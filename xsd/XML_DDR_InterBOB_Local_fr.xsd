@@ -1,35 +1,27 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by Pierre PIETRI (SAS SETEC ITS) -->
-<xsd:schema targetNamespace="urn:InterBOB__V1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:InterBOB__V1.0">
+<xsd:schema targetNamespace="urn:InterBOB__V1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<xsd:annotation>
 		<xsd:documentation>Schéma XML du corps local du dictionnaire de données d'InterBOB.</xsd:documentation>
 	</xsd:annotation>
 	<xsd:simpleType name="t_CodeCommentaireAccuseReception">
 		<xsd:annotation>
 			<xsd:documentation>Permet de définir lune codification de commentaires types pour les accusés de réception.
-			<!-- Mettre ici les codes et les libellés choisis -->
 			</xsd:documentation>
 		</xsd:annotation>
-		<xsd:restriction base="xsd:string">
-			<!-- Mettre ici les valeurs énumérées -->
-		</xsd:restriction>
+		<xsd:restriction base="xsd:string"/>
 	</xsd:simpleType>
 	<xsd:simpleType name="t_CodeProfilCommercialContrat">
 		<xsd:annotation>
 			<xsd:documentation>Permet de définir localement une typologie de profils commerciaux de contrats (et non de statuts de clients).
 			Ne correspond à HolderProfileNumber de la norme CEN 1545-1
-			<!-- Mettre ici les codes et les libellés choisis -->
 			</xsd:documentation>
 		</xsd:annotation>
-		<xsd:restriction base="xsd:string">
-			<!-- Mettre ici les valeurs énumérées -->
-		</xsd:restriction>
+		<xsd:restriction base="xsd:string"/>
 	</xsd:simpleType>
 	<xsd:simpleType name="t_EnumCategorieSupport">
 		<xsd:annotation>
 			<xsd:documentation>Permet de définir localement une typologie.
 N_est pas l_équivalent de l_élément de données d_intercode HolderDataCommercialId qui s_applique à l_application installée : Exemples : carte senior, carte gratuite, carte bancaire+billettique...</xsd:documentation>
-			<xsd:documentation>A COMPLETER !</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:nonNegativeInteger"/>
 	</xsd:simpleType>
@@ -53,7 +45,6 @@ Code Libellé
 Les valeurs (0..31) sont attribuées selon la norme CEN 1545-1
 Les valeurs (32..127) sont attribuées pour des statuts interopérables dont la définition sera nationale
 Les valeurs (128..255) sont disponibles pour des statuts de portées locales urbains ou interurbains ou régionaux selon les conventions locales.</xsd:documentation>
-			<xsd:documentation>Ajouter en cas de besoin des valeurs entre 128et 255</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:nonNegativeInteger"/>
 	</xsd:simpleType>
@@ -182,8 +173,7 @@ Code Libellé
 			<xsd:documentation>Enumère les valeurs possible d'un type d'application.
 Correspondances Code/Libellé:
 Code Libellé 
-1    ApplicationTransport
-</xsd:documentation>
+1    ApplicationTransport</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:nonNegativeInteger">
 			<xsd:enumeration value="1"/>
@@ -196,7 +186,6 @@ Code Libellé
 Correspondances Code/Libellé:
 Code Libellé
   A valoriser le cas échéant</xsd:documentation>
-			<xsd:documentation>A COMPLETER !</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:nonNegativeInteger"/>
 	</xsd:simpleType>
@@ -236,7 +225,6 @@ Code Libellé
 Correspondances Code/Libellé:
 Code Libellé
   A valoriser le cas échéant</xsd:documentation>
-			<xsd:documentation>A COMPLETER !</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:nonNegativeInteger"/>
 	</xsd:simpleType>
@@ -249,8 +237,7 @@ Code	Libellé
    2	Liste d'interdictions (ne peut contenir que des interdictions)
    3	Liste mixte
 4..15	Réservé
-16 et la suite : à valoriser en local.
-</xsd:documentation>
+16 et la suite : à valoriser en local.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:nonNegativeInteger"/>
 	</xsd:simpleType>
@@ -259,8 +246,7 @@ Code	Libellé
 			<xsd:documentation>Correspondances Code/Libellé:
 Code	Libellé
    1	Incrémentiel
-   2	Exhaustif
-</xsd:documentation>
+   2	Exhaustif</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:nonNegativeInteger"/>
 	</xsd:simpleType>
@@ -390,13 +376,9 @@ On peut définir localement des valeurs à partir de 65</xsd:documentation>
 			Par exemple cela peut servir à identifier la version de SAM ou ASIC utilisée au sein d'un bassin d'interopérabilité.
 			Cela peut aussi servir à préciser la famille d'un type technique exemple MFRC 531, CSAM, SAMS1_.
 Correspondances Code/Libellé:
-Code Libellé 
-<!-- Mettre ici les codes et les libellés choisis -->
-			</xsd:documentation>
+Code Libellé </xsd:documentation>
 		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger">
-			<!-- Mettre ici les valeurs énumérées -->
-		</xsd:restriction>
+		<xsd:restriction base="xsd:nonNegativeInteger"/>
 	</xsd:simpleType>
 	<xsd:simpleType name="t_EnumTypeTransaction">
 		<xsd:annotation>
