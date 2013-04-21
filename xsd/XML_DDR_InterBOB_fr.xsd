@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<xsd:schema targetNamespace="urn:InterBOB__V1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema targetNamespace="urn:InterBOB__V1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:IBLSLN="urn:IBLSLN__V1.0">
 	<xsd:annotation>
 		<xsd:documentation>Schéma XML du corps principal du dictionnaire de données d'InterBOB.</xsd:documentation>
 	</xsd:annotation>
-	<xsd:include schemaLocation="E:\Normalisation\INTERBOB\GitHub\xsd\XML_DDR_InterBOB_Local_fr.xsd"/>
+	<xsd:import namespace="urn:IBLSLN__V1.0" schemaLocation="Flux_IBLSLN.xsd"/>
+	<xsd:include schemaLocation="XML_DDR_InterBOB_Local_fr.xsd"/>
 	<xsd:element name="t_AccesValide" type="t_AccesValide"/>
 	<xsd:complexType name="t_AccesValide">
 		<xsd:annotation>
@@ -105,38 +106,23 @@ Les règles énoncées par la norme AFNOR Z69300 pour la ligne 4 d'adresse doivent 
 		<xsd:annotation>
 			<xsd:documentation>Une matrice d'application instanciée et implantée sur un support utilisateur. Elle est identifiée par un identifiant unique.</xsd:documentation>
 		</xsd:annotation>
-		<xsd:sequence>
-			<xsd:element name="IdApplicationInstallee" type="xsd:string" minOccurs="0" maxOccurs="1">
-				<xsd:annotation>
-					<xsd:documentation>Cet élément est momentanément laissé optionnel pour compatibilité avec des systèmes existants, qui ne gèrent que des supports dédiés et mono-applicatifs.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="DateHeureDebutValidite" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
-			<xsd:element name="DateHeureFinValidite" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
-			<xsd:element name="MatriceApplicationEnregistree" type="t_MatriceApplicationEnregistree" minOccurs="0" maxOccurs="1"/>
-			<xsd:element name="Distributeur" type="t_OrganisationEnregistree" minOccurs="1" maxOccurs="1"/>
-			<xsd:element name="SoldeCompteur" type="t_SoldeCompteur" minOccurs="0" maxOccurs="unbounded">
-				<xsd:annotation>
-					<xsd:documentation>Permet de gérer un solde de compteur lié à l'application installée.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="Support" type="t_Support" minOccurs="1" maxOccurs="1">
-				<xsd:annotation>
-					<xsd:documentation>Référence du support où est installée l'application</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="ContratApplication">
-				<xsd:complexType>
-					<xsd:complexContent>
-						<xsd:extension base="t_Contrat">
-							<xsd:sequence>
-								<xsd:element name="ClientDetenteur" type="t_Client" minOccurs="0" maxOccurs="1"/>
-							</xsd:sequence>
-						</xsd:extension>
-					</xsd:complexContent>
-				</xsd:complexType>
-			</xsd:element>
-		</xsd:sequence>
+		<xsd:complexContent>
+			<xsd:extension base="t_ApplicationInstalleeAbstraite">
+				<xsd:sequence>
+					<xsd:element name="DateHeureDebutValidite" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
+					<xsd:element name="SoldeCompteur" type="t_SoldeCompteur" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>Permet de gérer un solde de compteur lié à l'application installée.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="ContratApplication" type="t_ContratApplication" minOccurs="0" maxOccurs="1">
+						<xsd:annotation>
+							<xsd:documentation>Obligatoire si le support est nominatif, et dans le cas d'une 1e émission.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
 	</xsd:complexType>
 	<xsd:element name="t_ApplicationUtilisee" type="t_ApplicationUtilisee"/>
 	<xsd:complexType name="t_ApplicationUtilisee">
@@ -459,7 +445,13 @@ Les règles énoncées par la norme AFNOR Z69300 pour la ligne 4 d'adresse doivent 
 			<xsd:documentation>Permet d'identifier de manière unique le contrat établi entre le distributeur et le client pour la délivrance de l_application du titre ou du support .</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="TypeCommercialContrat" type="t_EnumTypeCommercialContrat" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="TypeCommercialContrat" type="t_EnumTypeCommercialContrat" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>Obligatoire si plusieurs gammes commerciales circulent sur le bassin.
+Permet de transmettre la gamme commerciale.
+(HolderDataCommercialId pour une application transport).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 			<xsd:element name="IdContrat" type="t_Identifiant" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Permet si nécessaire de référencer le n° de contrat établi avec le client  pour l'attribution d'un support, d'une application, d'un profil, d'un produit etc.</xsd:documentation>
@@ -508,21 +500,13 @@ Les règles énoncées par la norme AFNOR Z69300 pour la ligne 4 d'adresse doivent 
 			<xsd:extension base="t_EntreeListe">
 				<xsd:choice>
 					<xsd:element name="ApplicationInstallee" type="t_ApplicationInstallee" minOccurs="1" maxOccurs="1"/>
-					<xsd:element name="PlageApplicationInstallee">
-						<xsd:complexType>
-							<xsd:complexContent>
-								<xsd:extension base="t_PlageApplicationInstallee">
-									<xsd:sequence/>
-								</xsd:extension>
-							</xsd:complexContent>
-						</xsd:complexType>
-					</xsd:element>
+					<xsd:element name="PlageApplicationInstallee" type="t_PlageApplicationInstallee" minOccurs="1" maxOccurs="1"/>
 				</xsd:choice>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
 	<xsd:element name="t_EntreeListe" type="t_EntreeListe"/>
-	<xsd:complexType name="t_EntreeListe">
+	<xsd:complexType name="t_EntreeListe" abstract="true">
 		<xsd:annotation>
 			<xsd:documentation>Une entrée de toute liste gérée dans le cadre d'une communauté d'interopérabilité.</xsd:documentation>
 		</xsd:annotation>
@@ -536,17 +520,20 @@ Les règles énoncées par la norme AFNOR Z69300 pour la ligne 4 d'adresse doivent 
 			<xsd:element name="DateFinEffet" type="xsd:date" minOccurs="0" maxOccurs="1"/>
 			<xsd:element name="Motif" type="t_EnumMotifEntreeListe" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
-					<xsd:documentation>Permet de s'échanger un code correspondant à la cause de mise en liste. Les codes sont à définir localement.</xsd:documentation>
+					<xsd:documentation><xsd:appinfo>obsolete</xsd:appinfo>
+Permet de s'échanger un code correspondant à la cause de mise en liste. Les codes sont à définir localement.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="CodeMiseAJour" type="t_EnumCodeMiseAJour" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
-					<xsd:documentation>Permet de définir s'il faut ajouter (valeur associée 1) ou retirer (valeur associée 0) l'entrée définie à la liste exhaustive gérée par le système destinataire.</xsd:documentation>
+					<xsd:documentation><xsd:appinfo>obsolete</xsd:appinfo>
+Permet de définir s'il faut ajouter (valeur associée 1) ou retirer (valeur associée 0) l'entrée définie à la liste exhaustive gérée par le système destinataire.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="ActionDemandee" type="t_EnumActionEntreeListe" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
-					<xsd:documentation>Permet de définir la valeur de l'action à réaliser lors de la détection de l'objet. Cette valeur est à préciser en local par les partenaires du bassin d'interopérabilité. Les valeurs reprennent l'énumération de Action par défaut.</xsd:documentation>
+					<xsd:documentation><xsd:appinfo>obsolete</xsd:appinfo>
+Permet de définir la valeur de l'action à réaliser lors de la détection de l'objet. Cette valeur est à préciser en local par les partenaires du bassin d'interopérabilité. Les valeurs reprennent l'énumération de Action par défaut.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
@@ -706,7 +693,11 @@ Code Libellé   Support Application Produit Explication
 3    Bloquer   X       X           X       Bloquer temporairement temporaire _ Block Temporarily 
 4    Invalide  X       X           X       Rendre inutilisable (peut toujours être lu). Disable (still readable).
 5    Refuser   X       X           X       Refuser _ Reject
-6    Accepter  X       X           X       Accepter _ Accept</xsd:documentation>
+6    Accepter  X       X           X       Accepter _ Accept
+7    Ne rien faire
+8    Charger/Recharger
+9    Oter de la liste de refus
+10  Bloquer définitivement (mettre à effaçable)</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:nonNegativeInteger">
 			<xsd:enumeration value="1"/>
@@ -715,6 +706,10 @@ Code Libellé   Support Application Produit Explication
 			<xsd:enumeration value="4"/>
 			<xsd:enumeration value="5"/>
 			<xsd:enumeration value="6"/>
+			<xsd:enumeration value="7"/>
+			<xsd:enumeration value="8"/>
+			<xsd:enumeration value="9"/>
+			<xsd:enumeration value="10"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:element name="t_Equipement" type="t_Equipement"/>
@@ -842,36 +837,55 @@ Exemple : "Dépositaire xyz".</xsd:documentation>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:element name="t_Liste" type="t_Liste"/>
-	<xsd:complexType name="t_Liste">
+	<xsd:complexType name="t_Liste" abstract="true">
 		<xsd:annotation>
 			<xsd:documentation>Type de liste utilisée dans le cadre d'une communauté d'interopérabilité le plus général. Il se spécialise de diverses façons.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="DateHeureEmission" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
-			<xsd:element name="TypeMiseaJour" type="t_EnumTypeMiseaJour" minOccurs="1" maxOccurs="1">
+			<xsd:element name="DateHeureEmission" type="xsd:dateTime" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
-					<xsd:documentation>Cet attribut permet de préciser si c'est une liste exhaustive qui est transmise ou si ce ne sont que des mises à jour (« incrémentiel »).</xsd:documentation>
+					<xsd:documentation><xsd:appinfo>mandatory<xsd:appinfo>
+Date et heure d'émission de la liste de sécurité</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ElementControleIntegrite" type="xsd:string" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation><xsd:appinfo>obsolete</xsd:appinfo>
+Permet d'assurer l'intégrité de chaque Transaction.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TypeMiseaJour" type="t_EnumTypeMiseaJour" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation><xsd:appinfo>obsolete</xsd:appinfo>
+Cet attribut permet de préciser si c'est une liste exhaustive qui est transmise ou si ce ne sont que des mises à jour (« incrémentiel »).</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="DateDebutEffetParDefaut" type="xsd:date" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
-					<xsd:documentation>Même logique que pour l'élément ActionParDéfaut. DateDebutEffetParDefaut permet de définir la date de début d'effet applicable à tous les éléments Entrée* fils dont lélément DateDebutEffet n'est pas présent.</xsd:documentation>
+					<xsd:documentation><xsd:appinfo>obsolete</xsd:appinfo>
+Même logique que pour l'élément ActionParDéfaut. DateDebutEffetParDefaut permet de définir la date de début d'effet applicable à tous les éléments Entrée* fils dont l'élément DateDebutEffet n'est pas présent.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="DateFinEffetParDefaut" type="xsd:date" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="DateFinEffetParDefaut" type="xsd:date" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation><xsd:appinfo>obsolete</xsd:appinfo></xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 			<xsd:element name="TypeListeSecurite" type="t_EnumTypeListeSecurite" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Précise le type de la liste autorisation, interdiction...</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="IdentifiantListe" type="t_IdListe" minOccurs="0" maxOccurs="1">
-				<xsd:annotation>
-					<xsd:documentation>La gestion des identifiants des listes doit être définie localement au niveau du bassin d'interopérabilité. Cet élément est rendu optionnel pour permettre de s'échanger des listes ayant même type mais portant des identifiants différents dans chaque système partenaire.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
 			<xsd:element name="ActionParDefaut" type="t_EnumActionEntreeListe" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
-					<xsd:documentation>Permet de définir la valeur par défaut de l'action à réaliser sur les éléments Entrée fils dont l'attribut actionDemandée n'est pas présent.</xsd:documentation>
+					<xsd:documentation><xsd:appinfo>mandatory</xsd:appinfo>
+Permet de définir la valeur par défaut de l'action à réaliser sur les éléments Entrée fils dont l'attribut actionDemandée n'est pas présent.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="IdentifiantListe" type="t_IdListe" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation><xsd:appinfo>obsolete</xsd:appinfo>
+La gestion des identifiants des listes doit être définie localement au niveau du bassin d'interopérabilité. Cet élément est rendu optionnel pour permettre de s'échanger des listes ayant même type mais portant des identifiants différents dans chaque système partenaire.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
@@ -897,23 +911,10 @@ Le type"ListeSécurité" n'est qu'indicatif : c'est l' actionDemandée/actionParDéf
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="t_MessageListeSecurite">
-				<xsd:sequence>
-					<xsd:element name="ListeSecurite">
-						<xsd:complexType>
-							<xsd:complexContent>
-								<xsd:extension base="t_ListeSecurite">
-									<xsd:sequence minOccurs="0">
-										<xsd:element name="ElementControleIntegrite" type="xsd:string" minOccurs="0" maxOccurs="1">
-											<xsd:annotation>
-												<xsd:documentation>Permet d'assurer l'intégrité de chaque Transaction.</xsd:documentation>
-											</xsd:annotation>
-										</xsd:element>
-									</xsd:sequence>
-								</xsd:extension>
-							</xsd:complexContent>
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:sequence>
+				<xsd:choice>
+					<xsd:element name="ListeSecurite" type="t_ListeSecurite" minOccurs="1" maxOccurs="1"/>
+					<xsd:element name="ListeSecurite" type="IBLSLN:t_ListeSecurite" minOccurs="1" maxOccurs="1"/>
+				</xsd:choice>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -923,7 +924,7 @@ Le type"ListeSécurité" n'est qu'indicatif : c'est l' actionDemandée/actionParDéf
 			<xsd:documentation>Une matrice d'application enregistrée dans le cadre d'une communauté interopérable.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="IdMatriceApplication" type="xsd:string" minOccurs="1" maxOccurs="1">
+			<xsd:element name="IdMatriceApplication" type="xsd:string" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>Contient la valeur de l'élément de donnée  EnvApplicationVersionNumber défini dans Intercode.</xsd:documentation>
 				</xsd:annotation>
@@ -938,21 +939,30 @@ Le type"ListeSécurité" n'est qu'indicatif : c'est l' actionDemandée/actionParDéf
 					<xsd:documentation>Dans le cas où la matrice application est commune à tous les partenaires il est possible de ne pas échanger cet élément. En revanche dans le cas d'une application appartenant à un propriétaire distinct l'élément « PROPRIETAIRE » doit être renseigné. Le seul cas où l'élément t_MatriceApplicationEnregistree pourra ne pas être transmis sera le cas d'une seule Matrice Application Enregistrée Unique pour le bassin d'interopérabilité installée sur un support mono-application.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="BassinsAcceptation">
-				<xsd:complexType>
-					<xsd:annotation>
-						<xsd:documentation>Réseaux sur lesquels la matrice application est acceptée.
+			<xsd:element name="BassinsAcceptation" type="t_BassinsAcceptation" minOccurs="1" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation><xsd:appinfo>mandatory</xsd:appinfo></xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="t_BassinsAcceptation" type="t_BassinsAcceptation"/>
+	<xsd:complexType name="t_BassinsAcceptation">
+		<xsd:annotation>
+			<xsd:documentation>Réseaux sur lesquels la matrice application est acceptée.
 Cet élément est momentanément laissé optionnel pour compatibilité avec des systèmes existants.</xsd:documentation>
-					</xsd:annotation>
-					<xsd:sequence>
-						<xsd:element name="CodePays" type="t_IdPays" minOccurs="0" maxOccurs="1"/>
-						<xsd:element name="CodeBassin" type="t_NbTroisChiffres" minOccurs="0" maxOccurs="unbounded">
-							<xsd:annotation>
-								<xsd:documentation>La valeur est identique à la valeur ENVNetworkId de l'instanciation carte. Dans le cas de la France, cette valeur est conforme à Intercode et à la norme NF P99-502.</xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-					</xsd:sequence>
-				</xsd:complexType>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="CodePays" type="t_IdPays" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation><xsd:appinfo>mandatory</xsd:appinfo></xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CodeBassin" type="t_NbTroisChiffres" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation><xsd:appinfo>mandatory</xsd:appinfo>
+La valeur est identique à la valeur ENVNetworkId de l'instanciation carte. Dans le cas de la France, cette valeur est conforme à Intercode et à la norme NF P99-502.</xsd:documentation>
+				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
@@ -1372,7 +1382,11 @@ Exemple : le plus souvent il s'agira de l'utilisation d'un titre d'une applicati
 selon le cas.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="CodePays" type="t_IdPays" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="CodePays" type="t_IdPays" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation><xsd:appinfo>mandatory</xsd:appinfo></xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 			<xsd:element name="CodeBassin" type="t_NbTroisChiffres" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>La valeur est identique à la valeur ENVNetworkId de l'instanciation carte. Dans le cas de la France, cette valeur est conforme à Intercode et à la norme NF P99-502.</xsd:documentation>
@@ -1513,7 +1527,8 @@ Peut être rattaché à un élément de donnée porté par le support billettique (nive
 		<xsd:sequence>
 			<xsd:element name="TypeSupport" type="t_EnumTypeSupport" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
-					<xsd:documentation>Un des types de supports possibles, par exemple  CD97, GTML...
+					<xsd:documentation><xsd:appinfo>obsolete</xsd:appinfo>
+Un des types de supports possibles, par exemple  CD97, GTML...
 il devient nécessaire de renseigner cet élément conjointement avec "IdSupport" quand il y a
 coexistence de technologies de support différents et potentiellement des
 zones de recouvrement possibles au niveau des identifiants.</xsd:documentation>
@@ -1521,12 +1536,14 @@ zones de recouvrement possibles au niveau des identifiants.</xsd:documentation>
 			</xsd:element>
 			<xsd:element name="CategorieSupport" type="t_EnumCategorieSupport" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
-					<xsd:documentation>Permet de définir localement une typologie « nominative », « BSC », « anonyme ».</xsd:documentation>
+					<xsd:documentation><xsd:appinfo>obsolete</xsd:appinfo>
+Permet de définir localement une typologie « nominative », « BSC », « anonyme ».</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="IdSupport" type="t_IdSupport" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
-					<xsd:documentation>Identifiant à gérer localement. Doit permettre d'identifier de façon unique le support. Pour une carte, il correspond au numéro de série. Actuellement, une taille maximale de 10 octets parait pertinente pour les cartes billettiques sans contact.
+					<xsd:documentation><xsd:appinfo>mandatory</xsd:appinfo>
+Identifiant à gérer localement. Doit permettre d'identifier de façon unique le support. Pour une carte, il correspond au numéro de série. Actuellement, une taille maximale de 10 octets parait pertinente pour les cartes billettiques sans contact.
 il devient nécessaire de renseigner conjointement "TypeSupport" quand il y a
 coexistence de technologies de support différents et potentiellement des
 zones de recouvrement possibles au niveau des identifiants (genre
@@ -1652,6 +1669,62 @@ Consensus au niveau du groupe pour considérer que les messages (Acquisition comm
 		<xsd:complexContent>
 			<xsd:extension base="t_Zone">
 				<xsd:sequence/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:element name="t_ApplicationInstalleeAbstraite" type="t_ApplicationInstalleeAbstraite"/>
+	<xsd:complexType name="t_ApplicationInstalleeAbstraite" abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>Une matrice d'application instanciée et implantée sur un support utilisateur. Elle est identifiée par un identifiant unique.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="AID" type="xsd:string" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation><xsd:appinfo>mandatory</xsd:appinfo>
+Identifiant de l'application installée, conforme à la norme 99-502 pour les applications transport.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="FormeContenant" type="t_EnumFormeContenant" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation><xsd:appinfo>mandatory</xsd:appinfo>
+Permet d'identifier la forme physique du contenant de l'application transport : carte, billet, carte SIM, carte SD, clé USB...</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="IdApplicationInstallee" type="xsd:string" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation><xsd:appinfo>mandatory</xsd:appinfo>
+Cet élément est momentanément laissé optionnel pour compatibilité avec des systèmes existants, qui ne gèrent que des supports dédiés et mono-applicatifs.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="StructureApplication" type="t_EnumStructureApplication" minOccurs="0" maxOccurs="1" default="0"/>
+			<xsd:element name="DateHeureFinValidite" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="MatriceApplicationEnregistree" type="t_MatriceApplicationEnregistree" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation><xsd:appinfo>mandatory</xsd:appinfo></xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Distributeur" type="t_OrganisationEnregistree" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Support" type="t_Support" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>Référence du support où est installée l'application</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="t_ContratApplication" type="t_ContratApplication"/>
+	<xsd:complexType name="t_ContratApplication">
+		<xsd:complexContent>
+			<xsd:extension base="t_Contrat">
+				<xsd:sequence>
+					<xsd:element name="NatureApplication" type="t_EnumNatureApplication" minOccurs="0" maxOccurs="1">
+						<xsd:annotation>
+							<xsd:documentation>Différent de la gamme commerciale. Il s'agit ici de la nature de support.
+Pour une application transport Intercode, cette codification respectera la codification de HolderDataCardStatus.
+Particulièrement utile dans le cadre d'une opération de transformation d'un support non nominatif en support nominatif et d'une reconstitution.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="ClientDetenteur" type="t_Client" minOccurs="0" maxOccurs="1"/>
+				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
