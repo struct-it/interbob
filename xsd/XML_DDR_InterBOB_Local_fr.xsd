@@ -406,4 +406,22 @@ Code Libellé
 			<xsd:enumeration value="15"/>
 		</xsd:restriction>
 	</xsd:simpleType>
+	<xsd:simpleType name="t_EnumStructureApplication">
+		<xsd:restriction base="xsd:int">
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="t_EnumNatureApplication">
+		<xsd:restriction base="xsd:int">
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="t_EnumFormeContenant">
+		<xsd:restriction base="xsd:int">
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
 </xsd:schema>
