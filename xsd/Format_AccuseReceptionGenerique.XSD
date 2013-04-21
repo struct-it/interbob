@@ -3,7 +3,7 @@
 	<xsd:annotation>
 		<xsd:documentation>Schéma XML de l'accusé de réception générique.</xsd:documentation>
 	</xsd:annotation>
-	<xsd:import namespace="urn:InterBOB__V1.0" schemaLocation="E:\Normalisation\INTERBOB\GitHub\xsd\XML_DDR_InterBOB_fr.xsd"/>
+	<xsd:import namespace="urn:InterBOB__V1.0" schemaLocation="XML_DDR_InterBOB_fr.xsd"/>
 	<xsd:element name="MessageAccuseReception" type="InterBOB:t_MessageAccuseReception">
 		<xsd:annotation>
 			<xsd:documentation>Ce message permet de rendre compte de la réception d'un message et de la prise en compte ou non de son contenu.

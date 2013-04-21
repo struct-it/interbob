@@ -3,6 +3,6 @@
 	<xsd:annotation>
 		<xsd:documentation>Format XML des données d'utilisation.</xsd:documentation>
 	</xsd:annotation>
-	<xsd:import namespace="urn:InterBOB__V1.0" schemaLocation="E:\Normalisation\INTERBOB\GitHub\xsd\XML_DDR_InterBOB_fr.xsd"/>
+	<xsd:import namespace="urn:InterBOB__V1.0" schemaLocation="XML_DDR_InterBOB_fr.xsd"/>
 	<xsd:element name="MessageUtilisations" type="InterBOB:t_MessageUtilisations"/>
 </xsd:schema>

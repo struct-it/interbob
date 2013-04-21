@@ -3,7 +3,7 @@
 	<xsd:annotation>
 		<xsd:documentation>Schéma XML de la mise à jour de liste de sécurité.&gt;</xsd:documentation>
 	</xsd:annotation>
-	<xsd:import namespace="urn:InterBOB__V1.0" schemaLocation="E:\Normalisation\INTERBOB\GitHub\xsd\XML_DDR_InterBOB_fr.xsd"/>
+	<xsd:import namespace="urn:InterBOB__V1.0" schemaLocation="XML_DDR_InterBOB_fr.xsd"/>
 	<xsd:element name="MajListeSecurite" type="InterBOB:t_MajListeSecurite">
 		<xsd:annotation>
 			<xsd:documentation>L'application de ces listes est réduite aux supports, applications et titres de transport électroniques. Les listes de sécurité ne comprennent pas les listes d'action : exemple, (re)chargement, renouvellement d'un titre.</xsd:documentation>
