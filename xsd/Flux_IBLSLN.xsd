@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<xs:schema targetNamespace="urn:IBLSLN__V1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:InterBOB="urn:InterBOB__V1.0">
+<xs:schema targetNamespace="urn:IBLSLN__V1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:IBLSLN="urn:IBLSLN__V1.0" xmlns:IB="urn:IB______V1.0" xmlns:InterBOB="urn:InterBOB__V1.0">
+	<xs:import namespace="urn:IB______V1.0" schemaLocation="Flux_IB.xsd"/>
 	<xs:import namespace="urn:InterBOB__V1.0" schemaLocation="XML_DDR_InterBOB_fr.xsd"/>
-	<xs:element name="t_ApplicationInstallee" type="t_ApplicationInstallee"/>
-	<xs:complexType name="t_ApplicationInstallee">
-		<xs:annotation>
-			<xs:documentation>Une matrice d'application instanciée et implantée sur un support utilisateur, qui doit être invalidée par tout système partenaire la rencontrant.</xs:documentation>
-		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="InterBOB:t_ApplicationInstalleeAbstraite">
-				<xs:sequence/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:element name="t_ListeSecurite" type="t_ListeSecurite"/>
 	<xs:complexType name="t_ListeSecurite">
 		<xs:annotation>
 			<xs:documentation>Liste de sécurité d'un flux IBLSLN.</xs:documentation>
@@ -20,31 +9,30 @@
 		<xs:complexContent>
 			<xs:extension base="InterBOB:t_Liste">
 				<xs:sequence>
-					<xs:element name="EntreeListeSecurite" type="t_EntreeListeSecurite" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="EntreeListeSecurite" type="IBLSLN:t_EntreeListeSecurite" minOccurs="1" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="t_EntreeListeSecurite" type="t_EntreeListeSecurite"/>
 	<xs:complexType name="t_EntreeListeSecurite">
 		<xs:annotation>
 			<xs:documentation>Une entrée de la liste de sécurité.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="EntreeApplicationInstallee" type="t_EntreeApplicationInstallee" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="EntreeApplicationInstallee" type="IB:t_EntreeApplicationInstallee" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:element name="t_EntreeApplicationInstallee" type="t_EntreeApplicationInstallee"/>
-	<xs:complexType name="t_EntreeApplicationInstallee">
+	<xs:complexType name="t_MajListeSecurite">
 		<xs:annotation>
-			<xs:documentation>Une entrée de type "Application Installée" dans la liste de sécurité.</xs:documentation>
+			<xs:documentation>Message IBLSLN</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="InterBOB:t_EntreeListe">
+			<xs:extension base="InterBOB:t_MessageListeSecurite">
 				<xs:sequence>
-					<xs:element name="ApplicationInstallee" type="t_ApplicationInstallee" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="ListeSecurite" type="IBLSLN:t_ListeSecurite" minOccurs="1" maxOccurs="1"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="MajListeSecurite" type="IBLSLN:t_MajListeSecurite"/>
 </xs:schema>
