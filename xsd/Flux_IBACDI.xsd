@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema targetNamespace="urn:IBACDI__V1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:IBACDI="urn:IBACDI__V1.0" xmlns:IB____="urn:IB______V1.0" xmlns:InterBOB="urn:InterBOB__V1.0">
+	<xs:import namespace="urn:IB______V1.0" schemaLocation="Flux_IB.xsd"/>
+	<xs:import namespace="urn:InterBOB__V1.0" schemaLocation="XML_DDR_InterBOB_fr.xsd"/>
+	<xs:complexType name="t_ObjetImplique">
+		<xs:annotation>
+			<xs:documentation>L'objet d'une action contrat (contrat client, support utilisateur, application installée, produit installé...).</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="ProduitInstalle" type="IBACDI:t_ProduitInstalle" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Objet" type="IB____:t_ObjetAbstrait" minOccurs="1" maxOccurs="1"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="t_ProduitInstalle">
+		<xs:complexContent>
+			<xs:extension base="InterBOB:t_ProduitInstalleAbstraitContraintTransport">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="MessageAcquisitions" type="IBACDI:t_MessageAcquisitions"/>
+	<xs:complexType name="t_MessageAcquisitions">
+		<xs:annotation>
+			<xs:documentation>Message IBACDI rendant compte d'acquisitions d'applications, de produits...</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="InterBOB:t_Message">
+				<xs:sequence>
+					<xs:element name="OperationVente" type="IBACDI:t_OperationVente" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="t_OperationVente">
+		<xs:annotation>
+			<xs:documentation>Permet de décrire une opération unitaire sur un seul objet dans le cadre d'un flux IBACDI.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="InterBOB:t_OperationVenteAbstrait">
+				<xs:sequence>
+					<xs:element name="ObjetImplique" type="IBACDI:t_ObjetImplique" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="AncienObjetImplique" type="IBACDI:t_ObjetImplique" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>
