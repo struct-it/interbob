@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<xsd:schema targetNamespace="urn:InterBOB__V1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema targetNamespace="urn:InterBOB__V1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:InterBOB="urn:InterBOB__V1.0">
 	<xsd:annotation>
 		<xsd:documentation>Schéma XML du corps local du dictionnaire de données d'InterBOB.</xsd:documentation>
 	</xsd:annotation>
@@ -253,7 +253,7 @@ Code	Libellé
 	<xsd:simpleType name="t_EnumTypeOperationVente">
 		<xsd:annotation>
 			<xsd:documentation>
-Enumère les valeurs possibles d'un  type d'opération de vente.
+Enumère les valeurs possibles d'un type d'opération de vente.
 Correspondances Code/Libellé:
 Code Libellé 
 1    Vente
@@ -404,6 +404,34 @@ Code Libellé
 			<xsd:enumeration value="8"/>
 			<xsd:enumeration value="9"/>
 			<xsd:enumeration value="15"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="t_EnumActionEntreeListe">
+		<xsd:annotation>
+			<xsd:documentation>Type d'action susceptible d'être effectuée sur un objet mentionné dans une liste (qu'il s'agisse ou non d'une liste de sécurité).
+Code Libellé   Support Application Produit Explication
+1    Détruire  X                           Mettre hors d'usage _ Destroy
+2    Capturer  X                           Capturer la carte sur détection _ Capture
+3    Bloquer   X       X           X       Bloquer temporairement temporaire _ Block Temporarily 
+4    Invalide  X       X           X       Rendre inutilisable (peut toujours être lu). Disable (still readable).
+5    Refuser   X       X           X       Refuser _ Reject
+6    Accepter  X       X           X       Accepter _ Accept
+7    Ne rien faire
+8    Charger/Recharger
+9    Oter de la liste de refus
+10  Bloquer définitivement (mettre à effaçable)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+			<xsd:enumeration value="5"/>
+			<xsd:enumeration value="6"/>
+			<xsd:enumeration value="7"/>
+			<xsd:enumeration value="8"/>
+			<xsd:enumeration value="9"/>
+			<xsd:enumeration value="10"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="t_EnumStructureApplication">
