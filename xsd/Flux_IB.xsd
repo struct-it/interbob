@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema targetNamespace="urn:IB______V1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:IB____="urn:IB______V1.0" xmlns:InterBOB="urn:InterBOB__V1.0">
+	<xs:import namespace="urn:InterBOB__V1.0" schemaLocation="XML_DDR_InterBOB_fr.xsd"/>
+	<xs:complexType name="t_ApplicationInstallee">
+		<xs:annotation>
+			<xs:documentation>Une matrice d'application instanciée et implantée sur un support utilisateur, qui doit être invalidée par tout système partenaire la rencontrant.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="InterBOB:t_ApplicationInstalleeAbstraite">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="t_EntreeApplicationInstallee">
+		<xs:annotation>
+			<xs:documentation>Une entrée de type "Application Installée" dans la liste de sécurité.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="InterBOB:t_EntreeListe">
+				<xs:sequence>
+					<xs:element name="ApplicationInstallee" type="IB____:t_ApplicationInstallee" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="t_ObjetAbstrait">
+		<xs:sequence>
+			<xs:element name="ApplicationUtilisee" type="InterBOB:t_ApplicationUtilisee" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
