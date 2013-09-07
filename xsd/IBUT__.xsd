@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema targetNamespace="urn:IBUT_V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:IBUT="urn:IBUT_V1" xmlns:InterBOB="urn:InterBOB_V1">
+	<xs:import namespace="urn:InterBOB_V1" schemaLocation="XML_DDR_InterBOB_fr.xsd"/>
+	<xs:complexType name="t_OperationContrat">
+		<xs:annotation>
+			<xs:documentation>La journalisation d'un événement intervenant dans la vie d'un CONTRAT : initialisation du contrat, acquisitions, validations, etc. Un extrait d'un événement contrat est souvent matétrialisé sur un TITRE DE TRANSPORT.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Date" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Heure" type="xs:time" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="t_SupportUtilisateur">
+		<xs:annotation>
+			<xs:documentation>Un support identifié attribuable à un utilisateur.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="InterBOB:t_Support">
+				<xs:choice>
+					<xs:element name="EmetteurSupportEnregistre" type="InterBOB:t_OrganisationEnregistree" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Permet d'identifier l'entité ayant délivré le support, vers qui le client se tournera en cas de dysfonctionnement.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="EmetteurSupportExtraBassin" type="InterBOB:t_OrganisationExtraBassin" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Permet d'identifier l'entité ayant délivré le support, vers qui le client se tournera en cas de dysfonctionnement.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="t_UtilisationProduitInstalle">
+		<xs:annotation>
+			<xs:documentation>Représente représente les aspects spécifiques au support utilisateur dans une utilisation.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="IBUT:t_OperationContrat">
+				<xs:sequence>
+					<xs:element name="SupportUtilise" type="IBUT:t_SupportUtilisateur" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="EquipementValidation" type="InterBOB:t_Equipement" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Un équipement de terrain destiné à contrôler des droits d'utilisation liés à des produits installés, et en conséquence à valider ou non un passage en entrée, sortie ou correspondance d'un réseau de transports.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ApplicationUtilisee" type="InterBOB:t_Application" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="ProduitUtilise" type="IBUT:t_ProduitUtilise" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Cet élément représente l'état du titre après validation ; notamment dans le cas d'un titre de type carnet, l'élément soldeCompteur contient le nombre restant d'unités.
+Consensus au niveau du groupe pour considérer que les messages (Acquisition comme Utilisation) reflètent les événement « unitaires » : la distribution d'un titre ou d'une application, la validation d'un titre électronique chez un opérateur donné sur un équipement. Les messages n'ont pas vocation à s'échanger des agrégats.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="AccesValide" type="InterBOB:t_AccesValide" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="t_ProduitUtilise">
+		<xs:annotation>
+			<xs:documentation>Une instanciation d'un produit sur un support utilisateur. Elle est la concrétisation de droits d'accès aux services de transport.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="InterBOB:t_ProduitAbstrait">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="t_MessageUtilisations">
+		<xs:annotation>
+			<xs:documentation>Permet de faire transiter tous les événements de validation. Consensus du groupe le 7/09/2006 pour ne s'échanger que les validations qui ont réussi (c'est à dire sur des titres valables).</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="InterBOB:t_Message">
+				<xs:sequence>
+					<xs:element name="UtilisationProduitInstalle" type="IBUT:t_UtilisationProduitInstalle" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="MessageUtilisations" type="IBUT:t_MessageUtilisations"/>
+</xs:schema>

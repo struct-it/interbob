@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<xsd:schema targetNamespace="urn:InterBOB__formats__V1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:InterBOB="urn:InterBOB__V1.0">
-	<xsd:annotation>
-		<xsd:documentation>Format XML des données d'utilisation.</xsd:documentation>
-	</xsd:annotation>
-	<xsd:import namespace="urn:InterBOB__V1.0" schemaLocation="XML_DDR_InterBOB_fr.xsd"/>
-	<xsd:element name="MessageUtilisations" type="InterBOB:t_MessageUtilisations"/>
-</xsd:schema>
