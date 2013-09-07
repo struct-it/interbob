@@ -1,95 +1,95 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<xsd:schema targetNamespace="urn:InterBOB__V1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:InterBOB="urn:InterBOB__V1.0">
-	<xsd:annotation>
-		<xsd:documentation>Schéma XML du corps local du dictionnaire de données d'InterBOB.</xsd:documentation>
-	</xsd:annotation>
-	<xsd:simpleType name="t_CodeCommentaireAccuseReception">
-		<xsd:annotation>
-			<xsd:documentation>Permet de définir lune codification de commentaires types pour les accusés de réception.
-			</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:string"/>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_CodeProfilCommercialContrat">
-		<xsd:annotation>
-			<xsd:documentation>Permet de définir localement une typologie de profils commerciaux de contrats (et non de statuts de clients).
+<xs:schema targetNamespace="urn:InterBOB_V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:InterBOB="urn:InterBOB_V1">
+	<xs:annotation>
+		<xs:documentation>Schéma XML du corps local du dictionnaire de données d'InterBOB.</xs:documentation>
+	</xs:annotation>
+	<xs:simpleType name="t_CodeCommentaireAccuseReception">
+		<xs:annotation>
+			<xs:documentation>Permet de définir lune codification de commentaires types pour les accusés de réception.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="t_CodeProfilCommercialContrat">
+		<xs:annotation>
+			<xs:documentation>Permet de définir localement une typologie de profils commerciaux de contrats (et non de statuts de clients).
 			Ne correspond à HolderProfileNumber de la norme CEN 1545-1
-			</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:string"/>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumCategorieSupport">
-		<xsd:annotation>
-			<xsd:documentation>Permet de définir localement une typologie.
-N_est pas l_équivalent de l_élément de données d_intercode HolderDataCommercialId qui s_applique à l_application installée : Exemples : carte senior, carte gratuite, carte bancaire+billettique...</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger"/>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumCodeMiseAJour">
-		<xsd:annotation>
-			<xsd:documentation>Permet de définir s'il faut ajouter (valeur associée 1) ou retirer (valeur associée 0) l'entrée définie à la liste exhaustive gérée par le système destinataire.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumCategorieSupport">
+		<xs:annotation>
+			<xs:documentation>Permet de définir localement une typologie.
+N_est pas l_équivalent de l_élément de données d_intercode HolderDataCommercialId qui s_applique à l_application installée : Exemples : carte senior, carte gratuite, carte bancaire+billettique...</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger"/>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumCodeMiseAJour">
+		<xs:annotation>
+			<xs:documentation>Permet de définir s'il faut ajouter (valeur associée 1) ou retirer (valeur associée 0) l'entrée définie à la liste exhaustive gérée par le système destinataire.
 
 Correspondances Code/Libellé:
 Code Libellé 
 0    Retirer
-1    Ajouter</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger">
-			<xsd:enumeration value="0"/>
-			<xsd:enumeration value="1"/>
-		</xsd:restriction>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumCodeProfil">
-		<xsd:annotation>
-			<xsd:documentation>Identification du statut , correspond à HolderProfileNumber de la norme CEN 1545-1
+1    Ajouter</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumCodeProfil">
+		<xs:annotation>
+			<xs:documentation>Identification du statut , correspond à HolderProfileNumber de la norme CEN 1545-1
 Les valeurs (0..31) sont attribuées selon la norme CEN 1545-1
 Les valeurs (32..127) sont attribuées pour des statuts interopérables dont la définition sera nationale
-Les valeurs (128..255) sont disponibles pour des statuts de portées locales urbains ou interurbains ou régionaux selon les conventions locales.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger"/>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumEtatAction">
-		<xsd:annotation>
-			<xsd:documentation>Enumère les valeurs possibles d'un état d'une action effectuée.
+Les valeurs (128..255) sont disponibles pour des statuts de portées locales urbains ou interurbains ou régionaux selon les conventions locales.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger"/>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumEtatAction">
+		<xs:annotation>
+			<xs:documentation>Enumère les valeurs possibles d'un état d'une action effectuée.
 Correspondances Code/Libellé:
 Code Libellé 
 1    Détruire
 2    Capturer
-3    Réussite</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger">
-			<xsd:enumeration value="1"/>
-			<xsd:enumeration value="2"/>
-			<xsd:enumeration value="3"/>
-		</xsd:restriction>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumEtatOperationVente">
-		<xsd:annotation>
-			<xsd:documentation>Enumère les valeurs possibles d'un état d'une opération de vente.
+3    Réussite</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumEtatOperationVente">
+		<xs:annotation>
+			<xs:documentation>Enumère les valeurs possibles d'un état d'une opération de vente.
 Correspondances Code/Libellé:
 Code Libellé 
 1    Opération de vente réussie
-2    Opération de vente annulée</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger">
-			<xsd:enumeration value="1"/>
-			<xsd:enumeration value="2"/>
-		</xsd:restriction>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumFacteurTarifaireDeQualite">
-		<xsd:annotation>
-			<xsd:documentation>Enumère les valeurs possibles de niveau de qualité associé au service. La codification de cette enumération correspond à ContractPassengerClass d'Intercode et désigne plus généralement la classe de service.
+2    Opération de vente annulée</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumFacteurTarifaireDeQualite">
+		<xs:annotation>
+			<xs:documentation>Enumère les valeurs possibles de niveau de qualité associé au service. La codification de cette enumération correspond à ContractPassengerClass d'Intercode et désigne plus généralement la classe de service.
 Correspondances Code/Libellé:
 Code Libellé
 0    Aucune
 1    1ère Classe
-2    2ème Classe</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger"/>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumModeTransport">
-		<xsd:annotation>
-			<xsd:documentation>Enumère les différents modes de transport possibles.
+2    2ème Classe</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger"/>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumModeTransport">
+		<xs:annotation>
+			<xs:documentation>Enumère les différents modes de transport possibles.
 Correspondances Code/Libellé:
 Code Libellé
 1    Bus urbain
@@ -97,45 +97,45 @@ Code Libellé
 3    Métro
 4    Tram
 5    Train
-8    Parking</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger">
-			<xsd:enumeration value="1"/>
-			<xsd:enumeration value="2"/>
-			<xsd:enumeration value="3"/>
-			<xsd:enumeration value="4"/>
-			<xsd:enumeration value="5"/>
-			<xsd:enumeration value="8"/>
-		</xsd:restriction>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumMotifEntreeListe">
-		<xsd:annotation>
-			<xsd:documentation>Enumère les différents motifs possibles d'introduire un objet dans une liste</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger"/>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumMoyenPaiement">
-		<xsd:annotation>
-			<xsd:documentation>Cette énumération est un sous-ensemble de EN1545_PaymentMeans considéré suffisant pour les besoins d'échanges dans le cadre d'un .
+8    Parking</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="8"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumMotifEntreeListe">
+		<xs:annotation>
+			<xs:documentation>Enumère les différents motifs possibles d'introduire un objet dans une liste</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger"/>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumMoyenPaiement">
+		<xs:annotation>
+			<xs:documentation>Cette énumération est un sous-ensemble de EN1545_PaymentMeans considéré suffisant pour les besoins d'échanges dans le cadre d'un .
 Correspondances Code/Libellé:
 Code Libellé 
 1    Carte Bancaire
 2    Chèque
 3    Espèces
 4    Non Mentionné
-5    Autre</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger">
-			<xsd:enumeration value="1"/>
-			<xsd:enumeration value="2"/>
-			<xsd:enumeration value="3"/>
-			<xsd:enumeration value="4"/>
-			<xsd:enumeration value="5"/>
-		</xsd:restriction>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumQualifiantReception">
-		<xsd:annotation>
-			<xsd:documentation>
+5    Autre</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumQualifiantReception">
+		<xs:annotation>
+			<xs:documentation>
 Enumère les valeurs possibles d'un qualifiant de réception.
 Correspondances Code/Libellé:
 Code Libellé 
@@ -144,54 +144,54 @@ Code Libellé
 2    Rejeté par le traitement
 3    Traité
 
-D'autres valeurs peuvent être définies au niveau du bassin d'interopérabilité.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger">
-			<xsd:enumeration value="0"/>
-			<xsd:enumeration value="1"/>
-			<xsd:enumeration value="2"/>
-			<xsd:enumeration value="3"/>
-		</xsd:restriction>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumTitre">
-		<xsd:annotation>
-			<xsd:documentation>Enumère les différents titres possibles.
+D'autres valeurs peuvent être définies au niveau du bassin d'interopérabilité.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumTitre">
+		<xs:annotation>
+			<xs:documentation>Enumère les différents titres possibles.
 Correspondances Code/Libellé:
 Code Libellé 
 1   M.
 2   Mme
-3   Mlle</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger">
-			<xsd:enumeration value="1"/>
-			<xsd:enumeration value="2"/>
-			<xsd:enumeration value="3"/>
-		</xsd:restriction>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumTypeApplication">
-		<xsd:annotation>
-			<xsd:documentation>Enumère les valeurs possible d'un type d'application.
+3   Mlle</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumTypeApplication">
+		<xs:annotation>
+			<xs:documentation>Enumère les valeurs possible d'un type d'application.
 Correspondances Code/Libellé:
 Code Libellé 
-1    ApplicationTransport</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger">
-			<xsd:enumeration value="1"/>
-		</xsd:restriction>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumTypeCommercialContrat">
-		<xsd:annotation>
-			<xsd:documentation>Exemples : contrat annuel, contrat combiné, contrat découverte, contrat senior
+1    ApplicationTransport</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:enumeration value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumTypeCommercialContrat">
+		<xs:annotation>
+			<xs:documentation>Exemples : contrat annuel, contrat combiné, contrat découverte, contrat senior
 
 Correspondances Code/Libellé:
 Code Libellé
-  A valoriser le cas échéant</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger"/>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumTypeCoordonnee">
-		<xsd:annotation>
-			<xsd:documentation>Enumère les différents types de coordonnées.
+  A valoriser le cas échéant</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger"/>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumTypeCoordonnee">
+		<xs:annotation>
+			<xs:documentation>Enumère les différents types de coordonnées.
 Correspondances Code/Libellé:
 Code Libellé 
 1   Tél. domicile 1
@@ -203,56 +203,56 @@ Code Libellé
 7   Tél. mobile 1
 8   Tél. mobile 2
 9   Courriel 1
-10  Courriel 2</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger">
-			<xsd:enumeration value="1"/>
-			<xsd:enumeration value="2"/>
-			<xsd:enumeration value="3"/>
-			<xsd:enumeration value="4"/>
-			<xsd:enumeration value="5"/>
-			<xsd:enumeration value="6"/>
-			<xsd:enumeration value="7"/>
-			<xsd:enumeration value="8"/>
-			<xsd:enumeration value="9"/>
-			<xsd:enumeration value="10"/>
-		</xsd:restriction>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumTypeEquipement">
-		<xsd:annotation>
-			<xsd:documentation>Enumère les valeurs possibles d'un  type d'un type d'équipement.
+10  Courriel 2</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="6"/>
+			<xs:enumeration value="7"/>
+			<xs:enumeration value="8"/>
+			<xs:enumeration value="9"/>
+			<xs:enumeration value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumTypeEquipement">
+		<xs:annotation>
+			<xs:documentation>Enumère les valeurs possibles d'un  type d'un type d'équipement.
 
 Correspondances Code/Libellé:
 Code Libellé
-  A valoriser le cas échéant</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger"/>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumTypeListeSecurite">
-		<xsd:annotation>
-			<xsd:documentation>Enumère les diférents types de listes possibles.
+  A valoriser le cas échéant</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger"/>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumTypeListeSecurite">
+		<xs:annotation>
+			<xs:documentation>Enumère les diférents types de listes possibles.
 Correspondances Code/Libellé:
 Code	Libellé
    1	Liste d'autorisations (ne peut contenir que des autorisations)
    2	Liste d'interdictions (ne peut contenir que des interdictions)
    3	Liste mixte
 4..15	Réservé
-16 et la suite : à valoriser en local.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger"/>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumTypeMiseaJour">
-		<xsd:annotation>
-			<xsd:documentation>Correspondances Code/Libellé:
+16 et la suite : à valoriser en local.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger"/>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumTypeMiseaJour">
+		<xs:annotation>
+			<xs:documentation>Correspondances Code/Libellé:
 Code	Libellé
    1	Incrémentiel
-   2	Exhaustif</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger"/>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumTypeOperationVente">
-		<xsd:annotation>
-			<xsd:documentation>
+   2	Exhaustif</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger"/>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumTypeOperationVente">
+		<xs:annotation>
+			<xs:documentation>
 Enumère les valeurs possibles d'un type d'opération de vente.
 Correspondances Code/Libellé:
 Code Libellé 
@@ -262,71 +262,71 @@ Code Libellé
 29   Reconstitution
 
 Valeurs correspondantes à la norme 1545-1 paragraphe 7.9 de 2005, correspond à « EventTypeCode » pour les valeurs 1,10 et 3.
-On peut définir localement des valeurs à partir de 30.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger">
-			<xsd:enumeration value="1">
-				<xsd:annotation>
-					<xsd:documentation>
+On peut définir localement des valeurs à partir de 30.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:enumeration value="1">
+				<xs:annotation>
+					<xs:documentation>
 Vente - valeur 1
 Sale, associée à la valeur 1 d'après EN1545-1 version
 2005. Nécessaire, afin de synchroniser les systèmes centraux, d'informer son
-partenaire qu'un titre a été vendu.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:enumeration>
-			<xsd:enumeration value="3">
-				<xsd:annotation>
-					<xsd:documentation>
+partenaire qu'un titre a été vendu.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="3">
+				<xs:annotation>
+					<xs:documentation>
 Annulation - valeur 3
 Equivalent à undo-previous-event-without-refund d'après EN1545-1 version
 2005. Nécessaire, afin de synchroniser les systèmes centraux pour informer
-son partenaire qu'un titre a été remboursé.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:enumeration>
-			<xsd:enumeration value="10">
-				<xsd:annotation>
-					<xsd:documentation>
+son partenaire qu'un titre a été remboursé.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="10">
+				<xs:annotation>
+					<xs:documentation>
 Remboursement - valeur 10
 Equivalent à undo-previous-event-with-refund d'après
 EN1545-1 version 2005. Nécessaire, afin de synchroniser les systèmes
-centraux pour informer son partenaire qu'un titre a été remboursé.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:enumeration>
-			<xsd:enumeration value="29">
-				<xsd:annotation>
-					<xsd:documentation>
+centraux pour informer son partenaire qu'un titre a été remboursé.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="29">
+				<xs:annotation>
+					<xs:documentation>
 Reconstitution - valeur 29
 Correspond à la première valeur libre dans  EN1545-1 version 2005.
 Nécessaire néanmoins afin de synchroniser les systèmes centraux pour
 informer son partenaire qu'un titre a été reconstitué suite à la
 reconstitution d'une carte (explicitement demandé par notre partenaire sur
-Bretagne).</xsd:documentation>
-				</xsd:annotation>
-			</xsd:enumeration>
-		</xsd:restriction>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumTypeReferentiel">
-		<xsd:annotation>
-			<xsd:documentation>Enumère les types de référentiel auquel appartient la localisation.
+Bretagne).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumTypeReferentiel">
+		<xs:annotation>
+			<xs:documentation>Enumère les types de référentiel auquel appartient la localisation.
 Correspondances Code/Libellé:
 Code Libellé 
 1    IATA
 2    UIC
 3    UN-LOCODE
 4    Nommage en clair
-5    IATA selon un algorithme SNCF propriétaire</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger">
-			<xsd:enumeration value="1"/>
-			<xsd:enumeration value="2"/>
-			<xsd:enumeration value="3"/>
-			<xsd:enumeration value="4"/>
-			<xsd:enumeration value="5"/>
-		</xsd:restriction>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumTypeSupport">
-		<xsd:annotation>
-			<xsd:documentation>Enumère les valeurs possibles d'un type de support.
+5    IATA selon un algorithme SNCF propriétaire</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumTypeSupport">
+		<xs:annotation>
+			<xs:documentation>Enumère les valeurs possibles d'un type de support.
 Correspondances Code/Libellé:
 Code Libellé 
 1    BMS1
@@ -347,42 +347,42 @@ Code Libellé
 16   CTM 512
 17   MF ULTRA LIGHT
 18   à 64 RUF conformément aux supports référencés dans Intertic et Intercode.
-On peut définir localement des valeurs à partir de 65</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger">
-			<xsd:enumeration value="1"/>
-			<xsd:enumeration value="2"/>
-			<xsd:enumeration value="3"/>
-			<xsd:enumeration value="4"/>
-			<xsd:enumeration value="5"/>
-			<xsd:enumeration value="6"/>
-			<xsd:enumeration value="7"/>
-			<xsd:enumeration value="8"/>
-			<xsd:enumeration value="9"/>
-			<xsd:enumeration value="10"/>
-			<xsd:enumeration value="11"/>
-			<xsd:enumeration value="12"/>
-			<xsd:enumeration value="13"/>
-			<xsd:enumeration value="14"/>
-			<xsd:enumeration value="15"/>
-			<xsd:enumeration value="16"/>
-			<xsd:enumeration value="17"/>
-		</xsd:restriction>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumTypeTechniqueSousSystemeSecurite">
-		<xsd:annotation>
-			<xsd:documentation>Peut servir à identifier la technologie du module de sécurité.
+On peut définir localement des valeurs à partir de 65</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="6"/>
+			<xs:enumeration value="7"/>
+			<xs:enumeration value="8"/>
+			<xs:enumeration value="9"/>
+			<xs:enumeration value="10"/>
+			<xs:enumeration value="11"/>
+			<xs:enumeration value="12"/>
+			<xs:enumeration value="13"/>
+			<xs:enumeration value="14"/>
+			<xs:enumeration value="15"/>
+			<xs:enumeration value="16"/>
+			<xs:enumeration value="17"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumTypeTechniqueSousSystemeSecurite">
+		<xs:annotation>
+			<xs:documentation>Peut servir à identifier la technologie du module de sécurité.
 			La granularité et les valeurs éventuels de cet élément sont à définir en local par les partenaires du bassin d'interopérabilité.
 			Par exemple cela peut servir à identifier la version de SAM ou ASIC utilisée au sein d'un bassin d'interopérabilité.
 			Cela peut aussi servir à préciser la famille d'un type technique exemple MFRC 531, CSAM, SAMS1_.
 Correspondances Code/Libellé:
-Code Libellé </xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger"/>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumTypeTransaction">
-		<xsd:annotation>
-			<xsd:documentation>Equivaut au quartet de poids faible de l'élément de donnée INTERCODE EventCode qui contient le type de transaction concerné par l'événement.
+Code Libellé </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger"/>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumTypeTransaction">
+		<xs:annotation>
+			<xs:documentation>Equivaut au quartet de poids faible de l'élément de donnée INTERCODE EventCode qui contient le type de transaction concerné par l'événement.
 Correspondances Code/Libellé:
 Code Libellé 
 1    Validation en entrée
@@ -392,23 +392,23 @@ Code Libellé
 6    Validation en correspondance (entrée)
 7    Validation en correspondance (sortie)
 9    Annulation de validation
-15   Invalidation.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger">
-			<xsd:enumeration value="1"/>
-			<xsd:enumeration value="2"/>
-			<xsd:enumeration value="4"/>
-			<xsd:enumeration value="5"/>
-			<xsd:enumeration value="6"/>
-			<xsd:enumeration value="7"/>
-			<xsd:enumeration value="8"/>
-			<xsd:enumeration value="9"/>
-			<xsd:enumeration value="15"/>
-		</xsd:restriction>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumActionEntreeListe">
-		<xsd:annotation>
-			<xsd:documentation>Type d'action susceptible d'être effectuée sur un objet mentionné dans une liste (qu'il s'agisse ou non d'une liste de sécurité).
+15   Invalidation.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="6"/>
+			<xs:enumeration value="7"/>
+			<xs:enumeration value="8"/>
+			<xs:enumeration value="9"/>
+			<xs:enumeration value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumActionEntreeListe">
+		<xs:annotation>
+			<xs:documentation>Type d'action susceptible d'être effectuée sur un objet mentionné dans une liste (qu'il s'agisse ou non d'une liste de sécurité).
 Code Libellé   Support Application Produit Explication
 1    Détruire  X                           Mettre hors d'usage _ Destroy
 2    Capturer  X                           Capturer la carte sur détection _ Capture
@@ -419,37 +419,37 @@ Code Libellé   Support Application Produit Explication
 7    Ne rien faire
 8    Charger/Recharger
 9    Oter de la liste de refus
-10  Bloquer définitivement (mettre à effaçable)</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:nonNegativeInteger">
-			<xsd:enumeration value="1"/>
-			<xsd:enumeration value="2"/>
-			<xsd:enumeration value="3"/>
-			<xsd:enumeration value="4"/>
-			<xsd:enumeration value="5"/>
-			<xsd:enumeration value="6"/>
-			<xsd:enumeration value="7"/>
-			<xsd:enumeration value="8"/>
-			<xsd:enumeration value="9"/>
-			<xsd:enumeration value="10"/>
-		</xsd:restriction>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumStructureApplication">
-		<xsd:restriction base="xsd:int">
-			<xsd:enumeration value="0"/>
-			<xsd:enumeration value="1"/>
-		</xsd:restriction>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumNatureApplication">
-		<xsd:restriction base="xsd:int">
-			<xsd:enumeration value="0"/>
-			<xsd:enumeration value="1"/>
-		</xsd:restriction>
-	</xsd:simpleType>
-	<xsd:simpleType name="t_EnumFormeContenant">
-		<xsd:restriction base="xsd:int">
-			<xsd:enumeration value="0"/>
-			<xsd:enumeration value="1"/>
-		</xsd:restriction>
-	</xsd:simpleType>
-</xsd:schema>
+10  Bloquer définitivement (mettre à effaçable)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="6"/>
+			<xs:enumeration value="7"/>
+			<xs:enumeration value="8"/>
+			<xs:enumeration value="9"/>
+			<xs:enumeration value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumStructureApplication">
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumNatureApplication">
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_EnumFormeContenant">
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
