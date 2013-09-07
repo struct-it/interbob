@@ -11,7 +11,7 @@
 		<xs:sequence>
 			<xs:element name="CompteurCorrespondance" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo>
+					<xs:documentation><xs:appinfo>mandatory</xs:appinfo>
 Sa valeur correspond au nombre de validations durant le voyage en cours.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -37,7 +37,7 @@ Sa valeur correspond au nombre de validations durant le voyage en cours.</xs:doc
 				<xs:sequence>
 					<xs:element name="CodeArticle" type="xs:string" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation><xsd:appInfo>obsolete</xsd:appInfo>
+							<xs:documentation><xs:appinfo>obsolete</xs:appinfo>
 Information commerciale contextuelle, d'usage libre.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -49,12 +49,12 @@ Information commerciale contextuelle, d'usage libre.</xs:documentation>
 					<xs:element name="EtatOperation" type="InterBOB:t_EnumEtatOperationVente" minOccurs="1" maxOccurs="1"/>
 					<xs:element name="MontantOperation" type="xs:decimal" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo></xs:documentation>
+							<xs:documentation><xs:appinfo>mandatory</xs:appinfo></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="MoyenPaiementPrincipal" type="InterBOB:t_EnumMoyenPaiement" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo></xs:documentation>
+							<xs:documentation><xs:appinfo>mandatory</xs:appinfo></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="EquipementAcquisition" type="InterBOB:t_Equipement" minOccurs="1" maxOccurs="1">
@@ -64,7 +64,7 @@ Information commerciale contextuelle, d'usage libre.</xs:documentation>
 					</xs:element>
 					<xs:element name="LieuDistribution" type="InterBOB:t_LieuDistribution" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo></xs:documentation>
+							<xs:documentation><xs:appinfo>mandatory</xs:appinfo></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Devise" type="InterBOB:t_UniteMonetaire" minOccurs="0" maxOccurs="1"/>
@@ -147,7 +147,7 @@ Les règles énoncées par la norme AFNOR Z69300 pour la ligne 4 d'adresse doivent 
 				<xs:sequence>
 					<xs:element name="DateHeureDebutValidite" type="xs:dateTime" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation><xsd:appinfo>obsolete</xsd:appinfo></xs:documentation>
+							<xs:documentation><xs:appinfo>obsolete</xs:appinfo></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="Distributeur" type="InterBOB:t_OrganisationEnregistree" minOccurs="1" maxOccurs="1"/>
@@ -209,7 +209,7 @@ Les règles énoncées par la norme AFNOR Z69300 pour la ligne 4 d'adresse doivent 
 		<xs:sequence>
 			<xs:element name="Texte" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo></xs:documentation>
+					<xs:documentation><xs:appinfo>mandatory</xs:appinfo></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Code" type="InterBOB:t_CodeCommentaireAccuseReception" minOccurs="0" maxOccurs="1">
@@ -327,7 +327,7 @@ Les règles énoncées par la norme AFNOR Z69300 pour la ligne 4 d'adresse doivent 
 		<xs:sequence>
 			<xs:element name="Transporteur" type="InterBOB:t_OrganisationEnregistree" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo>
+					<xs:documentation><xs:appinfo>mandatory</xs:appinfo>
 A définir en local dans le cadre du bassin d'interopérabilite. Permet d'identifier le partenaire qui organise ou opère la ligne, permet de désigner des AO ou des transporteurs.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -384,7 +384,7 @@ Permet de transmettre la gamme commerciale.
 			<xs:element name="QualifiantReception" type="InterBOB:t_EnumQualifiantReception" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="ElementControle" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>obsolete</xsd:appinfo>
+					<xs:documentation><xs:appinfo>obsolete</xs:appinfo>
 Permet de renvoyer l'élément contrôle Intégrité reçu ou le résultat d'un traitement de cet élément Contrôle Integrité reçu.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -418,13 +418,13 @@ Permet de renvoyer l'élément contrôle Intégrité reçu ou le résultat d'un traitem
 				<xs:sequence>
 					<xs:element name="Motif" type="InterBOB:t_EnumMotifEntreeListe" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation><xsd:appinfo>obsolete</xsd:appinfo>
+							<xs:documentation><xs:appinfo>obsolete</xs:appinfo>
 Permet de s'échanger un code correspondant à la cause de mise en liste. Les codes sont à définir localement.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="CodeMiseAJour" type="InterBOB:t_EnumCodeMiseAJour" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation><xsd:appinfo>obsolete</xsd:appinfo>
+							<xs:documentation><xs:appinfo>obsolete</xs:appinfo>
 Permet de définir s'il faut ajouter (valeur associée 1) ou retirer (valeur associée 0) l'entrée définie à la liste exhaustive gérée par le système destinataire.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -594,7 +594,7 @@ Remarque : Allemagne=276, Angleterre=826, France=250</xs:documentation>
 			</xs:element>
 			<xs:element name="ExploitantEquipement" type="InterBOB:t_OrganisationEnregistree" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appInfo>mandatory</xsd:appInfo>
+					<xs:documentation><xs:appinfo>mandatory</xs:appinfo>
 Il contient l'identifiant du partenaire qui a effectivement réalisé la vente ou la validation. Il s'agit de l'identifiant du partenaire qui opère sur l'équipement, ce partenaire n'est pas forcément le propriétaire de l'équipement.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -629,7 +629,7 @@ La numérotation des versions d'implémentation (8.5 dans l'exemple) est gérée par
 			<xs:element name="Nom" type="xs:normalizedString" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="TypeReferentiel" type="InterBOB:t_EnumTypeReferentiel" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo></xs:documentation>
+					<xs:documentation><xs:appinfo>mandatory</xs:appinfo></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="IdGroupeDeLignes" type="InterBOB:t_Identifiant" minOccurs="1" maxOccurs="1"/>
@@ -653,14 +653,14 @@ La numérotation des versions d'implémentation (8.5 dans l'exemple) est gérée par
 				<xs:sequence>
 					<xs:element name="LibelleLieuDistribution" type="xs:string" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation><xsd:appinfo>obsolete</xsd:appinfo>
+							<xs:documentation><xs:appinfo>obsolete</xs:appinfo>
 Permet de caractériser en clair le lieu de distribution.
 Exemple : "Dépositaire xyz".</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="VenteEmbarquee" type="xs:boolean" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo></xs:documentation>
+							<xs:documentation><xs:appinfo>mandatory</xs:appinfo></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
@@ -674,18 +674,18 @@ Exemple : "Dépositaire xyz".</xs:documentation>
 		<xs:sequence>
 			<xs:element name="IdLocalisation" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo></xs:documentation>
+					<xs:documentation><xs:appinfo>mandatory</xs:appinfo></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ReferentielLocalisation" type="InterBOB:t_EnumTypeReferentiel" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo>
+					<xs:documentation><xs:appinfo>mandatory</xs:appinfo>
 Permet de définir le référentiel auquel appartient la localisation.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Sens" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>obsolete</xsd:appinfo>
+					<xs:documentation><xs:appinfo>obsolete</xs:appinfo>
 La valeur equivaut à l'élément de donnée Intercode EventDataRouteDirection</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -708,7 +708,7 @@ La valeur equivaut à l'élément de donnée Intercode EventDataRouteDirection</xs:d
 		<xs:sequence>
 			<xs:element name="TypeReferentiel" type="InterBOB:t_EnumTypeReferentiel" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo></xs:documentation>
+					<xs:documentation><xs:appinfo>mandatory</xs:appinfo></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="IdLigne" type="InterBOB:t_Identifiant" minOccurs="1" maxOccurs="1"/>
@@ -723,24 +723,24 @@ La valeur equivaut à l'élément de donnée Intercode EventDataRouteDirection</xs:d
 				<xs:sequence>
 					<xs:element name="ElementControleIntegrite" type="xs:string" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation><xsd:appinfo>obsolete</xsd:appinfo>
+							<xs:documentation><xs:appinfo>obsolete</xs:appinfo>
 Permet d'assurer l'intégrité de chaque Transaction.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="DateDebutEffetParDefaut" type="xs:date" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation><xsd:appinfo>obsolete</xsd:appinfo>
+							<xs:documentation><xs:appinfo>obsolete</xs:appinfo>
 Même logique que pour l'élément ActionParDéfaut. DateDebutEffetParDefaut permet de définir la date de début d'effet applicable à tous les éléments Entrée* fils dont l'élément DateDebutEffet n'est pas présent.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="DateFinEffetParDefaut" type="xs:date" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation><xsd:appinfo>obsolete</xsd:appinfo></xs:documentation>
+							<xs:documentation><xs:appinfo>obsolete</xs:appinfo></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="IdentifiantListe" type="InterBOB:t_IdListe" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation><xsd:appinfo>obsolete</xsd:appinfo>
+							<xs:documentation><xs:appinfo>obsolete</xs:appinfo>
 La gestion des identifiants des listes doit être définie localement au niveau du bassin d'interopérabilité. Cet élément est rendu optionnel pour permettre de s'échanger des listes ayant même type mais portant des identifiants différents dans chaque système partenaire.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -795,7 +795,7 @@ Le type"ListeSécurité" n'est qu'indicatif : c'est l' actionDemandée/actionParDéf
 			</xs:element>
 			<xs:element name="BassinsAcceptation" type="InterBOB:t_BassinsAcceptation" minOccurs="1" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo></xs:documentation>
+					<xs:documentation><xs:appinfo>mandatory</xs:appinfo></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -808,12 +808,12 @@ Cet élément est momentanément laissé optionnel pour compatibilité avec des systè
 		<xs:sequence>
 			<xs:element name="CodePays" type="InterBOB:t_IdPays" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo></xs:documentation>
+					<xs:documentation><xs:appinfo>mandatory</xs:appinfo></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="CodeBassin" type="InterBOB:t_NbTroisChiffres" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo>
+					<xs:documentation><xs:appinfo>mandatory</xs:appinfo>
 La valeur est identique à la valeur ENVNetworkId de l'instanciation carte. Dans le cas de la France, cette valeur est conforme à Intercode et à la norme NF P99-502.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -831,7 +831,7 @@ La valeur est identique à la valeur ENVNetworkId de l'instanciation carte. Dans 
 			</xs:element>
 			<xs:element name="ElementControleIntegrite" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appInfo>obsolete</xsd:appInfo>
+					<xs:documentation><xs:appinfo>obsolete</xs:appinfo>
 A vocation à s'echanger une "donnée" permettant de contrôler la totalité du contenu du message.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -942,7 +942,7 @@ L'élément IdMessage doit être unique sur le bassin d'interopérabilité. La règle 
 			<xs:element name="IdPointArret" type="xs:string" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="TypeReferentiel" type="InterBOB:t_EnumTypeReferentiel" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo>
+					<xs:documentation><xs:appinfo>mandatory</xs:appinfo>
 Permet de définir le référentiel auquel appartient la localisation.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -1099,7 +1099,7 @@ Permet de définir le référentiel auquel appartient la localisation.</xs:document
 			<xs:element name="Date" type="xs:date" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="Heure" type="xs:time" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo></xs:documentation>
+					<xs:documentation><xs:appinfo>mandatory</xs:appinfo></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="IdOperation" type="InterBOB:t_Identifiant" minOccurs="0" maxOccurs="1">
@@ -1175,7 +1175,7 @@ Permet de définir le référentiel auquel appartient la localisation.</xs:document
 		<xs:sequence>
 			<xs:element name="Nom" type="xs:normalizedString" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>obsolete</xsd:appinfo>
+					<xs:documentation><xs:appinfo>obsolete</xs:appinfo>
 Nom du partenaire opérant l'équipement</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -1300,7 +1300,7 @@ La possibilité de gérer plusieurs compteurs est assurée par la cardinalité de l'
 		<xs:sequence>
 			<xs:element name="QuantiteOperation" type="xs:integer" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo>
+					<xs:documentation><xs:appinfo>mandatory</xs:appinfo>
 - Valeur positive si la quantité est ajoutée au solde
 - Valeur négative si la valeur est retirée du solde
 Exemple : utilisation d'un carnet qui occasionne un décrément du compteur sur le support et un incrément d'un compteur de fidélité en « central », non présent sur le support.
@@ -1310,7 +1310,7 @@ Deuxième Compteur sur le support, IdCompteur = identifiant du compteur nombre de
 			</xs:element>
 			<xs:element name="Solde" type="xs:integer" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo>
+					<xs:documentation><xs:appinfo>mandatory</xs:appinfo>
 Contient la valeur du compteur après l'opération de validation ou de distribution et l'application de la quantité correspondante.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -1351,7 +1351,7 @@ Peut être rattaché à un élément de donnée porté par le support billettique (nive
 		<xs:sequence>
 			<xs:element name="TypeSupport" type="InterBOB:t_EnumTypeSupport" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>obsolete</xsd:appinfo>
+					<xs:documentation><xs:appinfo>obsolete</xs:appinfo>
 Un des types de supports possibles, par exemple  CD97, GTML...
 il devient nécessaire de renseigner cet élément conjointement avec "IdSupport" quand il y a
 coexistence de technologies de support différents et potentiellement des
@@ -1360,13 +1360,13 @@ zones de recouvrement possibles au niveau des identifiants.</xs:documentation>
 			</xs:element>
 			<xs:element name="CategorieSupport" type="InterBOB:t_EnumCategorieSupport" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>obsolete</xsd:appinfo>
+					<xs:documentation><xs:appinfo>obsolete</xs:appinfo>
 Permet de définir localement une typologie « nominative », « BSC », « anonyme ».</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="IdSupport" type="InterBOB:t_IdSupport" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo>
+					<xs:documentation><xs:appinfo>mandatory</xs:appinfo>
 Identifiant à gérer localement. Doit permettre d'identifier de façon unique le support. Pour une carte, il correspond au numéro de série. Actuellement, une taille maximale de 10 octets parait pertinente pour les cartes billettiques sans contact.
 il devient nécessaire de renseigner conjointement "TypeSupport" quand il y a
 coexistence de technologies de support différents et potentiellement des
@@ -1448,7 +1448,7 @@ Consensus au niveau du groupe pour considérer que les messages (Acquisition comm
 		<xs:sequence>
 			<xs:element name="TypeReferentiel" type="InterBOB:t_EnumTypeReferentiel" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>obsolete</xsd:appinfo></xs:documentation>
+					<xs:documentation><xs:appinfo>obsolete</xs:appinfo></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="IdZoneTarifaire" type="InterBOB:t_Identifiant" minOccurs="1" maxOccurs="1"/>
@@ -1473,7 +1473,7 @@ Consensus au niveau du groupe pour considérer que les messages (Acquisition comm
 				<xs:sequence>
 					<xs:element name="FormeContenant" type="InterBOB:t_EnumFormeContenant" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo>
+							<xs:documentation><xs:appinfo>mandatory</xs:appinfo>
 Permet d'identifier la forme physique du contenant de l'application transport : carte, billet, carte SIM, carte SD, clé USB...</xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -1520,13 +1520,13 @@ Particulièrement utile dans le cadre d'une opération de transformation d'un supp
 				<xs:choice>
 					<xs:element name="EmetteurSupportEnregistre" type="InterBOB:t_OrganisationEnregistree" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo>
+							<xs:documentation><xs:appinfo>mandatory</xs:appinfo>
 Permet d'identifier l'entité ayant délivré le support, vers qui le client se tournera en cas de dysfonctionnement.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="EmetteurSupportExtraBassin" type="InterBOB:t_OrganisationExtraBassin" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation><xsd;appinfo>mandatory</xsd:appinfo>
+							<xs:documentation><xs:appinfo>mandatory</xs:appinfo>
 Permet d'identifier l'entité ayant délivré le support, vers qui le client se tournera en cas de dysfonctionnement.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -1561,20 +1561,20 @@ Permet d'identifier l'entité ayant délivré le support, vers qui le client se tou
 		<xs:sequence>
 			<xs:element name="AID" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo>
+					<xs:documentation><xs:appinfo>mandatory</xs:appinfo>
 Identifiant de l'application installée, conforme à la norme 99-502 pour les applications transport.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="IdApplicationInstallee" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo>
+					<xs:documentation><xs:appinfo>mandatory</xs:appinfo>
 Cet élément est momentanément laissé optionnel pour compatibilité avec des systèmes existants, qui ne gèrent que des supports dédiés et mono-applicatifs.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="DateHeureFinValidite" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="MatriceApplicationEnregistree" type="InterBOB:t_MatriceApplicationEnregistree" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>mandatory</xsd:appinfo></xs:documentation>
+					<xs:documentation><xs:appinfo>mandatory</xs:appinfo></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Distributeur" type="InterBOB:t_OrganisationEnregistree" minOccurs="1" maxOccurs="1"/>
@@ -1584,7 +1584,7 @@ Cet élément est momentanément laissé optionnel pour compatibilité avec des systè
 		<xs:sequence>
 			<xs:element name="DateHeureEmission" type="xs:dateTime" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation><xsd:appinfo>mandatory<xsd:appinfo>
+					<xs:documentation><xs:appinfo>mandatory</xs:appinfo>
 Date et heure d'émission de la liste de sécurité</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -1617,7 +1617,7 @@ Date et heure d'émission de la liste de sécurité</xs:documentation>
 				<xs:sequence>
 					<xs:element name="TypeMiseaJour" type="InterBOB:t_EnumTypeMiseaJour" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation><xsd:appinfo>obsolete</xsd:appinfo>
+							<xs:documentation><xs:appinfo>obsolete</xs:appinfo>
 Cet attribut permet de préciser si c'est une liste exhaustive qui est transmise ou si ce ne sont que des mises à jour (« incrémentiel »).</xs:documentation>
 						</xs:annotation>
 					</xs:element>
