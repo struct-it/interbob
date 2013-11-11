@@ -73,7 +73,7 @@ Consensus au niveau du groupe pour considérer que les messages (Acquisition comm
 		<xs:complexContent>
 			<xs:extension base="InterBOB:t_Message">
 				<xs:sequence>
-					<xs:element name="UtilisationProduitInstalle" type="IBUT:t_UtilisationProduitInstalle" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="UtilisationProduitInstalle" type="IBUT:t_UtilisationProduitInstalle" minOccurs="1" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
