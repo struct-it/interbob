@@ -34,10 +34,7 @@ Code Libellé
 0    Retirer
 1    Ajouter</xs:documentation>
 		</xs:annotation>
-		<xs:restriction base="xs:nonNegativeInteger">
-			<xs:enumeration value="0"/>
-			<xs:enumeration value="1"/>
-		</xs:restriction>
+		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumCodeProfil">
 		<xs:annotation>
@@ -57,11 +54,7 @@ Code Libellé
 2    Capturer
 3    Réussite</xs:documentation>
 		</xs:annotation>
-		<xs:restriction base="xs:nonNegativeInteger">
-			<xs:enumeration value="1"/>
-			<xs:enumeration value="2"/>
-			<xs:enumeration value="3"/>
-		</xs:restriction>
+		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumEtatOperationVente">
 		<xs:annotation>
@@ -71,10 +64,7 @@ Code Libellé
 1    Opération de vente réussie
 2    Opération de vente annulée</xs:documentation>
 		</xs:annotation>
-		<xs:restriction base="xs:nonNegativeInteger">
-			<xs:enumeration value="1"/>
-			<xs:enumeration value="2"/>
-		</xs:restriction>
+		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumFacteurTarifaireDeQualite">
 		<xs:annotation>
@@ -99,14 +89,7 @@ Code Libellé
 5    Train
 8    Parking</xs:documentation>
 		</xs:annotation>
-		<xs:restriction base="xs:nonNegativeInteger">
-			<xs:enumeration value="1"/>
-			<xs:enumeration value="2"/>
-			<xs:enumeration value="3"/>
-			<xs:enumeration value="4"/>
-			<xs:enumeration value="5"/>
-			<xs:enumeration value="8"/>
-		</xs:restriction>
+		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumMotifEntreeListe">
 		<xs:annotation>
@@ -125,13 +108,7 @@ Code Libellé
 4    Non Mentionné
 5    Autre</xs:documentation>
 		</xs:annotation>
-		<xs:restriction base="xs:nonNegativeInteger">
-			<xs:enumeration value="1"/>
-			<xs:enumeration value="2"/>
-			<xs:enumeration value="3"/>
-			<xs:enumeration value="4"/>
-			<xs:enumeration value="5"/>
-		</xs:restriction>
+		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumQualifiantReception">
 		<xs:annotation>
@@ -146,12 +123,7 @@ Code Libellé
 
 D'autres valeurs peuvent être définies au niveau du bassin d'interopérabilité.</xs:documentation>
 		</xs:annotation>
-		<xs:restriction base="xs:nonNegativeInteger">
-			<xs:enumeration value="0"/>
-			<xs:enumeration value="1"/>
-			<xs:enumeration value="2"/>
-			<xs:enumeration value="3"/>
-		</xs:restriction>
+		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumTitre">
 		<xs:annotation>
@@ -162,11 +134,7 @@ Code Libellé
 2   Mme
 3   Mlle</xs:documentation>
 		</xs:annotation>
-		<xs:restriction base="xs:nonNegativeInteger">
-			<xs:enumeration value="1"/>
-			<xs:enumeration value="2"/>
-			<xs:enumeration value="3"/>
-		</xs:restriction>
+		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumTypeApplication">
 		<xs:annotation>
@@ -175,9 +143,7 @@ Correspondances Code/Libellé:
 Code Libellé 
 1    ApplicationTransport</xs:documentation>
 		</xs:annotation>
-		<xs:restriction base="xs:nonNegativeInteger">
-			<xs:enumeration value="1"/>
-		</xs:restriction>
+		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumTypeCommercialContrat">
 		<xs:annotation>
@@ -205,18 +171,7 @@ Code Libellé
 9   Courriel 1
 10  Courriel 2</xs:documentation>
 		</xs:annotation>
-		<xs:restriction base="xs:nonNegativeInteger">
-			<xs:enumeration value="1"/>
-			<xs:enumeration value="2"/>
-			<xs:enumeration value="3"/>
-			<xs:enumeration value="4"/>
-			<xs:enumeration value="5"/>
-			<xs:enumeration value="6"/>
-			<xs:enumeration value="7"/>
-			<xs:enumeration value="8"/>
-			<xs:enumeration value="9"/>
-			<xs:enumeration value="10"/>
-		</xs:restriction>
+		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumTypeEquipement">
 		<xs:annotation>
@@ -264,46 +219,7 @@ Code Libellé
 Valeurs correspondantes à la norme 1545-1 paragraphe 7.9 de 2005, correspond à « EventTypeCode » pour les valeurs 1,10 et 3.
 On peut définir localement des valeurs à partir de 30.</xs:documentation>
 		</xs:annotation>
-		<xs:restriction base="xs:nonNegativeInteger">
-			<xs:enumeration value="1">
-				<xs:annotation>
-					<xs:documentation>
-Vente - valeur 1
-Sale, associée à la valeur 1 d'après EN1545-1 version
-2005. Nécessaire, afin de synchroniser les systèmes centraux, d'informer son
-partenaire qu'un titre a été vendu.</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="3">
-				<xs:annotation>
-					<xs:documentation>
-Annulation - valeur 3
-Equivalent à undo-previous-event-without-refund d'après EN1545-1 version
-2005. Nécessaire, afin de synchroniser les systèmes centraux pour informer
-son partenaire qu'un titre a été remboursé.</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10">
-				<xs:annotation>
-					<xs:documentation>
-Remboursement - valeur 10
-Equivalent à undo-previous-event-with-refund d'après
-EN1545-1 version 2005. Nécessaire, afin de synchroniser les systèmes
-centraux pour informer son partenaire qu'un titre a été remboursé.</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="29">
-				<xs:annotation>
-					<xs:documentation>
-Reconstitution - valeur 29
-Correspond à la première valeur libre dans  EN1545-1 version 2005.
-Nécessaire néanmoins afin de synchroniser les systèmes centraux pour
-informer son partenaire qu'un titre a été reconstitué suite à la
-reconstitution d'une carte (explicitement demandé par notre partenaire sur
-Bretagne).</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-		</xs:restriction>
+		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumTypeReferentiel">
 		<xs:annotation>
@@ -316,13 +232,7 @@ Code Libellé
 4    Nommage en clair
 5    IATA selon un algorithme SNCF propriétaire</xs:documentation>
 		</xs:annotation>
-		<xs:restriction base="xs:nonNegativeInteger">
-			<xs:enumeration value="1"/>
-			<xs:enumeration value="2"/>
-			<xs:enumeration value="3"/>
-			<xs:enumeration value="4"/>
-			<xs:enumeration value="5"/>
-		</xs:restriction>
+		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumTypeSupport">
 		<xs:annotation>
@@ -349,25 +259,7 @@ Code Libellé
 18   à 64 RUF conformément aux supports référencés dans Intertic et Intercode.
 On peut définir localement des valeurs à partir de 65</xs:documentation>
 		</xs:annotation>
-		<xs:restriction base="xs:nonNegativeInteger">
-			<xs:enumeration value="1"/>
-			<xs:enumeration value="2"/>
-			<xs:enumeration value="3"/>
-			<xs:enumeration value="4"/>
-			<xs:enumeration value="5"/>
-			<xs:enumeration value="6"/>
-			<xs:enumeration value="7"/>
-			<xs:enumeration value="8"/>
-			<xs:enumeration value="9"/>
-			<xs:enumeration value="10"/>
-			<xs:enumeration value="11"/>
-			<xs:enumeration value="12"/>
-			<xs:enumeration value="13"/>
-			<xs:enumeration value="14"/>
-			<xs:enumeration value="15"/>
-			<xs:enumeration value="16"/>
-			<xs:enumeration value="17"/>
-		</xs:restriction>
+		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumTypeTechniqueSousSystemeSecurite">
 		<xs:annotation>
@@ -394,17 +286,7 @@ Code Libellé
 9    Annulation de validation
 15   Invalidation.</xs:documentation>
 		</xs:annotation>
-		<xs:restriction base="xs:nonNegativeInteger">
-			<xs:enumeration value="1"/>
-			<xs:enumeration value="2"/>
-			<xs:enumeration value="4"/>
-			<xs:enumeration value="5"/>
-			<xs:enumeration value="6"/>
-			<xs:enumeration value="7"/>
-			<xs:enumeration value="8"/>
-			<xs:enumeration value="9"/>
-			<xs:enumeration value="15"/>
-		</xs:restriction>
+		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumActionEntreeListe">
 		<xs:annotation>
