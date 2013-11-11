@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Ajout XSLT-->
+<?xml-stylesheet type="text/xsl" href="INTERBOB.xslt"?>
+<!--Changement de déclaration-->
+<IBCS:CompteRenduSecurite xsi:schemaLocation="urn:IBCS_V1 IBCS__.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:IBCS="urn:IBCS_V1">
+  <DateHeure>2013-10-08T06:30:00</DateHeure>
+  <CorrespondantEmetteur>
+    <IdPartenaire>024</IdPartenaire>
+    <CodeBassin>912</CodeBassin>
+  </CorrespondantEmetteur>
+  <CorrespondantDestinataire>
+    <IdPartenaire>000</IdPartenaire>
+    <CodeBassin>912</CodeBassin>
+  </CorrespondantDestinataire>
+  <FormatMessage>
+    <ReferenceNorme>IB:CompteRenduSecurite</ReferenceNorme>
+    <VersionNorme>1.1:912.2</VersionNorme>
+  </FormatMessage>
+  <IdMessage>75</IdMessage>
+  <ActionListeSecurite>
+    <DateHeureAction>2013-10-07T09:48:25</DateHeureAction>
+    <TypeListeSecurite>2</TypeListeSecurite>
+	<!-- Ajout de LieuAction -->
+    <LieuAction>
+		<IdLocalisation>String</IdLocalisation>
+		<ReferentielLocalisation>0000</ReferentielLocalisation>
+    </LieuAction>
+    <!-- Ajout de EquipementAction -->
+    <EquipementAction>
+					<IdEquipement>String</IdEquipement>
+					<Referentiel>0000</Referentiel>
+					<TypeEquipement>0</TypeEquipement>
+					<ExploitantEquipement>
+						<IdPartenaire>024</IdPartenaire>
+						<CodeBassin>912</CodeBassin>
+					</ExploitantEquipement>
+				</EquipementAction>
+    <EntreeApplicationInstallee>
+      <ApplicationInstallee>
+		<!-- Ajout de AID -->
+		<AID></AID>
+		<!-- Ajout de IdApplicationInstallee -->
+		<IdApplicationInstallee></IdApplicationInstallee>  
+        <Distributeur>
+          <IdPartenaire>009</IdPartenaire>
+          <CodeBassin>912</CodeBassin>
+        </Distributeur>
+        <DateHeureFinValidite>2020-07-31T00:00:00</DateHeureFinValidite>
+          <!-- Ajout MatriceApplicationEnregistree -->
+          <MatriceApplicationEnregistree>
+				<BassinsAcceptation>
+					<CodeBassin>000</CodeBassin>
+					<CodeBassin>111</CodeBassin>
+				</BassinsAcceptation>
+		  </MatriceApplicationEnregistree>
+		  <!-- Ajout de FormeContenant -->
+		  <FormeContenant>0</FormeContenant>
+		  <!-- Ajout de StructureApplication -->
+          <StructureApplication>1</StructureApplication>
+        <Support>
+          <TypeSupport>67</TypeSupport>
+          <IdSupport>38868811</IdSupport>
+        </Support>
+      </ApplicationInstallee>
+    </EntreeApplicationInstallee>
+  </ActionListeSecurite>
+</IBCS:CompteRenduSecurite>
+

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Changement de déclaration-->
+<IBCSST:CompteRenduSecurite xsi:schemaLocation="urn:IBCSST_V1 IBCSST.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:IBCSST="urn:IBCSST_V1">  
+  <DateHeure>2013-09-19T16:28:54</DateHeure>
+  <CorrespondantEmetteur>
+    <IdPartenaire>002</IdPartenaire>
+    <CodeBassin>913</CodeBassin>
+  </CorrespondantEmetteur>
+  <CorrespondantDestinataire>
+    <IdPartenaire>052</IdPartenaire>
+    <CodeBassin>913</CodeBassin>
+  </CorrespondantDestinataire>
+  <FormatMessage>
+    <ReferenceNorme>IB:CompteRenduSecurite</ReferenceNorme>
+    <VersionNorme>1.1:913.2</VersionNorme>
+  </FormatMessage>
+  <IdMessage>10</IdMessage>
+  <ActionListeSecurite>
+    <DateHeureAction>2013-09-18T15:28:54</DateHeureAction>
+    <!--Valorisation de TypeListeSecurite a 2 (au lieu de 21)-->
+    <TypeListeSecurite>2</TypeListeSecurite>
+	<!--Ajout de LieuAction-->
+    <LieuAction>
+		<IdLocalisation>String</IdLocalisation>
+	</LieuAction>
+	<!--Ajout de EquipementAction-->
+	<EquipementAction>
+		<IdEquipement>String</IdEquipement>
+		<TypeEquipement>0</TypeEquipement>
+		<ExploitantEquipement>
+			<IdPartenaire>002</IdPartenaire>
+			<CodeBassin>913</CodeBassin>
+		</ExploitantEquipement>
+	</EquipementAction>
+    <EntreeProduitInstalle>
+      <ProduitInstalle>
+        <ReferenceProduit>
+          <ProprietaireProduit>
+            <IdPartenaire>001</IdPartenaire>
+            <CodeBassin>913</CodeBassin>
+          </ProprietaireProduit>
+          <IdProduit>6600</IdProduit>
+        </ReferenceProduit>
+        <ReferenceProduitInstalle>
+          <ExploitantVente>
+            <IdPartenaire>207</IdPartenaire>
+            <CodeBassin>913</CodeBassin>
+          </ExploitantVente>
+          <IdProduitInstalle>206</IdProduitInstalle>
+        </ReferenceProduitInstalle>
+        <SupportUtilise>
+          <TypeSupport>67</TypeSupport>
+          <IdSupport>666666666612</IdSupport>
+		  <!--Ajout ContratSupport-->
+          <ContratSupport>
+			<ProfilCommercialContrat>
+				<CodeProfilCommercialContrat>0</CodeProfilCommercialContrat>
+			</ProfilCommercialContrat>
+          </ContratSupport>
+          <EmetteurSupportEnregistre>
+            <IdPartenaire>000</IdPartenaire>
+            <CodeBassin>913</CodeBassin>
+          </EmetteurSupportEnregistre>
+        </SupportUtilise>
+      </ProduitInstalle>
+    </EntreeProduitInstalle>
+  </ActionListeSecurite>
+</IBCSST:CompteRenduSecurite>
+
