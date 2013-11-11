@@ -9,7 +9,7 @@
 		<xs:complexContent>
 			<xs:extension base="InterBOB:t_Message">
 				<xs:sequence>
-					<xs:element name="OperationVente" type="IBACDP:t_OperationVente" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="ListeAcquisition" type="IBACDP:t_ListeAcquisition" minOccurs="1" maxOccurs="1"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -44,4 +44,9 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="MessageAcquisitions" type="IBACDP:t_MessageAcquisitions"/>
+	<xs:complexType name="t_ListeAcquisition">
+		<xs:sequence>
+			<xs:element name="OperationVente" type="IBACDP:t_OperationVente" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
 </xs:schema>
