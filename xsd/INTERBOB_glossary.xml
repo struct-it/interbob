@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<!-- Entete XML -->
+	<element name="xsi:schemaLocation" parent="">
+		<usage>Obligatoire</usage>
+		<desc>Référence du schéma XML</desc>
+	</element>	
+	<!-- Entete des messages -->
+	<element name="DateHeure" parent="">
+		<usage>Obligatoire</usage>
+		<desc>Date-heure de l'extraction des données du message</desc>
+	</element>
+	<element name="CorrespondantEmetteur" parent="">
+		<usage>Obligatoire</usage>
+		<desc>Caractéristiques du partenaire émetteur</desc>
+	</element>
+	<element name="IdPartenaire" parent="CorrespondantEmetteur">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant du partenaire émetteur</desc>
+	</element>
+	<element name="CodeBassin" parent="CorrespondantEmetteur">
+		<usage>Obligatoire</usage>
+		<desc>Code du bassin d'interopérabilité du partenaire émetteur</desc>
+	</element>
+	<element name="CodePays" parent="CorrespondantEmetteur">
+		<usage>Conditionnel</usage>
+		<desc>
+			A utiliser obligatoirement si les échanges peuvent être réalisés dans un contexte 
+			impliquant plusieurs pays.
+		</desc>
+	</element>
+	<element name="CorrespondantDestinataire" parent="">
+		<usage>Obligatoire</usage>
+		<desc>Caractéristiques du partenaire émetteur</desc>
+	</element>
+	<element name="IdPartenaire" parent="CorrespondantDestinataire">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant du partenaire destinataire</desc>
+	</element>
+	<element name="CodeBassin" parent="CorrespondantDestinataire">
+		<usage>Obligatoire</usage>
+		<desc>Code du bassin d'interopérabilité du partenaire destinataire</desc>
+	</element>
+	<element name="CodePays" parent="CorrespondantDestinataire">
+		<usage>Conditionnel</usage>
+		<desc>
+			A utiliser obligatoirement si les échanges peuvent être réalisés dans un contexte 
+			impliquant plusieurs pays.
+		</desc>
+	</element>
+	<element name="FormatMessage" parent="">
+		<usage>Obligatoire</usage>
+		<desc>Propriétés du format de message</desc>
+	</element>
+	<element name="ReferenceNorme" parent="FormatMessage">
+		<usage>Obligatoire</usage>
+		<desc>Type du message<br/>Forme IB:[type de message].</desc>
+	</element>
+	<element name="VersionNorme" parent="FormatMessage">
+		<usage>Obligatoire</usage>
+		<desc>
+			Concaténation de 2 éléments : 
+			<ul>
+			<li>en majeur la version InterBOB suivie du séparateur ":"</li>
+			<li>lui-même suivi d'un identifiant optionnel (mais conseillé) de version d'implémentation et à définir entre les partenaires impliqués dans les échanges.</li>
+			</ul>
+			Exemple : 1.0:8.5.<br/>
+			La numérotation des versions d'implémentation (8.5 dans l'exemple) est gérée par le CERTU.
+		</desc>
+	</element>
+	<element name="IdMessage" parent="">
+		<usage>Obligatoire</usage>
+		<desc>
+			Cette donnée doit permettre (seule ou avec d'autres informations) d'identifier le message, 
+			d'effectuer la traçabilité et éventuellement de contrôler des pertes de séquence,
+			selon les règles édictées au niveau du bassin.<br/>
+			Doit être égale au numéro séquentiel attribué au message (dépend de l’émetteur):<br/>
+			<ul>
+			<li>Limite basse = 1</li>
+			<li>Limite haute = 65535</li> 
+			<li>Retour à 1 lorsque la limite haute est atteinte</li>
+			</ul>
+		</desc>
+	</element>
+	<!-- IBLSLN -->
+	<element name="IBLSLN:MajListeSecurite" parent="">
+		<usage/>
+		<desc>Demande d'interdiction d’une application transport ou d'un billet sans contact, 
+			qui sera placé dans une liste d'interdiction de titres de transport</desc>
+	</element>
+	<element name="ListeSecurite" parent="IBLSLN:MajListeSecurite">
+		<usage>Obligatoire</usage>
+		<desc>Liste d'applications transport ou de Billet Sans Contact à invalider</desc>
+	</element>
+	<element name="DateHeureEmission" parent="ListeSecurite">
+		<usage>Obligatoire</usage>
+		<desc>Date et heure d'émission de la liste</desc>
+	</element>
+	<element name="TypeListeSecurite" parent="ListeSecurite">
+		<usage>Obligatoire</usage>
+		<desc>Type de la liste<br/>Doit être égal à "2":Liste d'interdictions</desc>
+	</element>
+	<element name="ActionParDefaut" parent="ListeSecurite">
+		<usage>Conditionnel</usage>
+		<desc>Permet de définir la valeur par défaut de l'action à réaliser sur les entrées de la liste
+				dont l'élément "ActionDemandee" n'est pas présent.<br/>
+				Si présent, peut prendre les valeurs suivantes :
+				<ul>
+				<li>"4":Invalider = Rendre inutilisable (mais peut toujours être lu)</li>
+				<li>"7":Aucune opération d’invalidation demandée</li>
+				</ul>
+			</desc>
+	</element>
+	<element name="TypeMiseaJour" parent="ListeSecurite">
+		<usage>Obsolescent</usage>
+		<desc>Permet de préciser si: 
+				<ul>
+				<li>c'est une liste exhaustive qui est transmise : "1"</li>
+				<li>ce ne sont que des mises à jour (« incrémentiel ») : "2".</li>
+				</ul>
+				Dans le cas d'un message IBLSLN, c'est la liste exhaustive qui est transmise.
+		</desc>
+	</element>
+	<element name="EntreeListeSecurite" parent="ListeSecurite">
+		<usage>Obligatoire</usage>
+		<desc>Entrée de la liste</desc>
+	</element>
+	<element name="EntreeApplicationInstallee" parent="">
+		<usage>Obligatoire</usage>
+		<desc>Entrée de la liste de type "Application Installée"</desc>
+	</element>
+	<element name="ActionDemandee" parent="EntreeApplicationInstallee">
+		<usage>Conditionnel</usage>
+		<desc>Permet de définir la valeur de l'action à réaliser lors de la détection de l'objet.<br/>
+			Cette valeur est à préciser en local par les partenaires du bassin d'interopérabilité.<br/>
+			Les valeurs reprennent l'énumération de l'élément ActionParDefaut.
+		</desc>
+	</element>
+	<element name="DateDebutEffet" parent="EntreeApplicationInstallee">
+		<usage>Conditionnel</usage>
+		<desc>Date d’entrée effective en liste d’opposition.<br/>
+			Si la date est absente au niveau de l'élément on considère que l’échéance d’effet est : 
+			dès que possible
+		</desc>
+	</element>
+	<element name="ApplicationInstallee" parent="EntreeApplicationInstallee">
+		<usage>Obligatoire</usage>
+		<desc>Caractéristiques de l'application transport ou du Billet Sans Contact</desc>
+	</element>
+	<element name="AID" parent="ApplicationInstallee">
+		<usage>Obligatoire</usage>
+		<desc>Identification de l’application.<br/>
+			99-502 pour le transport. Autres référentiels sinon.
+		</desc>
+	</element>
+	<element name="IdApplicationInstallee" parent="ApplicationInstallee">
+		<usage>Obligatoire</usage>
+		<desc>Numéro de série de l'application</desc>
+	</element>
+	<element name="MatriceApplicationEnregistree" parent="ApplicationInstallee">
+		<usage>Obligatoire</usage>
+		<desc>Propriétés de la matrice application</desc>
+	</element>
+	<element name="BassinsAcceptation" parent="MatriceApplicationEnregistree">
+		<usage>Obligatoire</usage>
+		<desc>Liste des réseaux sur lesquels la matrice application est acceptée</desc>
+	</element>
+	<element name="CodeBassin" parent="BassinsAcceptation">
+		<usage>Obligatoire</usage>
+		<desc>Code du bassin d'interopérabilité acceptant la matrice application</desc>
+	</element>
+	<element name="FormeContenant" parent="ApplicationInstallee">
+		<usage>Obligatoire</usage>
+		<desc>Permet d’identifier la forme physique du contenant de l’application transport : 
+			carte, billet, carte SIM, carte SD, clé USB, …
+		</desc>
+	</element>
+	<element name="StructureApplication" parent="ApplicationInstallee">
+		<usage>Obligatoire</usage>
+		<desc>Structure de l’application : GTML, Tango, CD97-2, Triangle n, …</desc>
+	</element>
+	<element name="Distributeur" parent="ApplicationInstallee">
+		<usage>Obligatoire</usage>
+		<desc>Identification du partenaire émetteur de l’application</desc>
+	</element>
+	<element name="IdPartenaire" parent="Distributeur">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant du partenaire distributeur</desc>
+	</element>
+	<element name="CodeBassin" parent="Distributeur">
+		<usage>Obligatoire</usage>
+		<desc>Code du bassin d'interopérabilité du partenaire distributeur</desc>
+	</element>
+	<element name="DateHeureFinValidite" parent="ApplicationInstallee">
+		<usage>Conditionnel</usage>
+		<desc>Date de fin de validité de l’application<br/>
+			Si l’exploitant a l’information, il la transmet obligatoirement.</desc>
+	</element>
+	<element name="Support" parent="ApplicationInstallee">
+		<usage>Conditionnel</usage>
+		<desc>Correspond au support sur lequel l'application est installée.<br/>
+			A utiliser obligatoirement si l'élément IdSupport est différent 
+			de l'élément AID, ou bien si le support n’a pas d’application.
+		</desc>
+	</element>
+	<element name="TypeSupport" parent="Support">
+		<usage>Obsolescent</usage>
+		<desc>Type de support sur lequel l’opération est réalisée.</desc>
+	</element>
+	<element name="IdSupport" parent="Support">
+		<usage>Obligatoire</usage>
+		<desc>Numéro de série du support.</desc>
+	</element>
+	<!-- IBCS__ -->
+	<element name="IBCS:CompteRenduSecurite" parent="">
+		<usage/>
+		<desc>Compte-rendu de l’invalidation par un équipement d’une application transport ou 
+			d'un billet sans contact qui était placé dans la liste d’interdiction</desc>
+	</element>
+	<element name="ActionListeSecurite" parent="">
+		<usage>Obligatoire</usage>
+		<desc>Liste des actions effectuées dans la liste</desc>
+	</element>
+	<element name="DateHeureAction" parent="ActionListeSecurite">
+		<usage>Obligatoire</usage>
+		<desc>Date et heure de génération de liste</desc>
+	</element>
+	<element name="TypeListeSecurite" parent="ActionListeSecurite">
+		<usage>Obligatoire</usage>
+		<desc>Type de liste</desc>
+	</element>
+	<element name="LieuAction" parent="ActionListeSecurite">
+		<usage>Obligatoire</usage>
+		<desc>Lieu géographique pour lequel la liste a été générée</desc>
+	</element>
+	<element name="IdLocalisation" parent="LieuAction">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant du lieu</desc>
+	</element>
+	<element name="ReferentielLocalisation" parent="LieuAction">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant du référentiel géographique associé au lieu</desc>
+	</element>
+	<element name="EquipementAction" parent="ActionListeSecurite">
+		<usage>Obligatoire</usage>
+		<desc>Equipement pour lequel la liste a été générée</desc>
+	</element>
+	<element name="IdEquipement" parent="EquipementAction">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant de l'équipement</desc>
+	</element>
+	<element name="Referentiel" parent="EquipementAction">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant du référentiel géographique associé à l'équipement</desc>
+	</element>
+	<element name="TypeEquipement" parent="EquipementAction">
+		<usage>Obligatoire</usage>
+		<desc>Type de l'équipement</desc>
+	</element>
+	<element name="ExploitantEquipement" parent="EquipementAction">
+		<usage>Obligatoire</usage>
+		<desc>Partenaire du bassin d'interopérabilité exploitant l'équipement</desc>
+	</element>
+	<element name="IdPartenaire" parent="ExploitantEquipement">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant du partenaire du bassin d'interopérabilité</desc>
+	</element>
+	<element name="CodeBassin" parent="ExploitantEquipement">
+		<usage>Obligatoire</usage>
+		<desc>Code du bassin d'interopérabilité</desc>
+	</element>
+	<!-- -->
+	<element name="IdOperation">
+		<usage>Conditionnel</usage>
+		<desc>
+			<li>Obligatoire s'il s'agit d'une vente pour télédistribution ou rechargement en différé, et que l'IdProduit n'est pas déterminé au moment de la vente.</li>
+			<li>Renseigné avec le numéro de la commande ou de l'élément de commande, ou de la demande de télédistribution en cas de vente pour télédistribution (cf. [3-A]) lorsque l'IdProduit n'est déterminé qu'au chargement.</li>
+			<li>Optionnel (facultatif) s'il ne s'agit pas d'une vente pour télédistribution.</li>
+		</desc>
+	</element>
+	<element name="Date">
+		<usage>Obligatoire</usage>
+		<desc>Date de l'opération</desc>
+	</element>
+	<element name="Heure">
+		<usage>Obligatoire</usage>
+		<desc>Heure de l'opération</desc>
+	</element>
+	<element name="TypeOperationVente">
+		<usage>Obligatoire</usage>
+		<desc>
+			<li>1 : Vente (ou primo chargement)</li>
+			<li>31 : rechargement sur CSC sans changement de numéro de série de contrat ou rechargement sur BSC (rechargement englobe les mécanismes de surcharge et/ou de prorogation de date)</li>
+			<li>41 : distribution droit complexe</li>
+			<li>43 : prolongation droit complexe (prolongation = changement de date de fin de validité du droit déjà inscrit sur le support)</li>
+		</desc>
+	</element>
+</elements>
