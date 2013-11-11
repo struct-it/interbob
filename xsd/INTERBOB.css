@@ -1,0 +1,19 @@
+body {
+	background-color: #ffffff;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	margin: 6px 4px;
+}
+table.width100		{ width: 100%; border: solid 1px #000000; }
+table.width90		{ width: 90%;  border: solid 1px #000000; }
+table.width75		{ width: 75%;  border: solid 1px #000000; }
+table.width60		{ width: 60%;  border: solid 1px #000000; }
+table.width50		{ width: 50%;  border: solid 1px #000000; }
+
+td 					{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; padding: 4px; text-align: left; }
+td.category			{ background-color: #c8c8e8; color: #000000; font-weight: bold; vertical-align : top; }
+
+
+tr					{}
+tr.spacer			{ background-color: #ffffff; color: #000000; height: 5px; }
