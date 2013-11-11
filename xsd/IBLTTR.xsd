@@ -15,7 +15,7 @@
 		<xs:complexContent>
 			<xs:extension base="InterBOB:t_ListeAbstrait">
 				<xs:sequence>
-					<xs:element name="EntreeListeSecurite" type="IBLTTR:t_EntreeListeSecurite" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="EntreeListeSecurite" type="IBLTTR:t_EntreeListeSecurite" minOccurs="1" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
