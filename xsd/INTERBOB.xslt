@@ -17,6 +17,7 @@
 					<th>Utilisation</th>
 					<th>Valeur</th>
 				</tr>
+				<xsl:variable name="root" select="name(/*)"/>
 				<xsl:for-each select="//*">
 					<xsl:variable name="parent" select="name(..)"/>
 					<xsl:variable name="element" select="name()"/>
@@ -24,24 +25,24 @@
 						<xsl:choose>
 							<xsl:when test="count(.//*) &gt; 0">
 								<xsl:choose>
-									<xsl:when test="name(..) != ''">
+									<xsl:when test="$parent != ''">
 										<td class="category"><xsl:copy-of select="$parent"/>:<xsl:value-of select="$element"/></td>
-										<td class="category"><xsl:copy-of select="document($doc)//element[(@name=$element and @parent=$parent and @parent!='') or (@parent='' and @name=$element)]/desc"/></td>
-										<td class="category"><xsl:copy-of select="document($doc)//element[(@name=$element and @parent=$parent and @parent!='') or (@parent='' and @name=$element)]/usage"/></td>
+										<td class="category"><xsl:copy-of select="document($doc)//element[(@name=$element and @parent=$parent and @parent!='' and @root=$root and @root!='') or (@name=$element and @parent=$parent and @parent!='' and @root='') or (@root='' and @parent='' and @name=$element)]/desc"/></td>
+										<td class="category"><xsl:copy-of select="document($doc)//element[(@name=$element and @parent=$parent and @parent!='' and @root=$root and @root!='') or (@name=$element and @parent=$parent and @parent!='' and @root='') or (@root='' and @parent='' and @name=$element)]/usage"/></td>
 										<td class="category" />
 									</xsl:when>
 									<xsl:otherwise>
 										<td class="category"><xsl:value-of select="$element"/></td>
-										<td class="category"><xsl:copy-of select="document($doc)//element[(@name=$element and @parent=$parent and @parent!='') or (@parent='' and @name=$element)]/desc"/></td>
-										<td class="category"><xsl:copy-of select="document($doc)//element[(@name=$element and @parent=$parent and @parent!='') or (@parent='' and @name=$element)]/usage"/></td>
+										<td class="category"><xsl:copy-of select="document($doc)//element[(@name=$element and @parent=$parent and @parent!='' and @root=$root and @root!='') or (@name=$element and @parent=$parent and @parent!='' and @root='') or (@root='' and @parent='' and @name=$element)]/desc"/></td>
+										<td class="category"><xsl:copy-of select="document($doc)//element[(@name=$element and @parent=$parent and @parent!='' and @root=$root and @root!='') or (@name=$element and @parent=$parent and @parent!='' and @root='') or (@root='' and @parent='' and @name=$element)]/usage"/></td>
 										<td class="category" />
 									</xsl:otherwise>
 								</xsl:choose>
 							</xsl:when>
 							<xsl:otherwise>
 								<td><xsl:copy-of select="$parent"/>:<b><xsl:value-of select="$element"/></b></td>
-								<td><xsl:copy-of select="document($doc)//element[(@name=$element and @parent=$parent and @parent!='') or (@parent='' and @name=$element)]/desc"/></td>
-								<td><xsl:copy-of select="document($doc)//element[(@name=$element and @parent=$parent and @parent!='') or (@parent='' and @name=$element)]/usage"/></td>
+								<td><xsl:copy-of select="document($doc)//element[(@name=$element and @parent=$parent and @parent!='' and @root=$root and @root!='') or (@name=$element and @parent=$parent and @parent!='' and @root='') or (@root='' and @parent='' and @name=$element)]/desc"/></td>
+								<td><xsl:copy-of select="document($doc)//element[(@name=$element and @parent=$parent and @parent!='' and @root=$root and @root!='') or (@name=$element and @parent=$parent and @parent!='' and @root='') or (@root='' and @parent='' and @name=$element)]/usage"/></td>
 								<td><xsl:value-of select="current()"/></td>
 							</xsl:otherwise>
 						</xsl:choose>
@@ -50,8 +51,8 @@
 					<tr>
 						<xsl:variable name="attr" select="name()"/>
 						<td><xsl:copy-of select="$element"/>:<b><xsl:value-of select="$attr"/></b><br/><i>Attribut</i></td>
-						<td><xsl:copy-of select="document($doc)//element[(@name=$attr and @parent=$element and @parent!='') or (@name=$attr and @parent='')]/desc"/></td>
-						<td><xsl:copy-of select="document($doc)//element[(@name=$attr and @parent=$element and @parent!='') or (@name=$attr and @parent='')]/usage"/></td>
+						<td><xsl:copy-of select="document($doc)//element[(@name=$attr and @parent=$element and @parent!='' and @root=$root and @root!='') or (@name=$attr and @parent=$element and @parent!='' and @root='') or (@name=$attr and @parent='' and @root='')]/desc"/></td>
+						<td><xsl:copy-of select="document($doc)//element[(@name=$attr and @parent=$element and @parent!='' and @root=$root and @root!='') or (@name=$attr and @parent=$element and @parent!='' and @root='') or (@name=$attr and @parent='' and @root='')]/usage"/></td>
 						<td><xsl:value-of select="current()"/></td>
 					</tr>
 					</xsl:for-each>
