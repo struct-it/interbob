@@ -1288,6 +1288,12 @@ Correspond au ContractProvider d'Intercode.</xs:documentation>
 La possibilité de gérer plusieurs compteurs est assurée par la cardinalité de l'élément SoldeCompteur (0,infini).</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
+			<xs:element name="IdCompteur" type="InterBOB:t_Identifiant">
+				<xs:annotation>
+					<xs:documentation>A définir localement par les partenaires de l'interopérabilité, inclus la notion d'unité ou de devise.
+Peut être rattaché à un élément de donnée porté par le support billettique (niveau application ou titre) ou géré dans le système central, IdCompteur est un entier positif. Les valeurs seront à définir localement par les partenaires de l'interopérabilité.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="QuantiteOperation" type="xs:integer" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation><xs:appinfo>mandatory</xs:appinfo>
@@ -1302,12 +1308,6 @@ Deuxième Compteur sur le support, IdCompteur = identifiant du compteur nombre de
 				<xs:annotation>
 					<xs:documentation><xs:appinfo>mandatory</xs:appinfo>
 Contient la valeur du compteur après l'opération de validation ou de distribution et l'application de la quantité correspondante.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="IdCompteur" type="InterBOB:t_Identifiant">
-				<xs:annotation>
-					<xs:documentation>A définir localement par les partenaires de l'interopérabilité, inclus la notion d'unité ou de devise.
-Peut être rattaché à un élément de donnée porté par le support billettique (niveau application ou titre) ou géré dans le système central, IdCompteur est un entier positif. Les valeurs seront à définir localement par les partenaires de l'interopérabilité.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
