@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--Ajout XSLT-->
+<?xml-stylesheet type="text/xsl" href="INTERBOB.xslt"?>
 <!--Changement de déclaration-->
 <IBLSST:MajListeSecurite xsi:schemaLocation="urn:IBLSST_V1 IBLSST.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:IBLSST="urn:IBLSST_V1">
   <DateHeure>2013-09-20T10:56:37</DateHeure>

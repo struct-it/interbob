@@ -1,62 +1,62 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <elements>
 	<!-- Entete XML -->
-	<element name="xsi:schemaLocation" parent="">
+	<element name="xsi:schemaLocation" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>Référence du schéma XML</desc>
 	</element>	
 	<!-- Entete des messages -->
-	<element name="DateHeure" parent="">
+	<element name="DateHeure" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>Date-heure de l'extraction des données du message</desc>
 	</element>
-	<element name="CorrespondantEmetteur" parent="">
+	<element name="CorrespondantEmetteur" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>Caractéristiques du partenaire émetteur</desc>
 	</element>
-	<element name="IdPartenaire" parent="CorrespondantEmetteur">
+	<element name="IdPartenaire" parent="CorrespondantEmetteur" root="">
 		<usage>Obligatoire</usage>
 		<desc>Identifiant du partenaire émetteur</desc>
 	</element>
-	<element name="CodeBassin" parent="CorrespondantEmetteur">
+	<element name="CodeBassin" parent="CorrespondantEmetteur" root="">
 		<usage>Obligatoire</usage>
 		<desc>Code du bassin d'interopérabilité du partenaire émetteur</desc>
 	</element>
-	<element name="CodePays" parent="CorrespondantEmetteur">
+	<element name="CodePays" parent="CorrespondantEmetteur" root="">
 		<usage>Conditionnel</usage>
 		<desc>
 			A utiliser obligatoirement si les échanges peuvent être réalisés dans un contexte 
 			impliquant plusieurs pays.
 		</desc>
 	</element>
-	<element name="CorrespondantDestinataire" parent="">
+	<element name="CorrespondantDestinataire" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>Caractéristiques du partenaire émetteur</desc>
 	</element>
-	<element name="IdPartenaire" parent="CorrespondantDestinataire">
+	<element name="IdPartenaire" parent="CorrespondantDestinataire" root="">
 		<usage>Obligatoire</usage>
 		<desc>Identifiant du partenaire destinataire</desc>
 	</element>
-	<element name="CodeBassin" parent="CorrespondantDestinataire">
+	<element name="CodeBassin" parent="CorrespondantDestinataire" root="">
 		<usage>Obligatoire</usage>
 		<desc>Code du bassin d'interopérabilité du partenaire destinataire</desc>
 	</element>
-	<element name="CodePays" parent="CorrespondantDestinataire">
+	<element name="CodePays" parent="CorrespondantDestinataire" root="">
 		<usage>Conditionnel</usage>
 		<desc>
 			A utiliser obligatoirement si les échanges peuvent être réalisés dans un contexte 
 			impliquant plusieurs pays.
 		</desc>
 	</element>
-	<element name="FormatMessage" parent="">
+	<element name="FormatMessage" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>Propriétés du format de message</desc>
 	</element>
-	<element name="ReferenceNorme" parent="FormatMessage">
+	<element name="ReferenceNorme" parent="FormatMessage" root="">
 		<usage>Obligatoire</usage>
 		<desc>Type du message<br/>Forme IB:[type de message].</desc>
 	</element>
-	<element name="VersionNorme" parent="FormatMessage">
+	<element name="VersionNorme" parent="FormatMessage" root="">
 		<usage>Obligatoire</usage>
 		<desc>
 			Concaténation de 2 éléments : 
@@ -68,7 +68,7 @@
 			La numérotation des versions d'implémentation (8.5 dans l'exemple) est gérée par le CERTU.
 		</desc>
 	</element>
-	<element name="IdMessage" parent="">
+	<element name="IdMessage" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>
 			Cette donnée doit permettre (seule ou avec d'autres informations) d'identifier le message, 
@@ -83,24 +83,24 @@
 		</desc>
 	</element>
 	<!-- IBLSLN -->
-	<element name="IBLSLN:MajListeSecurite" parent="">
+	<element name="IBLSLN:MajListeSecurite" parent="" root="">
 		<usage/>
 		<desc>Demande d'interdiction d’une application transport ou d'un billet sans contact, 
 			qui sera placé dans une liste d'interdiction de titres de transport</desc>
 	</element>
-	<element name="ListeSecurite" parent="IBLSLN:MajListeSecurite">
+	<element name="ListeSecurite" parent="IBLSLN:MajListeSecurite" root="">
 		<usage>Obligatoire</usage>
 		<desc>Liste d'applications transport ou de Billet Sans Contact à invalider</desc>
 	</element>
-	<element name="DateHeureEmission" parent="ListeSecurite">
+	<element name="DateHeureEmission" parent="ListeSecurite" root="">
 		<usage>Obligatoire</usage>
 		<desc>Date et heure d'émission de la liste</desc>
 	</element>
-	<element name="TypeListeSecurite" parent="ListeSecurite">
+	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSLN:MajListeSecurite">
 		<usage>Obligatoire</usage>
-		<desc>Type de la liste<br/>Doit être égal à "2":Liste d'interdictions</desc>
+		<desc>Type de la liste<br/>Doit être égal à "2:Liste d'interdictions"</desc>
 	</element>
-	<element name="ActionParDefaut" parent="ListeSecurite">
+	<element name="ActionParDefaut" parent="ListeSecurite" root="">
 		<usage>Conditionnel</usage>
 		<desc>Permet de définir la valeur par défaut de l'action à réaliser sur les entrées de la liste
 				dont l'élément "ActionDemandee" n'est pas présent.<br/>
@@ -111,7 +111,7 @@
 				</ul>
 			</desc>
 	</element>
-	<element name="TypeMiseaJour" parent="ListeSecurite">
+	<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSLN:MajListeSecurite">
 		<usage>Obsolescent</usage>
 		<desc>Permet de préciser si: 
 				<ul>
@@ -121,156 +121,548 @@
 				Dans le cas d'un message IBLSLN, c'est la liste exhaustive qui est transmise.
 		</desc>
 	</element>
-	<element name="EntreeListeSecurite" parent="ListeSecurite">
+	<element name="EntreeListeSecurite" parent="ListeSecurite" root="">
 		<usage>Obligatoire</usage>
 		<desc>Entrée de la liste</desc>
 	</element>
-	<element name="EntreeApplicationInstallee" parent="">
+	<element name="EntreeApplicationInstallee" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>Entrée de la liste de type "Application Installée"</desc>
 	</element>
-	<element name="ActionDemandee" parent="EntreeApplicationInstallee">
+	<element name="ActionDemandee" parent="EntreeApplicationInstallee" root="IBLSLN:MajListeSecurite">
 		<usage>Conditionnel</usage>
 		<desc>Permet de définir la valeur de l'action à réaliser lors de la détection de l'objet.<br/>
 			Cette valeur est à préciser en local par les partenaires du bassin d'interopérabilité.<br/>
 			Les valeurs reprennent l'énumération de l'élément ActionParDefaut.
 		</desc>
 	</element>
-	<element name="DateDebutEffet" parent="EntreeApplicationInstallee">
+	<element name="DateDebutEffet" parent="EntreeApplicationInstallee" root="IBLSLN:MajListeSecurite">
 		<usage>Conditionnel</usage>
 		<desc>Date d’entrée effective en liste d’opposition.<br/>
 			Si la date est absente au niveau de l'élément on considère que l’échéance d’effet est : 
 			dès que possible
 		</desc>
 	</element>
-	<element name="ApplicationInstallee" parent="EntreeApplicationInstallee">
+	<element name="ApplicationInstallee" parent="EntreeApplicationInstallee" root="">
 		<usage>Obligatoire</usage>
 		<desc>Caractéristiques de l'application transport ou du Billet Sans Contact</desc>
 	</element>
-	<element name="AID" parent="ApplicationInstallee">
+	<element name="AID" parent="ApplicationInstallee" root="">
 		<usage>Obligatoire</usage>
 		<desc>Identification de l’application.<br/>
 			99-502 pour le transport. Autres référentiels sinon.
 		</desc>
 	</element>
-	<element name="IdApplicationInstallee" parent="ApplicationInstallee">
+	<element name="IdApplicationInstallee" parent="ApplicationInstallee" root="">
 		<usage>Obligatoire</usage>
 		<desc>Numéro de série de l'application</desc>
 	</element>
-	<element name="MatriceApplicationEnregistree" parent="ApplicationInstallee">
+	<element name="MatriceApplicationEnregistree" parent="ApplicationInstallee" root="">
 		<usage>Obligatoire</usage>
 		<desc>Propriétés de la matrice application</desc>
 	</element>
-	<element name="BassinsAcceptation" parent="MatriceApplicationEnregistree">
+	<element name="BassinsAcceptation" parent="MatriceApplicationEnregistree" root="">
 		<usage>Obligatoire</usage>
 		<desc>Liste des réseaux sur lesquels la matrice application est acceptée</desc>
 	</element>
-	<element name="CodeBassin" parent="BassinsAcceptation">
+	<element name="CodeBassin" parent="BassinsAcceptation" root="">
 		<usage>Obligatoire</usage>
 		<desc>Code du bassin d'interopérabilité acceptant la matrice application</desc>
 	</element>
-	<element name="FormeContenant" parent="ApplicationInstallee">
+	<element name="FormeContenant" parent="ApplicationInstallee" root="">
 		<usage>Obligatoire</usage>
 		<desc>Permet d’identifier la forme physique du contenant de l’application transport : 
 			carte, billet, carte SIM, carte SD, clé USB, …
 		</desc>
 	</element>
-	<element name="StructureApplication" parent="ApplicationInstallee">
+	<element name="StructureApplication" parent="ApplicationInstallee" root="">
 		<usage>Obligatoire</usage>
 		<desc>Structure de l’application : GTML, Tango, CD97-2, Triangle n, …</desc>
 	</element>
-	<element name="Distributeur" parent="ApplicationInstallee">
+	<element name="Distributeur" parent="ApplicationInstallee" root="">
 		<usage>Obligatoire</usage>
 		<desc>Identification du partenaire émetteur de l’application</desc>
 	</element>
-	<element name="IdPartenaire" parent="Distributeur">
+	<element name="IdPartenaire" parent="Distributeur" root="">
 		<usage>Obligatoire</usage>
 		<desc>Identifiant du partenaire distributeur</desc>
 	</element>
-	<element name="CodeBassin" parent="Distributeur">
+	<element name="CodeBassin" parent="Distributeur" root="">
 		<usage>Obligatoire</usage>
 		<desc>Code du bassin d'interopérabilité du partenaire distributeur</desc>
 	</element>
-	<element name="DateHeureFinValidite" parent="ApplicationInstallee">
+	<element name="DateHeureFinValidite" parent="ApplicationInstallee" root="">
 		<usage>Conditionnel</usage>
 		<desc>Date de fin de validité de l’application<br/>
 			Si l’exploitant a l’information, il la transmet obligatoirement.</desc>
 	</element>
-	<element name="Support" parent="ApplicationInstallee">
+	<element name="Support" parent="ApplicationInstallee" root="">
 		<usage>Conditionnel</usage>
 		<desc>Correspond au support sur lequel l'application est installée.<br/>
 			A utiliser obligatoirement si l'élément IdSupport est différent 
 			de l'élément AID, ou bien si le support n’a pas d’application.
 		</desc>
 	</element>
-	<element name="TypeSupport" parent="Support">
+	<element name="TypeSupport" parent="Support" root="">
 		<usage>Obsolescent</usage>
 		<desc>Type de support sur lequel l’opération est réalisée.</desc>
 	</element>
-	<element name="IdSupport" parent="Support">
+	<element name="IdSupport" parent="Support" root="">
 		<usage>Obligatoire</usage>
 		<desc>Numéro de série du support.</desc>
 	</element>
 	<!-- IBCS__ -->
-	<element name="IBCS:CompteRenduSecurite" parent="">
+	<element name="IBCS:CompteRenduSecurite" parent="" root="">
 		<usage/>
 		<desc>Compte-rendu de l’invalidation par un équipement d’une application transport ou 
 			d'un billet sans contact qui était placé dans la liste d’interdiction</desc>
 	</element>
-	<element name="ActionListeSecurite" parent="">
+	<element name="ActionListeSecurite" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>Liste des actions effectuées dans la liste</desc>
 	</element>
-	<element name="DateHeureAction" parent="ActionListeSecurite">
+	<element name="DateHeureAction" parent="ActionListeSecurite" root="">
 		<usage>Obligatoire</usage>
 		<desc>Date et heure de génération de liste</desc>
 	</element>
-	<element name="TypeListeSecurite" parent="ActionListeSecurite">
+	<element name="TypeListeSecurite" parent="ActionListeSecurite" root="">
 		<usage>Obligatoire</usage>
 		<desc>Type de liste</desc>
 	</element>
-	<element name="LieuAction" parent="ActionListeSecurite">
+	<element name="LieuAction" parent="ActionListeSecurite" root="">
 		<usage>Obligatoire</usage>
 		<desc>Lieu géographique pour lequel la liste a été générée</desc>
 	</element>
-	<element name="IdLocalisation" parent="LieuAction">
+	<element name="IdLocalisation" parent="LieuAction" root="">
 		<usage>Obligatoire</usage>
 		<desc>Identifiant du lieu</desc>
 	</element>
-	<element name="ReferentielLocalisation" parent="LieuAction">
+	<element name="ReferentielLocalisation" parent="LieuAction" root="">
 		<usage>Obligatoire</usage>
 		<desc>Identifiant du référentiel géographique associé au lieu</desc>
 	</element>
-	<element name="EquipementAction" parent="ActionListeSecurite">
+	<element name="EquipementAction" parent="ActionListeSecurite" root="">
 		<usage>Obligatoire</usage>
 		<desc>Equipement pour lequel la liste a été générée</desc>
 	</element>
-	<element name="IdEquipement" parent="EquipementAction">
+	<element name="IdEquipement" parent="EquipementAction" root="">
 		<usage>Obligatoire</usage>
 		<desc>Identifiant de l'équipement</desc>
 	</element>
-	<element name="Referentiel" parent="EquipementAction">
+	<element name="Referentiel" parent="EquipementAction" root="">
 		<usage>Obligatoire</usage>
 		<desc>Identifiant du référentiel géographique associé à l'équipement</desc>
 	</element>
-	<element name="TypeEquipement" parent="EquipementAction">
+	<element name="TypeEquipement" parent="EquipementAction" root="">
 		<usage>Obligatoire</usage>
 		<desc>Type de l'équipement</desc>
 	</element>
-	<element name="ExploitantEquipement" parent="EquipementAction">
+	<element name="ExploitantEquipement" parent="EquipementAction" root="">
 		<usage>Obligatoire</usage>
 		<desc>Partenaire du bassin d'interopérabilité exploitant l'équipement</desc>
 	</element>
-	<element name="IdPartenaire" parent="ExploitantEquipement">
+	<element name="IdPartenaire" parent="ExploitantEquipement" root="">
 		<usage>Obligatoire</usage>
 		<desc>Identifiant du partenaire du bassin d'interopérabilité</desc>
 	</element>
-	<element name="CodeBassin" parent="ExploitantEquipement">
+	<element name="CodeBassin" parent="ExploitantEquipement" root="">
 		<usage>Obligatoire</usage>
 		<desc>Code du bassin d'interopérabilité</desc>
 	</element>
+	<!-- IBCSST -->
+	<element name="IBCSST:CompteRenduSecurite" parent="" root="">
+		<usage/>
+		<desc>Ce message permet à un réseau d’informer ses partenaires qu’il a effectivement suspendu un titre 
+			qui était placé sur la liste de suspension : il constitue le compte-rendu de la suspension par un équipement.</desc>
+	</element>
+	<element name="EntreeProduitInstalle" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Entrée de la liste de type "Produit Installé"</desc>
+	</element>
+	<element name="ProduitInstalle" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Caractéristiques du produit installé</desc>
+	</element>
+	<element name="ReferenceProduit" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Référence du produit</desc>
+	</element>
+	<element name="ProprietaireProduit" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Partenaire propriétaire du produit</desc>
+	</element>
+	<element name="IdPartenaire" parent="ProprietaireProduit" root="">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant du partenaire propriétaire</desc>
+	</element>
+	<element name="CodeBassin" parent="ProprietaireProduit" root="">
+		<usage>Obligatoire</usage>
+		<desc>Code du bassin d'interopérabilité du partenaire propriétaire</desc>
+	</element>
+	<element name="CodePays" parent="ProprietaireProduit" root="">
+		<usage>Conditionnel</usage>
+		<desc>
+			A utiliser obligatoirement si les échanges peuvent être réalisés dans un contexte 
+			impliquant plusieurs pays.
+		</desc>
+	</element>
+	<element name="IdProduit" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Code du produit</desc>
+	</element>
+	<element name="ReferenceProduitInstalle" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Référence du produit installé</desc>
+	</element>
+	<element name="ExploitantVente" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Partenaire ayant réalisé la vente du produit</desc>
+	</element>
+	<element name="IdPartenaire" parent="ExploitantVente" root="">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant du partenaire ayant réalisé la vente</desc>
+	</element>
+	<element name="CodeBassin" parent="ExploitantVente" root="">
+		<usage>Obligatoire</usage>
+		<desc>Code du bassin d'interopérabilité du partenaire ayant réalisé la vente</desc>
+	</element>
+	<element name="CodePays" parent="ExploitantVente" root="">
+		<usage>Conditionnel</usage>
+		<desc>
+			A utiliser obligatoirement si les échanges peuvent être réalisés dans un contexte 
+			impliquant plusieurs pays.
+		</desc>
+	</element>
+	<element name="IdProduitInstalle" parent="" root="">
+		<usage>Conditionnel</usage>
+		<desc>Numéro de série du titre
+			<ul>
+				<li>Obligatoire dans  le cas où l’identifiant du produit est connu au moment de l’opération.</li>
+				<li>Balise non présente si l’identifiant du produit n’est pas connu (demande de télédistribution pour laquelle l’IdProduit n’est déterminé qu’au chargement).</li>
+			</ul>
+		</desc>
+	</element>	
+	<element name="SupportUtilise" parent="" root="">
+		<usage>Conditionnel</usage>
+		<desc>Correspond au support hébergeant l'application installée<br/>
+			<ul>
+				<li>A utiliser obligatoirement si IdSupport est différent de l’Identifiant de l’Application, ou bien si le support n’a pas d’Application.</li>
+				<li>Inutilisé sinon.</li>
+			</ul>
+		</desc>
+	</element>	
+	<element name="TypeSupport" parent="SupportUtilise" root="">
+		<usage>Obsolescent</usage>
+		<desc>Permet de définir les supports pouvant accepter des matrices application produit.</desc>
+	</element>
+	<element name="IdSupport" parent="SupportUtilise" root="">
+		<usage>Obligatoire</usage>
+		<desc>Numéro de série du support sur lequel l’opération est réalisée.</desc>
+	</element>
+	<element name="ContratSupport" parent="" root="">
+		<usage>Optionnel</usage>
+		<desc>Numéro de série du support sur lequel l’opération est réalisée.</desc>
+	</element>
+	<element name="ProfilCommercialContrat" parent="" root="">
+		<usage>Optionnel</usage>
+		<desc>Profil qui a permis l'opération sur le contrat.</desc>
+	</element>
+	<element name="CodeProfilCommercialContrat" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Code du profil qui a permis l'opération sur le contrat.</desc>
+	</element>
+	<element name="EmetteurSupportEnregistre" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Partenaire ayant délivré le support, vers qui le client se tournera en cas de dysfonctionnement.</desc>
+	</element>
+	<element name="IdPartenaire" parent="EmetteurSupportEnregistre" root="">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant du partenaire ayant délivré le support</desc>
+	</element>
+	<element name="CodeBassin" parent="EmetteurSupportEnregistre" root="">
+		<usage>Obligatoire</usage>
+		<desc>Code du bassin d'interopérabilité du partenaire ayant délivré le support</desc>
+	</element>
+	<element name="CodePays" parent="EmetteurSupportEnregistre" root="">
+		<usage>Conditionnel</usage>
+		<desc>
+			A utiliser obligatoirement si les échanges peuvent être réalisés dans un contexte 
+			impliquant plusieurs pays.
+		</desc>
+	</element>
+	<!-- IBLSRC -->
+	<element name="IBLSRC:MajListeSecurite" parent="" root="">
+		<usage/>
+		<desc>Ce message est envoyé en réponse à une demande d'informations de compte client.</desc>
+	</element>
+	<element name="ListeSecurite" parent="IBLSRC:MajListeSecurite" root="">
+		<usage>Obligatoire</usage>
+		<desc>Liste de compte client</desc>
+	</element>
+	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSRC:MajListeSecurite">
+		<usage>Obligatoire</usage>
+		<desc>Type de la liste<br/>Doit être égal à "17:Envoi de données client"</desc>
+	</element>
+	<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSRC:MajListeSecurite">
+		<usage>Obsolescent</usage>
+		<desc>Permet de préciser si: 
+				<ul>
+				<li>c'est une liste exhaustive qui est transmise : "1"</li>
+				<li>ce ne sont que des mises à jour (« incrémentiel ») : "2".</li>
+				</ul>
+		</desc>
+	</element>
+	<element name="EntreeClient" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Entrée de la liste de type "Données client"</desc>
+	</element>
+	<element name="ClientDetenteur" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Données du client</desc>
+	</element>
+	<element name="Nom" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Nom du client</desc>
+	</element>
+	<!-- IBLSSC -->
+	<element name="IBLSSC:MajListeSecurite" parent="" root="">
+		<usage/>
+		<desc>Demande de suppression de compte client.</desc>
+	</element>
+	<element name="ListeSecurite" parent="IBLSSC:MajListeSecurite" root="">
+		<usage>Obligatoire</usage>
+		<desc>Liste de compte client</desc>
+	</element>
+	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSSC:MajListeSecurite">
+		<usage>Obligatoire</usage>
+		<desc>Type de la liste<br/>Doit être égal à "18:Demande de suppression de données client"</desc>
+	</element>
+	<!-- IBUT -->
+	<element name="IBUT:MessageUtilisations" parent="" root="">
+		<usage/>
+		<desc>Information concernant l'usage d'un titre de transport.</desc>
+	</element>
+	<element name="UtilisationProduitInstalle" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Caractéristiques de l'usage d'un titre de transport.</desc>
+	</element>
+	<element name="Date" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Date de l'opération</desc>
+	</element>
+	<element name="Heure" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Heure de l'opération</desc>
+	</element>
+	<element name="EquipementValidation" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Un équipement de terrain destiné à contrôler des droits d'utilisation liés à des produits installés, et en conséquence à valider ou non un passage en entrée, sortie ou correspondance d'un réseau de transports.</desc>
+	</element>
+	<element name="IdEquipement" parent="EquipementValidation" root="">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant de l'équipement</desc>
+	</element>
+	<element name="TypeEquipement" parent="EquipementValidation" root="">
+		<usage>Obligatoire</usage>
+		<desc>Type de l'équipement</desc>
+	</element>
+	<element name="ProduitUtilise" parent="" root="">
+		<usage>Conditionnel</usage>
+		<desc>Caractéristiques du produit utilisé.
+			<ul>
+			<li>Obligatoire lorsqu’il ne s’agit pas de postpaiement (le titre existe dans le support ou bien en central, en amont de l’utilisation).</li>
+			<li>Facultatif dans le cas du traitement d’un postpaiement  (ex : utilisé si l’application contient un identifiant indiquant que le service de postpaiement est actif pour cette application)</li>
+			</ul>
+		</desc>
+	</element>
+	<element name="SoldeCompteur" parent="" root="">
+		<usage>Conditionnel</usage>
+		<desc>Correspond à la valeur du compteur principal.<br/>
+			Les informations concernant le 2e compteur (dans la sous-période) ne sont pas échangées.
+			<ul>
+			<li>Employé systématiquement pour un carnet.</li>
+			<li>Non employé pour un forfait.</li>
+			</ul>
+		</desc>
+	</element>
+	<element name="IdCompteur" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>
+			<ul>
+			<li>0 : indéterminé</li>
+			<li>1 : Voyage</li>
+			<li>2 : unités, jeton</li>
+			<li>3 : unité monétaire</li>
+			</ul>
+		</desc>
+	</element>
+	<element name="QuantiteOperation" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Valeur du décrément : nombre d’unités (voyage, argent, jeton, …) concernées par l’opération.</desc>
+	</element>
+	<element name="Solde" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Solde après décrément.</desc>
+	</element>
+	<element name="ContrainteTemporelle" parent="" root="">
+		<usage>Conditionnel</usage>
+		<desc>Contrainte temporelle du produit utilisé.
+			<ul>
+			<li>A renseigner obligatoirement  si la contrainte temporelle est modifiée à la validation ou à l’usage (ex :  titre est glissant à la validation)</li>
+			<li>Non renseigné dans les autres cas.</li>
+			</ul>
+		</desc>
+	</element>
+	<element name="TrancheCalendaire" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Contrainte temporelle de type "tranche calendaire"</desc>
+	</element>
+	<element name="Dates" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Liste des dates définissant la "tranche calendaire"</desc>
+	</element>
+	<element name="JourDebut" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Date de début de la "tranche calendaire"</desc>
+	</element>
+	<element name="JourFin" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Date de fin de la "tranche calendaire"</desc>
+	</element>
+	<element name="HeureDebut" parent="" root="">
+		<usage>Optionnel</usage>
+		<desc>Heure de début pour la date de début</desc>
+	</element>
+	<element name="HeureFin" parent="" root="">
+		<usage>Optionnel</usage>
+		<desc>Heure de fin pour la date de fin</desc>
+	</element>
+	<element name="Autorise" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Indique si le produit utilisé est autorisé pendant la "tranche calendaire" ou non</desc>
+	</element>
+	<element name="AccesValide" parent="" root="">
+		<usage>Conditionnel</usage>
+		<desc>Une utilisation validée d'un élément validable, composé d'éléments tarifaires consommés.<br/>
+			Obligatoire, sauf dans les cas où l’utilisation n’implique pas de validation.</desc>
+	</element>
+	<element name="CompteurCorrespondance" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Le champ CompteurCorrespondance est renseigné pour indiquer la notion de correspondance, et idéalement le nombre de correspondances.</desc>
+	</element>
+	<element name="TypeTransaction" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>
+			<ul>
+			<li>1 : Validation en entrée</li>
+			<li>4 : Contrôle volant (à bord) – Validation effectuée par un contrôle volant</li>
+			<li>5 : Validation de test</li>
+			<li>6 : Validation en correspondance (entrée)</li>
+			<li>0 : Aucun</li>
+			</ul>
+		</desc>
+	</element>
+	<element name="ModesTransport" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Liste de modes de transport utilisés</desc>
+	</element>
+	<element name="IdMode" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Mode de transport utilisé</desc>
+	</element>
+	<element name="Localisation" parent="" root="">
+		<usage>Conditionnel</usage>
+		<desc>
+			<ul>
+			<li>Balise obligatoirement présente et renseignée si la validation est localisée.</li>
+			<li>Balise absente si la validation est en mode délocalisé.</li>
+			</ul>
+		</desc>
+	</element>
+	<element name="IdLocalisation" parent="Localisation" root="">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant du lieu</desc>
+	</element>
+	<element name="ReferentielLocalisation" parent="Localisation" root="">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant du référentiel géographique associé au lieu</desc>
+	</element>
+	<element name="Sens" parent="Localisation" root="">
+		<usage>Conditionnel</usage>
+		<desc>Direction de la ligne sur laquelle la validation est effectuée.<br/>
+			Transmise si connue.</desc>
+	</element>
+	<element name="Ligne" parent="Localisation" root="">
+		<usage>Conditionnel</usage>
+		<desc>Caractéristique de la ligne sur laquelle la validation est effectuée.<br/>
+			Transmise si connue.</desc>
+	</element>
+	<element name="IdLigne" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant de la ligne</desc>
+	</element>
+	<!-- IBLSDC -->
+	<element name="IBLSDC:MajListeSecurite" parent="" root="">
+		<usage/>
+		<desc>Demande d’informations « Compte » (client, caractéristiques détaillées), sur la base d’une application transport.</desc>
+	</element>
+	<element name="ListeSecurite" parent="IBLSDC:MajListeSecurite" root="">
+		<usage>Obligatoire</usage>
+		<desc>Liste d'application transport</desc>
+	</element>
+	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSDC:MajListeSecurite">
+		<usage>Obligatoire</usage>
+		<desc>Type de la liste<br/>Doit être égal à "16 : demande d’informations sur les supports/applications de la liste"</desc>
+	</element>
+	<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSDC:MajListeSecurite">
+		<usage>Obsolescent</usage>
+		<desc>Permet de préciser si: 
+				<ul>
+				<li>c'est une liste exhaustive qui est transmise : "1"</li>
+				<li>ce ne sont que des mises à jour (« incrémentiel ») : "2".</li>
+				</ul>
+		</desc>
+	</element>
+	<!-- IBLSST -->
+	<element name="IBLSST:MajListeSecurite" parent="" root="">
+		<usage/>
+		<desc>Demande de suspension d’un titre, qui sera réalisée au travers d’une action sur l’application transport ou non.</desc>
+	</element>
+	<element name="ListeSecurite" parent="IBLSST:MajListeSecurite" root="">
+		<usage>Obligatoire</usage>
+		<desc>Liste d'application transport</desc>
+	</element>
+	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSST:MajListeSecurite">
+		<usage>Obligatoire</usage>
+		<desc>Type de la liste<br/>Doit être égal à "20 : liste de suspension de titres"</desc>
+	</element>
+	<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSST:MajListeSecurite">
+		<usage>Obsolescent</usage>
+		<desc>Permet de préciser si: 
+				<ul>
+				<li>c'est une liste exhaustive qui est transmise : "1"</li>
+				<li>ce ne sont que des mises à jour (« incrémentiel ») : "2".</li>
+				</ul>
+		</desc>
+	</element>
+	<element name="ActionDemandee" parent="EntreeProduitInstalle" root="IBLSST:MajListeSecurite">
+		<usage>Obligatoire</usage>
+		<desc>Permet de définir la valeur de l'action à réaliser lors de la détection de l'objet:
+			<ul>
+			<li>3 : bloquer temporairement</li>
+			<li>10 : bloquer définitivement (mettre à effaçable)</li>
+			</ul>
+		</desc>
+	</element>
+	<element name="DateDebutEffet" parent="EntreeProduitInstalle" root="IBLSST:MajListeSecurite">
+		<usage>Facultatif</usage>
+		<desc>Date de mise en suspension<br/>
+			Si la date est absente au niveau de l'élément on considère que l’échéance d’effet est : dès que possible
+		</desc>
+	</element>
+
 	<!-- -->
-	<element name="IdOperation">
+	<element name="IdOperation" parent="" root="">
 		<usage>Conditionnel</usage>
 		<desc>
 			<li>Obligatoire s'il s'agit d'une vente pour télédistribution ou rechargement en différé, et que l'IdProduit n'est pas déterminé au moment de la vente.</li>
@@ -278,15 +670,7 @@
 			<li>Optionnel (facultatif) s'il ne s'agit pas d'une vente pour télédistribution.</li>
 		</desc>
 	</element>
-	<element name="Date">
-		<usage>Obligatoire</usage>
-		<desc>Date de l'opération</desc>
-	</element>
-	<element name="Heure">
-		<usage>Obligatoire</usage>
-		<desc>Heure de l'opération</desc>
-	</element>
-	<element name="TypeOperationVente">
+	<element name="TypeOperationVente" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>
 			<li>1 : Vente (ou primo chargement)</li>

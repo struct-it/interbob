@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--Ajout XSLT-->
+<?xml-stylesheet type="text/xsl" href="INTERBOB.xslt"?>
 <!--Changement de déclaration-->
 <IBUT:MessageUtilisations xsi:schemaLocation="urn:IBUT_V1 IBUT__.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:IBUT="urn:IBUT_V1">
   <DateHeure>2013-10-08T05:15:00</DateHeure>
@@ -45,12 +47,11 @@
         </ExploitantVente>
         <IdProduitInstalle>1642292736</IdProduitInstalle>
       </ReferenceProduitInstalle>
-	  <!--SoldeCompteur n'est plus utilisé-->
-      <!--<SoldeCompteur>
+     <SoldeCompteur>
         <IdCompteur>1</IdCompteur>
         <QuantiteOperation>1</QuantiteOperation>
         <Solde>9</Solde>
-      </SoldeCompteur>-->
+      </SoldeCompteur>
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>0</CompteurCorrespondance>
@@ -98,12 +99,11 @@
         </ExploitantVente>
         <IdProduitInstalle>1720006656</IdProduitInstalle>
       </ReferenceProduitInstalle>
-      <!--SoldeCompteur n'est plus utilisé-->
-      <!--<SoldeCompteur>
+      <SoldeCompteur>
         <IdCompteur>1</IdCompteur>
         <QuantiteOperation>1</QuantiteOperation>
         <Solde>1</Solde>
-      </SoldeCompteur>-->
+      </SoldeCompteur>
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>0</CompteurCorrespondance>
@@ -151,12 +151,11 @@
         </ExploitantVente>
         <IdProduitInstalle>1720006656</IdProduitInstalle>
       </ReferenceProduitInstalle>
-      <!--SoldeCompteur n'est plus utilisé-->
-      <!--<SoldeCompteur>
+      <SoldeCompteur>
         <IdCompteur>1</IdCompteur>
         <QuantiteOperation>1</QuantiteOperation>
         <Solde>1</Solde>
-      </SoldeCompteur>-->
+      </SoldeCompteur>
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>0</CompteurCorrespondance>
@@ -204,12 +203,11 @@
         </ExploitantVente>
         <IdProduitInstalle>1720006656</IdProduitInstalle>
       </ReferenceProduitInstalle>
-      <!--SoldeCompteur n'est plus utilisé-->
-      <!--<SoldeCompteur>
+      <SoldeCompteur>
         <IdCompteur>1</IdCompteur>
         <QuantiteOperation>1</QuantiteOperation>
         <Solde>0</Solde>
-      </SoldeCompteur>-->
+      </SoldeCompteur>
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>0</CompteurCorrespondance>
@@ -257,12 +255,11 @@
         </ExploitantVente>
         <IdProduitInstalle>1720006656</IdProduitInstalle>
       </ReferenceProduitInstalle>
-      <!--SoldeCompteur n'est plus utilisé-->
-      <!--<SoldeCompteur>
+      <SoldeCompteur>
         <IdCompteur>1</IdCompteur>
         <QuantiteOperation>1</QuantiteOperation>
         <Solde>0</Solde>
-      </SoldeCompteur>-->
+      </SoldeCompteur>
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>0</CompteurCorrespondance>
@@ -311,6 +308,11 @@
         <IdProduitInstalle>1642292736</IdProduitInstalle>
       </ReferenceProduitInstalle>
       <!--ContrainteTemporelle placé après ReferenceProduitInstalle-->
+      <SoldeCompteur>
+        <IdCompteur>1</IdCompteur>
+        <QuantiteOperation>0</QuantiteOperation>
+        <Solde>0</Solde>
+      </SoldeCompteur>
       <ContrainteTemporelle>
         <TrancheCalendaire>
           <Dates>
@@ -322,12 +324,6 @@
           <Autorise>1</Autorise>
         </TrancheCalendaire>
       </ContrainteTemporelle>
-	  <!--SoldeCompteur n'est plus utilisé-->
-      <!--<SoldeCompteur>
-        <IdCompteur>1</IdCompteur>
-        <QuantiteOperation>0</QuantiteOperation>
-        <Solde>0</Solde>
-      </SoldeCompteur>-->
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>0</CompteurCorrespondance>
@@ -376,6 +372,11 @@
         <IdProduitInstalle>1642292736</IdProduitInstalle>
       </ReferenceProduitInstalle>
       <!--ContrainteTemporelle placé après ReferenceProduitInstalle-->
+      <SoldeCompteur>
+        <IdCompteur>1</IdCompteur>
+        <QuantiteOperation>0</QuantiteOperation>
+        <Solde>0</Solde>
+      </SoldeCompteur>
       <ContrainteTemporelle>
         <TrancheCalendaire>
           <Dates>
@@ -387,12 +388,6 @@
           <Autorise>1</Autorise>
         </TrancheCalendaire>
       </ContrainteTemporelle>
-	  <!--SoldeCompteur n'est plus utilisé-->
-      <!--<SoldeCompteur>
-        <IdCompteur>1</IdCompteur>
-        <QuantiteOperation>0</QuantiteOperation>
-        <Solde>0</Solde>
-      </SoldeCompteur>-->
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>0</CompteurCorrespondance>
@@ -440,12 +435,11 @@
         </ExploitantVente>
         <IdProduitInstalle>0</IdProduitInstalle>
       </ReferenceProduitInstalle>
-	  <!--SoldeCompteur n'est plus utilisé-->
-      <!--<SoldeCompteur>
+      <SoldeCompteur>
         <IdCompteur>1</IdCompteur>
         <QuantiteOperation>1</QuantiteOperation>
         <Solde>9</Solde>
-      </SoldeCompteur>-->
+      </SoldeCompteur>
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>0</CompteurCorrespondance>
@@ -493,12 +487,11 @@
         </ExploitantVente>
         <IdProduitInstalle>1720006656</IdProduitInstalle>
       </ReferenceProduitInstalle>
-	  <!--SoldeCompteur n'est plus utilisé-->
-      <!--<SoldeCompteur>
+      <SoldeCompteur>
         <IdCompteur>1</IdCompteur>
         <QuantiteOperation>0</QuantiteOperation>
         <Solde>1</Solde>
-      </SoldeCompteur>-->
+      </SoldeCompteur>
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>1</CompteurCorrespondance>
@@ -546,12 +539,11 @@
         </ExploitantVente>
         <IdProduitInstalle>1720006656</IdProduitInstalle>
       </ReferenceProduitInstalle>
-	  <!--SoldeCompteur n'est plus utilisé-->
-      <!--<SoldeCompteur>
+      <SoldeCompteur>
         <IdCompteur>1</IdCompteur>
         <QuantiteOperation>0</QuantiteOperation>
         <Solde>1</Solde>
-      </SoldeCompteur>-->
+      </SoldeCompteur>
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>2</CompteurCorrespondance>
@@ -599,12 +591,11 @@
         </ExploitantVente>
         <IdProduitInstalle>1720006656</IdProduitInstalle>
       </ReferenceProduitInstalle>
-	  <!--SoldeCompteur n'est plus utilisé-->
-      <!--<SoldeCompteur>
+      <SoldeCompteur>
         <IdCompteur>1</IdCompteur>
         <QuantiteOperation>1</QuantiteOperation>
         <Solde>1</Solde>
-      </SoldeCompteur>-->
+      </SoldeCompteur>
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>0</CompteurCorrespondance>
@@ -652,12 +643,11 @@
         </ExploitantVente>
         <IdProduitInstalle>1720006656</IdProduitInstalle>
       </ReferenceProduitInstalle>
-	  <!--SoldeCompteur n'est plus utilisé-->
-      <!--<SoldeCompteur>
+      <SoldeCompteur>
         <IdCompteur>1</IdCompteur>
         <QuantiteOperation>1</QuantiteOperation>
         <Solde>0</Solde>
-      </SoldeCompteur>-->
+      </SoldeCompteur>
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>0</CompteurCorrespondance>
@@ -705,12 +695,11 @@
         </ExploitantVente>
         <IdProduitInstalle>1720006656</IdProduitInstalle>
       </ReferenceProduitInstalle>
-	  <!--SoldeCompteur n'est plus utilisé-->
-      <!--<SoldeCompteur>
+      <SoldeCompteur>
         <IdCompteur>1</IdCompteur>
         <QuantiteOperation>1</QuantiteOperation>
         <Solde>0</Solde>
-      </SoldeCompteur>-->
+      </SoldeCompteur>
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>0</CompteurCorrespondance>
@@ -758,11 +747,11 @@
         </ExploitantVente>
         <IdProduitInstalle>1642154496</IdProduitInstalle>
       </ReferenceProduitInstalle>
-      <!--<SoldeCompteur>
+      <SoldeCompteur>
         <IdCompteur>1</IdCompteur>
         <QuantiteOperation>1</QuantiteOperation>
         <Solde>0</Solde>
-      </SoldeCompteur>-->
+      </SoldeCompteur>
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>0</CompteurCorrespondance>
@@ -810,12 +799,11 @@
         </ExploitantVente>
         <IdProduitInstalle>1642154496</IdProduitInstalle>
       </ReferenceProduitInstalle>
-	  <!--SoldeCompteur n'est plus utilisé-->
-      <!--<SoldeCompteur>
+      <SoldeCompteur>
         <IdCompteur>1</IdCompteur>
         <QuantiteOperation>1</QuantiteOperation>
         <Solde>0</Solde>
-      </SoldeCompteur>-->
+      </SoldeCompteur>
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>0</CompteurCorrespondance>
@@ -863,12 +851,11 @@
         </ExploitantVente>
         <IdProduitInstalle>1642154496</IdProduitInstalle>
       </ReferenceProduitInstalle>
-	  <!--SoldeCompteur n'est plus utilisé-->
-      <!--<SoldeCompteur>
+      <SoldeCompteur>
         <IdCompteur>1</IdCompteur>
         <QuantiteOperation>1</QuantiteOperation>
         <Solde>0</Solde>
-      </SoldeCompteur>-->
+      </SoldeCompteur>
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>0</CompteurCorrespondance>
@@ -916,11 +903,11 @@
         </ExploitantVente>
         <IdProduitInstalle>1642154496</IdProduitInstalle>
       </ReferenceProduitInstalle>
-      <!--<SoldeCompteur>
+      <SoldeCompteur>
         <IdCompteur>1</IdCompteur>
         <QuantiteOperation>1</QuantiteOperation>
         <Solde>0</Solde>
-      </SoldeCompteur>-->
+      </SoldeCompteur>
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>0</CompteurCorrespondance>
@@ -968,12 +955,11 @@
         </ExploitantVente>
         <IdProduitInstalle>1642154496</IdProduitInstalle>
       </ReferenceProduitInstalle>
-	  <!--SoldeCompteur n'est plus utilisé-->
-      <!--<SoldeCompteur>
+      <SoldeCompteur>
         <IdCompteur>1</IdCompteur>
         <QuantiteOperation>1</QuantiteOperation>
         <Solde>0</Solde>
-      </SoldeCompteur>-->
+      </SoldeCompteur>
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>0</CompteurCorrespondance>
@@ -1021,12 +1007,11 @@
         </ExploitantVente>
         <IdProduitInstalle>1641984688</IdProduitInstalle>
       </ReferenceProduitInstalle>
-	  <!--SoldeCompteur n'est plus utilisé-->
-      <!--<SoldeCompteur>
+      <SoldeCompteur>
         <IdCompteur>1</IdCompteur>
         <QuantiteOperation>1</QuantiteOperation>
         <Solde>4</Solde>
-      </SoldeCompteur>-->
+      </SoldeCompteur>
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>0</CompteurCorrespondance>
@@ -1074,12 +1059,11 @@
         </ExploitantVente>
         <IdProduitInstalle>1642306321</IdProduitInstalle>
       </ReferenceProduitInstalle>
-	  <!--SoldeCompteur n'est plus utilisé-->
-      <!--<SoldeCompteur>
+      <SoldeCompteur>
         <IdCompteur>1</IdCompteur>
         <QuantiteOperation>0</QuantiteOperation>
         <Solde>4</Solde>
-      </SoldeCompteur>-->
+      </SoldeCompteur>
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>1</CompteurCorrespondance>
@@ -1127,12 +1111,11 @@
         </ExploitantVente>
         <IdProduitInstalle>1642306321</IdProduitInstalle>
       </ReferenceProduitInstalle>
-	  <!--SoldeCompteur n'est plus utilisé-->
-      <!--<SoldeCompteur>
+      <SoldeCompteur>
         <IdCompteur>1</IdCompteur>
         <QuantiteOperation>1</QuantiteOperation>
         <Solde>4</Solde>
-      </SoldeCompteur>-->
+      </SoldeCompteur>
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>0</CompteurCorrespondance>
@@ -1239,12 +1222,11 @@
         </ExploitantVente>
         <IdProduitInstalle>1642292736</IdProduitInstalle>
       </ReferenceProduitInstalle>
-	  <!--SoldeCompteur n'est plus utilisé-->
-      <!--<SoldeCompteur>
+      <SoldeCompteur>
         <IdCompteur>1</IdCompteur>
         <QuantiteOperation>1</QuantiteOperation>
         <Solde>4</Solde>
-      </SoldeCompteur>-->
+      </SoldeCompteur>
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>0</CompteurCorrespondance>
@@ -1351,12 +1333,11 @@
         </ExploitantVente>
         <IdProduitInstalle>1642292736</IdProduitInstalle>
       </ReferenceProduitInstalle>
-	  <!--SoldeCompteur n'est plus utilisé-->
-      <!--<SoldeCompteur>
+      <SoldeCompteur>
         <IdCompteur>1</IdCompteur>
         <QuantiteOperation>1</QuantiteOperation>
         <Solde>4</Solde>
-      </SoldeCompteur>-->
+      </SoldeCompteur>
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>0</CompteurCorrespondance>
@@ -1404,12 +1385,11 @@
         </ExploitantVente>
         <IdProduitInstalle>1642292736</IdProduitInstalle>
       </ReferenceProduitInstalle>
-	  <!--SoldeCompteur n'est plus utilisé-->
-      <!--<SoldeCompteur>
+      <SoldeCompteur>
         <IdCompteur>1</IdCompteur>
         <QuantiteOperation>1</QuantiteOperation>
         <Solde>4</Solde>
-      </SoldeCompteur>-->
+      </SoldeCompteur>
     </ProduitUtilise>
     <AccesValide>
       <CompteurCorrespondance>0</CompteurCorrespondance>

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--Ajout XSLT-->
+<?xml-stylesheet type="text/xsl" href="INTERBOB.xslt"?>
 <!--Changement de déclaration-->
 <IBCSST:CompteRenduSecurite xsi:schemaLocation="urn:IBCSST_V1 IBCSST.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:IBCSST="urn:IBCSST_V1">  
   <DateHeure>2013-09-19T16:28:54</DateHeure>
