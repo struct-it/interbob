@@ -10,10 +10,10 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="t_ObjetImplique">
-		<xs:sequence>
+		<xs:choice>
 			<xs:element name="ProduitInstalle" type="IBACCC:t_ProduitInstalle" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="Objet" type="IB:t_ObjetAbstrait" minOccurs="1" maxOccurs="1"/>
-		</xs:sequence>
+		</xs:choice>
 	</xs:complexType>
 	<xs:complexType name="t_MessageAcquisitions">
 		<xs:annotation>

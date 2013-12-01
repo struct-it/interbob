@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<xs:schema targetNamespace="urn:IBACCP_V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:IBACCP="urn:IBACCP_V1" xmlns:IB="urn:IB_V1" xmlns:InterBOB="urn:InterBOB_V1">
+<!-- edited with XMLSpy v2010 rel. 3 (http://www.altova.com) by regis casteran (STRUCT-IT SASU) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:IBACCP="urn:IBACCP_V1" xmlns:IB="urn:IB_V1" xmlns:InterBOB="urn:InterBOB_V1" targetNamespace="urn:IBACCP_V1">
 	<xs:import namespace="urn:IB_V1" schemaLocation="IB____.xsd"/>
 	<xs:import namespace="urn:InterBOB_V1" schemaLocation="XML_DDR_InterBOB_fr.xsd"/>
 	<xs:complexType name="t_MessageAcquisitions">
@@ -9,16 +10,16 @@
 		<xs:complexContent>
 			<xs:extension base="InterBOB:t_Message">
 				<xs:sequence>
-					<xs:element name="ListeAcquisition" type="IBACCP:t_ListeAcquisition" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="ListeAcquisition" type="IBACCP:t_ListeAcquisition"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="t_ObjetImplique">
-		<xs:sequence>
-			<xs:element name="Objet" type="IB:t_ObjetAbstrait" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="ProduitInstalle" type="IBACCP:t_ProduitInstalle" minOccurs="1" maxOccurs="1"/>
-		</xs:sequence>
+		<xs:choice>
+			<xs:element name="ProduitInstalle" type="IBACCP:t_ProduitInstalle"/>
+			<xs:element name="Objet" type="IB:t_ObjetAbstrait"/>
+		</xs:choice>
 	</xs:complexType>
 	<xs:complexType name="t_OperationVente">
 		<xs:annotation>
@@ -27,8 +28,8 @@
 		<xs:complexContent>
 			<xs:extension base="InterBOB:t_OperationVenteAbstrait">
 				<xs:sequence>
-					<xs:element name="AncienObjetImplique" type="IBACCP:t_ObjetImplique" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="ObjetImplique" type="IBACCP:t_ObjetImplique" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="ObjetImplique" type="IBACCP:t_ObjetImplique"/>
+					<xs:element name="AncienObjetImplique" type="IBACCP:t_ObjetImplique" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -43,7 +44,7 @@
 	</xs:complexType>
 	<xs:complexType name="t_ListeAcquisition">
 		<xs:sequence>
-			<xs:element name="OperationVente" type="IBACCP:t_OperationVente" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="OperationVente" type="IBACCP:t_OperationVente" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 </xs:schema>
