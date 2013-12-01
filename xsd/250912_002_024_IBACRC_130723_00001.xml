@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Changement de déclaration-->
+<IBACRC:MessageAcquisitions xsi:schemaLocation="urn:IBACRC IBACRC.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:IBACRC="urn:IBACRC">
+  <DateHeure>2013-07-23T14:43:17</DateHeure>
+  <CorrespondantEmetteur>
+    <IdPartenaire>24</IdPartenaire>
+    <CodeBassin>912</CodeBassin>
+  </CorrespondantEmetteur>
+  <CorrespondantDestinataire>
+    <IdPartenaire>2</IdPartenaire>
+    <CodeBassin>912</CodeBassin>
+  </CorrespondantDestinataire>
+  <FormatMessage>
+    <ReferenceNorme>IB:MessageAcquisitions</ReferenceNorme>
+    <VersionNorme>1.1:912.2</VersionNorme>
+  </FormatMessage>
+  <IdMessage>1</IdMessage>
+  <OperationVente>
+    <Date>2012-11-30</Date>
+    <Heure>14:51:00</Heure>
+    <TypeOperationVente>63</TypeOperationVente>
+    <EtatOperation>1</EtatOperation>
+    <MontantOperation>0</MontantOperation>
+    <MoyenPaiementPrincipal>3</MoyenPaiementPrincipal>
+    <!-- EquipementAcquisition déplacé -->
+    <EquipementAcquisition>
+      <TypeEquipement>1</TypeEquipement>
+    </EquipementAcquisition>
+    <!-- ObjetImplique déplacé -->
+    <ObjetImplique>
+		<!-- ApplicationInstallee n'est plus utilisée -->
+      <!--<ApplicationInstallee>
+        <Distributeur>
+          <IdPartenaire>1</IdPartenaire>
+          <CodeBassin>912</CodeBassin>
+        </Distributeur>
+        <IdApplicationInstallee>250912</IdApplicationInstallee>
+        <DateHeureFinValidite>2012-12-14T12:00:00</DateHeureFinValidite>
+        <Support>
+          <TypeSupport>66</TypeSupport>
+          <CategorieSupport>3</CategorieSupport>
+          <IdSupport>123</IdSupport>
+        </Support>
+      </ApplicationInstallee>-->
+		<ProduitInstalle>
+			<ReferenceProduit>
+				<ProprietaireProduit>
+					<IdPartenaire>000</IdPartenaire>
+					<CodeBassin>000</CodeBassin>
+				</ProprietaireProduit>
+			</ReferenceProduit>
+			<ReferenceProduitInstalle>
+				<ExploitantVente>
+					<IdPartenaire>000</IdPartenaire>
+					<CodeBassin>000</CodeBassin>
+				</ExploitantVente>
+			</ReferenceProduitInstalle>
+		</ProduitInstalle>
+    </ObjetImplique>
+  </OperationVente>
+</IBACRC:MessageAcquisitions>
+
