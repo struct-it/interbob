@@ -108,8 +108,8 @@ Les règles énoncées par la norme AFNOR Z69300 pour la ligne 4 d'adresse doivent 
 			<xs:element name="NumVoie" type="xs:string" minOccurs="0"/>
 			<xs:element name="TypeVoie" type="xs:string" minOccurs="0"/>
 			<xs:element name="LibelleVoie" type="xs:string" minOccurs="0"/>
-			<xs:element name="CodePostal" type="xs:string"/>
 			<xs:element name="LigneAdresse" type="InterBOB:t_LigneAdresse" minOccurs="0" maxOccurs="5"/>
+			<xs:element name="CodePostal" type="xs:string"/>
 			<xs:element name="CodePays" type="InterBOB:t_IdPays" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -161,6 +161,11 @@ Les règles énoncées par la norme AFNOR Z69300 pour la ligne 4 d'adresse doivent 
 			<xs:documentation>Un client individuellement identifié dans une communauté interopérable.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
+			<xs:element name="IdClient" type="InterBOB:t_IdClient" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A vocation à transférer l'identifiant du client dans le système central du Partenaire. La gestion de l'Id client est à définir localement par les partenaires du bassin d'interopérabilité.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="Nom" type="xs:normalizedString"/>
 			<xs:element name="Prenom" type="xs:normalizedString" minOccurs="0"/>
 			<xs:element name="Titre" type="InterBOB:t_EnumTitre" minOccurs="0">
@@ -171,6 +176,8 @@ Les règles énoncées par la norme AFNOR Z69300 pour la ligne 4 d'adresse doivent 
 			<xs:element name="DateNaissance" type="xs:date" minOccurs="0"/>
 			<xs:element name="TelephonePrive" type="xs:normalizedString" minOccurs="0"/>
 			<xs:element name="TelephoneTravail" type="xs:normalizedString" minOccurs="0"/>
+			<xs:element name="Adresse" type="InterBOB:t_AdressePostale" minOccurs="0"/>
+			<xs:element name="AdresseTravail" type="InterBOB:t_AdressePostale" minOccurs="0"/>
 			<xs:element name="CommunicationDonneesPersonnelles" type="xs:boolean" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Cette donnée permet d'indiquer aux partenaires du bassin si le client autorise la transmission de ses données personnelles les valeurs possibles sont: 0 pour non et 1 pour oui.</xs:documentation>
@@ -182,13 +189,6 @@ Les règles énoncées par la norme AFNOR Z69300 pour la ligne 4 d'adresse doivent 
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ProfilClient" type="InterBOB:t_ProfilUsagerClient" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="IdClient" type="InterBOB:t_IdClient" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>A vocation à transférer l'identifiant du client dans le système central du Partenaire. La gestion de l'Id client est à définir localement par les partenaires du bassin d'interopérabilité.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Adresse" type="InterBOB:t_AdressePostale" minOccurs="0"/>
-			<xs:element name="AdresseTravail" type="InterBOB:t_AdressePostale" minOccurs="0"/>
 			<xs:element name="PartenaireReferent" type="InterBOB:t_OrganisationEnregistree" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Permet d'identifier le partenaire ayant enregistre le dossier du client.</xs:documentation>
