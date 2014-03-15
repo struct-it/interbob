@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema targetNamespace="urn:Glossary_V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:Glossary="urn:Glossary_V1">
+	<xs:complexType name="elementListType">
+		<xs:sequence>
+			<xs:element name="element" type="Glossary:elementType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="elementType">
+		<xs:sequence>
+			<xs:element name="usage" type="Glossary:elementUsageEnumType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="desc" type="xs:anyType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute name="name" use="required" type="xs:string"/>
+		<xs:attribute name="parent" use="required" type="xs:string"/>
+		<xs:attribute name="root" use="required" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="elements" type="Glossary:elementListType"/>
+	<xs:simpleType name="elementUsageEnumType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Conditionnel"/>
+			<xs:enumeration value="Obligatoire"/>
+			<xs:enumeration value="Obsolescent"/>
+			<xs:enumeration value="Optionnel"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
