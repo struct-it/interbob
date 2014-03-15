@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<elements>
+<?xml version="1.0" encoding="UTF-8"?>
+<Glossary:elements xsi:schemaLocation="urn:Glossary_V1 INTERBOB_Glossary.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Glossary="urn:Glossary_V1">
 	<!-- Entete XML -->
 	<element name="xsi:schemaLocation" parent="" root="">
 		<usage>Obligatoire</usage>
@@ -14,15 +14,19 @@
 		<usage>Obligatoire</usage>
 		<desc>Caractéristiques du partenaire émetteur</desc>
 	</element>
-	<element name="IdPartenaire" parent="CorrespondantEmetteur" root="">
-		<usage>Obligatoire</usage>
-		<desc>Identifiant du partenaire émetteur</desc>
+	<element name="Nom" parent="CorrespondantEmetteur" root="">
+		<usage>Obsolescent</usage>
+		<desc>Nom du partenaire émetteur</desc>
 	</element>
-	<element name="CodeBassin" parent="CorrespondantEmetteur" root="">
+	<element name="IdPartenaire" parent="" root="">
 		<usage>Obligatoire</usage>
-		<desc>Code du bassin d'interopérabilité du partenaire émetteur</desc>
+		<desc>Identifiant du partenaire</desc>
 	</element>
-	<element name="CodePays" parent="CorrespondantEmetteur" root="">
+	<element name="CodeBassin" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Code du bassin d'interopérabilité du partenaire</desc>
+	</element>
+	<element name="CodePays" parent="" root="">
 		<usage>Conditionnel</usage>
 		<desc>
 			A utiliser obligatoirement si les échanges peuvent être réalisés dans un contexte 
@@ -33,20 +37,9 @@
 		<usage>Obligatoire</usage>
 		<desc>Caractéristiques du partenaire émetteur</desc>
 	</element>
-	<element name="IdPartenaire" parent="CorrespondantDestinataire" root="">
-		<usage>Obligatoire</usage>
-		<desc>Identifiant du partenaire destinataire</desc>
-	</element>
-	<element name="CodeBassin" parent="CorrespondantDestinataire" root="">
-		<usage>Obligatoire</usage>
-		<desc>Code du bassin d'interopérabilité du partenaire destinataire</desc>
-	</element>
-	<element name="CodePays" parent="CorrespondantDestinataire" root="">
-		<usage>Conditionnel</usage>
-		<desc>
-			A utiliser obligatoirement si les échanges peuvent être réalisés dans un contexte 
-			impliquant plusieurs pays.
-		</desc>
+	<element name="Nom" parent="CorrespondantDestinataire" root="">
+		<usage>Obsolescent</usage>
+		<desc>Nom du partenaire destinataire</desc>
 	</element>
 	<element name="FormatMessage" parent="" root="">
 		<usage>Obligatoire</usage>
@@ -84,7 +77,6 @@
 	</element>
 	<!-- IBLSLN -->
 	<element name="IBLSLN:MajListeSecurite" parent="" root="">
-		<usage/>
 		<desc>Demande d'interdiction d’une application transport ou d'un billet sans contact, 
 			qui sera placé dans une liste d'interdiction de titres de transport</desc>
 	</element>
@@ -147,17 +139,17 @@
 		<usage>Obligatoire</usage>
 		<desc>Caractéristiques de l'application transport ou du Billet Sans Contact</desc>
 	</element>
-	<element name="AID" parent="ApplicationInstallee" root="">
+	<element name="AID" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>Identification de l’application.<br/>
 			99-502 pour le transport. Autres référentiels sinon.
 		</desc>
 	</element>
-	<element name="IdApplicationInstallee" parent="ApplicationInstallee" root="">
+	<element name="IdApplicationInstallee" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>Numéro de série de l'application</desc>
 	</element>
-	<element name="MatriceApplicationEnregistree" parent="ApplicationInstallee" root="">
+	<element name="MatriceApplicationEnregistree" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>Propriétés de la matrice application</desc>
 	</element>
@@ -165,31 +157,19 @@
 		<usage>Obligatoire</usage>
 		<desc>Liste des réseaux sur lesquels la matrice application est acceptée</desc>
 	</element>
-	<element name="CodeBassin" parent="BassinsAcceptation" root="">
-		<usage>Obligatoire</usage>
-		<desc>Code du bassin d'interopérabilité acceptant la matrice application</desc>
-	</element>
-	<element name="FormeContenant" parent="ApplicationInstallee" root="">
+	<element name="FormeContenant" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>Permet d’identifier la forme physique du contenant de l’application transport : 
 			carte, billet, carte SIM, carte SD, clé USB, …
 		</desc>
 	</element>
-	<element name="StructureApplication" parent="ApplicationInstallee" root="">
+	<element name="StructureApplication" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>Structure de l’application : GTML, Tango, CD97-2, Triangle n, …</desc>
 	</element>
-	<element name="Distributeur" parent="ApplicationInstallee" root="">
+	<element name="Distributeur" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>Identification du partenaire émetteur de l’application</desc>
-	</element>
-	<element name="IdPartenaire" parent="Distributeur" root="">
-		<usage>Obligatoire</usage>
-		<desc>Identifiant du partenaire distributeur</desc>
-	</element>
-	<element name="CodeBassin" parent="Distributeur" root="">
-		<usage>Obligatoire</usage>
-		<desc>Code du bassin d'interopérabilité du partenaire distributeur</desc>
 	</element>
 	<element name="DateHeureFinValidite" parent="ApplicationInstallee" root="">
 		<usage>Conditionnel</usage>
@@ -213,7 +193,6 @@
 	</element>
 	<!-- IBCS__ -->
 	<element name="IBCS:CompteRenduSecurite" parent="" root="">
-		<usage/>
 		<desc>Compte-rendu de l’invalidation par un équipement d’une application transport ou 
 			d'un billet sans contact qui était placé dans la liste d’interdiction</desc>
 	</element>
@@ -261,17 +240,8 @@
 		<usage>Obligatoire</usage>
 		<desc>Partenaire du bassin d'interopérabilité exploitant l'équipement</desc>
 	</element>
-	<element name="IdPartenaire" parent="ExploitantEquipement" root="">
-		<usage>Obligatoire</usage>
-		<desc>Identifiant du partenaire du bassin d'interopérabilité</desc>
-	</element>
-	<element name="CodeBassin" parent="ExploitantEquipement" root="">
-		<usage>Obligatoire</usage>
-		<desc>Code du bassin d'interopérabilité</desc>
-	</element>
 	<!-- IBCSST -->
 	<element name="IBCSST:CompteRenduSecurite" parent="" root="">
-		<usage/>
 		<desc>Ce message permet à un réseau d’informer ses partenaires qu’il a effectivement suspendu un titre 
 			qui était placé sur la liste de suspension : il constitue le compte-rendu de la suspension par un équipement.</desc>
 	</element>
@@ -291,21 +261,6 @@
 		<usage>Obligatoire</usage>
 		<desc>Partenaire propriétaire du produit</desc>
 	</element>
-	<element name="IdPartenaire" parent="ProprietaireProduit" root="">
-		<usage>Obligatoire</usage>
-		<desc>Identifiant du partenaire propriétaire</desc>
-	</element>
-	<element name="CodeBassin" parent="ProprietaireProduit" root="">
-		<usage>Obligatoire</usage>
-		<desc>Code du bassin d'interopérabilité du partenaire propriétaire</desc>
-	</element>
-	<element name="CodePays" parent="ProprietaireProduit" root="">
-		<usage>Conditionnel</usage>
-		<desc>
-			A utiliser obligatoirement si les échanges peuvent être réalisés dans un contexte 
-			impliquant plusieurs pays.
-		</desc>
-	</element>
 	<element name="IdProduit" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>Code du produit</desc>
@@ -317,21 +272,6 @@
 	<element name="ExploitantVente" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>Partenaire ayant réalisé la vente du produit</desc>
-	</element>
-	<element name="IdPartenaire" parent="ExploitantVente" root="">
-		<usage>Obligatoire</usage>
-		<desc>Identifiant du partenaire ayant réalisé la vente</desc>
-	</element>
-	<element name="CodeBassin" parent="ExploitantVente" root="">
-		<usage>Obligatoire</usage>
-		<desc>Code du bassin d'interopérabilité du partenaire ayant réalisé la vente</desc>
-	</element>
-	<element name="CodePays" parent="ExploitantVente" root="">
-		<usage>Conditionnel</usage>
-		<desc>
-			A utiliser obligatoirement si les échanges peuvent être réalisés dans un contexte 
-			impliquant plusieurs pays.
-		</desc>
 	</element>
 	<element name="IdProduitInstalle" parent="" root="">
 		<usage>Conditionnel</usage>
@@ -361,7 +301,7 @@
 	</element>
 	<element name="ContratSupport" parent="" root="">
 		<usage>Optionnel</usage>
-		<desc>Numéro de série du support sur lequel l’opération est réalisée.</desc>
+		<desc>Contrat entre le distributeur de l'application et le client.</desc>
 	</element>
 	<element name="ProfilCommercialContrat" parent="" root="">
 		<usage>Optionnel</usage>
@@ -375,24 +315,8 @@
 		<usage>Obligatoire</usage>
 		<desc>Partenaire ayant délivré le support, vers qui le client se tournera en cas de dysfonctionnement.</desc>
 	</element>
-	<element name="IdPartenaire" parent="EmetteurSupportEnregistre" root="">
-		<usage>Obligatoire</usage>
-		<desc>Identifiant du partenaire ayant délivré le support</desc>
-	</element>
-	<element name="CodeBassin" parent="EmetteurSupportEnregistre" root="">
-		<usage>Obligatoire</usage>
-		<desc>Code du bassin d'interopérabilité du partenaire ayant délivré le support</desc>
-	</element>
-	<element name="CodePays" parent="EmetteurSupportEnregistre" root="">
-		<usage>Conditionnel</usage>
-		<desc>
-			A utiliser obligatoirement si les échanges peuvent être réalisés dans un contexte 
-			impliquant plusieurs pays.
-		</desc>
-	</element>
 	<!-- IBLSRC -->
 	<element name="IBLSRC:MajListeSecurite" parent="" root="">
-		<usage/>
 		<desc>Ce message est envoyé en réponse à une demande d'informations de compte client.</desc>
 	</element>
 	<element name="ListeSecurite" parent="IBLSRC:MajListeSecurite" root="">
@@ -416,17 +340,16 @@
 		<usage>Obligatoire</usage>
 		<desc>Entrée de la liste de type "Données client"</desc>
 	</element>
-	<element name="ClientDetenteur" parent="" root="">
+	<element name="ClientDetenteur" parent="EntreeClient" root="">
 		<usage>Obligatoire</usage>
 		<desc>Données du client</desc>
 	</element>
-	<element name="Nom" parent="" root="">
+	<element name="Nom" parent="ClientDetenteur" root="">
 		<usage>Obligatoire</usage>
 		<desc>Nom du client</desc>
 	</element>
 	<!-- IBLSSC -->
 	<element name="IBLSSC:MajListeSecurite" parent="" root="">
-		<usage/>
 		<desc>Demande de suppression de compte client.</desc>
 	</element>
 	<element name="ListeSecurite" parent="IBLSSC:MajListeSecurite" root="">
@@ -439,7 +362,6 @@
 	</element>
 	<!-- IBUT -->
 	<element name="IBUT:MessageUtilisations" parent="" root="">
-		<usage/>
 		<desc>Information concernant l'usage d'un titre de transport.</desc>
 	</element>
 	<element name="UtilisationProduitInstalle" parent="" root="">
@@ -603,7 +525,6 @@
 	</element>
 	<!-- IBLSDC -->
 	<element name="IBLSDC:MajListeSecurite" parent="" root="">
-		<usage/>
 		<desc>Demande d’informations « Compte » (client, caractéristiques détaillées), sur la base d’une application transport.</desc>
 	</element>
 	<element name="ListeSecurite" parent="IBLSDC:MajListeSecurite" root="">
@@ -625,7 +546,6 @@
 	</element>
 	<!-- IBLSST -->
 	<element name="IBLSST:MajListeSecurite" parent="" root="">
-		<usage/>
 		<desc>Demande de suspension d’un titre, qui sera réalisée au travers d’une action sur l’application transport ou non.</desc>
 	</element>
 	<element name="ListeSecurite" parent="IBLSST:MajListeSecurite" root="">
@@ -655,14 +575,28 @@
 		</desc>
 	</element>
 	<element name="DateDebutEffet" parent="EntreeProduitInstalle" root="IBLSST:MajListeSecurite">
-		<usage>Facultatif</usage>
+		<usage>Optionnel</usage>
 		<desc>Date de mise en suspension<br/>
 			Si la date est absente au niveau de l'élément on considère que l’échéance d’effet est : dès que possible
 		</desc>
 	</element>
-
-	<!-- -->
-	<element name="IdOperation" parent="" root="">
+	<!-- IBACDC -->
+	<element name="IBACDC:MessageAcquisitions" parent="" root="">
+		<desc>Informer les partenaires du bassin d'interoperabilité d'une opération de vente d'un titre de transport.</desc>
+	</element>
+	<element name="ElementControleIntegrite" parent="" root="">
+		<usage>Obsolescent</usage>
+		<desc>Assure l'intégrité de la transaction</desc>
+	</element>
+	<element name="ListeAcquisition" parent="IBACDC:MessageAcquisitions" root="">
+		<usage>Obligatoire</usage>
+		<desc>Liste d'opérations de vente</desc>
+	</element>
+	<element name="OperationVente" parent="ListeAcquisition" root="">
+		<usage>Obligatoire</usage>
+		<desc>Opération de vente</desc>
+	</element>
+	<element name="IdOperation" parent="OperationVente" root="">
 		<usage>Conditionnel</usage>
 		<desc>
 			<li>Obligatoire s'il s'agit d'une vente pour télédistribution ou rechargement en différé, et que l'IdProduit n'est pas déterminé au moment de la vente.</li>
@@ -670,7 +604,7 @@
 			<li>Optionnel (facultatif) s'il ne s'agit pas d'une vente pour télédistribution.</li>
 		</desc>
 	</element>
-	<element name="TypeOperationVente" parent="" root="">
+	<element name="TypeOperationVente" parent="OperationVente" root="">
 		<usage>Obligatoire</usage>
 		<desc>
 			<li>1 : Vente (ou primo chargement)</li>
@@ -679,4 +613,437 @@
 			<li>43 : prolongation droit complexe (prolongation = changement de date de fin de validité du droit déjà inscrit sur le support)</li>
 		</desc>
 	</element>
-</elements>
+	<element name="CodeArticle" parent="OperationVente" root="">
+		<usage>Obsolescent</usage>
+		<desc>Code de l'ancien produit</desc>
+	</element>
+	<element name="EtatOperation" parent="OperationVente" root="">
+		<usage>Obligatoire</usage>
+		<desc>Etat de l'opération de vente</desc>
+	</element>
+	<element name="MontantOperation" parent="OperationVente" root="">
+		<usage>Obligatoire</usage>
+		<desc>Montant total réglé par le client, exprimé en centimes de la devise concernée.<br/>
+			Un montant nul sera renseigné avec la valeur « 0 ».
+		</desc>
+	</element>
+	<element name="MoyenPaiementPrincipal" parent="OperationVente" root="">
+		<usage>Obligatoire</usage>
+		<desc>Moyen de paiement utilisé pour régler le plus gros montant</desc>
+	</element>
+	<element name="EquipementAcquisition" parent="OperationVente" root="">
+		<usage>Obligatoire</usage>
+		<desc>Equipement sur lequel porte l'opération de vente</desc>
+	</element>
+	<element name="IdEquipement" parent="EquipementAcquisition" root="">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant de l'équipement</desc>
+	</element>
+	<element name="TypeEquipement" parent="EquipementAcquisition" root="">
+		<usage>Obligatoire</usage>
+		<desc>Type de l'équipement</desc>
+	</element>
+	<element name="IdFournisseurEquipement" parent="EquipementAcquisition" root="">
+		<usage>Obsolescent</usage>
+		<desc>Identifiant du fournisseur de l'équipement</desc>
+	</element>
+	<element name="Nom" parent="IdFournisseurEquipement" root="">
+		<usage>Obsolescent</usage>
+		<desc>Nom du fournisseur de l'équipement</desc>
+	</element>
+	<element name="Referentiel" parent="IdFournisseurEquipement" root="">
+		<usage>Obsolescent</usage>
+		<desc>Référentiel du fournisseur de l'équipement</desc>
+	</element>
+	<element name="IdentifiantDansReferentiel" parent="IdFournisseurEquipement" root="">
+		<usage>Obsolescent</usage>
+		<desc>Référentiel du fournisseur de l'équipement</desc>
+	</element>	
+	<element name="ExploitantEquipement" parent="EquipementAcquisition" root="">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant du partenaire du bassin d'interopérabilité qui a réalisé l'opération de vente</desc>
+	</element>	
+	<element name="Nom" parent="ExploitantEquipement" root="">
+		<usage>Obsolescent</usage>
+		<desc>Nom du partenaire du bassin d'intéropérabilité</desc>
+	</element>	
+	<element name="LieuDistribution" parent="OperationVente" root="">
+		<usage>Obligatoire</usage>
+		<desc>Lieu de distribution associé à l'opération de vente</desc>
+	</element>
+	<element name="IdLocalisation" parent="LieuDistribution" root="">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant de localisation du lieu de distribution</desc>
+	</element>
+	<element name="ReferentielLocalisation" parent="LieuDistribution" root="">
+		<usage>Obligatoire</usage>
+		<desc>Référentiel dans lequel est défini le lieu de distribution</desc>
+	</element>
+	<element name="Sens" parent="LieuDistribution" root="">
+		<usage>Optionnel</usage>
+		<desc>Indique le sens de la ligne associée à l'opération de vente</desc>
+	</element>
+	<element name="Ligne" parent="LieuDistribution" root="">
+		<usage>Optionnel</usage>
+		<desc>Caractéristique de la ligne sur laquelle l'acquisition est effectuée.</desc>
+	</element>
+	<element name="TypeReferentiel" parent="Ligne" root="">
+		<usage>Optionnel</usage>
+		<desc>Permet de définir le référentiel auquel appartient la ligne</desc>
+	</element>
+	<element name="Course" parent="LieuDistribution" root="">
+		<usage>Optionnel</usage>
+		<desc>Permet de définir le parcours de la ligne sur laquelle l'acquisition est effectuée.</desc>
+	</element>
+	<element name="TypeReferentiel" parent="Course" root="">
+		<usage>Optionnel</usage>
+		<desc>Permet de définir le référentiel auquel appartient la course</desc>
+	</element>
+	<element name="IdCourse" parent="Course" root="">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant de la course.</desc>
+	</element>
+	<element name="LibelleLieuDistribution" parent="LieuDistribution" root="">
+		<usage>Obsolescent</usage>
+		<desc>Libellé du lieu où l'acquisition est effectuée.</desc>
+	</element>
+	<element name="VenteEmbarquee" parent="LieuDistribution" root="">
+		<usage>Obligatoire</usage>
+		<desc>Indique si l'acquisition correspond à une vente en embarquée (TRUE) ou non (FALSE).</desc>
+	</element>
+	<element name="Devise" parent="OperationVente" root="">
+		<usage>Optionnel</usage>
+		<desc>Devise du montant total réglé par le client.<br/>
+			Si non utilisée, alors la devise sera considérée comme étant l'euro (EUR).</desc>
+	</element>
+	<element name="ObjetImplique" parent="OperationVente" root="">
+		<usage>Obligatoire</usage>
+		<desc>Objet de l'acquisition.</desc>
+	</element>
+	<element name="Nom" parent="ProprietaireProduit" root="">
+		<usage>Obsolescent</usage>
+		<desc>Nom du partenaire</desc>
+	</element>
+	<element name="Nom" parent="ExploitantVente" root="">
+		<usage>Obsolescent</usage>
+		<desc>Nom du partenaire</desc>
+	</element>
+	<element name="DureeValidite" parent="ContrainteTemporelle" root="">
+		<usage>Optionnel</usage>
+		<desc>Permet de préciser la duree de validité à partir de la première validation dans le cas des titres glissant à la validation.</desc>
+	</element>
+	<element name="FacteurTarifaireDeQualite" parent="ProduitInstalle" root="">
+		<usage>Optionnel</usage>
+		<desc>Permet de définir le niveau de qualité associé au service. Par exemple, 1ère ou 2ème classe.</desc>
+	</element>
+	<element name="PrixDeVenteProduit" parent="ProduitInstalle" root="">
+		<usage>Optionnel</usage>
+		<desc>Prix de vente initial du produit, exprimé en centimes de la devise concernée.</desc>
+	</element>
+	<element name="ContrainteGeographique" parent="ProduitInstalle" root="">
+		<usage>Optionnel</usage>
+		<desc>Contrainte de type géographique du produit.</desc>
+	</element>
+	<element name="ContrainteParcours" parent="ContrainteGeographique" root="">
+		<usage>Optionnel</usage>
+		<desc>Contrainte géographique sur le parcours associé au produit.</desc>
+	</element>
+	<element name="IndicateurContrainteChainage" parent="ContrainteParcours" root="">
+		<usage>Optionnel</usage>
+		<desc>Permet de définir l'ordre d'enchaînement des différents parcours auxquels donne droit le produit.</desc>
+	</element>
+	<element name="PointArretDebut" parent="ContrainteParcours" root="">
+		<usage>Obligatoire</usage>
+		<desc>Point d'arrêt définissant le début du parcours.</desc>
+	</element>
+	<element name="IdPointArret" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant du point d'arrêt.</desc>
+	</element>
+	<element name="TypeReferentiel" parent="PointArretDebut" root="">
+		<usage>Obligatoire</usage>
+		<desc>Référentiel du point d'arrêt.</desc>
+	</element>
+	<element name="PointArretFin" parent="ContrainteParcours" root="">
+		<usage>Obligatoire</usage>
+		<desc>Point d'arrêt définissant la fin du parcours.</desc>
+	</element>
+	<element name="TypeReferentiel" parent="PointArretFin" root="">
+		<usage>Obligatoire</usage>
+		<desc>Référentiel du point d'arrêt.</desc>
+	</element>
+	<element name="ContrainteZonale" parent="ContrainteGeographique" root="">
+		<usage>Optionnel</usage>
+		<desc>Contrainte géographique sur la zone tarifaire associée au produit.</desc>
+	</element>
+	<element name="IndicateurContrainteChainage" parent="ContrainteZonale" root="">
+		<usage>Optionnel</usage>
+		<desc>Permet de définir l'ordre d'enchaînement des différentes zones tarifaires auxquelles donne droit le produit.</desc>
+	</element>
+	<element name="ZoneTarifaire" parent="ContrainteZonale" root="">
+		<usage>Obligatoire</usage>
+		<desc>Caractéristique d'une zone tarifaire auxquelle donne droit le produit.</desc>
+	</element>
+	<element name="IdZoneTarifaire" parent="ZoneTarifaire" root="">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant de la zone tarifaire.</desc>
+	</element>
+	<element name="TypeReferentiel" parent="ZoneTarifaire" root="">
+		<usage>Obligatoire</usage>
+		<desc>Référentiel de la zone tarifaire.</desc>
+	</element>
+	<element name="ApplicationUtilisee" parent="ProduitInstalle" root="">
+		<usage>Conditionnel</usage>
+		<desc>A renseigner si le produit est hébergé par une application.</desc>
+	</element>
+	<element name="Nom" parent="Distributeur" root="">
+		<usage>Obsolescent</usage>
+		<desc>Nom du partenaire</desc>
+	</element>
+	<element name="IdMatriceApplication" parent="MatriceApplicationEnregistree" root="">
+		<usage>Optionnel</usage>
+		<desc>Identifiant de la matrice d'application.</desc>
+	</element>
+	<element name="TypeApplication" parent="MatriceApplicationEnregistree" root="">
+		<usage>Optionnel</usage>
+		<desc>Indique le type d'application (transport ou autre...)</desc>
+	</element>
+	<element name="Proprietaire" parent="MatriceApplicationEnregistree" root="">
+		<usage>Optionnel</usage>
+		<desc>Partenaire propriétaire de la matrice d'application</desc>
+	</element>
+	<element name="DateHeureFinValidite" parent="ApplicationUtilisee" root="">
+		<usage>Conditionnel</usage>
+		<desc>Date de fin de validité de l’application<br/>
+			Si l’exploitant a l’information, il la transmet obligatoirement.</desc>
+	</element>
+	<element name="Nom" parent="Proprietaire" root="">
+		<usage>Obsolescent</usage>
+		<desc>Nom du partenaire</desc>
+	</element>
+	<element name="CategorieSupport" parent="SupportUtilise" root="">
+		<usage>Obsolescent</usage>
+		<desc>Catégorie du support (nominatif, anonyme)</desc>
+	</element>
+	<element name="DateHeureEmission" parent="SupportUtilise" root="">
+		<usage>Optionnel</usage>
+		<desc>Date et heure de l'émission du support</desc>
+	</element>
+	<element name="DateHeureFinValidite" parent="SupportUtilise" root="">
+		<usage>Optionnel</usage>
+		<desc>Date de fin de validité du support.</desc>
+	</element>
+	<element name="ContratProduit" parent="ProduitInstalle" root="">
+		<usage>Optionnel</usage>
+		<desc>Contrat client associé au produit.</desc>
+	</element>
+	<element name="ClientDetenteur" parent="ContratProduit" root="">
+		<usage>Optionnel</usage>
+		<desc>Données du client détenteur du contrat</desc>
+	</element>
+	<element name="TypeCommercialContrat" parent="" root="">
+		<usage>Optionnel</usage>
+		<desc>Permet de connaitre la gamme commercial du contrat avec le client.</desc>
+	</element>
+	<element name="IdContrat" parent="" root="">
+		<usage>Optionnel</usage>
+		<desc>Identifiant du contrat avec le client.</desc>
+	</element>
+	<element name="DateDebutValidite" parent="ProfilCommercialContrat" root="">
+		<usage>Optionnel</usage>
+		<desc>Date de début de validité du profil</desc>
+	</element>
+	<element name="DateFinValidite" parent="ProfilCommercialContrat" root="">
+		<usage>Optionnel</usage>
+		<desc>Date de fin de validité du profil</desc>
+	</element>
+	<element name="DonneeComplementaire" parent="ProfilCommercialContrat" root="">
+		<usage>Optionnel</usage>
+		<desc>Données complémentaires du profil</desc>
+	</element>
+	<element name="Proprietaire" parent="ProfilCommercialContrat" root="">
+		<usage>Optionnel</usage>
+		<desc>Partenaire du bassin d'interopérabilité propriétaire du profil</desc>
+	</element>
+	<element name="ClientDetenteur" parent="ContratSupport" root="">
+		<usage>Optionnel</usage>
+		<desc>Données du client détenteur du contrat</desc>
+	</element>
+	<element name="IdClient" parent="ClientDetenteur" root="">
+		<usage>Optionnel</usage>
+		<desc>Identifiant du client</desc>
+	</element>
+	<element name="Prenom" parent="ClientDetenteur" root="">
+		<usage>Optionnel</usage>
+		<desc>Prénom du client</desc>
+	</element>
+	<element name="Titre" parent="ClientDetenteur" root="">
+		<usage>Optionnel</usage>
+		<desc>Titre du client: M, Mme, Mlle</desc>
+	</element>
+	<element name="DateNaissance" parent="ClientDetenteur" root="">
+		<usage>Optionnel</usage>
+		<desc>Date de naissance du client.</desc>
+	</element>
+	<element name="TelephonePrive" parent="ClientDetenteur" root="">
+		<usage>Optionnel</usage>
+		<desc>Numéro de téléphone privé du client.</desc>
+	</element>
+	<element name="TelephoneTravail" parent="ClientDetenteur" root="">
+		<usage>Optionnel</usage>
+		<desc>Numéro de téléphone professionnel du client.</desc>
+	</element>
+	<element name="Adresse" parent="ClientDetenteur" root="">
+		<usage>Optionnel</usage>
+		<desc>Addresse postale du client.</desc>
+	</element>
+	<element name="NumVoie" parent="" root="">
+		<usage>Optionnel</usage>
+		<desc>Numéro de voie.</desc>
+	</element>
+	<element name="TypeVoie" parent="" root="">
+		<usage>Optionnel</usage>
+		<desc>Type de voie.</desc>
+	</element>
+	<element name="LibelleVoie" parent="" root="">
+		<usage>Optionnel</usage>
+		<desc>Nom de voie.</desc>
+	</element>
+	<element name="LigneAdresse" parent="" root="">
+		<usage>Optionnel</usage>
+		<desc>Adresse postale complémentaire.</desc>
+	</element>
+	<element name="NumLigne" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Numéro de ligne</desc>
+	</element>
+	<element name="TexteLigne" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Texte de la ligne</desc>
+	</element>
+	<element name="CodePostal" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Code postal de l'adresse</desc>
+	</element>
+	<element name="AdresseTravail" parent="ClientDetenteur" root="">
+		<usage>Optionnel</usage>
+		<desc>Addresse postale professionnelle du client.</desc>
+	</element>
+	<element name="CommunicationDonneesPersonnelles" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Indique si le client autorise la communication de ses données personnelles à un tiers 
+			(TRUE) ou non (FALSE)</desc>
+	</element>
+	<element name="DateSaisie" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Dernière date de saisie des données personnelles du client</desc>
+	</element>
+	<element name="ProfilClient" parent="" root="">
+		<usage>Optionnel</usage>
+		<desc>Profil socio-professionnel du client</desc>
+	</element>
+	<element name="CodeProfil" parent="ProfilClient" root="">
+		<usage>Obligatoire</usage>
+		<desc>Code du profil</desc>
+	</element>
+	<element name="DateDebutValiditeProfil" parent="ProfilClient" root="">
+		<usage>Optionnel</usage>
+		<desc>Date de début de validité du profil</desc>
+	</element>
+	<element name="DateFinValiditeProfil" parent="ProfilClient" root="">
+		<usage>Optionnel</usage>
+		<desc>Date de fin de validité du profil</desc>
+	</element>
+	<element name="CategorieSociale" parent="" root="">
+		<usage>Optionnel</usage>
+		<desc>Catégorie sociale</desc>
+	</element>
+	<element name="NiveaudEtudes" parent="" root="">
+		<usage>Optionnel</usage>
+		<desc>Niveau d'études</desc>
+	</element>
+	<element name="Profession" parent="" root="">
+		<usage>Optionnel</usage>
+		<desc>Profession</desc>
+	</element>
+	<element name="Sexe" parent="" root="">
+		<usage>Optionnel</usage>
+		<desc>Sexe</desc>
+	</element>
+	<element name="TranchedAge" parent="" root="">
+		<usage>Optionnel</usage>
+		<desc>Tranche d'age</desc>
+	</element>
+	<element name="PartenaireReferent" parent="" root="">
+		<usage>Optionnel</usage>
+		<desc>Partenaire du bassin d'intéropérabilité ayant enregistré le client.</desc>
+	</element>	
+	<element name="Nom" parent="PartenaireReferent" root="">
+		<usage>Obsolescent</usage>
+		<desc>Nom du partenaire du bassin d'intéropérabilité</desc>
+	</element>	
+	<element name="ContrainteLignes" parent="ProduitInstalle" root="">
+		<usage>Optionnel</usage>
+		<desc>Contrainte concernant la ligne associée au produit.</desc>
+	</element>	
+	<element name="Transporteur" parent="ContrainteLignes" root="">
+		<usage>Obligatoire</usage>
+		<desc>Permet d'identifier le partenaire qui organise ou opère la ligne.</desc>
+	</element>	
+	<element name="Nom" parent="Transporteur" root="">
+		<usage>Obsolescent</usage>
+		<desc>Nom du partenaire du bassin d'intéropérabilité</desc>
+	</element>	
+	<element name="LignePermise" parent="ContrainteLignes" root="">
+		<usage>Obligatoire</usage>
+		<desc>Ligne sur laquelle le produit est autorisée.</desc>
+	</element>	
+	<element name="LigneInterdite" parent="ContrainteLignes" root="">
+		<usage>Obligatoire</usage>
+		<desc>Ligne sur laquelle le produit est interdit.</desc>
+	</element>	
+	<element name="TypeReferentiel" parent="LignePermise" root="">
+		<usage>Obligatoire</usage>
+		<desc>Référentiel géographique associé à la ligne.</desc>
+	</element>	
+	<element name="ContrainteGroupesLignes" parent="ProduitInstalle" root="">
+		<usage>Optionnel</usage>
+		<desc>Contrainte concernant un groupe de ligne associée au produit.</desc>
+	</element>	
+	<element name="Transporteur" parent="ContrainteGroupesLignes" root="">
+		<usage>Obligatoire</usage>
+		<desc>Permet d'identifier le partenaire qui organise ou opère la ligne.</desc>
+	</element>	
+	<element name="GroupeDeLignesPermisPour" parent="ContrainteGroupesLignes" root="">
+		<usage>Obligatoire</usage>
+		<desc>Groupe de lignes sur lequel le produit est autorisée.</desc>
+	</element>	
+	<element name="Nom" parent="GroupeDeLignesPermisPour" root="">
+		<usage>Optionnel</usage>
+		<desc>Nom du groupe de lignes.</desc>
+	</element>	
+	<element name="TypeReferentiel" parent="GroupeDeLignesPermisPour" root="">
+		<usage>Obligatoire</usage>
+		<desc>Référentiel géographique associé au groupe de lignes.</desc>
+	</element>	
+	<element name="IdGroupeDeLignes" parent="GroupeDeLignesPermisPour" root="">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant du groupe de lignes.</desc>
+	</element>	
+	<element name="LigneInterditePour" parent="ContrainteGroupesLignes" root="">
+		<usage>Optionnel</usage>
+		<desc>Ligne sur lequel le produit est interdit.</desc>
+	</element>	
+	<element name="TypeReferentiel" parent="LigneInterditePour" root="">
+		<usage>Obligatoire</usage>
+		<desc>Référentiel géographique associé à la ligne.</desc>
+	</element>	
+	<element name="ContrainteModale" parent="ProduitInstalle" root="">
+		<usage>Optionnel</usage>
+		<desc>Contrainte sur le mode de transport associé au produit.</desc>
+	</element>	
+	<element name="AncienObjetImplique" parent="OperationVente" root="">
+		<usage>Optionnel</usage>
+		<desc>Ancien objet de l'acquisition.</desc>
+	</element>	
+</Glossary:elements>
