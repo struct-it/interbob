@@ -6,13 +6,13 @@
 	<DateHeure>2001-12-17T09:30:47Z</DateHeure>
 	<ElementControleIntegrite></ElementControleIntegrite>
 	<CorrespondantEmetteur>
-		<Nom>Emetteur</Nom>
+		<Nom></Nom>
 		<IdPartenaire>24</IdPartenaire>
 		<CodePays>250</CodePays>
 		<CodeBassin>502</CodeBassin>
 	</CorrespondantEmetteur>
 	<CorrespondantDestinataire>
-		<Nom>normalizedString</Nom>
+		<Nom></Nom>
 		<IdPartenaire>110</IdPartenaire>
 		<CodePays>250</CodePays>
 		<CodeBassin>502</CodeBassin>
@@ -90,6 +90,15 @@
 						<Solde>9</Solde>
 					</SoldeCompteur>
 					<ContrainteTemporelle>
+						<TrancheCalendaire>
+							<Dates>
+								<JourDebut>0001-01-01</JourDebut>
+								<JourFin>0001-01-01</JourFin>
+								<HeureDebut>00:00:00</HeureDebut>
+								<HeureFin>00:00:00</HeureFin>
+							</Dates>
+							<Autorise>true</Autorise>
+						</TrancheCalendaire>
 						<DureeValidite>P1Y2M3DT10H30M</DureeValidite>
 					</ContrainteTemporelle>
 					<FacteurTarifaireDeQualite>1</FacteurTarifaireDeQualite>
@@ -299,6 +308,18 @@
 							<IdLigne>13</IdLigne>
 						</LignePermise>
 					</ContrainteLignes>
+					<ContrainteLignes>
+						<Transporteur>
+							<Nom>Transporteur1</Nom>
+							<IdPartenaire>165</IdPartenaire>
+							<CodePays>250</CodePays>
+							<CodeBassin>502</CodeBassin>
+						</Transporteur>
+						<LigneInterdite>
+							<TypeReferentiel>6003</TypeReferentiel>
+							<IdLigne>60</IdLigne>
+						</LigneInterdite>
+					</ContrainteLignes>
 					<ContrainteGroupesLignes>
 						<Transporteur>
 							<Nom>Transporteur2</Nom>
@@ -314,6 +335,10 @@
 						<LigneInterditePour>
 							<TypeReferentiel>6002</TypeReferentiel>
 							<IdLigne>1</IdLigne>
+						</LigneInterditePour>
+						<LigneInterditePour>
+							<TypeReferentiel>6003</TypeReferentiel>
+							<IdLigne>43</IdLigne>
 						</LigneInterditePour>
 					</ContrainteGroupesLignes>
 					<ContrainteModale>
@@ -347,6 +372,13 @@
 						<Solde>9</Solde>
 					</SoldeCompteur>
 					<ContrainteTemporelle>
+						<TrancheCalendaire>
+							<Dates>
+								<JourDebut>0001-01-01</JourDebut>
+								<JourFin>0001-01-01</JourFin>
+							</Dates>
+							<Autorise>false</Autorise>
+						</TrancheCalendaire>
 						<DureeValidite>P1Y2M3DT10H30M</DureeValidite>
 					</ContrainteTemporelle>
 					<FacteurTarifaireDeQualite>1</FacteurTarifaireDeQualite>
