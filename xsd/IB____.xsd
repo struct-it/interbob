@@ -25,6 +25,11 @@
 	</xs:complexType>
 	<xs:complexType name="t_ObjetAbstrait">
 		<xs:sequence>
+			<xs:element name="Description" type="xs:anyType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Description de l'objet abstrait</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="ApplicationUtilisee" type="InterBOB:t_Application" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
