@@ -135,7 +135,7 @@
 			dès que possible
 		</desc>
 	</element>
-	<element name="ApplicationInstallee" parent="EntreeApplicationInstallee" root="">
+	<element name="ApplicationInstallee" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>Caractéristiques de l'application transport ou du Billet Sans Contact</desc>
 	</element>
@@ -436,8 +436,15 @@
 		</desc>
 	</element>
 	<element name="TrancheCalendaire" parent="" root="">
-		<usage>Obligatoire</usage>
-		<desc>Contrainte temporelle de type "tranche calendaire"</desc>
+		<usage>Conditionnel</usage>
+		<desc>Contrainte temporelle de type "tranche calendaire"<br/>
+			Une contrainte temporelle peut être au choix :
+			<ul>
+			<li>une tranche calendaire</li>
+			<li>une tranche horaire</li>
+			<li>une journée tarifaire</li>
+			</ul>
+		</desc>
 	</element>
 	<element name="Dates" parent="" root="">
 		<usage>Obligatoire</usage>
@@ -461,7 +468,7 @@
 	</element>
 	<element name="Autorise" parent="" root="">
 		<usage>Obligatoire</usage>
-		<desc>Indique si le produit utilisé est autorisé pendant la "tranche calendaire" ou non</desc>
+		<desc>Indique si le produit utilisé est autorisé pendant la contrainte temporelle ou non</desc>
 	</element>
 	<element name="AccesValide" parent="" root="">
 		<usage>Conditionnel</usage>
@@ -588,9 +595,9 @@
 		<usage>Obsolescent</usage>
 		<desc>Assure l'intégrité de la transaction</desc>
 	</element>
-	<element name="ListeAcquisition" parent="IBACDC:MessageAcquisitions" root="">
+	<element name="ListeAcquisition" parent="" root="">
 		<usage>Obligatoire</usage>
-		<desc>Liste d'opérations de vente</desc>
+		<desc>Liste d'opérations</desc>
 	</element>
 	<element name="OperationVente" parent="ListeAcquisition" root="">
 		<usage>Obligatoire</usage>
@@ -821,7 +828,7 @@
 		<usage>Obsolescent</usage>
 		<desc>Nom du partenaire</desc>
 	</element>
-	<element name="CategorieSupport" parent="SupportUtilise" root="">
+	<element name="CategorieSupport" parent="" root="">
 		<usage>Obsolescent</usage>
 		<desc>Catégorie du support (nominatif, anonyme)</desc>
 	</element>
@@ -1046,4 +1053,90 @@
 		<usage>Optionnel</usage>
 		<desc>Ancien objet de l'acquisition.</desc>
 	</element>	
+	<element name="Objet" parent="ObjetImplique" root="">
+		<usage>Obligatoire</usage>
+		<desc>Objet abstrait.</desc>
+	</element>	
+	<element name="Description" parent="Objet" root="">
+		<usage>Obligatoire</usage>
+		<desc>Description de l'objet abstrait.</desc>
+	</element>
+	<element name="ApplicationUtilisee" parent="Objet" root="">
+		<usage>Obligatoire</usage>
+		<desc>Application hébergeant l'objet abstrait.</desc>
+	</element>
+	<!-- IBACDA -->
+	<element name="IBACDA:MessageAcquisitions" parent="" root="">
+		<desc>Informer les partenaires du bassin d'interoperabilité d'une opération de vente d'une application de transport.</desc>
+	</element>
+	<!-- IBACDP -->
+	<element name="IBACDP:MessageAcquisitions" parent="" root="">
+		<desc>Informer les partenaires du bassin d'interoperabilité d'une opération de reconstitution ou de renouvellement d'un profil client.</desc>
+	</element>
+	<element name="TrancheHoraire" parent="" root="">
+		<usage>Conditionnel</usage>
+		<desc>Contrainte temporelle de type "tranche horaire"<br/>
+			Une contrainte temporelle peut être au choix :
+			<ul>
+			<li>une tranche calendaire</li>
+			<li>une tranche horaire</li>
+			<li>une journée tarifaire</li>
+			</ul>
+		</desc>
+	</element>
+	<element name="HeureDeDebut" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Heure de début de la tranche horaire.</desc>
+	</element>
+	<element name="HeureDeFin" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Heure de fin de la tranche horaire.</desc>
+	</element>
+	<element name="JourTypeTarifaire" parent="" root="">
+		<usage>Conditionnel</usage>
+		<desc>Contrainte temporelle de type "journée tarifaire"<br/>
+			Une contrainte temporelle peut être au choix :
+			<ul>
+			<li>une tranche calendaire</li>
+			<li>une tranche horaire</li>
+			<li>une journée tarifaire</li>
+			</ul>
+		</desc>
+	</element>
+	<element name="Nom" parent="JourTypeTarifaire" root="">
+		<usage>Obsolescent</usage>
+		<desc>Nom de la journée tarifaire.</desc>
+	</element>
+	<element name="IdJourTypeTarifaire" parent="JourTypeTarifaire" root="">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant de la journée tarifaire.</desc>
+	</element>
+	<element name="IdCalendrier" parent="JourTypeTarifaire" root="">
+		<usage>Optionnel</usage>
+		<desc>Identifiant du calendrier associé à la journée tarifaire.</desc>
+	</element>
+	<!-- IBACBC -->
+	<element name="IBACBC:MessageAcquisitions" parent="" root="">
+		<desc>Informer les partenaires du bassin d'interoperabilité d'une opération de remboursement d'un titre de transport.</desc>
+	</element>
+	<!-- IBACBP -->
+	<element name="IBACBP:MessageAcquisitions" parent="" root="">
+		<desc>Informer les partenaires du bassin d'interoperabilité d'une opération de remboursement d'un profil client.</desc>
+	</element>
+	<!-- IBACBA -->
+	<element name="IBACBA:MessageAcquisitions" parent="" root="">
+		<desc>Informer les partenaires du bassin d'interoperabilité d'une opération de remboursement d'une application transport.</desc>
+	</element>
+	<!-- IBACCC -->
+	<element name="IBACCC:MessageAcquisitions" parent="" root="">
+		<desc>Informer les partenaires du bassin d'interoperabilité d'une opération de reconstitution ou de renouvellement d'un titre de transport.</desc>
+	</element>
+	<!-- IBACCP -->
+	<element name="IBACCP:MessageAcquisitions" parent="" root="">
+		<desc>Informer les partenaires du bassin d'interoperabilité d'une opération de reconstitution ou de renouvellement d'un profil client.</desc>
+	</element>
+	<!-- IBACCA -->
+	<element name="IBACCA:MessageAcquisitions" parent="" root="">
+		<desc>Informer les partenaires du bassin d'interoperabilité d'une opération de reconstitution ou de renouvellement d'une application transport.</desc>
+	</element>
 </Glossary:elements>
