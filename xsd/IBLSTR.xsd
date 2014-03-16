@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<xs:schema targetNamespace="urn:IBLTTR_V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:IBLTTR="urn:IBLTTR_V1" xmlns:InterBOB="urn:InterBOB_V1" xmlns:IB="urn:IB_V1">
+<xs:schema targetNamespace="urn:IBLSTR_V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:IBLSTR="urn:IBLSTR_V1" xmlns:IB="urn:IB_V1" xmlns:InterBOB="urn:InterBOB_V1">
 	<xs:import namespace="urn:IB_V1" schemaLocation="IB____.xsd"/>
 	<xs:import namespace="urn:InterBOB_V1" schemaLocation="XML_DDR_InterBOB_fr.xsd"/>
 	<xs:complexType name="t_MessageListeSecurite">
 		<xs:complexContent>
 			<xs:extension base="InterBOB:t_Message">
 				<xs:sequence>
-					<xs:element name="ListeSecurite" type="IBLTTR:t_ListeSecurite" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="ListeSecurite" type="IBLSTR:t_ListeSecurite" minOccurs="1" maxOccurs="1"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -15,7 +15,7 @@
 		<xs:complexContent>
 			<xs:extension base="InterBOB:t_ListeAbstrait">
 				<xs:sequence>
-					<xs:element name="EntreeListeSecurite" type="IBLTTR:t_EntreeListeSecurite" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="EntreeListeSecurite" type="IBLSTR:t_EntreeListeSecurite" minOccurs="1" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -25,5 +25,5 @@
 			<xs:element name="EntreeProduitInstalle" type="IB:t_EntreeProduitInstalle" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:element name="MajListeSecurite" type="IBLTTR:t_MessageListeSecurite"/>
+	<xs:element name="MajListeSecurite" type="IBLSTR:t_MessageListeSecurite"/>
 </xs:schema>
