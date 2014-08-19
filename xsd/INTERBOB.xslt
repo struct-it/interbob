@@ -15,7 +15,7 @@
 					<th>Nom</th>
 					<th>Description</th>
 					<th>Utilisation</th>
-					<th>Valeur</th>
+					<th>Exemple de valeur</th>
 				</tr>
 				<xsl:variable name="root" select="name(/*)"/>
 				<xsl:for-each select="//*">
