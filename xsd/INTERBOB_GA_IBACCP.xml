@@ -2,24 +2,23 @@
 <!--Ajout XSLT-->
 <?xml-stylesheet type="text/xsl" href="INTERBOB.xslt"?>
 <!--Sample XML file for INTERBOB GA-->
-<IBACCP:MessageAcquisitions xsi:schemaLocation="urn:IBACCP_V1 IBACCP.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:IBACCP="urn:IBACCP_V1">
-	<DateHeure>2001-12-17T09:30:47Z</DateHeure>
-	<ElementControleIntegrite>String</ElementControleIntegrite>
+<IBACCP:MessageAcquisitions xmlns:IBACCP="urn:IBACCP_V1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:IBACCP_V1 IBACCP.xsd">
+	<DateHeure>2001-12-17T09:30:47+05:00</DateHeure>
 	<CorrespondantEmetteur>
 		<Nom>normalizedString</Nom>
-		<IdPartenaire>1</IdPartenaire>
+		<IdPartenaire>0</IdPartenaire>
 		<CodePays>000</CodePays>
 		<CodeBassin>000</CodeBassin>
 	</CorrespondantEmetteur>
 	<CorrespondantDestinataire>
 		<Nom>normalizedString</Nom>
-		<IdPartenaire>1</IdPartenaire>
+		<IdPartenaire>0</IdPartenaire>
 		<CodePays>000</CodePays>
 		<CodeBassin>000</CodeBassin>
 	</CorrespondantDestinataire>
 	<CorrespondantDestinataire>
 		<Nom>normalizedString</Nom>
-		<IdPartenaire>1</IdPartenaire>
+		<IdPartenaire>0</IdPartenaire>
 		<CodePays>000</CodePays>
 		<CodeBassin>000</CodeBassin>
 	</CorrespondantDestinataire>
@@ -27,21 +26,16 @@
 		<ReferenceNorme>normalizedString</ReferenceNorme>
 		<VersionNorme>normalizedString</VersionNorme>
 	</FormatMessage>
-	<IdMessage>1</IdMessage>
+	<IdMessage>0</IdMessage>
+	<ElementControleIntegrite>String</ElementControleIntegrite>
 	<ListeAcquisition>
 		<OperationVente>
-			<Date>1967-08-13</Date>
-			<Heure>14:20:00.0Z</Heure>
-			<IdOperation>1</IdOperation>
-			<TypeOperationVente>1</TypeOperationVente>
+			<IdOperation>0</IdOperation>
+			<Date>1957-08-13</Date>
+			<Heure>09:30:47+05:00</Heure>
+			<TypeOperationVente>0</TypeOperationVente>
 			<CodeArticle>String</CodeArticle>
-			<ElementControleIntegrite>String</ElementControleIntegrite>
-			<EtatOperation>1</EtatOperation>
-			<MontantOperation>0.0</MontantOperation>
-			<MoyenPaiementPrincipal>1</MoyenPaiementPrincipal>
 			<EquipementAcquisition>
-				<IdEquipement>String</IdEquipement>
-				<TypeEquipement>1</TypeEquipement>
 				<IdFournisseurEquipement>
 					<Nom>String</Nom>
 					<Referentiel>String</Referentiel>
@@ -49,140 +43,242 @@
 				</IdFournisseurEquipement>
 				<ExploitantEquipement>
 					<Nom>normalizedString</Nom>
-					<IdPartenaire>1</IdPartenaire>
+					<IdPartenaire>0</IdPartenaire>
 					<CodePays>000</CodePays>
 					<CodeBassin>000</CodeBassin>
 				</ExploitantEquipement>
+				<IdEquipement>String</IdEquipement>
+				<TypeEquipement>0</TypeEquipement>
 			</EquipementAcquisition>
 			<LieuDistribution>
 				<IdLocalisation>String</IdLocalisation>
-				<ReferentielLocalisation>1</ReferentielLocalisation>
+				<ReferentielLocalisation>0</ReferentielLocalisation>
 				<Sens>String</Sens>
 				<Ligne>
-					<TypeReferentiel>1</TypeReferentiel>
-					<IdLigne>1</IdLigne>
+					<IdLigne>0</IdLigne>
+					<TypeReferentiel>0</TypeReferentiel>
 				</Ligne>
 				<Course>
-					<TypeReferentiel>1</TypeReferentiel>
-					<IdCourse>1</IdCourse>
+					<IdCourse>0</IdCourse>
+					<TypeReferentiel>0</TypeReferentiel>
 				</Course>
 				<LibelleLieuDistribution>String</LibelleLieuDistribution>
 				<VenteEmbarquee>true</VenteEmbarquee>
 			</LieuDistribution>
+			<EtatOperation>0</EtatOperation>
+			<MontantOperation>0</MontantOperation>
 			<Devise>String</Devise>
+			<MoyenPaiementPrincipal>0</MoyenPaiementPrincipal>
+			<ElementControleIntegrite>String</ElementControleIntegrite>
 			<ObjetImplique>
 				<ProduitInstalle>
 					<ReferenceProduit>
 						<ProprietaireProduit>
 							<Nom>normalizedString</Nom>
-							<IdPartenaire>1</IdPartenaire>
+							<IdPartenaire>0</IdPartenaire>
 							<CodePays>000</CodePays>
 							<CodeBassin>000</CodeBassin>
 						</ProprietaireProduit>
-						<IdProduit>1</IdProduit>
+						<IdProduit>0</IdProduit>
 					</ReferenceProduit>
 					<ReferenceProduitInstalle>
 						<ExploitantVente>
 							<Nom>normalizedString</Nom>
-							<IdPartenaire>1</IdPartenaire>
+							<IdPartenaire>0</IdPartenaire>
 							<CodePays>000</CodePays>
 							<CodeBassin>000</CodeBassin>
 						</ExploitantVente>
-						<IdProduitInstalle>1</IdProduitInstalle>
+						<IdProduitInstalle>0</IdProduitInstalle>
 					</ReferenceProduitInstalle>
 					<SoldeCompteur>
-						<IdCompteur>1</IdCompteur>
+						<IdCompteur>0</IdCompteur>
 						<QuantiteOperation>0</QuantiteOperation>
 						<Solde>0</Solde>
 					</SoldeCompteur>
 					<SoldeCompteur>
-						<IdCompteur>1</IdCompteur>
+						<IdCompteur>0</IdCompteur>
 						<QuantiteOperation>0</QuantiteOperation>
 						<Solde>0</Solde>
 					</SoldeCompteur>
 					<ContrainteTemporelle>
 						<TrancheHoraire>
-							<HeureDeDebut>14:20:00.0Z</HeureDeDebut>
-							<HeureDeFin>14:20:00.0Z</HeureDeFin>
+							<HeureDeDebut>09:30:47+05:00</HeureDeDebut>
+							<HeureDeFin>09:30:47+05:00</HeureDeFin>
 							<Autorise>true</Autorise>
 						</TrancheHoraire>
-						<DureeValidite>P1Y2M3DT10H30M</DureeValidite>
+						<DureeValidite>P1Y2M2DT10H30M</DureeValidite>
 					</ContrainteTemporelle>
 					<ContrainteTemporelle>
-						<JourTypeTarifaire>
-							<Nom>String</Nom>
-							<IdJourTypeTarifaire>0</IdJourTypeTarifaire>
-							<IdCalendrier>0</IdCalendrier>
+						<TrancheHoraire>
+							<HeureDeDebut>09:30:47+05:00</HeureDeDebut>
+							<HeureDeFin>09:30:47+05:00</HeureDeFin>
 							<Autorise>true</Autorise>
-						</JourTypeTarifaire>
-						<DureeValidite>P1Y2M3DT10H30M</DureeValidite>
+						</TrancheHoraire>
+						<DureeValidite>P1Y2M2DT10H30M</DureeValidite>
 					</ContrainteTemporelle>
-					<FacteurTarifaireDeQualite>1</FacteurTarifaireDeQualite>
-					<PrixDeVenteProduit>0.0</PrixDeVenteProduit>
+					<ContratProduit>
+						<IdContrat>0</IdContrat>
+						<TypeCommercialContrat>0</TypeCommercialContrat>
+						<ProfilCommercialContrat>
+							<CodeProfilCommercialContrat>String</CodeProfilCommercialContrat>
+							<DateDebutValidite>1957-08-13</DateDebutValidite>
+							<DateFinValidite>1957-08-13</DateFinValidite>
+							<DonneeComplementaire>String</DonneeComplementaire>
+							<DonneeComplementaire>String</DonneeComplementaire>
+							<Proprietaire>
+								<Nom>normalizedString</Nom>
+								<IdPartenaire>0</IdPartenaire>
+								<CodePays>000</CodePays>
+								<CodeBassin>000</CodeBassin>
+							</Proprietaire>
+						</ProfilCommercialContrat>
+						<ClientDetenteur>
+							<ProfilClient>
+								<CodeProfil>0</CodeProfil>
+								<DateDebutValiditeProfil>1957-08-13</DateDebutValiditeProfil>
+								<DateFinValiditeProfil>1957-08-13</DateFinValiditeProfil>
+								<CategorieSociale>String</CategorieSociale>
+								<NiveaudEtudes>String</NiveaudEtudes>
+								<Profession>String</Profession>
+								<Sexe>String</Sexe>
+								<TranchedAge>String</TranchedAge>
+							</ProfilClient>
+							<ProfilClient>
+								<CodeProfil>0</CodeProfil>
+								<DateDebutValiditeProfil>1957-08-13</DateDebutValiditeProfil>
+								<DateFinValiditeProfil>1957-08-13</DateFinValiditeProfil>
+								<CategorieSociale>String</CategorieSociale>
+								<NiveaudEtudes>String</NiveaudEtudes>
+								<Profession>String</Profession>
+								<Sexe>String</Sexe>
+								<TranchedAge>String</TranchedAge>
+							</ProfilClient>
+							<IdClient>0</IdClient>
+							<Nom>normalizedString</Nom>
+							<Prenom>normalizedString</Prenom>
+							<Titre>0</Titre>
+							<DateNaissance>1957-08-13</DateNaissance>
+							<Adresse>
+								<LigneAdresse>
+									<NumLigne>1</NumLigne>
+									<TexteLigne>String</TexteLigne>
+								</LigneAdresse>
+								<LigneAdresse>
+									<NumLigne>1</NumLigne>
+									<TexteLigne>String</TexteLigne>
+								</LigneAdresse>
+								<NumVoie>String</NumVoie>
+								<TypeVoie>String</TypeVoie>
+								<LibelleVoie>String</LibelleVoie>
+								<CodePostal>String</CodePostal>
+								<CodePays>000</CodePays>
+							</Adresse>
+							<TelephonePrive>normalizedString</TelephonePrive>
+							<AdresseTravail>
+								<LigneAdresse>
+									<NumLigne>1</NumLigne>
+									<TexteLigne>String</TexteLigne>
+								</LigneAdresse>
+								<LigneAdresse>
+									<NumLigne>1</NumLigne>
+									<TexteLigne>String</TexteLigne>
+								</LigneAdresse>
+								<NumVoie>String</NumVoie>
+								<TypeVoie>String</TypeVoie>
+								<LibelleVoie>String</LibelleVoie>
+								<CodePostal>String</CodePostal>
+								<CodePays>000</CodePays>
+							</AdresseTravail>
+							<TelephoneTravail>normalizedString</TelephoneTravail>
+							<Coordonnees>
+								<TypeCoordonnee>0</TypeCoordonnee>
+								<ValeurCoordonnee>normalizedString</ValeurCoordonnee>
+							</Coordonnees>
+							<Coordonnees>
+								<TypeCoordonnee>0</TypeCoordonnee>
+								<ValeurCoordonnee>normalizedString</ValeurCoordonnee>
+							</Coordonnees>
+							<PartenaireReferent>
+								<Nom>normalizedString</Nom>
+								<IdPartenaire>0</IdPartenaire>
+								<CodePays>000</CodePays>
+								<CodeBassin>000</CodeBassin>
+							</PartenaireReferent>
+							<CommunicationDonneesPersonnelles>true</CommunicationDonneesPersonnelles>
+							<DateSaisie>1957-08-13</DateSaisie>
+						</ClientDetenteur>
+					</ContratProduit>
 					<ContrainteGeographique>
+						<Transporteur>
+							<Nom>normalizedString</Nom>
+							<IdPartenaire>0</IdPartenaire>
+							<CodePays>000</CodePays>
+							<CodeBassin>000</CodeBassin>
+						</Transporteur>
 						<ContrainteParcours>
-							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
 							<PointArretDebut>
 								<IdPointArret>String</IdPointArret>
-								<TypeReferentiel>1</TypeReferentiel>
+								<TypeReferentiel>0</TypeReferentiel>
 							</PointArretDebut>
 							<PointArretFin>
 								<IdPointArret>String</IdPointArret>
-								<TypeReferentiel>1</TypeReferentiel>
+								<TypeReferentiel>0</TypeReferentiel>
 							</PointArretFin>
+							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
 						</ContrainteParcours>
 						<ContrainteZonale>
+							<ZoneTarifaire>
+								<IdZoneTarifaire>0</IdZoneTarifaire>
+								<TypeReferentiel>0</TypeReferentiel>
+							</ZoneTarifaire>
+							<ZoneTarifaire>
+								<IdZoneTarifaire>0</IdZoneTarifaire>
+								<TypeReferentiel>0</TypeReferentiel>
+							</ZoneTarifaire>
 							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
-							<ZoneTarifaire>
-								<TypeReferentiel>1</TypeReferentiel>
-								<IdZoneTarifaire>1</IdZoneTarifaire>
-							</ZoneTarifaire>
-							<ZoneTarifaire>
-								<TypeReferentiel>1</TypeReferentiel>
-								<IdZoneTarifaire>1</IdZoneTarifaire>
-							</ZoneTarifaire>
 						</ContrainteZonale>
 					</ContrainteGeographique>
 					<ContrainteGeographique>
+						<Transporteur>
+							<Nom>normalizedString</Nom>
+							<IdPartenaire>0</IdPartenaire>
+							<CodePays>000</CodePays>
+							<CodeBassin>000</CodeBassin>
+						</Transporteur>
 						<ContrainteParcours>
-							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
 							<PointArretDebut>
 								<IdPointArret>String</IdPointArret>
-								<TypeReferentiel>1</TypeReferentiel>
+								<TypeReferentiel>0</TypeReferentiel>
 							</PointArretDebut>
 							<PointArretFin>
 								<IdPointArret>String</IdPointArret>
-								<TypeReferentiel>1</TypeReferentiel>
+								<TypeReferentiel>0</TypeReferentiel>
 							</PointArretFin>
+							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
 						</ContrainteParcours>
 						<ContrainteZonale>
+							<ZoneTarifaire>
+								<IdZoneTarifaire>0</IdZoneTarifaire>
+								<TypeReferentiel>0</TypeReferentiel>
+							</ZoneTarifaire>
+							<ZoneTarifaire>
+								<IdZoneTarifaire>0</IdZoneTarifaire>
+								<TypeReferentiel>0</TypeReferentiel>
+							</ZoneTarifaire>
 							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
-							<ZoneTarifaire>
-								<TypeReferentiel>1</TypeReferentiel>
-								<IdZoneTarifaire>1</IdZoneTarifaire>
-							</ZoneTarifaire>
-							<ZoneTarifaire>
-								<TypeReferentiel>1</TypeReferentiel>
-								<IdZoneTarifaire>1</IdZoneTarifaire>
-							</ZoneTarifaire>
 						</ContrainteZonale>
 					</ContrainteGeographique>
+					<FacteurTarifaireDeQualite>0</FacteurTarifaireDeQualite>
+					<PrixDeVenteProduit>0</PrixDeVenteProduit>
 					<ApplicationUtilisee>
 						<AID>String</AID>
 						<IdApplicationInstallee>String</IdApplicationInstallee>
-						<Distributeur>
-							<Nom>normalizedString</Nom>
-							<IdPartenaire>1</IdPartenaire>
-							<CodePays>000</CodePays>
-							<CodeBassin>000</CodeBassin>
-						</Distributeur>
-						<DateHeureFinValidite>2001-12-17T09:30:47Z</DateHeureFinValidite>
 						<MatriceApplicationEnregistree>
 							<IdMatriceApplication>String</IdMatriceApplication>
-							<TypeApplication>1</TypeApplication>
+							<TypeApplication>0</TypeApplication>
 							<Proprietaire>
 								<Nom>normalizedString</Nom>
-								<IdPartenaire>1</IdPartenaire>
+								<IdPartenaire>0</IdPartenaire>
 								<CodePays>000</CodePays>
 								<CodeBassin>000</CodeBassin>
 							</Proprietaire>
@@ -197,198 +293,129 @@
 								<CodeBassin>000</CodeBassin>
 							</BassinsAcceptation>
 						</MatriceApplicationEnregistree>
+						<Distributeur>
+							<Nom>normalizedString</Nom>
+							<IdPartenaire>0</IdPartenaire>
+							<CodePays>000</CodePays>
+							<CodeBassin>000</CodeBassin>
+						</Distributeur>
+						<DateHeureFinValidite>2001-12-17T09:30:47+05:00</DateHeureFinValidite>
 					</ApplicationUtilisee>
 					<SupportUtilise>
-						<TypeSupport>1</TypeSupport>
-						<CategorieSupport>1</CategorieSupport>
-						<IdSupport>1</IdSupport>
-						<DateHeureEmission>2001-12-17T09:30:47Z</DateHeureEmission>
-						<DateHeureFinValidite>2001-12-17T09:30:47Z</DateHeureFinValidite>
-						<SoldeCompteur>
-							<IdCompteur>1</IdCompteur>
-							<QuantiteOperation>0</QuantiteOperation>
-							<Solde>0</Solde>
-						</SoldeCompteur>
-						<SoldeCompteur>
-							<IdCompteur>1</IdCompteur>
-							<QuantiteOperation>0</QuantiteOperation>
-							<Solde>0</Solde>
-						</SoldeCompteur>
+						<TypeSupport>0</TypeSupport>
+						<CategorieSupport>0</CategorieSupport>
+						<IdSupport>0</IdSupport>
 						<ContratSupport>
-							<TypeCommercialContrat>1</TypeCommercialContrat>
-							<IdContrat>1</IdContrat>
+							<IdContrat>0</IdContrat>
+							<TypeCommercialContrat>0</TypeCommercialContrat>
 							<ProfilCommercialContrat>
 								<CodeProfilCommercialContrat>String</CodeProfilCommercialContrat>
-								<DateDebutValidite>1967-08-13</DateDebutValidite>
-								<DateFinValidite>1967-08-13</DateFinValidite>
+								<DateDebutValidite>1957-08-13</DateDebutValidite>
+								<DateFinValidite>1957-08-13</DateFinValidite>
 								<DonneeComplementaire>String</DonneeComplementaire>
 								<DonneeComplementaire>String</DonneeComplementaire>
 								<Proprietaire>
 									<Nom>normalizedString</Nom>
-									<IdPartenaire>1</IdPartenaire>
+									<IdPartenaire>0</IdPartenaire>
 									<CodePays>000</CodePays>
 									<CodeBassin>000</CodeBassin>
 								</Proprietaire>
 							</ProfilCommercialContrat>
 							<ClientDetenteur>
-								<IdClient>1</IdClient>
+								<ProfilClient>
+									<CodeProfil>0</CodeProfil>
+									<DateDebutValiditeProfil>1957-08-13</DateDebutValiditeProfil>
+									<DateFinValiditeProfil>1957-08-13</DateFinValiditeProfil>
+									<CategorieSociale>String</CategorieSociale>
+									<NiveaudEtudes>String</NiveaudEtudes>
+									<Profession>String</Profession>
+									<Sexe>String</Sexe>
+									<TranchedAge>String</TranchedAge>
+								</ProfilClient>
+								<ProfilClient>
+									<CodeProfil>0</CodeProfil>
+									<DateDebutValiditeProfil>1957-08-13</DateDebutValiditeProfil>
+									<DateFinValiditeProfil>1957-08-13</DateFinValiditeProfil>
+									<CategorieSociale>String</CategorieSociale>
+									<NiveaudEtudes>String</NiveaudEtudes>
+									<Profession>String</Profession>
+									<Sexe>String</Sexe>
+									<TranchedAge>String</TranchedAge>
+								</ProfilClient>
+								<IdClient>0</IdClient>
 								<Nom>normalizedString</Nom>
 								<Prenom>normalizedString</Prenom>
-								<Titre>1</Titre>
-								<DateNaissance>1967-08-13</DateNaissance>
-								<TelephonePrive>normalizedString</TelephonePrive>
-								<TelephoneTravail>normalizedString</TelephoneTravail>
+								<Titre>0</Titre>
+								<DateNaissance>1957-08-13</DateNaissance>
 								<Adresse>
+									<LigneAdresse>
+										<NumLigne>1</NumLigne>
+										<TexteLigne>String</TexteLigne>
+									</LigneAdresse>
+									<LigneAdresse>
+										<NumLigne>1</NumLigne>
+										<TexteLigne>String</TexteLigne>
+									</LigneAdresse>
 									<NumVoie>String</NumVoie>
 									<TypeVoie>String</TypeVoie>
 									<LibelleVoie>String</LibelleVoie>
-									<LigneAdresse>
-										<NumLigne>1</NumLigne>
-										<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-									</LigneAdresse>
-									<LigneAdresse>
-										<NumLigne>1</NumLigne>
-										<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-									</LigneAdresse>
 									<CodePostal>String</CodePostal>
 									<CodePays>000</CodePays>
 								</Adresse>
+								<TelephonePrive>normalizedString</TelephonePrive>
 								<AdresseTravail>
+									<LigneAdresse>
+										<NumLigne>1</NumLigne>
+										<TexteLigne>String</TexteLigne>
+									</LigneAdresse>
+									<LigneAdresse>
+										<NumLigne>1</NumLigne>
+										<TexteLigne>String</TexteLigne>
+									</LigneAdresse>
 									<NumVoie>String</NumVoie>
 									<TypeVoie>String</TypeVoie>
 									<LibelleVoie>String</LibelleVoie>
-									<LigneAdresse>
-										<NumLigne>1</NumLigne>
-										<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-									</LigneAdresse>
-									<LigneAdresse>
-										<NumLigne>1</NumLigne>
-										<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-									</LigneAdresse>
 									<CodePostal>String</CodePostal>
 									<CodePays>000</CodePays>
 								</AdresseTravail>
-								<CommunicationDonneesPersonnelles>true</CommunicationDonneesPersonnelles>
-								<DateSaisie>1967-08-13</DateSaisie>
-								<ProfilClient>
-									<CodeProfil>1</CodeProfil>
-									<DateDebutValiditeProfil>1967-08-13</DateDebutValiditeProfil>
-									<DateFinValiditeProfil>1967-08-13</DateFinValiditeProfil>
-									<CategorieSociale>String</CategorieSociale>
-									<NiveaudEtudes>String</NiveaudEtudes>
-									<Profession>String</Profession>
-									<Sexe>String</Sexe>
-									<TranchedAge>String</TranchedAge>
-								</ProfilClient>
-								<ProfilClient>
-									<CodeProfil>1</CodeProfil>
-									<DateDebutValiditeProfil>1967-08-13</DateDebutValiditeProfil>
-									<DateFinValiditeProfil>1967-08-13</DateFinValiditeProfil>
-									<CategorieSociale>String</CategorieSociale>
-									<NiveaudEtudes>String</NiveaudEtudes>
-									<Profession>String</Profession>
-									<Sexe>String</Sexe>
-									<TranchedAge>String</TranchedAge>
-								</ProfilClient>
+								<TelephoneTravail>normalizedString</TelephoneTravail>
+								<Coordonnees>
+									<TypeCoordonnee>0</TypeCoordonnee>
+									<ValeurCoordonnee>normalizedString</ValeurCoordonnee>
+								</Coordonnees>
+								<Coordonnees>
+									<TypeCoordonnee>0</TypeCoordonnee>
+									<ValeurCoordonnee>normalizedString</ValeurCoordonnee>
+								</Coordonnees>
 								<PartenaireReferent>
 									<Nom>normalizedString</Nom>
-									<IdPartenaire>1</IdPartenaire>
+									<IdPartenaire>0</IdPartenaire>
 									<CodePays>000</CodePays>
 									<CodeBassin>000</CodeBassin>
 								</PartenaireReferent>
+								<CommunicationDonneesPersonnelles>true</CommunicationDonneesPersonnelles>
+								<DateSaisie>1957-08-13</DateSaisie>
 							</ClientDetenteur>
 						</ContratSupport>
+						<DateHeureEmission>2001-12-17T09:30:47+05:00</DateHeureEmission>
+						<DateHeureFinValidite>2001-12-17T09:30:47+05:00</DateHeureFinValidite>
+						<SoldeCompteur>
+							<IdCompteur>0</IdCompteur>
+							<QuantiteOperation>0</QuantiteOperation>
+							<Solde>0</Solde>
+						</SoldeCompteur>
+						<SoldeCompteur>
+							<IdCompteur>0</IdCompteur>
+							<QuantiteOperation>0</QuantiteOperation>
+							<Solde>0</Solde>
+						</SoldeCompteur>
 						<EmetteurSupportEnregistre>
 							<Nom>normalizedString</Nom>
-							<IdPartenaire>1</IdPartenaire>
+							<IdPartenaire>0</IdPartenaire>
 							<CodePays>000</CodePays>
 							<CodeBassin>000</CodeBassin>
 						</EmetteurSupportEnregistre>
 					</SupportUtilise>
-					<ContratProduit>
-						<TypeCommercialContrat>1</TypeCommercialContrat>
-						<IdContrat>1</IdContrat>
-						<ProfilCommercialContrat>
-							<CodeProfilCommercialContrat>String</CodeProfilCommercialContrat>
-							<DateDebutValidite>1967-08-13</DateDebutValidite>
-							<DateFinValidite>1967-08-13</DateFinValidite>
-							<DonneeComplementaire>String</DonneeComplementaire>
-							<DonneeComplementaire>String</DonneeComplementaire>
-							<Proprietaire>
-								<Nom>normalizedString</Nom>
-								<IdPartenaire>1</IdPartenaire>
-								<CodePays>000</CodePays>
-								<CodeBassin>000</CodeBassin>
-							</Proprietaire>
-						</ProfilCommercialContrat>
-						<ClientDetenteur>
-							<IdClient>1</IdClient>
-							<Nom>normalizedString</Nom>
-							<Prenom>normalizedString</Prenom>
-							<Titre>1</Titre>
-							<DateNaissance>1967-08-13</DateNaissance>
-							<TelephonePrive>normalizedString</TelephonePrive>
-							<TelephoneTravail>normalizedString</TelephoneTravail>
-							<Adresse>
-								<NumVoie>String</NumVoie>
-								<TypeVoie>String</TypeVoie>
-								<LibelleVoie>String</LibelleVoie>
-								<LigneAdresse>
-									<NumLigne>1</NumLigne>
-									<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-								</LigneAdresse>
-								<LigneAdresse>
-									<NumLigne>1</NumLigne>
-									<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-								</LigneAdresse>
-								<CodePostal>String</CodePostal>
-								<CodePays>000</CodePays>
-							</Adresse>
-							<AdresseTravail>
-								<NumVoie>String</NumVoie>
-								<TypeVoie>String</TypeVoie>
-								<LibelleVoie>String</LibelleVoie>
-								<LigneAdresse>
-									<NumLigne>1</NumLigne>
-									<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-								</LigneAdresse>
-								<LigneAdresse>
-									<NumLigne>1</NumLigne>
-									<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-								</LigneAdresse>
-								<CodePostal>String</CodePostal>
-								<CodePays>000</CodePays>
-							</AdresseTravail>
-							<CommunicationDonneesPersonnelles>true</CommunicationDonneesPersonnelles>
-							<DateSaisie>1967-08-13</DateSaisie>
-							<ProfilClient>
-								<CodeProfil>1</CodeProfil>
-								<DateDebutValiditeProfil>1967-08-13</DateDebutValiditeProfil>
-								<DateFinValiditeProfil>1967-08-13</DateFinValiditeProfil>
-								<CategorieSociale>String</CategorieSociale>
-								<NiveaudEtudes>String</NiveaudEtudes>
-								<Profession>String</Profession>
-								<Sexe>String</Sexe>
-								<TranchedAge>String</TranchedAge>
-							</ProfilClient>
-							<ProfilClient>
-								<CodeProfil>1</CodeProfil>
-								<DateDebutValiditeProfil>1967-08-13</DateDebutValiditeProfil>
-								<DateFinValiditeProfil>1967-08-13</DateFinValiditeProfil>
-								<CategorieSociale>String</CategorieSociale>
-								<NiveaudEtudes>String</NiveaudEtudes>
-								<Profession>String</Profession>
-								<Sexe>String</Sexe>
-								<TranchedAge>String</TranchedAge>
-							</ProfilClient>
-							<PartenaireReferent>
-								<Nom>normalizedString</Nom>
-								<IdPartenaire>1</IdPartenaire>
-								<CodePays>000</CodePays>
-								<CodeBassin>000</CodeBassin>
-							</PartenaireReferent>
-						</ClientDetenteur>
-					</ContratProduit>
 				</ProduitInstalle>
 			</ObjetImplique>
 			<AncienObjetImplique>
@@ -396,113 +423,210 @@
 					<ReferenceProduit>
 						<ProprietaireProduit>
 							<Nom>normalizedString</Nom>
-							<IdPartenaire>1</IdPartenaire>
+							<IdPartenaire>0</IdPartenaire>
 							<CodePays>000</CodePays>
 							<CodeBassin>000</CodeBassin>
 						</ProprietaireProduit>
-						<IdProduit>1</IdProduit>
+						<IdProduit>0</IdProduit>
 					</ReferenceProduit>
 					<ReferenceProduitInstalle>
 						<ExploitantVente>
 							<Nom>normalizedString</Nom>
-							<IdPartenaire>1</IdPartenaire>
+							<IdPartenaire>0</IdPartenaire>
 							<CodePays>000</CodePays>
 							<CodeBassin>000</CodeBassin>
 						</ExploitantVente>
-						<IdProduitInstalle>1</IdProduitInstalle>
+						<IdProduitInstalle>0</IdProduitInstalle>
 					</ReferenceProduitInstalle>
 					<SoldeCompteur>
-						<IdCompteur>1</IdCompteur>
+						<IdCompteur>0</IdCompteur>
 						<QuantiteOperation>0</QuantiteOperation>
 						<Solde>0</Solde>
 					</SoldeCompteur>
 					<SoldeCompteur>
-						<IdCompteur>1</IdCompteur>
+						<IdCompteur>0</IdCompteur>
 						<QuantiteOperation>0</QuantiteOperation>
 						<Solde>0</Solde>
 					</SoldeCompteur>
 					<ContrainteTemporelle>
 						<TrancheHoraire>
-							<HeureDeDebut>14:20:00.0Z</HeureDeDebut>
-							<HeureDeFin>14:20:00.0Z</HeureDeFin>
+							<HeureDeDebut>09:30:47+05:00</HeureDeDebut>
+							<HeureDeFin>09:30:47+05:00</HeureDeFin>
 							<Autorise>true</Autorise>
 						</TrancheHoraire>
-						<DureeValidite>P1Y2M3DT10H30M</DureeValidite>
+						<DureeValidite>P1Y2M2DT10H30M</DureeValidite>
 					</ContrainteTemporelle>
 					<ContrainteTemporelle>
 						<TrancheHoraire>
-							<HeureDeDebut>14:20:00.0Z</HeureDeDebut>
-							<HeureDeFin>14:20:00.0Z</HeureDeFin>
+							<HeureDeDebut>09:30:47+05:00</HeureDeDebut>
+							<HeureDeFin>09:30:47+05:00</HeureDeFin>
 							<Autorise>true</Autorise>
 						</TrancheHoraire>
-						<DureeValidite>P1Y2M3DT10H30M</DureeValidite>
+						<DureeValidite>P1Y2M2DT10H30M</DureeValidite>
 					</ContrainteTemporelle>
-					<FacteurTarifaireDeQualite>1</FacteurTarifaireDeQualite>
-					<PrixDeVenteProduit>0.0</PrixDeVenteProduit>
+					<ContratProduit>
+						<IdContrat>0</IdContrat>
+						<TypeCommercialContrat>0</TypeCommercialContrat>
+						<ProfilCommercialContrat>
+							<CodeProfilCommercialContrat>String</CodeProfilCommercialContrat>
+							<DateDebutValidite>1957-08-13</DateDebutValidite>
+							<DateFinValidite>1957-08-13</DateFinValidite>
+							<DonneeComplementaire>String</DonneeComplementaire>
+							<DonneeComplementaire>String</DonneeComplementaire>
+							<Proprietaire>
+								<Nom>normalizedString</Nom>
+								<IdPartenaire>0</IdPartenaire>
+								<CodePays>000</CodePays>
+								<CodeBassin>000</CodeBassin>
+							</Proprietaire>
+						</ProfilCommercialContrat>
+						<ClientDetenteur>
+							<ProfilClient>
+								<CodeProfil>0</CodeProfil>
+								<DateDebutValiditeProfil>1957-08-13</DateDebutValiditeProfil>
+								<DateFinValiditeProfil>1957-08-13</DateFinValiditeProfil>
+								<CategorieSociale>String</CategorieSociale>
+								<NiveaudEtudes>String</NiveaudEtudes>
+								<Profession>String</Profession>
+								<Sexe>String</Sexe>
+								<TranchedAge>String</TranchedAge>
+							</ProfilClient>
+							<ProfilClient>
+								<CodeProfil>0</CodeProfil>
+								<DateDebutValiditeProfil>1957-08-13</DateDebutValiditeProfil>
+								<DateFinValiditeProfil>1957-08-13</DateFinValiditeProfil>
+								<CategorieSociale>String</CategorieSociale>
+								<NiveaudEtudes>String</NiveaudEtudes>
+								<Profession>String</Profession>
+								<Sexe>String</Sexe>
+								<TranchedAge>String</TranchedAge>
+							</ProfilClient>
+							<IdClient>0</IdClient>
+							<Nom>normalizedString</Nom>
+							<Prenom>normalizedString</Prenom>
+							<Titre>0</Titre>
+							<DateNaissance>1957-08-13</DateNaissance>
+							<Adresse>
+								<LigneAdresse>
+									<NumLigne>1</NumLigne>
+									<TexteLigne>String</TexteLigne>
+								</LigneAdresse>
+								<LigneAdresse>
+									<NumLigne>1</NumLigne>
+									<TexteLigne>String</TexteLigne>
+								</LigneAdresse>
+								<NumVoie>String</NumVoie>
+								<TypeVoie>String</TypeVoie>
+								<LibelleVoie>String</LibelleVoie>
+								<CodePostal>String</CodePostal>
+								<CodePays>000</CodePays>
+							</Adresse>
+							<TelephonePrive>normalizedString</TelephonePrive>
+							<AdresseTravail>
+								<LigneAdresse>
+									<NumLigne>1</NumLigne>
+									<TexteLigne>String</TexteLigne>
+								</LigneAdresse>
+								<LigneAdresse>
+									<NumLigne>1</NumLigne>
+									<TexteLigne>String</TexteLigne>
+								</LigneAdresse>
+								<NumVoie>String</NumVoie>
+								<TypeVoie>String</TypeVoie>
+								<LibelleVoie>String</LibelleVoie>
+								<CodePostal>String</CodePostal>
+								<CodePays>000</CodePays>
+							</AdresseTravail>
+							<TelephoneTravail>normalizedString</TelephoneTravail>
+							<Coordonnees>
+								<TypeCoordonnee>0</TypeCoordonnee>
+								<ValeurCoordonnee>normalizedString</ValeurCoordonnee>
+							</Coordonnees>
+							<Coordonnees>
+								<TypeCoordonnee>0</TypeCoordonnee>
+								<ValeurCoordonnee>normalizedString</ValeurCoordonnee>
+							</Coordonnees>
+							<PartenaireReferent>
+								<Nom>normalizedString</Nom>
+								<IdPartenaire>0</IdPartenaire>
+								<CodePays>000</CodePays>
+								<CodeBassin>000</CodeBassin>
+							</PartenaireReferent>
+							<CommunicationDonneesPersonnelles>true</CommunicationDonneesPersonnelles>
+							<DateSaisie>1957-08-13</DateSaisie>
+						</ClientDetenteur>
+					</ContratProduit>
 					<ContrainteGeographique>
+						<Transporteur>
+							<Nom>normalizedString</Nom>
+							<IdPartenaire>0</IdPartenaire>
+							<CodePays>000</CodePays>
+							<CodeBassin>000</CodeBassin>
+						</Transporteur>
 						<ContrainteParcours>
-							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
 							<PointArretDebut>
 								<IdPointArret>String</IdPointArret>
-								<TypeReferentiel>1</TypeReferentiel>
+								<TypeReferentiel>0</TypeReferentiel>
 							</PointArretDebut>
 							<PointArretFin>
 								<IdPointArret>String</IdPointArret>
-								<TypeReferentiel>1</TypeReferentiel>
+								<TypeReferentiel>0</TypeReferentiel>
 							</PointArretFin>
+							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
 						</ContrainteParcours>
 						<ContrainteZonale>
+							<ZoneTarifaire>
+								<IdZoneTarifaire>0</IdZoneTarifaire>
+								<TypeReferentiel>0</TypeReferentiel>
+							</ZoneTarifaire>
+							<ZoneTarifaire>
+								<IdZoneTarifaire>0</IdZoneTarifaire>
+								<TypeReferentiel>0</TypeReferentiel>
+							</ZoneTarifaire>
 							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
-							<ZoneTarifaire>
-								<TypeReferentiel>1</TypeReferentiel>
-								<IdZoneTarifaire>1</IdZoneTarifaire>
-							</ZoneTarifaire>
-							<ZoneTarifaire>
-								<TypeReferentiel>1</TypeReferentiel>
-								<IdZoneTarifaire>1</IdZoneTarifaire>
-							</ZoneTarifaire>
 						</ContrainteZonale>
 					</ContrainteGeographique>
 					<ContrainteGeographique>
+						<Transporteur>
+							<Nom>normalizedString</Nom>
+							<IdPartenaire>0</IdPartenaire>
+							<CodePays>000</CodePays>
+							<CodeBassin>000</CodeBassin>
+						</Transporteur>
 						<ContrainteParcours>
-							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
 							<PointArretDebut>
 								<IdPointArret>String</IdPointArret>
-								<TypeReferentiel>1</TypeReferentiel>
+								<TypeReferentiel>0</TypeReferentiel>
 							</PointArretDebut>
 							<PointArretFin>
 								<IdPointArret>String</IdPointArret>
-								<TypeReferentiel>1</TypeReferentiel>
+								<TypeReferentiel>0</TypeReferentiel>
 							</PointArretFin>
+							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
 						</ContrainteParcours>
 						<ContrainteZonale>
+							<ZoneTarifaire>
+								<IdZoneTarifaire>0</IdZoneTarifaire>
+								<TypeReferentiel>0</TypeReferentiel>
+							</ZoneTarifaire>
+							<ZoneTarifaire>
+								<IdZoneTarifaire>0</IdZoneTarifaire>
+								<TypeReferentiel>0</TypeReferentiel>
+							</ZoneTarifaire>
 							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
-							<ZoneTarifaire>
-								<TypeReferentiel>1</TypeReferentiel>
-								<IdZoneTarifaire>1</IdZoneTarifaire>
-							</ZoneTarifaire>
-							<ZoneTarifaire>
-								<TypeReferentiel>1</TypeReferentiel>
-								<IdZoneTarifaire>1</IdZoneTarifaire>
-							</ZoneTarifaire>
 						</ContrainteZonale>
 					</ContrainteGeographique>
+					<FacteurTarifaireDeQualite>0</FacteurTarifaireDeQualite>
+					<PrixDeVenteProduit>0</PrixDeVenteProduit>
 					<ApplicationUtilisee>
 						<AID>String</AID>
 						<IdApplicationInstallee>String</IdApplicationInstallee>
-						<Distributeur>
-							<Nom>normalizedString</Nom>
-							<IdPartenaire>1</IdPartenaire>
-							<CodePays>000</CodePays>
-							<CodeBassin>000</CodeBassin>
-						</Distributeur>
-						<DateHeureFinValidite>2001-12-17T09:30:47Z</DateHeureFinValidite>
 						<MatriceApplicationEnregistree>
 							<IdMatriceApplication>String</IdMatriceApplication>
-							<TypeApplication>1</TypeApplication>
+							<TypeApplication>0</TypeApplication>
 							<Proprietaire>
 								<Nom>normalizedString</Nom>
-								<IdPartenaire>1</IdPartenaire>
+								<IdPartenaire>0</IdPartenaire>
 								<CodePays>000</CodePays>
 								<CodeBassin>000</CodeBassin>
 							</Proprietaire>
@@ -517,214 +641,139 @@
 								<CodeBassin>000</CodeBassin>
 							</BassinsAcceptation>
 						</MatriceApplicationEnregistree>
+						<Distributeur>
+							<Nom>normalizedString</Nom>
+							<IdPartenaire>0</IdPartenaire>
+							<CodePays>000</CodePays>
+							<CodeBassin>000</CodeBassin>
+						</Distributeur>
+						<DateHeureFinValidite>2001-12-17T09:30:47+05:00</DateHeureFinValidite>
 					</ApplicationUtilisee>
 					<SupportUtilise>
-						<TypeSupport>1</TypeSupport>
-						<CategorieSupport>1</CategorieSupport>
-						<IdSupport>1</IdSupport>
-						<DateHeureEmission>2001-12-17T09:30:47Z</DateHeureEmission>
-						<DateHeureFinValidite>2001-12-17T09:30:47Z</DateHeureFinValidite>
-						<SoldeCompteur>
-							<IdCompteur>1</IdCompteur>
-							<QuantiteOperation>0</QuantiteOperation>
-							<Solde>0</Solde>
-						</SoldeCompteur>
-						<SoldeCompteur>
-							<IdCompteur>1</IdCompteur>
-							<QuantiteOperation>0</QuantiteOperation>
-							<Solde>0</Solde>
-						</SoldeCompteur>
+						<TypeSupport>0</TypeSupport>
+						<CategorieSupport>0</CategorieSupport>
+						<IdSupport>0</IdSupport>
 						<ContratSupport>
-							<TypeCommercialContrat>1</TypeCommercialContrat>
-							<IdContrat>1</IdContrat>
+							<IdContrat>0</IdContrat>
+							<TypeCommercialContrat>0</TypeCommercialContrat>
 							<ProfilCommercialContrat>
 								<CodeProfilCommercialContrat>String</CodeProfilCommercialContrat>
-								<DateDebutValidite>1967-08-13</DateDebutValidite>
-								<DateFinValidite>1967-08-13</DateFinValidite>
+								<DateDebutValidite>1957-08-13</DateDebutValidite>
+								<DateFinValidite>1957-08-13</DateFinValidite>
 								<DonneeComplementaire>String</DonneeComplementaire>
 								<DonneeComplementaire>String</DonneeComplementaire>
 								<Proprietaire>
 									<Nom>normalizedString</Nom>
-									<IdPartenaire>1</IdPartenaire>
+									<IdPartenaire>0</IdPartenaire>
 									<CodePays>000</CodePays>
 									<CodeBassin>000</CodeBassin>
 								</Proprietaire>
 							</ProfilCommercialContrat>
 							<ClientDetenteur>
-								<IdClient>1</IdClient>
+								<ProfilClient>
+									<CodeProfil>0</CodeProfil>
+									<DateDebutValiditeProfil>1957-08-13</DateDebutValiditeProfil>
+									<DateFinValiditeProfil>1957-08-13</DateFinValiditeProfil>
+									<CategorieSociale>String</CategorieSociale>
+									<NiveaudEtudes>String</NiveaudEtudes>
+									<Profession>String</Profession>
+									<Sexe>String</Sexe>
+									<TranchedAge>String</TranchedAge>
+								</ProfilClient>
+								<ProfilClient>
+									<CodeProfil>0</CodeProfil>
+									<DateDebutValiditeProfil>1957-08-13</DateDebutValiditeProfil>
+									<DateFinValiditeProfil>1957-08-13</DateFinValiditeProfil>
+									<CategorieSociale>String</CategorieSociale>
+									<NiveaudEtudes>String</NiveaudEtudes>
+									<Profession>String</Profession>
+									<Sexe>String</Sexe>
+									<TranchedAge>String</TranchedAge>
+								</ProfilClient>
+								<IdClient>0</IdClient>
 								<Nom>normalizedString</Nom>
 								<Prenom>normalizedString</Prenom>
-								<Titre>1</Titre>
-								<DateNaissance>1967-08-13</DateNaissance>
-								<TelephonePrive>normalizedString</TelephonePrive>
-								<TelephoneTravail>normalizedString</TelephoneTravail>
+								<Titre>0</Titre>
+								<DateNaissance>1957-08-13</DateNaissance>
 								<Adresse>
+									<LigneAdresse>
+										<NumLigne>1</NumLigne>
+										<TexteLigne>String</TexteLigne>
+									</LigneAdresse>
+									<LigneAdresse>
+										<NumLigne>1</NumLigne>
+										<TexteLigne>String</TexteLigne>
+									</LigneAdresse>
 									<NumVoie>String</NumVoie>
 									<TypeVoie>String</TypeVoie>
 									<LibelleVoie>String</LibelleVoie>
-									<LigneAdresse>
-										<NumLigne>1</NumLigne>
-										<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-									</LigneAdresse>
-									<LigneAdresse>
-										<NumLigne>1</NumLigne>
-										<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-									</LigneAdresse>
 									<CodePostal>String</CodePostal>
 									<CodePays>000</CodePays>
 								</Adresse>
+								<TelephonePrive>normalizedString</TelephonePrive>
 								<AdresseTravail>
+									<LigneAdresse>
+										<NumLigne>1</NumLigne>
+										<TexteLigne>String</TexteLigne>
+									</LigneAdresse>
+									<LigneAdresse>
+										<NumLigne>1</NumLigne>
+										<TexteLigne>String</TexteLigne>
+									</LigneAdresse>
 									<NumVoie>String</NumVoie>
 									<TypeVoie>String</TypeVoie>
 									<LibelleVoie>String</LibelleVoie>
-									<LigneAdresse>
-										<NumLigne>1</NumLigne>
-										<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-									</LigneAdresse>
-									<LigneAdresse>
-										<NumLigne>1</NumLigne>
-										<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-									</LigneAdresse>
 									<CodePostal>String</CodePostal>
 									<CodePays>000</CodePays>
 								</AdresseTravail>
-								<CommunicationDonneesPersonnelles>true</CommunicationDonneesPersonnelles>
-								<DateSaisie>1967-08-13</DateSaisie>
-								<ProfilClient>
-									<CodeProfil>1</CodeProfil>
-									<DateDebutValiditeProfil>1967-08-13</DateDebutValiditeProfil>
-									<DateFinValiditeProfil>1967-08-13</DateFinValiditeProfil>
-									<CategorieSociale>String</CategorieSociale>
-									<NiveaudEtudes>String</NiveaudEtudes>
-									<Profession>String</Profession>
-									<Sexe>String</Sexe>
-									<TranchedAge>String</TranchedAge>
-								</ProfilClient>
-								<ProfilClient>
-									<CodeProfil>1</CodeProfil>
-									<DateDebutValiditeProfil>1967-08-13</DateDebutValiditeProfil>
-									<DateFinValiditeProfil>1967-08-13</DateFinValiditeProfil>
-									<CategorieSociale>String</CategorieSociale>
-									<NiveaudEtudes>String</NiveaudEtudes>
-									<Profession>String</Profession>
-									<Sexe>String</Sexe>
-									<TranchedAge>String</TranchedAge>
-								</ProfilClient>
+								<TelephoneTravail>normalizedString</TelephoneTravail>
+								<Coordonnees>
+									<TypeCoordonnee>0</TypeCoordonnee>
+									<ValeurCoordonnee>normalizedString</ValeurCoordonnee>
+								</Coordonnees>
+								<Coordonnees>
+									<TypeCoordonnee>0</TypeCoordonnee>
+									<ValeurCoordonnee>normalizedString</ValeurCoordonnee>
+								</Coordonnees>
 								<PartenaireReferent>
 									<Nom>normalizedString</Nom>
-									<IdPartenaire>1</IdPartenaire>
+									<IdPartenaire>0</IdPartenaire>
 									<CodePays>000</CodePays>
 									<CodeBassin>000</CodeBassin>
 								</PartenaireReferent>
+								<CommunicationDonneesPersonnelles>true</CommunicationDonneesPersonnelles>
+								<DateSaisie>1957-08-13</DateSaisie>
 							</ClientDetenteur>
 						</ContratSupport>
+						<DateHeureEmission>2001-12-17T09:30:47+05:00</DateHeureEmission>
+						<DateHeureFinValidite>2001-12-17T09:30:47+05:00</DateHeureFinValidite>
+						<SoldeCompteur>
+							<IdCompteur>0</IdCompteur>
+							<QuantiteOperation>0</QuantiteOperation>
+							<Solde>0</Solde>
+						</SoldeCompteur>
+						<SoldeCompteur>
+							<IdCompteur>0</IdCompteur>
+							<QuantiteOperation>0</QuantiteOperation>
+							<Solde>0</Solde>
+						</SoldeCompteur>
 						<EmetteurSupportEnregistre>
 							<Nom>normalizedString</Nom>
-							<IdPartenaire>1</IdPartenaire>
+							<IdPartenaire>0</IdPartenaire>
 							<CodePays>000</CodePays>
 							<CodeBassin>000</CodeBassin>
 						</EmetteurSupportEnregistre>
 					</SupportUtilise>
-					<ContratProduit>
-						<TypeCommercialContrat>1</TypeCommercialContrat>
-						<IdContrat>1</IdContrat>
-						<ProfilCommercialContrat>
-							<CodeProfilCommercialContrat>String</CodeProfilCommercialContrat>
-							<DateDebutValidite>1967-08-13</DateDebutValidite>
-							<DateFinValidite>1967-08-13</DateFinValidite>
-							<DonneeComplementaire>String</DonneeComplementaire>
-							<DonneeComplementaire>String</DonneeComplementaire>
-							<Proprietaire>
-								<Nom>normalizedString</Nom>
-								<IdPartenaire>1</IdPartenaire>
-								<CodePays>000</CodePays>
-								<CodeBassin>000</CodeBassin>
-							</Proprietaire>
-						</ProfilCommercialContrat>
-						<ClientDetenteur>
-							<IdClient>1</IdClient>
-							<Nom>normalizedString</Nom>
-							<Prenom>normalizedString</Prenom>
-							<Titre>1</Titre>
-							<DateNaissance>1967-08-13</DateNaissance>
-							<TelephonePrive>normalizedString</TelephonePrive>
-							<TelephoneTravail>normalizedString</TelephoneTravail>
-							<Adresse>
-								<NumVoie>String</NumVoie>
-								<TypeVoie>String</TypeVoie>
-								<LibelleVoie>String</LibelleVoie>
-								<LigneAdresse>
-									<NumLigne>1</NumLigne>
-									<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-								</LigneAdresse>
-								<LigneAdresse>
-									<NumLigne>1</NumLigne>
-									<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-								</LigneAdresse>
-								<CodePostal>String</CodePostal>
-								<CodePays>000</CodePays>
-							</Adresse>
-							<AdresseTravail>
-								<NumVoie>String</NumVoie>
-								<TypeVoie>String</TypeVoie>
-								<LibelleVoie>String</LibelleVoie>
-								<LigneAdresse>
-									<NumLigne>1</NumLigne>
-									<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-								</LigneAdresse>
-								<LigneAdresse>
-									<NumLigne>1</NumLigne>
-									<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-								</LigneAdresse>
-								<CodePostal>String</CodePostal>
-								<CodePays>000</CodePays>
-							</AdresseTravail>
-							<CommunicationDonneesPersonnelles>true</CommunicationDonneesPersonnelles>
-							<DateSaisie>1967-08-13</DateSaisie>
-							<ProfilClient>
-								<CodeProfil>1</CodeProfil>
-								<DateDebutValiditeProfil>1967-08-13</DateDebutValiditeProfil>
-								<DateFinValiditeProfil>1967-08-13</DateFinValiditeProfil>
-								<CategorieSociale>String</CategorieSociale>
-								<NiveaudEtudes>String</NiveaudEtudes>
-								<Profession>String</Profession>
-								<Sexe>String</Sexe>
-								<TranchedAge>String</TranchedAge>
-							</ProfilClient>
-							<ProfilClient>
-								<CodeProfil>1</CodeProfil>
-								<DateDebutValiditeProfil>1967-08-13</DateDebutValiditeProfil>
-								<DateFinValiditeProfil>1967-08-13</DateFinValiditeProfil>
-								<CategorieSociale>String</CategorieSociale>
-								<NiveaudEtudes>String</NiveaudEtudes>
-								<Profession>String</Profession>
-								<Sexe>String</Sexe>
-								<TranchedAge>String</TranchedAge>
-							</ProfilClient>
-							<PartenaireReferent>
-								<Nom>normalizedString</Nom>
-								<IdPartenaire>1</IdPartenaire>
-								<CodePays>000</CodePays>
-								<CodeBassin>000</CodeBassin>
-							</PartenaireReferent>
-						</ClientDetenteur>
-					</ContratProduit>
 				</ProduitInstalle>
 			</AncienObjetImplique>
 		</OperationVente>
 		<OperationVente>
-			<Date>1967-08-13</Date>
-			<Heure>14:20:00.0Z</Heure>
-			<IdOperation>1</IdOperation>
-			<TypeOperationVente>1</TypeOperationVente>
+			<IdOperation>0</IdOperation>
+			<Date>1957-08-13</Date>
+			<Heure>09:30:47+05:00</Heure>
+			<TypeOperationVente>0</TypeOperationVente>
 			<CodeArticle>String</CodeArticle>
-			<ElementControleIntegrite>String</ElementControleIntegrite>
-			<EtatOperation>1</EtatOperation>
-			<MontantOperation>0.0</MontantOperation>
-			<MoyenPaiementPrincipal>1</MoyenPaiementPrincipal>
 			<EquipementAcquisition>
-				<IdEquipement>String</IdEquipement>
-				<TypeEquipement>1</TypeEquipement>
 				<IdFournisseurEquipement>
 					<Nom>String</Nom>
 					<Referentiel>String</Referentiel>
@@ -732,139 +781,242 @@
 				</IdFournisseurEquipement>
 				<ExploitantEquipement>
 					<Nom>normalizedString</Nom>
-					<IdPartenaire>1</IdPartenaire>
+					<IdPartenaire>0</IdPartenaire>
 					<CodePays>000</CodePays>
 					<CodeBassin>000</CodeBassin>
 				</ExploitantEquipement>
+				<IdEquipement>String</IdEquipement>
+				<TypeEquipement>0</TypeEquipement>
 			</EquipementAcquisition>
 			<LieuDistribution>
 				<IdLocalisation>String</IdLocalisation>
-				<ReferentielLocalisation>1</ReferentielLocalisation>
+				<ReferentielLocalisation>0</ReferentielLocalisation>
 				<Sens>String</Sens>
 				<Ligne>
-					<TypeReferentiel>1</TypeReferentiel>
-					<IdLigne>1</IdLigne>
+					<IdLigne>0</IdLigne>
+					<TypeReferentiel>0</TypeReferentiel>
 				</Ligne>
 				<Course>
-					<TypeReferentiel>1</TypeReferentiel>
-					<IdCourse>1</IdCourse>
+					<IdCourse>0</IdCourse>
+					<TypeReferentiel>0</TypeReferentiel>
 				</Course>
 				<LibelleLieuDistribution>String</LibelleLieuDistribution>
 				<VenteEmbarquee>true</VenteEmbarquee>
 			</LieuDistribution>
+			<EtatOperation>0</EtatOperation>
+			<MontantOperation>0</MontantOperation>
 			<Devise>String</Devise>
+			<MoyenPaiementPrincipal>0</MoyenPaiementPrincipal>
+			<ElementControleIntegrite>String</ElementControleIntegrite>
 			<ObjetImplique>
 				<ProduitInstalle>
 					<ReferenceProduit>
 						<ProprietaireProduit>
 							<Nom>normalizedString</Nom>
-							<IdPartenaire>1</IdPartenaire>
+							<IdPartenaire>0</IdPartenaire>
 							<CodePays>000</CodePays>
 							<CodeBassin>000</CodeBassin>
 						</ProprietaireProduit>
-						<IdProduit>1</IdProduit>
+						<IdProduit>0</IdProduit>
 					</ReferenceProduit>
 					<ReferenceProduitInstalle>
 						<ExploitantVente>
 							<Nom>normalizedString</Nom>
-							<IdPartenaire>1</IdPartenaire>
+							<IdPartenaire>0</IdPartenaire>
 							<CodePays>000</CodePays>
 							<CodeBassin>000</CodeBassin>
 						</ExploitantVente>
-						<IdProduitInstalle>1</IdProduitInstalle>
+						<IdProduitInstalle>0</IdProduitInstalle>
 					</ReferenceProduitInstalle>
 					<SoldeCompteur>
-						<IdCompteur>1</IdCompteur>
+						<IdCompteur>0</IdCompteur>
 						<QuantiteOperation>0</QuantiteOperation>
 						<Solde>0</Solde>
 					</SoldeCompteur>
 					<SoldeCompteur>
-						<IdCompteur>1</IdCompteur>
+						<IdCompteur>0</IdCompteur>
 						<QuantiteOperation>0</QuantiteOperation>
 						<Solde>0</Solde>
 					</SoldeCompteur>
 					<ContrainteTemporelle>
 						<TrancheHoraire>
-							<HeureDeDebut>14:20:00.0Z</HeureDeDebut>
-							<HeureDeFin>14:20:00.0Z</HeureDeFin>
+							<HeureDeDebut>09:30:47+05:00</HeureDeDebut>
+							<HeureDeFin>09:30:47+05:00</HeureDeFin>
 							<Autorise>true</Autorise>
 						</TrancheHoraire>
-						<DureeValidite>P1Y2M3DT10H30M</DureeValidite>
+						<DureeValidite>P1Y2M2DT10H30M</DureeValidite>
 					</ContrainteTemporelle>
 					<ContrainteTemporelle>
 						<TrancheHoraire>
-							<HeureDeDebut>14:20:00.0Z</HeureDeDebut>
-							<HeureDeFin>14:20:00.0Z</HeureDeFin>
+							<HeureDeDebut>09:30:47+05:00</HeureDeDebut>
+							<HeureDeFin>09:30:47+05:00</HeureDeFin>
 							<Autorise>true</Autorise>
 						</TrancheHoraire>
-						<DureeValidite>P1Y2M3DT10H30M</DureeValidite>
+						<DureeValidite>P1Y2M2DT10H30M</DureeValidite>
 					</ContrainteTemporelle>
-					<FacteurTarifaireDeQualite>1</FacteurTarifaireDeQualite>
-					<PrixDeVenteProduit>0.0</PrixDeVenteProduit>
+					<ContratProduit>
+						<IdContrat>0</IdContrat>
+						<TypeCommercialContrat>0</TypeCommercialContrat>
+						<ProfilCommercialContrat>
+							<CodeProfilCommercialContrat>String</CodeProfilCommercialContrat>
+							<DateDebutValidite>1957-08-13</DateDebutValidite>
+							<DateFinValidite>1957-08-13</DateFinValidite>
+							<DonneeComplementaire>String</DonneeComplementaire>
+							<DonneeComplementaire>String</DonneeComplementaire>
+							<Proprietaire>
+								<Nom>normalizedString</Nom>
+								<IdPartenaire>0</IdPartenaire>
+								<CodePays>000</CodePays>
+								<CodeBassin>000</CodeBassin>
+							</Proprietaire>
+						</ProfilCommercialContrat>
+						<ClientDetenteur>
+							<ProfilClient>
+								<CodeProfil>0</CodeProfil>
+								<DateDebutValiditeProfil>1957-08-13</DateDebutValiditeProfil>
+								<DateFinValiditeProfil>1957-08-13</DateFinValiditeProfil>
+								<CategorieSociale>String</CategorieSociale>
+								<NiveaudEtudes>String</NiveaudEtudes>
+								<Profession>String</Profession>
+								<Sexe>String</Sexe>
+								<TranchedAge>String</TranchedAge>
+							</ProfilClient>
+							<ProfilClient>
+								<CodeProfil>0</CodeProfil>
+								<DateDebutValiditeProfil>1957-08-13</DateDebutValiditeProfil>
+								<DateFinValiditeProfil>1957-08-13</DateFinValiditeProfil>
+								<CategorieSociale>String</CategorieSociale>
+								<NiveaudEtudes>String</NiveaudEtudes>
+								<Profession>String</Profession>
+								<Sexe>String</Sexe>
+								<TranchedAge>String</TranchedAge>
+							</ProfilClient>
+							<IdClient>0</IdClient>
+							<Nom>normalizedString</Nom>
+							<Prenom>normalizedString</Prenom>
+							<Titre>0</Titre>
+							<DateNaissance>1957-08-13</DateNaissance>
+							<Adresse>
+								<LigneAdresse>
+									<NumLigne>1</NumLigne>
+									<TexteLigne>String</TexteLigne>
+								</LigneAdresse>
+								<LigneAdresse>
+									<NumLigne>1</NumLigne>
+									<TexteLigne>String</TexteLigne>
+								</LigneAdresse>
+								<NumVoie>String</NumVoie>
+								<TypeVoie>String</TypeVoie>
+								<LibelleVoie>String</LibelleVoie>
+								<CodePostal>String</CodePostal>
+								<CodePays>000</CodePays>
+							</Adresse>
+							<TelephonePrive>normalizedString</TelephonePrive>
+							<AdresseTravail>
+								<LigneAdresse>
+									<NumLigne>1</NumLigne>
+									<TexteLigne>String</TexteLigne>
+								</LigneAdresse>
+								<LigneAdresse>
+									<NumLigne>1</NumLigne>
+									<TexteLigne>String</TexteLigne>
+								</LigneAdresse>
+								<NumVoie>String</NumVoie>
+								<TypeVoie>String</TypeVoie>
+								<LibelleVoie>String</LibelleVoie>
+								<CodePostal>String</CodePostal>
+								<CodePays>000</CodePays>
+							</AdresseTravail>
+							<TelephoneTravail>normalizedString</TelephoneTravail>
+							<Coordonnees>
+								<TypeCoordonnee>0</TypeCoordonnee>
+								<ValeurCoordonnee>normalizedString</ValeurCoordonnee>
+							</Coordonnees>
+							<Coordonnees>
+								<TypeCoordonnee>0</TypeCoordonnee>
+								<ValeurCoordonnee>normalizedString</ValeurCoordonnee>
+							</Coordonnees>
+							<PartenaireReferent>
+								<Nom>normalizedString</Nom>
+								<IdPartenaire>0</IdPartenaire>
+								<CodePays>000</CodePays>
+								<CodeBassin>000</CodeBassin>
+							</PartenaireReferent>
+							<CommunicationDonneesPersonnelles>true</CommunicationDonneesPersonnelles>
+							<DateSaisie>1957-08-13</DateSaisie>
+						</ClientDetenteur>
+					</ContratProduit>
 					<ContrainteGeographique>
+						<Transporteur>
+							<Nom>normalizedString</Nom>
+							<IdPartenaire>0</IdPartenaire>
+							<CodePays>000</CodePays>
+							<CodeBassin>000</CodeBassin>
+						</Transporteur>
 						<ContrainteParcours>
-							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
 							<PointArretDebut>
 								<IdPointArret>String</IdPointArret>
-								<TypeReferentiel>1</TypeReferentiel>
+								<TypeReferentiel>0</TypeReferentiel>
 							</PointArretDebut>
 							<PointArretFin>
 								<IdPointArret>String</IdPointArret>
-								<TypeReferentiel>1</TypeReferentiel>
+								<TypeReferentiel>0</TypeReferentiel>
 							</PointArretFin>
+							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
 						</ContrainteParcours>
 						<ContrainteZonale>
+							<ZoneTarifaire>
+								<IdZoneTarifaire>0</IdZoneTarifaire>
+								<TypeReferentiel>0</TypeReferentiel>
+							</ZoneTarifaire>
+							<ZoneTarifaire>
+								<IdZoneTarifaire>0</IdZoneTarifaire>
+								<TypeReferentiel>0</TypeReferentiel>
+							</ZoneTarifaire>
 							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
-							<ZoneTarifaire>
-								<TypeReferentiel>1</TypeReferentiel>
-								<IdZoneTarifaire>1</IdZoneTarifaire>
-							</ZoneTarifaire>
-							<ZoneTarifaire>
-								<TypeReferentiel>1</TypeReferentiel>
-								<IdZoneTarifaire>1</IdZoneTarifaire>
-							</ZoneTarifaire>
 						</ContrainteZonale>
 					</ContrainteGeographique>
 					<ContrainteGeographique>
+						<Transporteur>
+							<Nom>normalizedString</Nom>
+							<IdPartenaire>0</IdPartenaire>
+							<CodePays>000</CodePays>
+							<CodeBassin>000</CodeBassin>
+						</Transporteur>
 						<ContrainteParcours>
-							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
 							<PointArretDebut>
 								<IdPointArret>String</IdPointArret>
-								<TypeReferentiel>1</TypeReferentiel>
+								<TypeReferentiel>0</TypeReferentiel>
 							</PointArretDebut>
 							<PointArretFin>
 								<IdPointArret>String</IdPointArret>
-								<TypeReferentiel>1</TypeReferentiel>
+								<TypeReferentiel>0</TypeReferentiel>
 							</PointArretFin>
+							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
 						</ContrainteParcours>
 						<ContrainteZonale>
+							<ZoneTarifaire>
+								<IdZoneTarifaire>0</IdZoneTarifaire>
+								<TypeReferentiel>0</TypeReferentiel>
+							</ZoneTarifaire>
+							<ZoneTarifaire>
+								<IdZoneTarifaire>0</IdZoneTarifaire>
+								<TypeReferentiel>0</TypeReferentiel>
+							</ZoneTarifaire>
 							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
-							<ZoneTarifaire>
-								<TypeReferentiel>1</TypeReferentiel>
-								<IdZoneTarifaire>1</IdZoneTarifaire>
-							</ZoneTarifaire>
-							<ZoneTarifaire>
-								<TypeReferentiel>1</TypeReferentiel>
-								<IdZoneTarifaire>1</IdZoneTarifaire>
-							</ZoneTarifaire>
 						</ContrainteZonale>
 					</ContrainteGeographique>
+					<FacteurTarifaireDeQualite>0</FacteurTarifaireDeQualite>
+					<PrixDeVenteProduit>0</PrixDeVenteProduit>
 					<ApplicationUtilisee>
 						<AID>String</AID>
 						<IdApplicationInstallee>String</IdApplicationInstallee>
-						<Distributeur>
-							<Nom>normalizedString</Nom>
-							<IdPartenaire>1</IdPartenaire>
-							<CodePays>000</CodePays>
-							<CodeBassin>000</CodeBassin>
-						</Distributeur>
-						<DateHeureFinValidite>2001-12-17T09:30:47Z</DateHeureFinValidite>
 						<MatriceApplicationEnregistree>
 							<IdMatriceApplication>String</IdMatriceApplication>
-							<TypeApplication>1</TypeApplication>
+							<TypeApplication>0</TypeApplication>
 							<Proprietaire>
 								<Nom>normalizedString</Nom>
-								<IdPartenaire>1</IdPartenaire>
+								<IdPartenaire>0</IdPartenaire>
 								<CodePays>000</CodePays>
 								<CodeBassin>000</CodeBassin>
 							</Proprietaire>
@@ -879,198 +1031,129 @@
 								<CodeBassin>000</CodeBassin>
 							</BassinsAcceptation>
 						</MatriceApplicationEnregistree>
+						<Distributeur>
+							<Nom>normalizedString</Nom>
+							<IdPartenaire>0</IdPartenaire>
+							<CodePays>000</CodePays>
+							<CodeBassin>000</CodeBassin>
+						</Distributeur>
+						<DateHeureFinValidite>2001-12-17T09:30:47+05:00</DateHeureFinValidite>
 					</ApplicationUtilisee>
 					<SupportUtilise>
-						<TypeSupport>1</TypeSupport>
-						<CategorieSupport>1</CategorieSupport>
-						<IdSupport>1</IdSupport>
-						<DateHeureEmission>2001-12-17T09:30:47Z</DateHeureEmission>
-						<DateHeureFinValidite>2001-12-17T09:30:47Z</DateHeureFinValidite>
-						<SoldeCompteur>
-							<IdCompteur>1</IdCompteur>
-							<QuantiteOperation>0</QuantiteOperation>
-							<Solde>0</Solde>
-						</SoldeCompteur>
-						<SoldeCompteur>
-							<IdCompteur>1</IdCompteur>
-							<QuantiteOperation>0</QuantiteOperation>
-							<Solde>0</Solde>
-						</SoldeCompteur>
+						<TypeSupport>0</TypeSupport>
+						<CategorieSupport>0</CategorieSupport>
+						<IdSupport>0</IdSupport>
 						<ContratSupport>
-							<TypeCommercialContrat>1</TypeCommercialContrat>
-							<IdContrat>1</IdContrat>
+							<IdContrat>0</IdContrat>
+							<TypeCommercialContrat>0</TypeCommercialContrat>
 							<ProfilCommercialContrat>
 								<CodeProfilCommercialContrat>String</CodeProfilCommercialContrat>
-								<DateDebutValidite>1967-08-13</DateDebutValidite>
-								<DateFinValidite>1967-08-13</DateFinValidite>
+								<DateDebutValidite>1957-08-13</DateDebutValidite>
+								<DateFinValidite>1957-08-13</DateFinValidite>
 								<DonneeComplementaire>String</DonneeComplementaire>
 								<DonneeComplementaire>String</DonneeComplementaire>
 								<Proprietaire>
 									<Nom>normalizedString</Nom>
-									<IdPartenaire>1</IdPartenaire>
+									<IdPartenaire>0</IdPartenaire>
 									<CodePays>000</CodePays>
 									<CodeBassin>000</CodeBassin>
 								</Proprietaire>
 							</ProfilCommercialContrat>
 							<ClientDetenteur>
-								<IdClient>1</IdClient>
+								<ProfilClient>
+									<CodeProfil>0</CodeProfil>
+									<DateDebutValiditeProfil>1957-08-13</DateDebutValiditeProfil>
+									<DateFinValiditeProfil>1957-08-13</DateFinValiditeProfil>
+									<CategorieSociale>String</CategorieSociale>
+									<NiveaudEtudes>String</NiveaudEtudes>
+									<Profession>String</Profession>
+									<Sexe>String</Sexe>
+									<TranchedAge>String</TranchedAge>
+								</ProfilClient>
+								<ProfilClient>
+									<CodeProfil>0</CodeProfil>
+									<DateDebutValiditeProfil>1957-08-13</DateDebutValiditeProfil>
+									<DateFinValiditeProfil>1957-08-13</DateFinValiditeProfil>
+									<CategorieSociale>String</CategorieSociale>
+									<NiveaudEtudes>String</NiveaudEtudes>
+									<Profession>String</Profession>
+									<Sexe>String</Sexe>
+									<TranchedAge>String</TranchedAge>
+								</ProfilClient>
+								<IdClient>0</IdClient>
 								<Nom>normalizedString</Nom>
 								<Prenom>normalizedString</Prenom>
-								<Titre>1</Titre>
-								<DateNaissance>1967-08-13</DateNaissance>
-								<TelephonePrive>normalizedString</TelephonePrive>
-								<TelephoneTravail>normalizedString</TelephoneTravail>
+								<Titre>0</Titre>
+								<DateNaissance>1957-08-13</DateNaissance>
 								<Adresse>
+									<LigneAdresse>
+										<NumLigne>1</NumLigne>
+										<TexteLigne>String</TexteLigne>
+									</LigneAdresse>
+									<LigneAdresse>
+										<NumLigne>1</NumLigne>
+										<TexteLigne>String</TexteLigne>
+									</LigneAdresse>
 									<NumVoie>String</NumVoie>
 									<TypeVoie>String</TypeVoie>
 									<LibelleVoie>String</LibelleVoie>
-									<LigneAdresse>
-										<NumLigne>1</NumLigne>
-										<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-									</LigneAdresse>
-									<LigneAdresse>
-										<NumLigne>1</NumLigne>
-										<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-									</LigneAdresse>
 									<CodePostal>String</CodePostal>
 									<CodePays>000</CodePays>
 								</Adresse>
+								<TelephonePrive>normalizedString</TelephonePrive>
 								<AdresseTravail>
+									<LigneAdresse>
+										<NumLigne>1</NumLigne>
+										<TexteLigne>String</TexteLigne>
+									</LigneAdresse>
+									<LigneAdresse>
+										<NumLigne>1</NumLigne>
+										<TexteLigne>String</TexteLigne>
+									</LigneAdresse>
 									<NumVoie>String</NumVoie>
 									<TypeVoie>String</TypeVoie>
 									<LibelleVoie>String</LibelleVoie>
-									<LigneAdresse>
-										<NumLigne>1</NumLigne>
-										<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-									</LigneAdresse>
-									<LigneAdresse>
-										<NumLigne>1</NumLigne>
-										<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-									</LigneAdresse>
 									<CodePostal>String</CodePostal>
 									<CodePays>000</CodePays>
 								</AdresseTravail>
-								<CommunicationDonneesPersonnelles>true</CommunicationDonneesPersonnelles>
-								<DateSaisie>1967-08-13</DateSaisie>
-								<ProfilClient>
-									<CodeProfil>1</CodeProfil>
-									<DateDebutValiditeProfil>1967-08-13</DateDebutValiditeProfil>
-									<DateFinValiditeProfil>1967-08-13</DateFinValiditeProfil>
-									<CategorieSociale>String</CategorieSociale>
-									<NiveaudEtudes>String</NiveaudEtudes>
-									<Profession>String</Profession>
-									<Sexe>String</Sexe>
-									<TranchedAge>String</TranchedAge>
-								</ProfilClient>
-								<ProfilClient>
-									<CodeProfil>1</CodeProfil>
-									<DateDebutValiditeProfil>1967-08-13</DateDebutValiditeProfil>
-									<DateFinValiditeProfil>1967-08-13</DateFinValiditeProfil>
-									<CategorieSociale>String</CategorieSociale>
-									<NiveaudEtudes>String</NiveaudEtudes>
-									<Profession>String</Profession>
-									<Sexe>String</Sexe>
-									<TranchedAge>String</TranchedAge>
-								</ProfilClient>
+								<TelephoneTravail>normalizedString</TelephoneTravail>
+								<Coordonnees>
+									<TypeCoordonnee>0</TypeCoordonnee>
+									<ValeurCoordonnee>normalizedString</ValeurCoordonnee>
+								</Coordonnees>
+								<Coordonnees>
+									<TypeCoordonnee>0</TypeCoordonnee>
+									<ValeurCoordonnee>normalizedString</ValeurCoordonnee>
+								</Coordonnees>
 								<PartenaireReferent>
 									<Nom>normalizedString</Nom>
-									<IdPartenaire>1</IdPartenaire>
+									<IdPartenaire>0</IdPartenaire>
 									<CodePays>000</CodePays>
 									<CodeBassin>000</CodeBassin>
 								</PartenaireReferent>
+								<CommunicationDonneesPersonnelles>true</CommunicationDonneesPersonnelles>
+								<DateSaisie>1957-08-13</DateSaisie>
 							</ClientDetenteur>
 						</ContratSupport>
+						<DateHeureEmission>2001-12-17T09:30:47+05:00</DateHeureEmission>
+						<DateHeureFinValidite>2001-12-17T09:30:47+05:00</DateHeureFinValidite>
+						<SoldeCompteur>
+							<IdCompteur>0</IdCompteur>
+							<QuantiteOperation>0</QuantiteOperation>
+							<Solde>0</Solde>
+						</SoldeCompteur>
+						<SoldeCompteur>
+							<IdCompteur>0</IdCompteur>
+							<QuantiteOperation>0</QuantiteOperation>
+							<Solde>0</Solde>
+						</SoldeCompteur>
 						<EmetteurSupportEnregistre>
 							<Nom>normalizedString</Nom>
-							<IdPartenaire>1</IdPartenaire>
+							<IdPartenaire>0</IdPartenaire>
 							<CodePays>000</CodePays>
 							<CodeBassin>000</CodeBassin>
 						</EmetteurSupportEnregistre>
 					</SupportUtilise>
-					<ContratProduit>
-						<TypeCommercialContrat>1</TypeCommercialContrat>
-						<IdContrat>1</IdContrat>
-						<ProfilCommercialContrat>
-							<CodeProfilCommercialContrat>String</CodeProfilCommercialContrat>
-							<DateDebutValidite>1967-08-13</DateDebutValidite>
-							<DateFinValidite>1967-08-13</DateFinValidite>
-							<DonneeComplementaire>String</DonneeComplementaire>
-							<DonneeComplementaire>String</DonneeComplementaire>
-							<Proprietaire>
-								<Nom>normalizedString</Nom>
-								<IdPartenaire>1</IdPartenaire>
-								<CodePays>000</CodePays>
-								<CodeBassin>000</CodeBassin>
-							</Proprietaire>
-						</ProfilCommercialContrat>
-						<ClientDetenteur>
-							<IdClient>1</IdClient>
-							<Nom>normalizedString</Nom>
-							<Prenom>normalizedString</Prenom>
-							<Titre>1</Titre>
-							<DateNaissance>1967-08-13</DateNaissance>
-							<TelephonePrive>normalizedString</TelephonePrive>
-							<TelephoneTravail>normalizedString</TelephoneTravail>
-							<Adresse>
-								<NumVoie>String</NumVoie>
-								<TypeVoie>String</TypeVoie>
-								<LibelleVoie>String</LibelleVoie>
-								<LigneAdresse>
-									<NumLigne>1</NumLigne>
-									<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-								</LigneAdresse>
-								<LigneAdresse>
-									<NumLigne>1</NumLigne>
-									<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-								</LigneAdresse>
-								<CodePostal>String</CodePostal>
-								<CodePays>000</CodePays>
-							</Adresse>
-							<AdresseTravail>
-								<NumVoie>String</NumVoie>
-								<TypeVoie>String</TypeVoie>
-								<LibelleVoie>String</LibelleVoie>
-								<LigneAdresse>
-									<NumLigne>1</NumLigne>
-									<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-								</LigneAdresse>
-								<LigneAdresse>
-									<NumLigne>1</NumLigne>
-									<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-								</LigneAdresse>
-								<CodePostal>String</CodePostal>
-								<CodePays>000</CodePays>
-							</AdresseTravail>
-							<CommunicationDonneesPersonnelles>true</CommunicationDonneesPersonnelles>
-							<DateSaisie>1967-08-13</DateSaisie>
-							<ProfilClient>
-								<CodeProfil>1</CodeProfil>
-								<DateDebutValiditeProfil>1967-08-13</DateDebutValiditeProfil>
-								<DateFinValiditeProfil>1967-08-13</DateFinValiditeProfil>
-								<CategorieSociale>String</CategorieSociale>
-								<NiveaudEtudes>String</NiveaudEtudes>
-								<Profession>String</Profession>
-								<Sexe>String</Sexe>
-								<TranchedAge>String</TranchedAge>
-							</ProfilClient>
-							<ProfilClient>
-								<CodeProfil>1</CodeProfil>
-								<DateDebutValiditeProfil>1967-08-13</DateDebutValiditeProfil>
-								<DateFinValiditeProfil>1967-08-13</DateFinValiditeProfil>
-								<CategorieSociale>String</CategorieSociale>
-								<NiveaudEtudes>String</NiveaudEtudes>
-								<Profession>String</Profession>
-								<Sexe>String</Sexe>
-								<TranchedAge>String</TranchedAge>
-							</ProfilClient>
-							<PartenaireReferent>
-								<Nom>normalizedString</Nom>
-								<IdPartenaire>1</IdPartenaire>
-								<CodePays>000</CodePays>
-								<CodeBassin>000</CodeBassin>
-							</PartenaireReferent>
-						</ClientDetenteur>
-					</ContratProduit>
 				</ProduitInstalle>
 			</ObjetImplique>
 			<AncienObjetImplique>
@@ -1078,113 +1161,210 @@
 					<ReferenceProduit>
 						<ProprietaireProduit>
 							<Nom>normalizedString</Nom>
-							<IdPartenaire>1</IdPartenaire>
+							<IdPartenaire>0</IdPartenaire>
 							<CodePays>000</CodePays>
 							<CodeBassin>000</CodeBassin>
 						</ProprietaireProduit>
-						<IdProduit>1</IdProduit>
+						<IdProduit>0</IdProduit>
 					</ReferenceProduit>
 					<ReferenceProduitInstalle>
 						<ExploitantVente>
 							<Nom>normalizedString</Nom>
-							<IdPartenaire>1</IdPartenaire>
+							<IdPartenaire>0</IdPartenaire>
 							<CodePays>000</CodePays>
 							<CodeBassin>000</CodeBassin>
 						</ExploitantVente>
-						<IdProduitInstalle>1</IdProduitInstalle>
+						<IdProduitInstalle>0</IdProduitInstalle>
 					</ReferenceProduitInstalle>
 					<SoldeCompteur>
-						<IdCompteur>1</IdCompteur>
+						<IdCompteur>0</IdCompteur>
 						<QuantiteOperation>0</QuantiteOperation>
 						<Solde>0</Solde>
 					</SoldeCompteur>
 					<SoldeCompteur>
-						<IdCompteur>1</IdCompteur>
+						<IdCompteur>0</IdCompteur>
 						<QuantiteOperation>0</QuantiteOperation>
 						<Solde>0</Solde>
 					</SoldeCompteur>
 					<ContrainteTemporelle>
 						<TrancheHoraire>
-							<HeureDeDebut>14:20:00.0Z</HeureDeDebut>
-							<HeureDeFin>14:20:00.0Z</HeureDeFin>
+							<HeureDeDebut>09:30:47+05:00</HeureDeDebut>
+							<HeureDeFin>09:30:47+05:00</HeureDeFin>
 							<Autorise>true</Autorise>
 						</TrancheHoraire>
-						<DureeValidite>P1Y2M3DT10H30M</DureeValidite>
+						<DureeValidite>P1Y2M2DT10H30M</DureeValidite>
 					</ContrainteTemporelle>
 					<ContrainteTemporelle>
 						<TrancheHoraire>
-							<HeureDeDebut>14:20:00.0Z</HeureDeDebut>
-							<HeureDeFin>14:20:00.0Z</HeureDeFin>
+							<HeureDeDebut>09:30:47+05:00</HeureDeDebut>
+							<HeureDeFin>09:30:47+05:00</HeureDeFin>
 							<Autorise>true</Autorise>
 						</TrancheHoraire>
-						<DureeValidite>P1Y2M3DT10H30M</DureeValidite>
+						<DureeValidite>P1Y2M2DT10H30M</DureeValidite>
 					</ContrainteTemporelle>
-					<FacteurTarifaireDeQualite>1</FacteurTarifaireDeQualite>
-					<PrixDeVenteProduit>0.0</PrixDeVenteProduit>
+					<ContratProduit>
+						<IdContrat>0</IdContrat>
+						<TypeCommercialContrat>0</TypeCommercialContrat>
+						<ProfilCommercialContrat>
+							<CodeProfilCommercialContrat>String</CodeProfilCommercialContrat>
+							<DateDebutValidite>1957-08-13</DateDebutValidite>
+							<DateFinValidite>1957-08-13</DateFinValidite>
+							<DonneeComplementaire>String</DonneeComplementaire>
+							<DonneeComplementaire>String</DonneeComplementaire>
+							<Proprietaire>
+								<Nom>normalizedString</Nom>
+								<IdPartenaire>0</IdPartenaire>
+								<CodePays>000</CodePays>
+								<CodeBassin>000</CodeBassin>
+							</Proprietaire>
+						</ProfilCommercialContrat>
+						<ClientDetenteur>
+							<ProfilClient>
+								<CodeProfil>0</CodeProfil>
+								<DateDebutValiditeProfil>1957-08-13</DateDebutValiditeProfil>
+								<DateFinValiditeProfil>1957-08-13</DateFinValiditeProfil>
+								<CategorieSociale>String</CategorieSociale>
+								<NiveaudEtudes>String</NiveaudEtudes>
+								<Profession>String</Profession>
+								<Sexe>String</Sexe>
+								<TranchedAge>String</TranchedAge>
+							</ProfilClient>
+							<ProfilClient>
+								<CodeProfil>0</CodeProfil>
+								<DateDebutValiditeProfil>1957-08-13</DateDebutValiditeProfil>
+								<DateFinValiditeProfil>1957-08-13</DateFinValiditeProfil>
+								<CategorieSociale>String</CategorieSociale>
+								<NiveaudEtudes>String</NiveaudEtudes>
+								<Profession>String</Profession>
+								<Sexe>String</Sexe>
+								<TranchedAge>String</TranchedAge>
+							</ProfilClient>
+							<IdClient>0</IdClient>
+							<Nom>normalizedString</Nom>
+							<Prenom>normalizedString</Prenom>
+							<Titre>0</Titre>
+							<DateNaissance>1957-08-13</DateNaissance>
+							<Adresse>
+								<LigneAdresse>
+									<NumLigne>1</NumLigne>
+									<TexteLigne>String</TexteLigne>
+								</LigneAdresse>
+								<LigneAdresse>
+									<NumLigne>1</NumLigne>
+									<TexteLigne>String</TexteLigne>
+								</LigneAdresse>
+								<NumVoie>String</NumVoie>
+								<TypeVoie>String</TypeVoie>
+								<LibelleVoie>String</LibelleVoie>
+								<CodePostal>String</CodePostal>
+								<CodePays>000</CodePays>
+							</Adresse>
+							<TelephonePrive>normalizedString</TelephonePrive>
+							<AdresseTravail>
+								<LigneAdresse>
+									<NumLigne>1</NumLigne>
+									<TexteLigne>String</TexteLigne>
+								</LigneAdresse>
+								<LigneAdresse>
+									<NumLigne>1</NumLigne>
+									<TexteLigne>String</TexteLigne>
+								</LigneAdresse>
+								<NumVoie>String</NumVoie>
+								<TypeVoie>String</TypeVoie>
+								<LibelleVoie>String</LibelleVoie>
+								<CodePostal>String</CodePostal>
+								<CodePays>000</CodePays>
+							</AdresseTravail>
+							<TelephoneTravail>normalizedString</TelephoneTravail>
+							<Coordonnees>
+								<TypeCoordonnee>0</TypeCoordonnee>
+								<ValeurCoordonnee>normalizedString</ValeurCoordonnee>
+							</Coordonnees>
+							<Coordonnees>
+								<TypeCoordonnee>0</TypeCoordonnee>
+								<ValeurCoordonnee>normalizedString</ValeurCoordonnee>
+							</Coordonnees>
+							<PartenaireReferent>
+								<Nom>normalizedString</Nom>
+								<IdPartenaire>0</IdPartenaire>
+								<CodePays>000</CodePays>
+								<CodeBassin>000</CodeBassin>
+							</PartenaireReferent>
+							<CommunicationDonneesPersonnelles>true</CommunicationDonneesPersonnelles>
+							<DateSaisie>1957-08-13</DateSaisie>
+						</ClientDetenteur>
+					</ContratProduit>
 					<ContrainteGeographique>
+						<Transporteur>
+							<Nom>normalizedString</Nom>
+							<IdPartenaire>0</IdPartenaire>
+							<CodePays>000</CodePays>
+							<CodeBassin>000</CodeBassin>
+						</Transporteur>
 						<ContrainteParcours>
-							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
 							<PointArretDebut>
 								<IdPointArret>String</IdPointArret>
-								<TypeReferentiel>1</TypeReferentiel>
+								<TypeReferentiel>0</TypeReferentiel>
 							</PointArretDebut>
 							<PointArretFin>
 								<IdPointArret>String</IdPointArret>
-								<TypeReferentiel>1</TypeReferentiel>
+								<TypeReferentiel>0</TypeReferentiel>
 							</PointArretFin>
+							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
 						</ContrainteParcours>
 						<ContrainteZonale>
+							<ZoneTarifaire>
+								<IdZoneTarifaire>0</IdZoneTarifaire>
+								<TypeReferentiel>0</TypeReferentiel>
+							</ZoneTarifaire>
+							<ZoneTarifaire>
+								<IdZoneTarifaire>0</IdZoneTarifaire>
+								<TypeReferentiel>0</TypeReferentiel>
+							</ZoneTarifaire>
 							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
-							<ZoneTarifaire>
-								<TypeReferentiel>1</TypeReferentiel>
-								<IdZoneTarifaire>1</IdZoneTarifaire>
-							</ZoneTarifaire>
-							<ZoneTarifaire>
-								<TypeReferentiel>1</TypeReferentiel>
-								<IdZoneTarifaire>1</IdZoneTarifaire>
-							</ZoneTarifaire>
 						</ContrainteZonale>
 					</ContrainteGeographique>
 					<ContrainteGeographique>
+						<Transporteur>
+							<Nom>normalizedString</Nom>
+							<IdPartenaire>0</IdPartenaire>
+							<CodePays>000</CodePays>
+							<CodeBassin>000</CodeBassin>
+						</Transporteur>
 						<ContrainteParcours>
-							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
 							<PointArretDebut>
 								<IdPointArret>String</IdPointArret>
-								<TypeReferentiel>1</TypeReferentiel>
+								<TypeReferentiel>0</TypeReferentiel>
 							</PointArretDebut>
 							<PointArretFin>
 								<IdPointArret>String</IdPointArret>
-								<TypeReferentiel>1</TypeReferentiel>
+								<TypeReferentiel>0</TypeReferentiel>
 							</PointArretFin>
+							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
 						</ContrainteParcours>
 						<ContrainteZonale>
+							<ZoneTarifaire>
+								<IdZoneTarifaire>0</IdZoneTarifaire>
+								<TypeReferentiel>0</TypeReferentiel>
+							</ZoneTarifaire>
+							<ZoneTarifaire>
+								<IdZoneTarifaire>0</IdZoneTarifaire>
+								<TypeReferentiel>0</TypeReferentiel>
+							</ZoneTarifaire>
 							<IndicateurContrainteChainage>0</IndicateurContrainteChainage>
-							<ZoneTarifaire>
-								<TypeReferentiel>1</TypeReferentiel>
-								<IdZoneTarifaire>1</IdZoneTarifaire>
-							</ZoneTarifaire>
-							<ZoneTarifaire>
-								<TypeReferentiel>1</TypeReferentiel>
-								<IdZoneTarifaire>1</IdZoneTarifaire>
-							</ZoneTarifaire>
 						</ContrainteZonale>
 					</ContrainteGeographique>
+					<FacteurTarifaireDeQualite>0</FacteurTarifaireDeQualite>
+					<PrixDeVenteProduit>0</PrixDeVenteProduit>
 					<ApplicationUtilisee>
 						<AID>String</AID>
 						<IdApplicationInstallee>String</IdApplicationInstallee>
-						<Distributeur>
-							<Nom>normalizedString</Nom>
-							<IdPartenaire>1</IdPartenaire>
-							<CodePays>000</CodePays>
-							<CodeBassin>000</CodeBassin>
-						</Distributeur>
-						<DateHeureFinValidite>2001-12-17T09:30:47Z</DateHeureFinValidite>
 						<MatriceApplicationEnregistree>
 							<IdMatriceApplication>String</IdMatriceApplication>
-							<TypeApplication>1</TypeApplication>
+							<TypeApplication>0</TypeApplication>
 							<Proprietaire>
 								<Nom>normalizedString</Nom>
-								<IdPartenaire>1</IdPartenaire>
+								<IdPartenaire>0</IdPartenaire>
 								<CodePays>000</CodePays>
 								<CodeBassin>000</CodeBassin>
 							</Proprietaire>
@@ -1199,198 +1379,129 @@
 								<CodeBassin>000</CodeBassin>
 							</BassinsAcceptation>
 						</MatriceApplicationEnregistree>
+						<Distributeur>
+							<Nom>normalizedString</Nom>
+							<IdPartenaire>0</IdPartenaire>
+							<CodePays>000</CodePays>
+							<CodeBassin>000</CodeBassin>
+						</Distributeur>
+						<DateHeureFinValidite>2001-12-17T09:30:47+05:00</DateHeureFinValidite>
 					</ApplicationUtilisee>
 					<SupportUtilise>
-						<TypeSupport>1</TypeSupport>
-						<CategorieSupport>1</CategorieSupport>
-						<IdSupport>1</IdSupport>
-						<DateHeureEmission>2001-12-17T09:30:47Z</DateHeureEmission>
-						<DateHeureFinValidite>2001-12-17T09:30:47Z</DateHeureFinValidite>
-						<SoldeCompteur>
-							<IdCompteur>1</IdCompteur>
-							<QuantiteOperation>0</QuantiteOperation>
-							<Solde>0</Solde>
-						</SoldeCompteur>
-						<SoldeCompteur>
-							<IdCompteur>1</IdCompteur>
-							<QuantiteOperation>0</QuantiteOperation>
-							<Solde>0</Solde>
-						</SoldeCompteur>
+						<TypeSupport>0</TypeSupport>
+						<CategorieSupport>0</CategorieSupport>
+						<IdSupport>0</IdSupport>
 						<ContratSupport>
-							<TypeCommercialContrat>1</TypeCommercialContrat>
-							<IdContrat>1</IdContrat>
+							<IdContrat>0</IdContrat>
+							<TypeCommercialContrat>0</TypeCommercialContrat>
 							<ProfilCommercialContrat>
 								<CodeProfilCommercialContrat>String</CodeProfilCommercialContrat>
-								<DateDebutValidite>1967-08-13</DateDebutValidite>
-								<DateFinValidite>1967-08-13</DateFinValidite>
+								<DateDebutValidite>1957-08-13</DateDebutValidite>
+								<DateFinValidite>1957-08-13</DateFinValidite>
 								<DonneeComplementaire>String</DonneeComplementaire>
 								<DonneeComplementaire>String</DonneeComplementaire>
 								<Proprietaire>
 									<Nom>normalizedString</Nom>
-									<IdPartenaire>1</IdPartenaire>
+									<IdPartenaire>0</IdPartenaire>
 									<CodePays>000</CodePays>
 									<CodeBassin>000</CodeBassin>
 								</Proprietaire>
 							</ProfilCommercialContrat>
 							<ClientDetenteur>
-								<IdClient>1</IdClient>
+								<ProfilClient>
+									<CodeProfil>0</CodeProfil>
+									<DateDebutValiditeProfil>1957-08-13</DateDebutValiditeProfil>
+									<DateFinValiditeProfil>1957-08-13</DateFinValiditeProfil>
+									<CategorieSociale>String</CategorieSociale>
+									<NiveaudEtudes>String</NiveaudEtudes>
+									<Profession>String</Profession>
+									<Sexe>String</Sexe>
+									<TranchedAge>String</TranchedAge>
+								</ProfilClient>
+								<ProfilClient>
+									<CodeProfil>0</CodeProfil>
+									<DateDebutValiditeProfil>1957-08-13</DateDebutValiditeProfil>
+									<DateFinValiditeProfil>1957-08-13</DateFinValiditeProfil>
+									<CategorieSociale>String</CategorieSociale>
+									<NiveaudEtudes>String</NiveaudEtudes>
+									<Profession>String</Profession>
+									<Sexe>String</Sexe>
+									<TranchedAge>String</TranchedAge>
+								</ProfilClient>
+								<IdClient>0</IdClient>
 								<Nom>normalizedString</Nom>
 								<Prenom>normalizedString</Prenom>
-								<Titre>1</Titre>
-								<DateNaissance>1967-08-13</DateNaissance>
-								<TelephonePrive>normalizedString</TelephonePrive>
-								<TelephoneTravail>normalizedString</TelephoneTravail>
+								<Titre>0</Titre>
+								<DateNaissance>1957-08-13</DateNaissance>
 								<Adresse>
+									<LigneAdresse>
+										<NumLigne>1</NumLigne>
+										<TexteLigne>String</TexteLigne>
+									</LigneAdresse>
+									<LigneAdresse>
+										<NumLigne>1</NumLigne>
+										<TexteLigne>String</TexteLigne>
+									</LigneAdresse>
 									<NumVoie>String</NumVoie>
 									<TypeVoie>String</TypeVoie>
 									<LibelleVoie>String</LibelleVoie>
-									<LigneAdresse>
-										<NumLigne>1</NumLigne>
-										<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-									</LigneAdresse>
-									<LigneAdresse>
-										<NumLigne>1</NumLigne>
-										<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-									</LigneAdresse>
 									<CodePostal>String</CodePostal>
 									<CodePays>000</CodePays>
 								</Adresse>
+								<TelephonePrive>normalizedString</TelephonePrive>
 								<AdresseTravail>
+									<LigneAdresse>
+										<NumLigne>1</NumLigne>
+										<TexteLigne>String</TexteLigne>
+									</LigneAdresse>
+									<LigneAdresse>
+										<NumLigne>1</NumLigne>
+										<TexteLigne>String</TexteLigne>
+									</LigneAdresse>
 									<NumVoie>String</NumVoie>
 									<TypeVoie>String</TypeVoie>
 									<LibelleVoie>String</LibelleVoie>
-									<LigneAdresse>
-										<NumLigne>1</NumLigne>
-										<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-									</LigneAdresse>
-									<LigneAdresse>
-										<NumLigne>1</NumLigne>
-										<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-									</LigneAdresse>
 									<CodePostal>String</CodePostal>
 									<CodePays>000</CodePays>
 								</AdresseTravail>
-								<CommunicationDonneesPersonnelles>true</CommunicationDonneesPersonnelles>
-								<DateSaisie>1967-08-13</DateSaisie>
-								<ProfilClient>
-									<CodeProfil>1</CodeProfil>
-									<DateDebutValiditeProfil>1967-08-13</DateDebutValiditeProfil>
-									<DateFinValiditeProfil>1967-08-13</DateFinValiditeProfil>
-									<CategorieSociale>String</CategorieSociale>
-									<NiveaudEtudes>String</NiveaudEtudes>
-									<Profession>String</Profession>
-									<Sexe>String</Sexe>
-									<TranchedAge>String</TranchedAge>
-								</ProfilClient>
-								<ProfilClient>
-									<CodeProfil>1</CodeProfil>
-									<DateDebutValiditeProfil>1967-08-13</DateDebutValiditeProfil>
-									<DateFinValiditeProfil>1967-08-13</DateFinValiditeProfil>
-									<CategorieSociale>String</CategorieSociale>
-									<NiveaudEtudes>String</NiveaudEtudes>
-									<Profession>String</Profession>
-									<Sexe>String</Sexe>
-									<TranchedAge>String</TranchedAge>
-								</ProfilClient>
+								<TelephoneTravail>normalizedString</TelephoneTravail>
+								<Coordonnees>
+									<TypeCoordonnee>0</TypeCoordonnee>
+									<ValeurCoordonnee>normalizedString</ValeurCoordonnee>
+								</Coordonnees>
+								<Coordonnees>
+									<TypeCoordonnee>0</TypeCoordonnee>
+									<ValeurCoordonnee>normalizedString</ValeurCoordonnee>
+								</Coordonnees>
 								<PartenaireReferent>
 									<Nom>normalizedString</Nom>
-									<IdPartenaire>1</IdPartenaire>
+									<IdPartenaire>0</IdPartenaire>
 									<CodePays>000</CodePays>
 									<CodeBassin>000</CodeBassin>
 								</PartenaireReferent>
+								<CommunicationDonneesPersonnelles>true</CommunicationDonneesPersonnelles>
+								<DateSaisie>1957-08-13</DateSaisie>
 							</ClientDetenteur>
 						</ContratSupport>
+						<DateHeureEmission>2001-12-17T09:30:47+05:00</DateHeureEmission>
+						<DateHeureFinValidite>2001-12-17T09:30:47+05:00</DateHeureFinValidite>
+						<SoldeCompteur>
+							<IdCompteur>0</IdCompteur>
+							<QuantiteOperation>0</QuantiteOperation>
+							<Solde>0</Solde>
+						</SoldeCompteur>
+						<SoldeCompteur>
+							<IdCompteur>0</IdCompteur>
+							<QuantiteOperation>0</QuantiteOperation>
+							<Solde>0</Solde>
+						</SoldeCompteur>
 						<EmetteurSupportEnregistre>
 							<Nom>normalizedString</Nom>
-							<IdPartenaire>1</IdPartenaire>
+							<IdPartenaire>0</IdPartenaire>
 							<CodePays>000</CodePays>
 							<CodeBassin>000</CodeBassin>
 						</EmetteurSupportEnregistre>
 					</SupportUtilise>
-					<ContratProduit>
-						<TypeCommercialContrat>1</TypeCommercialContrat>
-						<IdContrat>1</IdContrat>
-						<ProfilCommercialContrat>
-							<CodeProfilCommercialContrat>String</CodeProfilCommercialContrat>
-							<DateDebutValidite>1967-08-13</DateDebutValidite>
-							<DateFinValidite>1967-08-13</DateFinValidite>
-							<DonneeComplementaire>String</DonneeComplementaire>
-							<DonneeComplementaire>String</DonneeComplementaire>
-							<Proprietaire>
-								<Nom>normalizedString</Nom>
-								<IdPartenaire>1</IdPartenaire>
-								<CodePays>000</CodePays>
-								<CodeBassin>000</CodeBassin>
-							</Proprietaire>
-						</ProfilCommercialContrat>
-						<ClientDetenteur>
-							<IdClient>1</IdClient>
-							<Nom>normalizedString</Nom>
-							<Prenom>normalizedString</Prenom>
-							<Titre>1</Titre>
-							<DateNaissance>1967-08-13</DateNaissance>
-							<TelephonePrive>normalizedString</TelephonePrive>
-							<TelephoneTravail>normalizedString</TelephoneTravail>
-							<Adresse>
-								<NumVoie>String</NumVoie>
-								<TypeVoie>String</TypeVoie>
-								<LibelleVoie>String</LibelleVoie>
-								<LigneAdresse>
-									<NumLigne>1</NumLigne>
-									<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-								</LigneAdresse>
-								<LigneAdresse>
-									<NumLigne>1</NumLigne>
-									<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-								</LigneAdresse>
-								<CodePostal>String</CodePostal>
-								<CodePays>000</CodePays>
-							</Adresse>
-							<AdresseTravail>
-								<NumVoie>String</NumVoie>
-								<TypeVoie>String</TypeVoie>
-								<LibelleVoie>String</LibelleVoie>
-								<LigneAdresse>
-									<NumLigne>1</NumLigne>
-									<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-								</LigneAdresse>
-								<LigneAdresse>
-									<NumLigne>1</NumLigne>
-									<TexteLigne>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</TexteLigne>
-								</LigneAdresse>
-								<CodePostal>String</CodePostal>
-								<CodePays>000</CodePays>
-							</AdresseTravail>
-							<CommunicationDonneesPersonnelles>true</CommunicationDonneesPersonnelles>
-							<DateSaisie>1967-08-13</DateSaisie>
-							<ProfilClient>
-								<CodeProfil>1</CodeProfil>
-								<DateDebutValiditeProfil>1967-08-13</DateDebutValiditeProfil>
-								<DateFinValiditeProfil>1967-08-13</DateFinValiditeProfil>
-								<CategorieSociale>String</CategorieSociale>
-								<NiveaudEtudes>String</NiveaudEtudes>
-								<Profession>String</Profession>
-								<Sexe>String</Sexe>
-								<TranchedAge>String</TranchedAge>
-							</ProfilClient>
-							<ProfilClient>
-								<CodeProfil>1</CodeProfil>
-								<DateDebutValiditeProfil>1967-08-13</DateDebutValiditeProfil>
-								<DateFinValiditeProfil>1967-08-13</DateFinValiditeProfil>
-								<CategorieSociale>String</CategorieSociale>
-								<NiveaudEtudes>String</NiveaudEtudes>
-								<Profession>String</Profession>
-								<Sexe>String</Sexe>
-								<TranchedAge>String</TranchedAge>
-							</ProfilClient>
-							<PartenaireReferent>
-								<Nom>normalizedString</Nom>
-								<IdPartenaire>1</IdPartenaire>
-								<CodePays>000</CodePays>
-								<CodeBassin>000</CodeBassin>
-							</PartenaireReferent>
-						</ClientDetenteur>
-					</ContratProduit>
 				</ProduitInstalle>
 			</AncienObjetImplique>
 		</OperationVente>

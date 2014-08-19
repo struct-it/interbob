@@ -4,7 +4,6 @@
 <!--Sample XML file for INTERBOB GA-->
 <IBACBA:MessageAcquisitions xsi:schemaLocation="urn:IBACBA_V1 IBACBA.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:IBACBA="urn:IBACBA_V1">
 	<DateHeure>2001-12-17T09:30:47Z</DateHeure>
-	<ElementControleIntegrite>String</ElementControleIntegrite>
 	<CorrespondantEmetteur>
 		<Nom>normalizedString</Nom>
 		<IdPartenaire>1</IdPartenaire>
@@ -28,59 +27,53 @@
 		<VersionNorme>normalizedString</VersionNorme>
 	</FormatMessage>
 	<IdMessage>1</IdMessage>
+	<ElementControleIntegrite>String</ElementControleIntegrite>
 	<ListeAcquisition>
 		<OperationVente>
+			<IdOperation>1</IdOperation>
 			<Date>1967-08-13</Date>
 			<Heure>14:20:00.0Z</Heure>
-			<IdOperation>1</IdOperation>
 			<TypeOperationVente>1</TypeOperationVente>
 			<CodeArticle>String</CodeArticle>
-			<ElementControleIntegrite>String</ElementControleIntegrite>
-			<EtatOperation>1</EtatOperation>
-			<MontantOperation>0.0</MontantOperation>
-			<MoyenPaiementPrincipal>1</MoyenPaiementPrincipal>
 			<EquipementAcquisition>
-				<IdEquipement>String</IdEquipement>
-				<TypeEquipement>1</TypeEquipement>
 				<IdFournisseurEquipement>
 					<Nom>String</Nom>
 					<Referentiel>String</Referentiel>
 					<IdentifiantDansReferentiel>String</IdentifiantDansReferentiel>
-				</IdFournisseurEquipement>
+				</IdFournisseurEquipement>			
 				<ExploitantEquipement>
 					<Nom>normalizedString</Nom>
 					<IdPartenaire>1</IdPartenaire>
 					<CodePays>000</CodePays>
 					<CodeBassin>000</CodeBassin>
 				</ExploitantEquipement>
+				<IdEquipement>String</IdEquipement>
+				<TypeEquipement>1</TypeEquipement>
 			</EquipementAcquisition>
 			<LieuDistribution>
 				<IdLocalisation>String</IdLocalisation>
 				<ReferentielLocalisation>1</ReferentielLocalisation>
 				<Sens>String</Sens>
 				<Ligne>
-					<TypeReferentiel>1</TypeReferentiel>
 					<IdLigne>1</IdLigne>
+					<TypeReferentiel>1</TypeReferentiel>
 				</Ligne>
 				<Course>
-					<TypeReferentiel>1</TypeReferentiel>
 					<IdCourse>1</IdCourse>
+					<TypeReferentiel>1</TypeReferentiel>
 				</Course>
 				<LibelleLieuDistribution>String</LibelleLieuDistribution>
 				<VenteEmbarquee>true</VenteEmbarquee>
-			</LieuDistribution>
+			</LieuDistribution>			
+			<EtatOperation>1</EtatOperation>
+			<MontantOperation>0.0</MontantOperation>
 			<Devise>String</Devise>
+			<MoyenPaiementPrincipal>1</MoyenPaiementPrincipal>
+			<ElementControleIntegrite>String</ElementControleIntegrite>
 			<ObjetImplique>
 				<ApplicationInstallee>
 					<AID>String</AID>
 					<IdApplicationInstallee>String</IdApplicationInstallee>
-					<Distributeur>
-						<Nom>normalizedString</Nom>
-						<IdPartenaire>1</IdPartenaire>
-						<CodePays>000</CodePays>
-						<CodeBassin>000</CodeBassin>
-					</Distributeur>
-					<DateHeureFinValidite>2001-12-17T09:30:47Z</DateHeureFinValidite>
 					<MatriceApplicationEnregistree>
 						<IdMatriceApplication>String</IdMatriceApplication>
 						<TypeApplication>1</TypeApplication>
@@ -101,6 +94,13 @@
 							<CodeBassin>000</CodeBassin>
 						</BassinsAcceptation>
 					</MatriceApplicationEnregistree>
+					<Distributeur>
+						<Nom>normalizedString</Nom>
+						<IdPartenaire>1</IdPartenaire>
+						<CodePays>000</CodePays>
+						<CodeBassin>000</CodeBassin>
+					</Distributeur>
+					<DateHeureFinValidite>2001-12-17T09:30:47Z</DateHeureFinValidite>
 					<FormeContenant>0</FormeContenant>
 					<StructureApplication>0</StructureApplication>
 					<Support>
@@ -114,13 +114,6 @@
 				<ApplicationInstallee>
 					<AID>String</AID>
 					<IdApplicationInstallee>String</IdApplicationInstallee>
-					<Distributeur>
-						<Nom>normalizedString</Nom>
-						<IdPartenaire>1</IdPartenaire>
-						<CodePays>000</CodePays>
-						<CodeBassin>000</CodeBassin>
-					</Distributeur>
-					<DateHeureFinValidite>2001-12-17T09:30:47Z</DateHeureFinValidite>
 					<MatriceApplicationEnregistree>
 						<IdMatriceApplication>String</IdMatriceApplication>
 						<TypeApplication>1</TypeApplication>
@@ -141,6 +134,13 @@
 							<CodeBassin>000</CodeBassin>
 						</BassinsAcceptation>
 					</MatriceApplicationEnregistree>
+					<Distributeur>
+						<Nom>normalizedString</Nom>
+						<IdPartenaire>1</IdPartenaire>
+						<CodePays>000</CodePays>
+						<CodeBassin>000</CodeBassin>
+					</Distributeur>
+					<DateHeureFinValidite>2001-12-17T09:30:47Z</DateHeureFinValidite>
 					<FormeContenant>0</FormeContenant>
 					<StructureApplication>0</StructureApplication>
 					<Support>
@@ -152,18 +152,12 @@
 			</AncienObjetImplique>
 		</OperationVente>
 		<OperationVente>
+			<IdOperation>1</IdOperation>		
 			<Date>1967-08-13</Date>
 			<Heure>14:20:00.0Z</Heure>
-			<IdOperation>1</IdOperation>
 			<TypeOperationVente>1</TypeOperationVente>
 			<CodeArticle>String</CodeArticle>
-			<ElementControleIntegrite>String</ElementControleIntegrite>
-			<EtatOperation>1</EtatOperation>
-			<MontantOperation>0.0</MontantOperation>
-			<MoyenPaiementPrincipal>1</MoyenPaiementPrincipal>
 			<EquipementAcquisition>
-				<IdEquipement>String</IdEquipement>
-				<TypeEquipement>1</TypeEquipement>
 				<IdFournisseurEquipement>
 					<Nom>String</Nom>
 					<Referentiel>String</Referentiel>
@@ -175,34 +169,33 @@
 					<CodePays>000</CodePays>
 					<CodeBassin>000</CodeBassin>
 				</ExploitantEquipement>
+				<IdEquipement>String</IdEquipement>
+				<TypeEquipement>1</TypeEquipement>
 			</EquipementAcquisition>
 			<LieuDistribution>
 				<IdLocalisation>String</IdLocalisation>
 				<ReferentielLocalisation>1</ReferentielLocalisation>
 				<Sens>String</Sens>
 				<Ligne>
-					<TypeReferentiel>1</TypeReferentiel>
 					<IdLigne>1</IdLigne>
+					<TypeReferentiel>1</TypeReferentiel>
 				</Ligne>
 				<Course>
+					<IdCourse>1</IdCourse>				
 					<TypeReferentiel>1</TypeReferentiel>
-					<IdCourse>1</IdCourse>
 				</Course>
 				<LibelleLieuDistribution>String</LibelleLieuDistribution>
 				<VenteEmbarquee>true</VenteEmbarquee>
-			</LieuDistribution>
-			<Devise>String</Devise>
+			</LieuDistribution>			
+			<EtatOperation>1</EtatOperation>
+			<MontantOperation>0.0</MontantOperation>
+			<Devise>String</Devise>			
+			<MoyenPaiementPrincipal>1</MoyenPaiementPrincipal>
+			<ElementControleIntegrite>String</ElementControleIntegrite>
 			<ObjetImplique>
 				<ApplicationInstallee>
 					<AID>String</AID>
 					<IdApplicationInstallee>String</IdApplicationInstallee>
-					<Distributeur>
-						<Nom>normalizedString</Nom>
-						<IdPartenaire>1</IdPartenaire>
-						<CodePays>000</CodePays>
-						<CodeBassin>000</CodeBassin>
-					</Distributeur>
-					<DateHeureFinValidite>2001-12-17T09:30:47Z</DateHeureFinValidite>
 					<MatriceApplicationEnregistree>
 						<IdMatriceApplication>String</IdMatriceApplication>
 						<TypeApplication>1</TypeApplication>
@@ -223,6 +216,13 @@
 							<CodeBassin>000</CodeBassin>
 						</BassinsAcceptation>
 					</MatriceApplicationEnregistree>
+					<Distributeur>
+						<Nom>normalizedString</Nom>
+						<IdPartenaire>1</IdPartenaire>
+						<CodePays>000</CodePays>
+						<CodeBassin>000</CodeBassin>
+					</Distributeur>
+					<DateHeureFinValidite>2001-12-17T09:30:47Z</DateHeureFinValidite>
 					<FormeContenant>0</FormeContenant>
 					<StructureApplication>0</StructureApplication>
 					<Support>
@@ -236,13 +236,6 @@
 				<ApplicationInstallee>
 					<AID>String</AID>
 					<IdApplicationInstallee>String</IdApplicationInstallee>
-					<Distributeur>
-						<Nom>normalizedString</Nom>
-						<IdPartenaire>1</IdPartenaire>
-						<CodePays>000</CodePays>
-						<CodeBassin>000</CodeBassin>
-					</Distributeur>
-					<DateHeureFinValidite>2001-12-17T09:30:47Z</DateHeureFinValidite>
 					<MatriceApplicationEnregistree>
 						<IdMatriceApplication>String</IdMatriceApplication>
 						<TypeApplication>1</TypeApplication>
@@ -263,6 +256,13 @@
 							<CodeBassin>000</CodeBassin>
 						</BassinsAcceptation>
 					</MatriceApplicationEnregistree>
+					<Distributeur>
+						<Nom>normalizedString</Nom>
+						<IdPartenaire>1</IdPartenaire>
+						<CodePays>000</CodePays>
+						<CodeBassin>000</CodeBassin>
+					</Distributeur>
+					<DateHeureFinValidite>2001-12-17T09:30:47Z</DateHeureFinValidite>
 					<FormeContenant>0</FormeContenant>
 					<StructureApplication>0</StructureApplication>
 					<Support>
