@@ -44,8 +44,8 @@
 		<xs:complexContent>
 			<xs:extension base="InterBOB:t_EntreeListeAbstrait">
 				<xs:sequence>
+					<xs:element name="ApplicationUtilisee" type="InterBOB:t_ApplicationUtilisee" minOccurs="1" maxOccurs="1"/>
 					<xs:element name="ClientDetenteur" type="InterBOB:t_Client" minOccurs="1" maxOccurs="1"/>
-					<xs:element name="ApplicationUtilisee" type="InterBOB:t_ApplicationUtilisee" minOccurs="0" maxOccurs="1"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
