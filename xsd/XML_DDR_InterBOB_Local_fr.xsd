@@ -126,12 +126,6 @@ Enumère les valeurs possibles d'un type d'opération de vente.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
-	<xs:simpleType name="t_EnumTypeReferentiel">
-		<xs:annotation>
-			<xs:documentation>Enumère les types de référentiel auquel appartient la localisation.</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:nonNegativeInteger"/>
-	</xs:simpleType>
 	<xs:simpleType name="t_EnumTypeSupport">
 		<xs:annotation>
 			<xs:documentation>Enumère les valeurs possibles d'un type de support.</xs:documentation>
