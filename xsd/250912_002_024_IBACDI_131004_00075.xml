@@ -19,22 +19,20 @@
     <Date>2013-10-01</Date>
     <Heure>14:49:49</Heure>
     <TypeOperationVente>1</TypeOperationVente>
-    <EtatOperation>1</EtatOperation>
-    <MontantOperation>100</MontantOperation>
-    <MoyenPaiementPrincipal>3</MoyenPaiementPrincipal>
-	<!-- EquipementAcquisition déplacé -->
-   <EquipementAcquisition>
+    <EquipementAcquisition>
       <IdEquipement>88</IdEquipement>
       <TypeEquipement>1</TypeEquipement>
     </EquipementAcquisition>
-    <!-- LieuDistribution déplacé -->
     <LieuDistribution>
       <IdLocalisation>0</IdLocalisation>
       <ReferentielLocalisation>6010</ReferentielLocalisation>
       <LibelleLieuDistribution>GAREDEROUEN0001</LibelleLieuDistribution>
       <VenteEmbarquee>0</VenteEmbarquee>
     </LieuDistribution>
- 	<!-- ObjetImplique déplacé -->
+    <EtatOperation>1</EtatOperation>
+    <MontantOperation>100</MontantOperation>
+    <MoyenPaiementPrincipal>3</MoyenPaiementPrincipal>
+	<!-- ObjetImplique déplacé -->
     <ObjetImplique>
       <ProduitInstalle>
         <ReferenceProduit>
@@ -51,7 +49,7 @@
           </ExploitantVente>
           <IdProduitInstalle>1642168724</IdProduitInstalle>
         </ReferenceProduitInstalle>
-        <!-- ContrainteTemporelle déplacé -->
+		<!-- ContrainteTemporelle déplacé -->        
         <ContrainteTemporelle>
           <TrancheCalendaire>
             <Dates>
@@ -62,20 +60,7 @@
             </Dates>
             <Autorise>1</Autorise>
           </TrancheCalendaire>
-        </ContrainteTemporelle>
-        <!-- FacteurTarifaireDeQualite déplacé -->
-        <FacteurTarifaireDeQualite>0</FacteurTarifaireDeQualite>
-        <!-- PrixDeVenteProduit déplacé -->
-        <PrixDeVenteProduit>100</PrixDeVenteProduit>
-        <SupportUtilise>
-          <TypeSupport>67</TypeSupport>
-          <IdSupport>38868923</IdSupport>
-          <EmetteurSupportEnregistre>
-            <IdPartenaire>004</IdPartenaire>
-            <CodeBassin>912</CodeBassin>
-          </EmetteurSupportEnregistre>
-        </SupportUtilise>
-        <!-- ContratProduit déplacé -->
+        </ContrainteTemporelle>                
         <ContratProduit>
           <ClientDetenteur>
             <IdClient>250912011000000000025</IdClient>
@@ -95,56 +80,6 @@
             <DateSaisie>2012-11-06</DateSaisie>
           </ClientDetenteur>
         </ContratProduit>
-      </ProduitInstalle>
-    </ObjetImplique>
-  </OperationVente>
-  <OperationVente>
-    <Date>2013-10-01</Date>
-    <Heure>14:49:49</Heure>
-    <TypeOperationVente>1</TypeOperationVente>
-    <EtatOperation>1</EtatOperation>
-    <MontantOperation>100</MontantOperation>
-    <MoyenPaiementPrincipal>3</MoyenPaiementPrincipal>
-	<!-- EquipementAcquisition déplacé -->
-    <EquipementAcquisition>
-      <IdEquipement>88</IdEquipement>
-      <TypeEquipement>1</TypeEquipement>
-    </EquipementAcquisition>
-    <!-- LieuDistribution déplacé -->
-    <LieuDistribution>
-      <IdLocalisation>0</IdLocalisation>
-      <ReferentielLocalisation>6004</ReferentielLocalisation>
-      <LibelleLieuDistribution>GAREDEROUEN0001</LibelleLieuDistribution>
-      <VenteEmbarquee>0</VenteEmbarquee>
-    </LieuDistribution>
- 	<!-- ObjetImplique déplacé -->
-    <ObjetImplique>
-      <ProduitInstalle>
-        <ReferenceProduit>
-          <ProprietaireProduit>
-            <IdPartenaire>004</IdPartenaire>
-            <CodeBassin>912</CodeBassin>
-          </ProprietaireProduit>
-          <IdProduit>110</IdProduit>
-        </ReferenceProduit>
-        <ReferenceProduitInstalle>
-          <ExploitantVente>
-            <IdPartenaire>004</IdPartenaire>
-            <CodeBassin>912</CodeBassin>
-          </ExploitantVente>
-          <IdProduitInstalle>1642168724</IdProduitInstalle>
-        </ReferenceProduitInstalle>
-        <ContrainteTemporelle>
-          <TrancheCalendaire>
-            <Dates>
-              <JourDebut>2013-10-01</JourDebut>
-              <JourFin>2039-12-31</JourFin>
-              <HeureDebut>00:00:00</HeureDebut>
-              <HeureFin>00:00:00</HeureFin>
-            </Dates>
-            <Autorise>1</Autorise>
-          </TrancheCalendaire>
-        </ContrainteTemporelle>
         <FacteurTarifaireDeQualite>0</FacteurTarifaireDeQualite>
         <PrixDeVenteProduit>100</PrixDeVenteProduit>
         <SupportUtilise>
@@ -155,25 +90,6 @@
             <CodeBassin>912</CodeBassin>
           </EmetteurSupportEnregistre>
         </SupportUtilise>
-        <ContratProduit>
-          <ClientDetenteur>
-            <IdClient>250912011000000000025</IdClient>
-            <Nom>MORAND-4-STATUTS</Nom>
-            <Prenom>Franck</Prenom>
-            <Titre>4</Titre>
-            <DateNaissance>1980-01-01</DateNaissance>
-            <Adresse>
-              <LigneAdresse>
-                <NumLigne>6</NumLigne>
-                <TexteLigne>76000 ROUEN</TexteLigne>
-              </LigneAdresse>
-              <CodePostal>76000</CodePostal>
-              <CodePays>250</CodePays>
-            </Adresse>
-            <CommunicationDonneesPersonnelles>0</CommunicationDonneesPersonnelles>
-            <DateSaisie>2012-11-06</DateSaisie>
-          </ClientDetenteur>
-        </ContratProduit>
       </ProduitInstalle>
     </ObjetImplique>
   </OperationVente>
@@ -181,9 +97,6 @@
     <Date>2013-10-01</Date>
     <Heure>14:49:49</Heure>
     <TypeOperationVente>1</TypeOperationVente>
-    <EtatOperation>1</EtatOperation>
-    <MontantOperation>100</MontantOperation>
-    <MoyenPaiementPrincipal>3</MoyenPaiementPrincipal>
     <EquipementAcquisition>
       <IdEquipement>88</IdEquipement>
       <TypeEquipement>1</TypeEquipement>
@@ -194,7 +107,11 @@
       <LibelleLieuDistribution>GAREDEROUEN0001</LibelleLieuDistribution>
       <VenteEmbarquee>0</VenteEmbarquee>
     </LieuDistribution>
-    <ObjetImplique>
+    <EtatOperation>1</EtatOperation>
+    <MontantOperation>100</MontantOperation>
+    <MoyenPaiementPrincipal>3</MoyenPaiementPrincipal>
+	<!-- ObjetImplique déplacé -->    
+	<ObjetImplique>
       <ProduitInstalle>
         <ReferenceProduit>
           <ProprietaireProduit>
@@ -210,6 +127,7 @@
           </ExploitantVente>
           <IdProduitInstalle>1642168724</IdProduitInstalle>
         </ReferenceProduitInstalle>
+		<!-- ContrainteTemporelle déplacé -->        
         <ContrainteTemporelle>
           <TrancheCalendaire>
             <Dates>
@@ -220,17 +138,7 @@
             </Dates>
             <Autorise>1</Autorise>
           </TrancheCalendaire>
-        </ContrainteTemporelle>
-        <FacteurTarifaireDeQualite>0</FacteurTarifaireDeQualite>
-        <PrixDeVenteProduit>100</PrixDeVenteProduit>
-        <SupportUtilise>
-          <TypeSupport>67</TypeSupport>
-          <IdSupport>38868923</IdSupport>
-          <EmetteurSupportEnregistre>
-            <IdPartenaire>004</IdPartenaire>
-            <CodeBassin>912</CodeBassin>
-          </EmetteurSupportEnregistre>
-        </SupportUtilise>
+        </ContrainteTemporelle>        
         <ContratProduit>
           <ClientDetenteur>
             <IdClient>250912011000000000025</IdClient>
@@ -250,8 +158,19 @@
             <DateSaisie>2012-11-06</DateSaisie>
           </ClientDetenteur>
         </ContratProduit>
+        <FacteurTarifaireDeQualite>0</FacteurTarifaireDeQualite>
+        <PrixDeVenteProduit>100</PrixDeVenteProduit>
+        <SupportUtilise>
+          <TypeSupport>67</TypeSupport>
+          <IdSupport>38868923</IdSupport>
+          <EmetteurSupportEnregistre>
+            <IdPartenaire>004</IdPartenaire>
+            <CodeBassin>912</CodeBassin>
+          </EmetteurSupportEnregistre>
+        </SupportUtilise>
       </ProduitInstalle>
     </ObjetImplique>
   </OperationVente>
+
 </IBACDI:MessageAcquisitions>
 

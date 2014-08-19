@@ -19,21 +19,19 @@
     <Date>2013-07-19</Date>
     <Heure>15:51:31</Heure>
     <TypeOperationVente>10</TypeOperationVente>
-    <EtatOperation>1</EtatOperation>
-    <MontantOperation>2300</MontantOperation>
-    <MoyenPaiementPrincipal>3</MoyenPaiementPrincipal>
-    <!-- EquipementAcquisition déplacé -->
     <EquipementAcquisition>
       <IdEquipement>1</IdEquipement>
       <TypeEquipement>1</TypeEquipement>
     </EquipementAcquisition>
-    <!-- LieyDistribution déplacé -->
     <LieuDistribution>
 		<!-- IdLocalisation ajouté -->
-		<IdLocalisation>0</IdLocalisation>
+      <IdLocalisation>0</IdLocalisation>
       <ReferentielLocalisation>6000</ReferentielLocalisation>
       <VenteEmbarquee>0</VenteEmbarquee>
     </LieuDistribution>
+    <EtatOperation>1</EtatOperation>
+    <MontantOperation>2300</MontantOperation>
+    <MoyenPaiementPrincipal>3</MoyenPaiementPrincipal>
 	<!-- ObjetImplique déplacé -->
     <ObjetImplique>
       <ProduitInstalle>
@@ -78,19 +76,21 @@
     <Date>2013-07-14</Date>
     <Heure>15:51:31</Heure>
     <TypeOperationVente>10</TypeOperationVente>
-    <EtatOperation>1</EtatOperation>
-    <MontantOperation>2450</MontantOperation>
-    <MoyenPaiementPrincipal>3</MoyenPaiementPrincipal>
     <EquipementAcquisition>
       <IdEquipement>1</IdEquipement>
       <TypeEquipement>1</TypeEquipement>
     </EquipementAcquisition>
     <LieuDistribution>
-		<IdLocalisation>0</IdLocalisation>
+	  <!-- IdLocalisation ajouté -->
+      <IdLocalisation>0</IdLocalisation>
       <ReferentielLocalisation>6002</ReferentielLocalisation>
       <LibelleLieuDistribution>----INDETERMINE</LibelleLieuDistribution>
       <VenteEmbarquee>0</VenteEmbarquee>
     </LieuDistribution>
+    <EtatOperation>1</EtatOperation>
+    <MontantOperation>2450</MontantOperation>
+    <MoyenPaiementPrincipal>3</MoyenPaiementPrincipal>
+	<!-- ObjetImplique déplacé -->
     <ObjetImplique>
       <ProduitInstalle>
         <ReferenceProduit>
@@ -123,19 +123,21 @@
     <Date>2013-07-14</Date>
     <Heure>15:51:31</Heure>
     <TypeOperationVente>10</TypeOperationVente>
-    <EtatOperation>1</EtatOperation>
-    <MontantOperation>2450</MontantOperation>
-    <MoyenPaiementPrincipal>3</MoyenPaiementPrincipal>
     <EquipementAcquisition>
       <IdEquipement>1</IdEquipement>
       <TypeEquipement>1</TypeEquipement>
     </EquipementAcquisition>
     <LieuDistribution>
-		<IdLocalisation>0</IdLocalisation>
+	  <!-- IdLocalisation ajouté -->
+      <IdLocalisation>0</IdLocalisation>
       <ReferentielLocalisation>6002</ReferentielLocalisation>
       <LibelleLieuDistribution>----INDETERMINE</LibelleLieuDistribution>
       <VenteEmbarquee>0</VenteEmbarquee>
     </LieuDistribution>
+    <EtatOperation>1</EtatOperation>
+    <MontantOperation>2450</MontantOperation>
+    <MoyenPaiementPrincipal>3</MoyenPaiementPrincipal>
+	<!-- ObjetImplique déplacé -->
     <ObjetImplique>
       <ProduitInstalle>
         <ReferenceProduit>
@@ -168,19 +170,21 @@
     <Date>2013-07-14</Date>
     <Heure>15:51:31</Heure>
     <TypeOperationVente>10</TypeOperationVente>
-    <EtatOperation>1</EtatOperation>
-    <MontantOperation>2450</MontantOperation>
-    <MoyenPaiementPrincipal>3</MoyenPaiementPrincipal>
     <EquipementAcquisition>
       <IdEquipement>1</IdEquipement>
       <TypeEquipement>1</TypeEquipement>
     </EquipementAcquisition>
     <LieuDistribution>
-		<IdLocalisation>0</IdLocalisation>
+ 	  <!-- IdLocalisation ajouté -->
+      <IdLocalisation>0</IdLocalisation>
       <ReferentielLocalisation>6002</ReferentielLocalisation>
       <LibelleLieuDistribution>----INDETERMINE</LibelleLieuDistribution>
       <VenteEmbarquee>0</VenteEmbarquee>
     </LieuDistribution>
+    <EtatOperation>1</EtatOperation>
+    <MontantOperation>2450</MontantOperation>
+    <MoyenPaiementPrincipal>3</MoyenPaiementPrincipal>
+	<!-- ObjetImplique déplacé -->
     <ObjetImplique>
       <ProduitInstalle>
         <ReferenceProduit>
@@ -207,7 +211,7 @@
           </EmetteurSupportEnregistre>
         </SupportUtilise>
       </ProduitInstalle>
-    </ObjetImplique>
+    </ObjetImplique>  
   </OperationVente>
 </IBACRB:MessageAcquisitions>
 

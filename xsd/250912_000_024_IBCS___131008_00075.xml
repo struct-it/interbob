@@ -19,21 +19,21 @@
   <IdMessage>75</IdMessage>
   <ActionListeSecurite>
     <DateHeureAction>2013-10-07T09:48:25</DateHeureAction>
-    <TypeListeSecurite>2</TypeListeSecurite>
 	<!-- Ajout de LieuAction -->
     <LieuAction>
 		<IdLocalisation>String</IdLocalisation>
 		<ReferentielLocalisation>0000</ReferentielLocalisation>
     </LieuAction>
+    <TypeListeSecurite>2</TypeListeSecurite>
     <!-- Ajout de EquipementAction -->
     <EquipementAction>
-					<IdEquipement>String</IdEquipement>
-					<Referentiel>0000</Referentiel>
-					<TypeEquipement>0</TypeEquipement>
 					<ExploitantEquipement>
 						<IdPartenaire>024</IdPartenaire>
 						<CodeBassin>912</CodeBassin>
 					</ExploitantEquipement>
+					<IdEquipement>String</IdEquipement>
+					<TypeEquipement>0</TypeEquipement>
+					<Referentiel>0000</Referentiel>
 				</EquipementAction>
     <EntreeApplicationInstallee>
       <ApplicationInstallee>
@@ -41,18 +41,18 @@
 		<AID></AID>
 		<!-- Ajout de IdApplicationInstallee -->
 		<IdApplicationInstallee></IdApplicationInstallee>  
-        <Distributeur>
-          <IdPartenaire>009</IdPartenaire>
-          <CodeBassin>912</CodeBassin>
-        </Distributeur>
-        <DateHeureFinValidite>2020-07-31T00:00:00</DateHeureFinValidite>
-          <!-- Ajout MatriceApplicationEnregistree -->
+            <!-- Ajout MatriceApplicationEnregistree -->
           <MatriceApplicationEnregistree>
 				<BassinsAcceptation>
 					<CodeBassin>000</CodeBassin>
 					<CodeBassin>111</CodeBassin>
 				</BassinsAcceptation>
 		  </MatriceApplicationEnregistree>
+		<Distributeur>
+          <IdPartenaire>009</IdPartenaire>
+          <CodeBassin>912</CodeBassin>
+        </Distributeur>
+        <DateHeureFinValidite>2020-07-31T00:00:00</DateHeureFinValidite>
 		  <!-- Ajout de FormeContenant -->
 		  <FormeContenant>0</FormeContenant>
 		  <!-- Ajout de StructureApplication -->

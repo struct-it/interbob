@@ -25,10 +25,24 @@
     <EntreeListeSecurite>
       <EntreeApplicationInstallee>
         <ApplicationInstallee>
+		  <!-- Ajout AID -->
+		  <AID>0</AID>
+		  <!-- Ajout IdApplicationInstallee -->
+		  <IdApplicationInstallee>0</IdApplicationInstallee>
+		  <!-- Ajout de MatriceApplicationEnregistree -->
+          <MatriceApplicationEnregistree>
+			<BassinsAcceptation>
+				<CodeBassin>000</CodeBassin>
+			</BassinsAcceptation>
+		  </MatriceApplicationEnregistree>
           <Distributeur>
             <IdPartenaire>001</IdPartenaire>
             <CodeBassin>912</CodeBassin>
           </Distributeur>
+          <!-- Ajout FormeContenant -->
+          <FormeContenant>1</FormeContenant>
+          <!-- Ajout StructureApplication -->
+          <StructureApplication>0</StructureApplication>
           <Support>
             <TypeSupport>67</TypeSupport>
             <IdSupport>388689081</IdSupport>

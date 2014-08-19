@@ -30,15 +30,10 @@
         <ActionDemandee>4</ActionDemandee>
         <DateDebutEffet>2013-10-02</DateDebutEffet>
         <ApplicationInstallee>
-          <!-- Ajout MatriceApplicationEnregistree -->			  
+          <!-- Ajout AID -->			  
 		  <AID></AID>
           <!-- Ajout IdApplicationInstallee -->			  
 		  <IdApplicationInstallee></IdApplicationInstallee>
-          <Distributeur>
-            <IdPartenaire>009</IdPartenaire>
-            <CodeBassin>912</CodeBassin>
-          </Distributeur>
-          <DateHeureFinValidite>2020-07-31T00:00:00</DateHeureFinValidite>
           <!-- Ajout MatriceApplicationEnregistree -->
           <MatriceApplicationEnregistree>
 				<BassinsAcceptation>
@@ -46,6 +41,11 @@
 					<CodeBassin>111</CodeBassin>
 				</BassinsAcceptation>
 		  </MatriceApplicationEnregistree>
+          <Distributeur>
+            <IdPartenaire>009</IdPartenaire>
+            <CodeBassin>912</CodeBassin>
+          </Distributeur>
+          <DateHeureFinValidite>2020-07-31T00:00:00</DateHeureFinValidite>
 		  <!-- Ajout de FormeContenant -->
 		  <FormeContenant>0</FormeContenant>
 		  <!-- Ajout de StructureApplication -->

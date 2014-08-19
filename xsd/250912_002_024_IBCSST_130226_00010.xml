@@ -19,20 +19,20 @@
   <IdMessage>10</IdMessage>
   <ActionListeSecurite>
     <DateHeureAction>2013-09-18T15:28:54</DateHeureAction>
-    <!--Valorisation de TypeListeSecurite a 2 (au lieu de 21)-->
-    <TypeListeSecurite>2</TypeListeSecurite>
-	<!--Ajout de LieuAction-->
+    <!-- Ajout de LieuAction -->
     <LieuAction>
-		<IdLocalisation>String</IdLocalisation>
+		<IdLocalisation>0</IdLocalisation>
 	</LieuAction>
-	<!--Ajout de EquipementAction-->
-	<EquipementAction>
-		<IdEquipement>String</IdEquipement>
-		<TypeEquipement>0</TypeEquipement>
+	<!-- TypeListeSecurite a la valeur 2 au lieu de 21 -->
+    <TypeListeSecurite>2</TypeListeSecurite>
+	<!-- Ajout de EquipementAction -->    
+    <EquipementAction>
 		<ExploitantEquipement>
-			<IdPartenaire>002</IdPartenaire>
-			<CodeBassin>913</CodeBassin>
+			<IdPartenaire>000</IdPartenaire>
+			<CodeBassin>000</CodeBassin>
 		</ExploitantEquipement>
+		<IdEquipement>0</IdEquipement>
+		<TypeEquipement>0</TypeEquipement>
 	</EquipementAction>
     <EntreeProduitInstalle>
       <ProduitInstalle>
@@ -53,12 +53,6 @@
         <SupportUtilise>
           <TypeSupport>67</TypeSupport>
           <IdSupport>666666666612</IdSupport>
-		  <!--Ajout ContratSupport-->
-          <ContratSupport>
-			<ProfilCommercialContrat>
-				<CodeProfilCommercialContrat>0</CodeProfilCommercialContrat>
-			</ProfilCommercialContrat>
-          </ContratSupport>
           <EmetteurSupportEnregistre>
             <IdPartenaire>000</IdPartenaire>
             <CodeBassin>913</CodeBassin>

@@ -20,11 +20,13 @@
   <ListeSecurite>
     <DateHeureEmission>2013-08-02T15:49:54</DateHeureEmission>
     <TypeListeSecurite>17</TypeListeSecurite>
-    <!--TypeMiseaJour place apres TypeListeSecurite (coherence IBLSLN)-->    
-    <TypeMiseaJour>2</TypeMiseaJour>
+    <!-- Ajout de ActionParDefaut -->
+    <ActionParDefaut>0</ActionParDefaut>
+    <!-- TypeMiseaJour déplacé -->
+    <TypeMiseaJour>2</TypeMiseaJour>    
     <EntreeListeSecurite>
-       <!-- EntreeApplication Installee supprimee au profit de EntreeClient -->
-	   <!--<EntreeApplicationInstallee>
+	  <!-- EntreeApplicationInstallee n'est plus utilisee -->
+      <!--<EntreeApplicationInstallee>
         <ApplicationInstallee>
           <Distributeur>
             <IdPartenaire>002</IdPartenaire>
@@ -65,13 +67,27 @@
             <IdSupport>2080575595</IdSupport>
           </Support>
         </ApplicationInstallee>
-      </EntreeApplicationInstallee>-->
-		<EntreeClient>
-			<ClientDetenteur>
-				<Nom>String</Nom>
-			</ClientDetenteur>
-		</EntreeClient>
+      </EntreeApplicationInstallee> -->
+      <EntreeClient>
+		<ApplicationUtilisee>
+			<!-- Ajout AID -->
+			<AID>0</AID>
+			<!-- Ajout IdApplicationInstallee -->
+			<IdApplicationInstallee>0</IdApplicationInstallee>
+			<MatriceApplicationEnregistree>
+				<BassinsAcceptation>
+					<CodeBassin>000</CodeBassin>
+				</BassinsAcceptation>
+			</MatriceApplicationEnregistree>
+			<Distributeur>
+				<IdPartenaire>000</IdPartenaire>
+				<CodeBassin>000</CodeBassin>
+			</Distributeur>
+		</ApplicationUtilisee>
+		<ClientDetenteur>
+			<Nom></Nom>
+		</ClientDetenteur>
+	  </EntreeClient>
     </EntreeListeSecurite>
   </ListeSecurite>
 </IBLSRC:MajListeSecurite>
-

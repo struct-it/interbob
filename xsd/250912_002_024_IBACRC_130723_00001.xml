@@ -19,16 +19,15 @@
     <Date>2012-11-30</Date>
     <Heure>14:51:00</Heure>
     <TypeOperationVente>63</TypeOperationVente>
-    <EtatOperation>1</EtatOperation>
-    <MontantOperation>0</MontantOperation>
-    <MoyenPaiementPrincipal>3</MoyenPaiementPrincipal>
-    <!-- EquipementAcquisition déplacé -->
     <EquipementAcquisition>
       <TypeEquipement>1</TypeEquipement>
     </EquipementAcquisition>
-    <!-- ObjetImplique déplacé -->
+    <EtatOperation>1</EtatOperation>
+    <MontantOperation>0</MontantOperation>
+    <MoyenPaiementPrincipal>3</MoyenPaiementPrincipal>
+	<!-- ObjetImplique déplacé -->
     <ObjetImplique>
-		<!-- ApplicationInstallee n'est plus utilisée -->
+	  <!-- ApplicationInstallee n'est plus utilisée -->
       <!--<ApplicationInstallee>
         <Distributeur>
           <IdPartenaire>1</IdPartenaire>
@@ -42,20 +41,20 @@
           <IdSupport>123</IdSupport>
         </Support>
       </ApplicationInstallee>-->
-		<ProduitInstalle>
-			<ReferenceProduit>
-				<ProprietaireProduit>
-					<IdPartenaire>000</IdPartenaire>
-					<CodeBassin>000</CodeBassin>
-				</ProprietaireProduit>
-			</ReferenceProduit>
-			<ReferenceProduitInstalle>
-				<ExploitantVente>
-					<IdPartenaire>000</IdPartenaire>
-					<CodeBassin>000</CodeBassin>
-				</ExploitantVente>
-			</ReferenceProduitInstalle>
-		</ProduitInstalle>
+      <Objet>
+		<Description>text</Description>
+		<ApplicationUtilisee>
+		<MatriceApplicationEnregistree>
+			<BassinsAcceptation>
+				<CodeBassin>000</CodeBassin>
+			</BassinsAcceptation>
+		</MatriceApplicationEnregistree>
+		<Distributeur>
+			<IdPartenaire>0</IdPartenaire>
+			<CodeBassin>000</CodeBassin>
+		</Distributeur>
+		</ApplicationUtilisee>
+      </Objet>
     </ObjetImplique>
   </OperationVente>
 </IBACRC:MessageAcquisitions>
