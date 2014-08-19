@@ -348,6 +348,10 @@
 		<usage>Obligatoire</usage>
 		<desc>Nom du client</desc>
 	</element>
+	<element name="ApplicationUtilisee" parent="EntreeClient" root="">
+		<usage>Obligatoire</usage>
+		<desc>Description de l'application utilisée</desc>
+	</element>
 	<!-- IBLSSC -->
 	<element name="IBLSSC:MajListeSecurite" parent="" root="">
 		<desc>Demande de suppression de compte client.</desc>
@@ -936,6 +940,18 @@
 		<usage>Optionnel</usage>
 		<desc>Addresse postale professionnelle du client.</desc>
 	</element>
+	<element name="Coordonnees" parent="ClientDetenteur" root="">
+		<usage>Optionnel</usage>
+		<desc>Coordonnée supplémentaire du client.</desc>
+	</element>
+	<element name="TypeCoordonnee" parent="Coordonnees" root="">
+		<usage>Obligatoire</usage>
+		<desc>Type de la coordonnée supplémentaire du client.</desc>
+	</element>
+	<element name="ValeurCoordonnee" parent="Coordonnees" root="">
+		<usage>Obligatoire</usage>
+		<desc>Valeur de la coordonnée supplémentaire du client.</desc>
+	</element>
 	<element name="CommunicationDonneesPersonnelles" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>Indique si le client autorise la communication de ses données personnelles à un tiers 
@@ -1054,6 +1070,10 @@
 		<desc>Ancien objet de l'acquisition.</desc>
 	</element>	
 	<element name="Objet" parent="ObjetImplique" root="">
+		<usage>Obligatoire</usage>
+		<desc>Objet abstrait.</desc>
+	</element>
+	<element name="Objet" parent="AncienObjetImplique" root="">
 		<usage>Obligatoire</usage>
 		<desc>Objet abstrait.</desc>
 	</element>	
