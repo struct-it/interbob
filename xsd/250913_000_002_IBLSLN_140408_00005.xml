@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Ajout XSLT-->
+<?xml-stylesheet type="text/xsl" href="INTERBOB.xslt"?>
+<!--Changement de déclaration-->
+<IBLSLN:MajListeSecurite xsi:schemaLocation="urn:IBLSLN_V1 IBLSLN.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:IBLSLN="urn:IBLSLN_V1">
+  <DateHeure>2014-04-08T08:48:41</DateHeure>
+  <CorrespondantEmetteur>
+    <IdPartenaire>02</IdPartenaire>
+    <CodeBassin>913</CodeBassin>
+  </CorrespondantEmetteur>
+  <CorrespondantDestinataire>
+    <IdPartenaire>0</IdPartenaire>
+    <CodeBassin>913</CodeBassin>
+  </CorrespondantDestinataire>
+  <FormatMessage>
+    <ReferenceNorme>IB:MajListeSecurite</ReferenceNorme>
+    <VersionNorme>1.1:913.1</VersionNorme>
+  </FormatMessage>
+  <IdMessage>5</IdMessage>
+  <ListeSecurite>
+  	<!-- IdentifiantListe est obsolete -->
+    <!--<IdentifiantListe>250_913_2</IdentifiantListe>-->
+    <DateHeureEmission>2014-04-08T08:48:41</DateHeureEmission>
+    <!--Element remonte dans la structure (modelisation)-->
+    <TypeListeSecurite>2</TypeListeSecurite>
+     <ActionParDefaut>4</ActionParDefaut>
+    <TypeMiseaJour>1</TypeMiseaJour>
+    <EntreeListeSecurite>
+      <EntreeApplicationInstallee>
+        <ActionDemandee>4</ActionDemandee>
+        <DateDebutEffet>2014-04-07</DateDebutEffet>
+        <ApplicationInstallee>
+		  <!-- Ajout AID -->
+		  <AID></AID>
+		  <!-- Ajout IdApplicationInstallee -->
+		  <IdApplicationInstallee></IdApplicationInstallee>
+		  <!-- Ajout MatriceApplicationEnregistree -->
+		  <MatriceApplicationEnregistree>
+			<BassinsAcceptation>
+				<CodeBassin>000</CodeBassin>
+			</BassinsAcceptation>
+		  </MatriceApplicationEnregistree>
+          <Distributeur>
+            <IdPartenaire>2</IdPartenaire>
+            <CodeBassin>913</CodeBassin>
+          </Distributeur>
+		  <!-- Ajout FormeContenant -->          
+          <FormeContenant>1</FormeContenant>
+ 		  <!-- Ajout StructureApplication -->          
+          <StructureApplication>1</StructureApplication>
+          <Support>
+            <TypeSupport>67</TypeSupport>
+            <IdSupport>2081098355</IdSupport>
+          </Support>
+        </ApplicationInstallee>
+      </EntreeApplicationInstallee>
+    </EntreeListeSecurite>
+  </ListeSecurite>
+</IBLSLN:MajListeSecurite>
+
