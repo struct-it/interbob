@@ -1159,4 +1159,57 @@
 	<element name="IBACCA:MessageAcquisitions" parent="" root="">
 		<desc>Informer les partenaires du bassin d'interoperabilité d'une opération de reconstitution ou de renouvellement d'une application transport.</desc>
 	</element>
+	<!-- IBLSEC -->
+	<element name="IBLSEC:MajListeSecurite" parent="" root="">
+		<desc>Ce message est envoyé pour un envoi spontané d'informations de compte client.</desc>
+	</element>
+	<element name="ListeSecurite" parent="IBLSEC:MajListeSecurite" root="">
+		<usage>Obligatoire</usage>
+		<desc>Liste de compte client</desc>
+	</element>
+	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSEC:MajListeSecurite">
+		<usage>Obligatoire</usage>
+		<desc>Type de la liste<br/>Doit être égal à "17:Envoi de données client"</desc>
+	</element>
+	<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSEC:MajListeSecurite">
+		<usage>Obsolescent</usage>
+		<desc>Permet de préciser si: 
+				<ul>
+				<li>c'est une liste exhaustive qui est transmise : "1"</li>
+				<li>ce ne sont que des mises à jour (« incrémentiel ») : "2".</li>
+				</ul>
+		</desc>
+	</element>
+	<element name="IdentifiantListe" parent="ListeSecurite" root="">
+		<usage>Obsolescent</usage>
+		<desc>Identifiant de la liste</desc>
+	</element>
+	<element name="PositionDansListe" parent="EntreeClient" root="">
+		<usage>Obsolescent</usage>
+		<desc>Permet de définir la position de l'élément dans la liste</desc>
+	</element>
+	<element name="ActionDemandee" parent="EntreeClient" root="">
+		<usage>Obsolescent</usage>
+		<desc>Permet de définir la valeur de l'action à réaliser lors de la détection de l'objet</desc>
+	</element>
+	<element name="DateDebutEffet" parent="EntreeClient" root="">
+		<usage>Obsolescent</usage>
+		<desc></desc>
+	</element>	
+	<element name="DateFinEffet" parent="EntreeClient" root="">
+		<usage>Obsolescent</usage>
+		<desc></desc>
+	</element>
+	<element name="ListeApplicationUtilisee" parent="EntreeClient" root="">
+		<usage>Obligatoire</usage>
+		<desc>Liste des applidations utilisées par le compte client</desc>
+	</element>
+	<element name="ApplicationUtilisee" parent="ListeApplicationUtilisee" root="">
+		<usage>Optionnel</usage>
+		<desc>Description de l'application utilisée</desc>
+	</element>
+	<element name="DateHeureDebutValidite" parent="ApplicationUtilisee" root="">
+		<usage>Obsolescent</usage>
+		<desc>Date de début de validité de l’application</desc>
+	</element>
 </Glossary:elements>
