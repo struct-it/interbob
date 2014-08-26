@@ -14,7 +14,7 @@
 	<xs:element name="MajListeSecurite" type="IBLSTS:t_MessageListeSecurite"/>
 	<xs:complexType name="t_EntreeListeSecurite">
 		<xs:sequence>
-			<xs:element name="EntreeProduitInstalle" type="IB:t_EntreeProduitInstalle" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="EntreeProduitInstalle" type="IB:t_EntreeProduitInstalleAnonyme" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="t_ListeSecurite">

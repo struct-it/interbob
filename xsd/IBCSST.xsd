@@ -36,7 +36,7 @@
 			<xs:element name="LieuAction" type="InterBOB:t_LieuTarifaire" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="TypeListeSecurite" type="InterBOB:t_EnumTypeListeSecurite" minOccurs="1" maxOccurs="1" fixed="2"/>
 			<xs:element name="EquipementAction" type="IBCSST:t_Equipement" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="EntreeProduitInstalle" type="IB:t_EntreeProduitInstalle" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="EntreeProduitInstalle" type="IB:t_EntreeProduitInstalleAnonyme" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="t_Equipement">
