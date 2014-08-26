@@ -160,12 +160,12 @@ Les règles énoncées par la norme AFNOR Z69300 pour la ligne 4 d'adresse doivent 
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="ProfilClient" type="InterBOB:t_ProfilUsagerClient" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="IdClient" type="InterBOB:t_IdClient" minOccurs="0" maxOccurs="1">
+			<xs:element name="IdClient" type="InterBOB:t_IdClient" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>A vocation à transférer l'identifiant du client dans le système central du Partenaire. La gestion de l'Id client est à définir localement par les partenaires du bassin d'interopérabilité.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Nom" type="xs:normalizedString" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Nom" type="xs:normalizedString" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="Prenom" type="xs:normalizedString" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="Titre" type="InterBOB:t_EnumTitre" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
@@ -1507,6 +1507,83 @@ Permet d'identifier l'entité ayant délivré le support, vers qui le client se tou
 					<xs:element name="ContrainteModale" type="InterBOB:t_ContrainteModale" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>Permet de recenser les modes de transport autorisés.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="t_ProduitInstalleAbstraitAnonyme">
+		<xs:complexContent>
+			<xs:extension base="InterBOB:t_ProduitAbstrait">
+				<xs:sequence>
+					<xs:element name="ContratProduit" type="InterBOB:t_Contrat" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="ContrainteGeographique" type="InterBOB:t_ContrainteGeographique" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="FacteurTarifaireDeQualite" type="InterBOB:t_EnumFacteurTarifaireDeQualite" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Représente le niveau de qualité associé au service. Par exemple, 1ère ou 2ème classe.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="PrixDeVenteProduit" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="ApplicationUtilisee" type="InterBOB:t_Application" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Correspond à l'application installée hébergeant le produit</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="SupportUtilise" type="InterBOB:t_SupportUtilisateurAnonyme" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Correspond au support hébergeant l'application installée.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="t_ProduitInstalleAbstraitAnonymeContraintTransport">
+		<xs:complexContent>
+			<xs:extension base="InterBOB:t_ProduitInstalleAbstraitAnonyme">
+				<xs:sequence>
+					<xs:element name="ContrainteLignes" type="InterBOB:t_ContrainteLignes" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="ContrainteGroupesLignes" type="InterBOB:t_ContrainteGroupesLignes" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="ContrainteModale" type="InterBOB:t_ContrainteModale" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Permet de recenser les modes de transport autorisés.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="t_SupportUtilisateurAbstraitAnonyme" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="InterBOB:t_Support">
+				<xs:sequence>
+					<xs:element name="ContratSupport" type="InterBOB:t_Contrat" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="DateHeureEmission" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="DateHeureFinValidite" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="SoldeCompteur" type="InterBOB:t_SoldeCompteur" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Permet de gérer un solde de compteur.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="t_SupportUtilisateurAnonyme">
+		<xs:complexContent>
+			<xs:extension base="InterBOB:t_SupportUtilisateurAbstraitAnonyme">
+				<xs:sequence>
+					<xs:element name="EmetteurSupportEnregistre" type="InterBOB:t_OrganisationEnregistree" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>&lt;xsd:appinfo&gt;mandatory&lt;/xsd:appinfo&gt;
+Permet d'identifier l'entité ayant délivré le support, vers qui le client se tournera en cas de dysfonctionnement.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="EmetteurSupportExtraBassin" type="InterBOB:t_OrganisationExtraBassin" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>&lt;xsd;appinfo&gt;mandatory&lt;/xsd:appinfo&gt;
+Permet d'identifier l'entité ayant délivré le support, vers qui le client se tournera en cas de dysfonctionnement.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
