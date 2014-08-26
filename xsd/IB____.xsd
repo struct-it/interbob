@@ -23,6 +23,15 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="t_EntreeProduitInstalleAnonyme">
+		<xs:complexContent>
+			<xs:extension base="InterBOB:t_EntreeListeAbstrait">
+				<xs:sequence>
+					<xs:element name="ProduitInstalle" type="IB:t_ProduitInstalleAnonyme" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:complexType name="t_ObjetAbstrait">
 		<xs:sequence>
 			<xs:element name="Description" type="xs:anyType" minOccurs="1" maxOccurs="1">
@@ -32,6 +41,23 @@
 			</xs:element>
 			<xs:element name="ApplicationUtilisee" type="InterBOB:t_Application" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="t_EntreeClientListeSpontanee">
+		<xs:complexContent>
+			<xs:extension base="InterBOB:t_EntreeListeAbstrait">
+				<xs:sequence>
+					<xs:element name="ListeApplicationUtilisee" type="IB:t_ListeApplicationUtilisee" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="ClientDetenteur" type="InterBOB:t_Client" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="t_ProduitInstalleAnonyme">
+		<xs:complexContent>
+			<xs:extension base="InterBOB:t_ProduitInstalleAbstraitAnonymeContraintTransport">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="t_ProduitInstalle">
 		<xs:complexContent>
@@ -44,7 +70,7 @@
 		<xs:complexContent>
 			<xs:extension base="InterBOB:t_EntreeListeAbstrait">
 				<xs:sequence>
-					<xs:element name="ApplicationUtilisee" type="InterBOB:t_ApplicationUtilisee" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="ApplicationUtilisee" type="InterBOB:t_ApplicationUtilisee" minOccurs="1" maxOccurs="unbounded"/>
 					<xs:element name="ClientDetenteur" type="InterBOB:t_Client" minOccurs="1" maxOccurs="1"/>
 				</xs:sequence>
 			</xs:extension>
@@ -58,5 +84,10 @@
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="t_ListeApplicationUtilisee">
+		<xs:sequence>
+			<xs:element name="ApplicationUtilisee" type="InterBOB:t_ApplicationUtilisee" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
 	</xs:complexType>
 </xs:schema>
