@@ -4,7 +4,7 @@
 	<xs:import namespace="urn:InterBOB_V1" schemaLocation="XML_DDR_InterBOB_fr.xsd"/>
 	<xs:complexType name="t_MessageAcquisitions">
 		<xs:annotation>
-			<xs:documentation>Message IBACCC rendant compte d'une reconstitution de contrats</xs:documentation>
+			<xs:documentation>Message IBACRC</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="InterBOB:t_Message">
@@ -16,19 +16,19 @@
 	</xs:complexType>
 	<xs:complexType name="t_ObjetImplique">
 		<xs:choice>
-			<xs:element name="Objet" type="IB:t_ObjetAbstrait" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="ProduitInstalle" type="IBACRC:t_ProduitInstalle" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Objet" type="IB:t_ObjetAbstrait" minOccurs="1" maxOccurs="1"/>
 		</xs:choice>
 	</xs:complexType>
 	<xs:complexType name="t_OperationVente">
 		<xs:annotation>
-			<xs:documentation>Permet de décrire une opération unitaire sur un seul objet dans le cadre d'un flux IBACCC.</xs:documentation>
+			<xs:documentation>Permet de décrire une opération unitaire sur un seul objet dans le cadre d'un flux IBACRC.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="InterBOB:t_OperationVenteAbstrait">
 				<xs:sequence>
-					<xs:element name="AncienObjetImplique" type="IBACRC:t_ObjetImplique" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="ObjetImplique" type="IBACRC:t_ObjetImplique" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="AncienObjetImplique" type="IBACRC:t_ObjetImplique" minOccurs="0" maxOccurs="1"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
