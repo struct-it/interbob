@@ -85,7 +85,7 @@
 			</Distributeur>
 		</ApplicationUtilisee>
 		<ClientDetenteur>
-			<Nom></Nom>
+			<IdClient>0</IdClient>
 		</ClientDetenteur>
 	  </EntreeClient>
     </EntreeListeSecurite>
