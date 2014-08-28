@@ -14,7 +14,7 @@
 	</xs:complexType>
 	<xs:complexType name="t_OperationVente">
 		<xs:annotation>
-			<xs:documentation>Permet de décrire une opération unitaire sur un seul objet dans le cadre d'un flux IBACDC.</xs:documentation>
+			<xs:documentation>Permet de décrire une opération unitaire sur un seul objet dans le cadre d'un flux IBACDI.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="InterBOB:t_OperationVenteAbstrait">
@@ -27,7 +27,7 @@
 	</xs:complexType>
 	<xs:complexType name="t_MessageAcquisitions">
 		<xs:annotation>
-			<xs:documentation>Message IBACDC rendant compte d'une acquisition de contrats</xs:documentation>
+			<xs:documentation>Message IBACDI</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="InterBOB:t_Message">

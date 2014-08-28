@@ -10,7 +10,7 @@
 	</xs:complexType>
 	<xs:complexType name="t_MessageAcquisitions">
 		<xs:annotation>
-			<xs:documentation>Message IBACBC rendant compte du remboursement de contrats</xs:documentation>
+			<xs:documentation>Message IBACRB</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="InterBOB:t_Message">
@@ -23,7 +23,7 @@
 	<xs:element name="MessageAcquisitions" type="IBACRB:t_MessageAcquisitions"/>
 	<xs:complexType name="t_OperationVente">
 		<xs:annotation>
-			<xs:documentation>Permet de décrire une opération unitaire sur un seul objet dans le cadre d'un flux IBACBC.</xs:documentation>
+			<xs:documentation>Permet de décrire une opération unitaire sur un seul objet dans le cadre d'un flux IBACRB.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="InterBOB:t_OperationVenteAbstrait">
