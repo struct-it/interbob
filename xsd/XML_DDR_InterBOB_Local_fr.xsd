@@ -173,4 +173,13 @@ Code Libellé   Support Application Produit Explication
 	<xs:simpleType name="t_EnumFormeContenant">
 		<xs:restriction base="xs:int"/>
 	</xs:simpleType>
+	<xs:simpleType name="t_EnumTypeVoie">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="t_LibelleVoie">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="t_Commune">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
 </xs:schema>
