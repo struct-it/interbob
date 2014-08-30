@@ -13,6 +13,7 @@
 		<xs:attribute name="name" use="required" type="xs:string"/>
 		<xs:attribute name="parent" use="required" type="xs:string"/>
 		<xs:attribute name="root" use="required" type="xs:string"/>
+		<xs:attribute name="isEnum" use="optional" default="false" type="xs:boolean"/>
 	</xs:complexType>
 	<xs:element name="elements" type="Glossary:elementListType"/>
 	<xs:simpleType name="elementUsageEnumType">

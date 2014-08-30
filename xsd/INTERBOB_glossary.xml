@@ -88,11 +88,11 @@
 		<usage>Obligatoire</usage>
 		<desc>Date et heure d'émission de la liste</desc>
 	</element>
-	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSLN:MajListeSecurite">
+	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSLN:MajListeSecurite" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>Type de la liste<br/>Doit être égal à "2:Liste d'interdictions"</desc>
 	</element>
-	<element name="ActionParDefaut" parent="ListeSecurite" root="">
+	<element name="ActionParDefaut" parent="ListeSecurite" root="" isEnum="true">
 		<usage>Conditionnel</usage>
 		<desc>Permet de définir la valeur par défaut de l'action à réaliser sur les entrées de la liste
 				dont l'élément "ActionDemandee" n'est pas présent.<br/>
@@ -103,7 +103,7 @@
 				</ul>
 			</desc>
 	</element>
-	<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSLN:MajListeSecurite">
+	<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSLN:MajListeSecurite" isEnum="true">
 		<usage>Obsolescent</usage>
 		<desc>Permet de préciser si: 
 				<ul>
@@ -121,7 +121,7 @@
 		<usage>Obligatoire</usage>
 		<desc>Entrée de la liste de type "Application Installée"</desc>
 	</element>
-	<element name="ActionDemandee" parent="EntreeApplicationInstallee" root="IBLSLN:MajListeSecurite">
+	<element name="ActionDemandee" parent="EntreeApplicationInstallee" root="IBLSLN:MajListeSecurite" isEnum="true">
 		<usage>Conditionnel</usage>
 		<desc>Permet de définir la valeur de l'action à réaliser lors de la détection de l'objet.<br/>
 			Cette valeur est à préciser en local par les partenaires du bassin d'interopérabilité.<br/>
@@ -157,13 +157,13 @@
 		<usage>Obligatoire</usage>
 		<desc>Liste des réseaux sur lesquels la matrice application est acceptée</desc>
 	</element>
-	<element name="FormeContenant" parent="" root="">
+	<element name="FormeContenant" parent="" root="" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>Permet d’identifier la forme physique du contenant de l’application transport : 
 			carte, billet, carte SIM, carte SD, clé USB, …
 		</desc>
 	</element>
-	<element name="StructureApplication" parent="" root="">
+	<element name="StructureApplication" parent="" root="" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>Structure de l’application : GTML, Tango, CD97-2, Triangle n, …</desc>
 	</element>
@@ -183,7 +183,7 @@
 			de l'élément AID, ou bien si le support n’a pas d’application.
 		</desc>
 	</element>
-	<element name="TypeSupport" parent="Support" root="">
+	<element name="TypeSupport" parent="Support" root="" isEnum="true">
 		<usage>Obsolescent</usage>
 		<desc>Type de support sur lequel l’opération est réalisée.</desc>
 	</element>
@@ -204,7 +204,7 @@
 		<usage>Obligatoire</usage>
 		<desc>Date et heure de génération de liste</desc>
 	</element>
-	<element name="TypeListeSecurite" parent="ActionListeSecurite" root="">
+	<element name="TypeListeSecurite" parent="ActionListeSecurite" root="" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>Type de liste</desc>
 	</element>
@@ -232,7 +232,7 @@
 		<usage>Obligatoire</usage>
 		<desc>Identifiant du référentiel géographique associé à l'équipement</desc>
 	</element>
-	<element name="TypeEquipement" parent="EquipementAction" root="">
+	<element name="TypeEquipement" parent="EquipementAction" root="" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>Type de l'équipement</desc>
 	</element>
@@ -291,7 +291,7 @@
 			</ul>
 		</desc>
 	</element>	
-	<element name="TypeSupport" parent="SupportUtilise" root="">
+	<element name="TypeSupport" parent="SupportUtilise" root="" isEnum="true">
 		<usage>Obsolescent</usage>
 		<desc>Permet de définir les supports pouvant accepter des matrices application produit.</desc>
 	</element>
@@ -323,11 +323,11 @@
 		<usage>Obligatoire</usage>
 		<desc>Liste de compte client</desc>
 	</element>
-	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSRC:MajListeSecurite">
+	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSRC:MajListeSecurite" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>Type de la liste<br/>Doit être égal à "17:Envoi de données client"</desc>
 	</element>
-	<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSRC:MajListeSecurite">
+	<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSRC:MajListeSecurite" isEnum="true">
 		<usage>Obsolescent</usage>
 		<desc>Permet de préciser si: 
 				<ul>
@@ -360,7 +360,7 @@
 		<usage>Obligatoire</usage>
 		<desc>Liste de compte client</desc>
 	</element>
-	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSSC:MajListeSecurite">
+	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSSC:MajListeSecurite" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>Type de la liste<br/>Doit être égal à "18:Demande de suppression de données client"</desc>
 	</element>
@@ -388,7 +388,7 @@
 		<usage>Obligatoire</usage>
 		<desc>Identifiant de l'équipement</desc>
 	</element>
-	<element name="TypeEquipement" parent="EquipementValidation" root="">
+	<element name="TypeEquipement" parent="EquipementValidation" root="" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>Type de l'équipement</desc>
 	</element>
@@ -483,7 +483,7 @@
 		<usage>Obligatoire</usage>
 		<desc>Le champ CompteurCorrespondance est renseigné pour indiquer la notion de correspondance, et idéalement le nombre de correspondances.</desc>
 	</element>
-	<element name="TypeTransaction" parent="" root="">
+	<element name="TypeTransaction" parent="" root="" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>
 			<ul>
@@ -499,7 +499,7 @@
 		<usage>Obligatoire</usage>
 		<desc>Liste de modes de transport utilisés</desc>
 	</element>
-	<element name="IdMode" parent="" root="">
+	<element name="IdMode" parent="" root="" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>Mode de transport utilisé</desc>
 	</element>
@@ -542,11 +542,11 @@
 		<usage>Obligatoire</usage>
 		<desc>Liste d'application transport</desc>
 	</element>
-	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSDC:MajListeSecurite">
+	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSDC:MajListeSecurite" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>Type de la liste<br/>Doit être égal à "16 : demande d’informations sur les supports/applications de la liste"</desc>
 	</element>
-	<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSDC:MajListeSecurite">
+	<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSDC:MajListeSecurite" isEnum="true">
 		<usage>Obsolescent</usage>
 		<desc>Permet de préciser si: 
 				<ul>
@@ -563,11 +563,11 @@
 		<usage>Obligatoire</usage>
 		<desc>Liste d'application transport</desc>
 	</element>
-	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSST:MajListeSecurite">
+	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSST:MajListeSecurite" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>Type de la liste<br/>Doit être égal à "20 : liste de suspension de titres"</desc>
 	</element>
-	<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSST:MajListeSecurite">
+	<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSST:MajListeSecurite" isEnum="true">
 		<usage>Obsolescent</usage>
 		<desc>Permet de préciser si: 
 				<ul>
@@ -576,7 +576,7 @@
 				</ul>
 		</desc>
 	</element>
-	<element name="ActionDemandee" parent="EntreeProduitInstalle" root="IBLSST:MajListeSecurite">
+	<element name="ActionDemandee" parent="EntreeProduitInstalle" root="IBLSST:MajListeSecurite" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>Permet de définir la valeur de l'action à réaliser lors de la détection de l'objet:
 			<ul>
@@ -615,7 +615,7 @@
 			<li>Optionnel (facultatif) s'il ne s'agit pas d'une vente pour télédistribution.</li>
 		</desc>
 	</element>
-	<element name="TypeOperationVente" parent="OperationVente" root="">
+	<element name="TypeOperationVente" parent="OperationVente" root="" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>
 			<li>1 : Vente (ou primo chargement)</li>
@@ -628,7 +628,7 @@
 		<usage>Obsolescent</usage>
 		<desc>Code de l'ancien produit</desc>
 	</element>
-	<element name="EtatOperation" parent="OperationVente" root="">
+	<element name="EtatOperation" parent="OperationVente" root="" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>Etat de l'opération de vente</desc>
 	</element>
@@ -638,7 +638,7 @@
 			Un montant nul sera renseigné avec la valeur « 0 ».
 		</desc>
 	</element>
-	<element name="MoyenPaiementPrincipal" parent="OperationVente" root="">
+	<element name="MoyenPaiementPrincipal" parent="OperationVente" root="" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>Moyen de paiement utilisé pour régler le plus gros montant</desc>
 	</element>
@@ -650,7 +650,7 @@
 		<usage>Obligatoire</usage>
 		<desc>Identifiant de l'équipement</desc>
 	</element>
-	<element name="TypeEquipement" parent="EquipementAcquisition" root="">
+	<element name="TypeEquipement" parent="EquipementAcquisition" root="" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>Type de l'équipement</desc>
 	</element>
@@ -743,7 +743,7 @@
 		<usage>Optionnel</usage>
 		<desc>Permet de préciser la duree de validité à partir de la première validation dans le cas des titres glissant à la validation.</desc>
 	</element>
-	<element name="FacteurTarifaireDeQualite" parent="ProduitInstalle" root="">
+	<element name="FacteurTarifaireDeQualite" parent="ProduitInstalle" root="" isEnum="true">
 		<usage>Optionnel</usage>
 		<desc>Permet de définir le niveau de qualité associé au service. Par exemple, 1ère ou 2ème classe.</desc>
 	</element>
@@ -815,7 +815,7 @@
 		<usage>Optionnel</usage>
 		<desc>Identifiant de la matrice d'application.</desc>
 	</element>
-	<element name="TypeApplication" parent="MatriceApplicationEnregistree" root="">
+	<element name="TypeApplication" parent="MatriceApplicationEnregistree" root="" isEnum="true">
 		<usage>Optionnel</usage>
 		<desc>Indique le type d'application (transport ou autre...)</desc>
 	</element>
@@ -832,7 +832,7 @@
 		<usage>Obsolescent</usage>
 		<desc>Nom du partenaire</desc>
 	</element>
-	<element name="CategorieSupport" parent="" root="">
+	<element name="CategorieSupport" parent="" root="" isEnum="true">
 		<usage>Obsolescent</usage>
 		<desc>Catégorie du support (nominatif, anonyme)</desc>
 	</element>
@@ -852,7 +852,7 @@
 		<usage>Optionnel</usage>
 		<desc>Données du client détenteur du contrat</desc>
 	</element>
-	<element name="TypeCommercialContrat" parent="" root="">
+	<element name="TypeCommercialContrat" parent="" root="" isEnum="true">
 		<usage>Optionnel</usage>
 		<desc>Permet de connaitre la gamme commercial du contrat avec le client.</desc>
 	</element>
@@ -888,7 +888,7 @@
 		<usage>Optionnel</usage>
 		<desc>Prénom du client</desc>
 	</element>
-	<element name="Titre" parent="ClientDetenteur" root="">
+	<element name="Titre" parent="ClientDetenteur" root="" isEnum="true">
 		<usage>Optionnel</usage>
 		<desc>Titre du client: M, Mme, Mlle</desc>
 	</element>
@@ -912,7 +912,7 @@
 		<usage>Optionnel</usage>
 		<desc>Numéro de voie.</desc>
 	</element>
-	<element name="TypeVoie" parent="" root="">
+	<element name="TypeVoie" parent="" root="" isEnum="true">
 		<usage>Optionnel</usage>
 		<desc>Type de voie.</desc>
 	</element>
@@ -944,7 +944,7 @@
 		<usage>Optionnel</usage>
 		<desc>Coordonnée supplémentaire du client.</desc>
 	</element>
-	<element name="TypeCoordonnee" parent="Coordonnees" root="">
+	<element name="TypeCoordonnee" parent="Coordonnees" root="" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>Type de la coordonnée supplémentaire du client.</desc>
 	</element>
@@ -965,7 +965,7 @@
 		<usage>Optionnel</usage>
 		<desc>Profil socio-professionnel du client</desc>
 	</element>
-	<element name="CodeProfil" parent="ProfilClient" root="">
+	<element name="CodeProfil" parent="ProfilClient" root="" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>Code du profil</desc>
 	</element>
@@ -1167,11 +1167,11 @@
 		<usage>Obligatoire</usage>
 		<desc>Liste de compte client</desc>
 	</element>
-	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSEC:MajListeSecurite">
+	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSEC:MajListeSecurite" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>Type de la liste<br/>Doit être égal à "17:Envoi de données client"</desc>
 	</element>
-	<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSEC:MajListeSecurite">
+	<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSEC:MajListeSecurite" isEnum="true">
 		<usage>Obsolescent</usage>
 		<desc>Permet de préciser si: 
 				<ul>
@@ -1188,7 +1188,7 @@
 		<usage>Obsolescent</usage>
 		<desc>Permet de définir la position de l'élément dans la liste</desc>
 	</element>
-	<element name="ActionDemandee" parent="EntreeClient" root="">
+	<element name="ActionDemandee" parent="EntreeClient" root="" isEnum="true">
 		<usage>Obsolescent</usage>
 		<desc>Permet de définir la valeur de l'action à réaliser lors de la détection de l'objet</desc>
 	</element>
