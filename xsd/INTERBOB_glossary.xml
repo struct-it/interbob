@@ -315,19 +315,19 @@
 		<usage>Obligatoire</usage>
 		<desc>Partenaire ayant délivré le support, vers qui le client se tournera en cas de dysfonctionnement.</desc>
 	</element>
-	<!-- IBLSRC -->
-	<element name="IBLSRC:MajListeSecurite" parent="" root="">
+	<!-- IBLSRF -->
+	<element name="IBLSRF:MajListeSecurite" parent="" root="">
 		<desc>Ce message est envoyé en réponse à une demande d'informations de compte client.</desc>
 	</element>
-	<element name="ListeSecurite" parent="IBLSRC:MajListeSecurite" root="">
+	<element name="ListeSecurite" parent="IBLSRF:MajListeSecurite" root="">
 		<usage>Obligatoire</usage>
 		<desc>Liste de compte client</desc>
 	</element>
-	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSRC:MajListeSecurite" isEnum="true">
+	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSRF:MajListeSecurite" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>Type de la liste<br/>Doit être égal à "17:Envoi de données client"</desc>
 	</element>
-	<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSRC:MajListeSecurite" isEnum="true">
+	<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSRF:MajListeSecurite" isEnum="true">
 		<usage>Obsolescent</usage>
 		<desc>Permet de préciser si: 
 				<ul>
@@ -1138,6 +1138,10 @@
 	<!-- IBACBC -->
 	<element name="IBACBC:MessageAcquisitions" parent="" root="">
 		<desc>Informer les partenaires du bassin d'interoperabilité d'une opération de remboursement d'un titre de transport.</desc>
+	</element>
+	<element name="Effacable" parent="ProduitInstalle" root="">
+		<usage>Obligatoire</usage>
+		<desc>Indique si le produit installé peut être effacé (TRUE) ou non (FALSE)</desc>
 	</element>
 	<!-- IBACBP -->
 	<element name="IBACBP:MessageAcquisitions" parent="" root="">
