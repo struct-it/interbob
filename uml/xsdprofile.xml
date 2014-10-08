@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="D3339D42-5" name="XSDprofile" version="1.0" notes="XSDprofile"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="Mandatory" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="128" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Attribute"/>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="Obsolete" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="8421504" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Attribute"/>
+				</AppliesTo>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+	</Content>
+</UMLProfile>
