@@ -101,9 +101,9 @@
 						<CodeBassin>000</CodeBassin>
 					</Distributeur>
 					<DateHeureFinValidite>2001-12-17T09:30:47+05:00</DateHeureFinValidite>
-					<FormeContenant>0</FormeContenant>
 					<StructureApplication>0</StructureApplication>
 					<Support>
+						<FormeContenant>0</FormeContenant>
 						<TypeSupport>0</TypeSupport>
 						<CategorieSupport>0</CategorieSupport>
 						<IdSupport>0</IdSupport>
@@ -141,9 +141,9 @@
 						<CodeBassin>000</CodeBassin>
 					</Distributeur>
 					<DateHeureFinValidite>2001-12-17T09:30:47+05:00</DateHeureFinValidite>
-					<FormeContenant>0</FormeContenant>
 					<StructureApplication>0</StructureApplication>
 					<Support>
+						<FormeContenant>0</FormeContenant>
 						<TypeSupport>0</TypeSupport>
 						<CategorieSupport>0</CategorieSupport>
 						<IdSupport>0</IdSupport>
@@ -223,9 +223,9 @@
 						<CodeBassin>000</CodeBassin>
 					</Distributeur>
 					<DateHeureFinValidite>2001-12-17T09:30:47+05:00</DateHeureFinValidite>
-					<FormeContenant>0</FormeContenant>
 					<StructureApplication>0</StructureApplication>
 					<Support>
+						<FormeContenant>0</FormeContenant>
 						<TypeSupport>0</TypeSupport>
 						<CategorieSupport>0</CategorieSupport>
 						<IdSupport>0</IdSupport>
@@ -263,9 +263,9 @@
 						<CodeBassin>000</CodeBassin>
 					</Distributeur>
 					<DateHeureFinValidite>2001-12-17T09:30:47+05:00</DateHeureFinValidite>
-					<FormeContenant>0</FormeContenant>
 					<StructureApplication>0</StructureApplication>
 					<Support>
+						<FormeContenant>0</FormeContenant>
 						<TypeSupport>0</TypeSupport>
 						<CategorieSupport>0</CategorieSupport>
 						<IdSupport>0</IdSupport>
