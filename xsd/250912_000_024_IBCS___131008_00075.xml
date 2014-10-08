@@ -53,11 +53,11 @@
           <CodeBassin>912</CodeBassin>
         </Distributeur>
         <DateHeureFinValidite>2020-07-31T00:00:00</DateHeureFinValidite>
-		  <!-- Ajout de FormeContenant -->
-		  <FormeContenant>0</FormeContenant>
 		  <!-- Ajout de StructureApplication -->
           <StructureApplication>1</StructureApplication>
         <Support>
+		  <!-- Ajout de FormeContenant -->
+		  <FormeContenant>0</FormeContenant>
           <TypeSupport>67</TypeSupport>
           <IdSupport>38868811</IdSupport>
         </Support>

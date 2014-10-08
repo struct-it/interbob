@@ -39,11 +39,11 @@
             <IdPartenaire>001</IdPartenaire>
             <CodeBassin>912</CodeBassin>
           </Distributeur>
-          <!-- Ajout FormeContenant -->
-          <FormeContenant>1</FormeContenant>
           <!-- Ajout StructureApplication -->
           <StructureApplication>0</StructureApplication>
           <Support>
+            <!-- Ajout FormeContenant -->
+            <FormeContenant>1</FormeContenant>
             <TypeSupport>67</TypeSupport>
             <IdSupport>388689081</IdSupport>
           </Support>

@@ -51,11 +51,11 @@
 						<IdPartenaire>000</IdPartenaire>
 						<CodeBassin>000</CodeBassin>
 					</Distributeur>
-					<!-- Ajout FormeContenant -->					
-					<FormeContenant>0</FormeContenant>
 					<!-- Ajout StructureApplication -->									
 					<StructureApplication>1</StructureApplication>
 					<Support>
+						<!-- Ajout FormeContenant -->					
+						<FormeContenant>0</FormeContenant>
 						<TypeSupport>67</TypeSupport>
 						<IdSupport>388689081</IdSupport>
 					</Support>					
@@ -89,11 +89,11 @@
 						<IdPartenaire>000</IdPartenaire>
 						<CodeBassin>000</CodeBassin>
 					</Distributeur>
-					<!-- Ajout FormeContenant -->					
-					<FormeContenant>0</FormeContenant>
 					<!-- Ajout StructureApplication -->									
 					<StructureApplication>1</StructureApplication>
 					<Support>
+						<!-- Ajout FormeContenant -->					
+						<FormeContenant>0</FormeContenant>
 						<TypeSupport>67</TypeSupport>
 						<IdSupport>388689081</IdSupport>
 					</Support>

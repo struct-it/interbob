@@ -18,21 +18,21 @@
   <IdMessage>11</IdMessage>
   <ActionListeSecurite>
     <DateHeureAction>2014-04-08T10:06:43</DateHeureAction>
-    <TypeListeSecurite>2</TypeListeSecurite>
 	<!-- Ajout de LieuAction -->
     <LieuAction>
 		<IdLocalisation>String</IdLocalisation>
 		<ReferentielLocalisation>0000</ReferentielLocalisation>
     </LieuAction>
+    <TypeListeSecurite>2</TypeListeSecurite>
     <!-- Ajout de EquipementAction -->
     <EquipementAction>
-		<IdEquipement>String</IdEquipement>
-		<Referentiel>0000</Referentiel>
-		<TypeEquipement>0</TypeEquipement>
 		<ExploitantEquipement>
 			<IdPartenaire>024</IdPartenaire>
 			<CodeBassin>912</CodeBassin>
-		</ExploitantEquipement>
+		</ExploitantEquipement>    
+		<IdEquipement>String</IdEquipement>
+		<TypeEquipement>0</TypeEquipement>
+		<Referentiel>0000</Referentiel>
 	</EquipementAction>        
     <EntreeApplicationInstallee>
       <ApplicationInstallee>
@@ -40,11 +40,6 @@
 		<AID></AID>
 		<!-- Ajout de IdApplicationInstallee -->
 		<IdApplicationInstallee></IdApplicationInstallee>       
-        <Distributeur>
-          <IdPartenaire>002</IdPartenaire>
-          <CodeBassin>913</CodeBassin>
-        </Distributeur>
-        <DateHeureFinValidite>2021-04-03T00:00:00</DateHeureFinValidite>
         <!-- Ajout MatriceApplicationEnregistree -->
         <MatriceApplicationEnregistree>
 			<BassinsAcceptation>
@@ -52,11 +47,16 @@
 				<CodeBassin>111</CodeBassin>
 			</BassinsAcceptation>
 		</MatriceApplicationEnregistree>
-		<!-- Ajout de FormeContenant -->
-		<FormeContenant>0</FormeContenant>
+        <Distributeur>
+          <IdPartenaire>002</IdPartenaire>
+          <CodeBassin>913</CodeBassin>
+        </Distributeur>  
+        <DateHeureFinValidite>2021-04-03T00:00:00</DateHeureFinValidite>
 		<!-- Ajout de StructureApplication -->
         <StructureApplication>1</StructureApplication>
         <Support>
+  		  <!-- Ajout de FormeContenant -->
+		  <FormeContenant>0</FormeContenant>
           <TypeSupport>67</TypeSupport>
           <IdSupport>2081098355</IdSupport>
         </Support>
