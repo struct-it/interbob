@@ -1,173 +1,92 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema targetNamespace="urn:InterBOB_V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:InterBOB="urn:InterBOB_V1">
 	<xs:annotation>
-		<xs:documentation>Schéma XML du corps local du dictionnaire de données d'InterBOB.</xs:documentation>
+		<xs:documentation>SchÃ©ma XML du corps local du dictionnaire de donnÃ©es d'InterBOB.</xs:documentation>
 	</xs:annotation>
 	<xs:simpleType name="t_CodeCommentaireAccuseReception">
 		<xs:annotation>
-			<xs:documentation>Permet de définir lune codification de commentaires types pour les accusés de réception.
+			<xs:documentation>
 			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_CodeProfilCommercialContrat">
 		<xs:annotation>
-			<xs:documentation>Permet de définir localement une typologie de profils commerciaux de contrats (et non de statuts de clients).
-			Ne correspond à HolderProfileNumber de la norme CEN 1545-1
+			<xs:documentation>
 			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
-	<xs:simpleType name="t_EnumCategorieSupport">
-		<xs:annotation>
-			<xs:documentation>Permet de définir localement une typologie.
-N_est pas l_équivalent de l_élément de données d_intercode HolderDataCommercialId qui s_applique à l_application installée : Exemples : carte senior, carte gratuite, carte bancaire+billettique...</xs:documentation>
-		</xs:annotation>
+	<xs:simpleType name="t_EnumCategorie">
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumCodeMiseAJour">
-		<xs:annotation>
-			<xs:documentation>Permet de définir s'il faut ajouter ou retirer l'entrée définie à la liste exhaustive gérée par le système destinataire.</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumCodeProfil">
-		<xs:annotation>
-			<xs:documentation>Identification du statut , correspond à HolderProfileNumber de la norme CEN 1545-1</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumEtatAction">
-		<xs:annotation>
-			<xs:documentation>Enumère les valeurs possibles d'un état d'une action effectuée.</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumEtatOperationVente">
-		<xs:annotation>
-			<xs:documentation>Enumère les valeurs possibles d'un état d'une opération de vente.</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumFacteurTarifaireDeQualite">
-		<xs:annotation>
-			<xs:documentation>Enumère les valeurs possibles de niveau de qualité associé au service. La codification de cette enumération correspond à ContractPassengerClass d'Intercode et désigne plus généralement la classe de service.</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumModeTransport">
-		<xs:annotation>
-			<xs:documentation>Enumère les différents modes de transport possibles.</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumMotifEntreeListe">
-		<xs:annotation>
-			<xs:documentation>Enumère les différents motifs possibles d'introduire un objet dans une liste</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumMoyenPaiement">
-		<xs:annotation>
-			<xs:documentation>Cette énumération est un sous-ensemble de EN1545_PaymentMeans considéré suffisant pour les besoins d'échanges dans le cadre d'un .</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumQualifiantReception">
 		<xs:annotation>
-			<xs:documentation>
-Enumère les valeurs possibles d'un qualifiant de réception.</xs:documentation>
+			<xs:documentation></xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumTitre">
-		<xs:annotation>
-			<xs:documentation>Enumère les différents titres possibles.</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumTypeApplication">
-		<xs:annotation>
-			<xs:documentation>Enumère les valeurs possible d'un type d'application.</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumTypeCommercialContrat">
-		<xs:annotation>
-			<xs:documentation>Exemples : contrat annuel, contrat combiné, contrat découverte, contrat senior</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumTypeCoordonnee">
-		<xs:annotation>
-			<xs:documentation>Enumère les différents types de coordonnées.</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumTypeEquipement">
-		<xs:annotation>
-			<xs:documentation>Enumère les valeurs possibles d'un  type d'un type d'équipement.</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumTypeListeSecurite">
-		<xs:annotation>
-			<xs:documentation>Enumère les diférents types de listes possibles.</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumTypeMiseaJour">
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumTypeOperationVente">
-		<xs:annotation>
-			<xs:documentation>
-Enumère les valeurs possibles d'un type d'opération de vente.</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumTypeSupport">
-		<xs:annotation>
-			<xs:documentation>Enumère les valeurs possibles d'un type de support.</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumTypeTechniqueSousSystemeSecurite">
-		<xs:annotation>
-			<xs:documentation>Peut servir à identifier la technologie du module de sécurité.
-			La granularité et les valeurs éventuels de cet élément sont à définir en local par les partenaires du bassin d'interopérabilité.
-			Par exemple cela peut servir à identifier la version de SAM ou ASIC utilisée au sein d'un bassin d'interopérabilité.
-			Cela peut aussi servir à préciser la famille d'un type technique exemple MFRC 531, CSAM, SAMS1_.</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumTypeTransaction">
-		<xs:annotation>
-			<xs:documentation>Equivaut au quartet de poids faible de l'élément de donnée INTERCODE EventCode qui contient le type de transaction concerné par l'événement.</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumActionEntreeListe">
-		<xs:annotation>
-			<xs:documentation>Type d'action susceptible d'être effectuée sur un objet mentionné dans une liste (qu'il s'agisse ou non d'une liste de sécurité).
-Code Libellé   Support Application Produit Explication
-1    Détruire  X                           Mettre hors d'usage _ Destroy
-2    Capturer  X                           Capturer la carte sur détection _ Capture
-3    Bloquer   X       X           X       Bloquer temporairement temporaire _ Block Temporarily 
-4    Invalide  X       X           X       Rendre inutilisable (peut toujours être lu). Disable (still readable).
-5    Refuser   X       X           X       Refuser _ Reject
-6    Accepter  X       X           X       Accepter _ Accept
-7    Ne rien faire
-8    Charger/Recharger
-9    Oter de la liste de refus
-10  Bloquer définitivement (mettre à effaçable)</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumStructureApplication">
-		<xs:restriction base="xs:int"/>
-	</xs:simpleType>
-	<xs:simpleType name="t_EnumNatureApplication">
 		<xs:restriction base="xs:int"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumFormeContenant">
