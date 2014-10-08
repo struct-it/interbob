@@ -416,6 +416,7 @@
 							<CodeBassin>000</CodeBassin>
 						</EmetteurSupportEnregistre>
 					</SupportUtilise>
+					<Effacable>false</Effacable>
 				</ProduitInstalle>
 			</ObjetImplique>
 			<AncienObjetImplique>
@@ -764,6 +765,7 @@
 							<CodeBassin>000</CodeBassin>
 						</EmetteurSupportEnregistre>
 					</SupportUtilise>
+					<Effacable>true</Effacable>
 				</ProduitInstalle>
 			</AncienObjetImplique>
 		</OperationVente>
@@ -1154,6 +1156,7 @@
 							<CodeBassin>000</CodeBassin>
 						</EmetteurSupportEnregistre>
 					</SupportUtilise>
+					<Effacable>true</Effacable>
 				</ProduitInstalle>
 			</ObjetImplique>
 			<AncienObjetImplique>
@@ -1502,6 +1505,7 @@
 							<CodeBassin>000</CodeBassin>
 						</EmetteurSupportEnregistre>
 					</SupportUtilise>
+					<Effacable>true</Effacable>
 				</ProduitInstalle>
 			</AncienObjetImplique>
 		</OperationVente>
