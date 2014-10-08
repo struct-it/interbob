@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema targetNamespace="urn:IBCSST_V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:IBCSST="urn:IBCSST_V1" xmlns:IB="urn:IB_V1" xmlns:InterBOB="urn:InterBOB_V1">
 	<xs:import namespace="urn:IB_V1" schemaLocation="IB____.xsd"/>
 	<xs:import namespace="urn:InterBOB_V1" schemaLocation="XML_DDR_InterBOB_Local_fr.xsd"/>
@@ -30,7 +30,7 @@
 		<xs:sequence>
 			<xs:element name="DateHeureAction" type="xs:dateTime" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Date de l&#8217;invalidation </xs:documentation>
+					<xs:documentation>Date de lâ€™invalidation </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="LieuAction" type="InterBOB:t_LieuTarifaire" minOccurs="1" maxOccurs="1"/>
@@ -41,13 +41,13 @@
 	</xs:complexType>
 	<xs:complexType name="t_Equipement">
 		<xs:annotation>
-			<xs:documentation>Un équipement en général. Il peut s'agir d'un composant matériel, ou logiciel.</xs:documentation>
+			<xs:documentation>Un Ã©quipement en gÃ©nÃ©ral. Il peut s'agir d'un composant matÃ©riel, ou logiciel.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="ExploitantEquipement" type="InterBOB:t_OrganisationEnregistree" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="IdEquipement" type="xs:string" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Identifiant de l'équipement</xs:documentation>
+					<xs:documentation>Identifiant de l'Ã©quipement</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TypeEquipement" type="InterBOB:t_EnumTypeEquipement" minOccurs="1" maxOccurs="1"/>

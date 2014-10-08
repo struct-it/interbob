@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema targetNamespace="urn:IB_V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:IB="urn:IB_V1" xmlns:InterBOB="urn:InterBOB_V1">
 	<xs:import namespace="urn:InterBOB_V1" schemaLocation="XML_DDR_InterBOB_fr.xsd"/>
 	<xs:complexType name="t_ApplicationInstallee">
 		<xs:annotation>
-			<xs:documentation>Une matrice d'application instanciée et implantée sur un support utilisateur, qui doit être invalidée par tout système partenaire la rencontrant.</xs:documentation>
+			<xs:documentation>Une matrice d'application instanciÃ©e et implantÃ©e sur un support utilisateur, qui doit Ãªtre invalidÃ©e par tout systÃ¨me partenaire la rencontrant.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="InterBOB:t_ApplicationInstalleeAbstraite">
@@ -13,7 +13,7 @@
 	</xs:complexType>
 	<xs:complexType name="t_EntreeApplicationInstallee">
 		<xs:annotation>
-			<xs:documentation>Une entrée de type "Application Installée" dans la liste de sécurité.</xs:documentation>
+			<xs:documentation>Une entrÃ©e de type "Application InstallÃ©e" dans la liste de sÃ©curitÃ©.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="InterBOB:t_EntreeListe">
