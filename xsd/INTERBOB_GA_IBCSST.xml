@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Ajout XSLT-->
+<?xml-stylesheet type="text/xsl" href="INTERBOB.xslt"?>
+<!--Changement de déclaration-->
+<IBCSST:CompteRenduSecurite xsi:schemaLocation="urn:IBCSST_V1 IBCSST.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:IBCSST="urn:IBCSST_V1">
+    <DateHeure>2013-09-20T10:56:37</DateHeure>
+     <CorrespondantEmetteur>
+        <Nom/>
+        <IdPartenaire>24</IdPartenaire>
+        <CodePays>000</CodePays>
+        <CodeBassin>913</CodeBassin>
+    </CorrespondantEmetteur>
+    <CorrespondantDestinataire>
+        <Nom/>
+       <IdPartenaire>2</IdPartenaire>
+        <CodePays>000</CodePays>
+        <CodeBassin>913</CodeBassin>
+    </CorrespondantDestinataire>
+    <FormatMessage>
+    	<ReferenceNorme>IBCSST:CompteRenduSecurite</ReferenceNorme>
+   	 <VersionNorme>1.1:913.1</VersionNorme>
+    </FormatMessage>
+ <IdMessage>10</IdMessage> 
+ <ElementControleIntegrite></ElementControleIntegrite>
+    <ActionListeSecurite>
+    <DateHeureAction>2013-09-18T15:28:54</DateHeureAction>
+    <!-- Ajout de LieuAction -->
+    <LieuAction>
+	<IdLocalisation>0</IdLocalisation>
+	<ReferentielLocalisation>0</ReferentielLocalisation>
+	<Sens/>
+            <Ligne>
+                <IdLigne>0</IdLigne>
+                <TypeReferentiel>0</TypeReferentiel>
+            </Ligne>
+            <Course>
+                <IdCourse>0</IdCourse>
+                <TypeReferentiel>0</TypeReferentiel>
+             </Course>
+	</LieuAction>
+	<!-- TypeListeSecurite a la valeur 2 au lieu de 21 -->
+    <TypeListeSecurite>2</TypeListeSecurite>
+	<!-- Ajout de EquipementAction -->    
+    <EquipementAction>
+            <ExploitantEquipement>
+                <Nom/>
+                <IdPartenaire>003</IdPartenaire>
+                <CodePays>000</CodePays>
+               <CodeBassin>913</CodeBassin>
+            </ExploitantEquipement>
+            <IdEquipement>String</IdEquipement>
+            <TypeEquipement>6</TypeEquipement>
+            <Referentiel>6024</Referentiel>
+        </EquipementAction>       
+        <EntreeProduitInstalle>
+            <PositionDansListe>1</PositionDansListe>
+                <ActionDemandee>10</ActionDemandee>
+                <DateDebutEffet>2013-08-28</DateDebutEffet>
+                <DateFinEffet>2013-08-30</DateFinEffet>
+            <ProduitInstalle>
+             <ReferenceProduit>
+	<ProprietaireProduit>
+		<IdPartenaire>0</IdPartenaire>
+		<CodeBassin>000</CodeBassin>
+	</ProprietaireProduit>
+</ReferenceProduit>
+             <ReferenceProduitInstalle>
+	<ExploitantVente>
+		<IdPartenaire>0</IdPartenaire>
+		<CodeBassin>000</CodeBassin>
+	</ExploitantVente>
+</ReferenceProduitInstalle>
+            </ProduitInstalle>
+        </EntreeProduitInstalle>
+    </ActionListeSecurite>
+</IBCSST:CompteRenduSecurite>

@@ -2,8 +2,9 @@
 <!--Ajout XSLT-->
 <?xml-stylesheet type="text/xsl" href="INTERBOB.xslt"?>
 <!--Changement de déclaration-->
-<IBLSEC:MajListeSecurite xsi:schemaLocation="urn:IBLSEC_V1 IBLSEC.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:IBLSEC="urn:IBLSEC_V1">
-    <DateHeure>2012-12-05T11:53:52</DateHeure>
+<IBLSRF:MajListeSecurite xsi:schemaLocation="urn:IBLSRF_V1 IBLSRF.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:IBLSRF="urn:IBLSRF_V1">
+    <DateHeure>
+2012-12-05T11:53:52</DateHeure>
     <CorrespondantEmetteur>
         <Nom></Nom>
         <IdPartenaire>024</IdPartenaire>
@@ -22,21 +23,20 @@
     </FormatMessage>
     <IdMessage>25</IdMessage>
     <ElementControleIntegrite></ElementControleIntegrite>
-<ListeSecurite>
+    <ListeSecurite>
 	<IdentifiantListe></IdentifiantListe>
  	<DateHeureEmission>2012-12-05T11:53:52</DateHeureEmission>
-        	<TypeListeSecurite>19</TypeListeSecurite>
+        	<TypeListeSecurite>17</TypeListeSecurite>
         	<ActionParDefaut></ActionParDefaut>
         	<TypeMiseaJour>1</TypeMiseaJour>
-<EntreeListeSecurite>
+        <EntreeListeSecurite>
             <EntreeClient>
                 <PositionDansListe>1</PositionDansListe>
                 <ActionDemandee></ActionDemandee>
                 <DateDebutEffet>1957-08-13</DateDebutEffet>
                 <DateFinEffet>1957-08-13</DateFinEffet>
-                <ListeApplicationUtilisee>
-                    <ApplicationUtilisee>
-					<AID>A0000004040125912001</AID>
+                <ApplicationUtilisee>
+	    				<AID>A0000004040125000001</AID>
 					<IdApplicationInstallee>201234567</IdApplicationInstallee>
 					<MatriceApplicationEnregistree>
 						<IdMatriceApplication></IdMatriceApplication>
@@ -59,11 +59,10 @@
 						<CodePays>250</CodePays>
 						<CodeBassin>912</CodeBassin>
 					</Distributeur>
-                    				<DateHeureFinValidite>2016-12-17T09:30:47</DateHeureFinValidite>
-                    				<DateHeureDebutValidite>2001-12-17T09:30:47+05:00</DateHeureDebutValidite>
-                  </ApplicationUtilisee>
-                 </ListeApplicationUtilisee>
-               <ClientDetenteur>
+                    	<DateHeureFinValidite>2016-12-17T09:30:47</DateHeureFinValidite>
+                    	<DateHeureDebutValidite>2001-12-17T09:30:47+05:00</DateHeureDebutValidite>
+                </ApplicationUtilisee>
+                <ClientDetenteur>
                     <ProfilClient>
                         <CodeProfil>0</CodeProfil>
                         <DateDebutValiditeProfil>1957-08-13</DateDebutValiditeProfil>
@@ -74,11 +73,13 @@
                         <Sexe/>
                         <TranchedAge/>
                     </ProfilClient>
-                    <IdClient>25091200212345678910</IdClient>
+                    <IdClient>
+25091200212345678910</IdClient>
                     <Nom>INTER</Nom>
                     <Prenom>BOB</Prenom>
                     <Titre>1</Titre>
-                    <DateNaissance>2015-01-01</DateNaissance>
+                    <DateNaissance>
+2015-01-01</DateNaissance>
                     <Adresse>
                         <LigneAdresse>
                             <NumLigne>1</NumLigne>
@@ -88,7 +89,8 @@
                 	<TypeVoie>AV</TypeVoie>
                 	<LibelleVoie>DE STALINGRAD</LibelleVoie>
                	 <CodePostal>30100</CodePostal>
-                	<Commune>ALES</Commune>
+                	
+<Commune>ALES</Commune>
                         	<Complement>QUARTIER VAL FLEURI</Complement>
                         	<CodePays>250</CodePays>
                     </Adresse>
@@ -119,9 +121,10 @@
                         <CodeBassin>913</CodeBassin>
                     </PartenaireReferent>
                     <CommunicationDonneesPersonnelles>0</CommunicationDonneesPersonnelles>
-                    <DateSaisie>2013-03-13</DateSaisie>
+                    <DateSaisie>
+2013-03-13</DateSaisie>
                 </ClientDetenteur>
             </EntreeClient>
         </EntreeListeSecurite>
-        </ListeSecurite>
-</IBLSEC:MajListeSecurite>
+     </ListeSecurite>
+</IBLSRF:MajListeSecurite>

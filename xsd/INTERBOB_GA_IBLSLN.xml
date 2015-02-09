@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Ajout XSLT-->
+<?xml-stylesheet type="text/xsl" href="INTERBOB.xslt"?>
+<!--Changement de déclaration-->
+<IBLSLN:MajListeSecurite xsi:schemaLocation="urn:IBLSLN_V1 IBLSLN.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:IBLSLN="urn:IBLSLN_V1">
+    <DateHeure>2014-04-08T08:48:41</DateHeure>
+    <CorrespondantEmetteur>
+        <Nom>
+</Nom>
+        <IdPartenaire>
+02</IdPartenaire>
+        <CodePays>
+250</CodePays>
+        <CodeBassin>913
+</CodeBassin>
+    </CorrespondantEmetteur>
+    <CorrespondantDestinataire>
+         <Nom></Nom>
+        <IdPartenaire>24</IdPartenaire>
+        <CodePays>250</CodePays>
+        <CodeBassin>913</CodeBassin>
+    </CorrespondantDestinataire>
+    <FormatMessage>
+    	<ReferenceNorme>IB:MajListeSecurite</ReferenceNorme>
+    	<VersionNorme>1.2:913.1</VersionNorme>
+    </FormatMessage>
+    <IdMessage>5</IdMessage>
+    <ElementControleIntegrite></ElementControleIntegrite>
+    <ListeSecurite>
+        <IdentifiantListe/>
+        <!-- IdentifiantListe est obsolete -->
+    	<!--<IdentifiantListe>250_913_2</IdentifiantListe>-->
+        <DateHeureEmission>
+2014-04-08T08:48:41</DateHeureEmission>
+         <TypeListeSecurite>2</TypeListeSecurite>
+         <ActionParDefaut>4</ActionParDefaut>
+         <TypeMiseaJour>0</TypeMiseaJour>
+        <DateDebutEffetParDefaut>1957-08-13</DateDebutEffetParDefaut>
+        <DateFinEffetParDefaut>1957-08-13</DateFinEffetParDefaut>
+        <ElementControleIntegrite/>
+        <EntreeListeSecurite>
+            <EntreeApplicationInstallee>
+                <PositionDansListe>1</PositionDansListe>
+                <ActionDemandee>4</ActionDemandee>
+                <DateDebutEffet>2014-04-07</DateDebutEffet>
+                <DateFinEffet>
+2017-04-07</DateFinEffet>
+                <Motif>0</Motif>
+                <CodeMiseAJour>0</CodeMiseAJour>
+                <ApplicationInstallee>
+                    <AID></AID>
+                    <IdApplicationInstallee></IdApplicationInstallee>
+                    <MatriceApplicationEnregistree>
+                        <IdMatriceApplication/>
+                        <TypeApplication>0</TypeApplication>
+                        <Proprietaire>
+                            <Nom/>
+                            <IdPartenaire>0</IdPartenaire>
+                            <CodePays>000</CodePays>
+                            <CodeBassin>000</CodeBassin>
+                        </Proprietaire>
+                        <BassinsAcceptation>
+                            <CodePays>000</CodePays>
+                            <CodeBassin>000</CodeBassin>
+                        </BassinsAcceptation>
+                    </MatriceApplicationEnregistree>
+                    <Distributeur>
+                        <Nom/>
+                        <IdPartenaire>0</IdPartenaire>
+                        <CodePays>000</CodePays>
+                        <CodeBassin>000</CodeBassin>
+                    </Distributeur>
+                    <DateHeureFinValidite>2001-12-17T09:30:47+05:00</DateHeureFinValidite>
+                    <CategorieApplication>2
+</CategorieApplication>
+                    <StructureApplication>70</StructureApplication>
+                    <Support>
+                        <FormeContenant>1</FormeContenant>
+                        <TypeSupport>6</TypeSupport>
+                        <CategorieSupport>
+2</CategorieSupport>
+                        <IdSupport>2081098355</IdSupport>
+                    </Support>
+                </ApplicationInstallee>
+            </EntreeApplicationInstallee>
+        </EntreeListeSecurite>
+        </ListeSecurite>
+</IBLSLN:MajListeSecurite>

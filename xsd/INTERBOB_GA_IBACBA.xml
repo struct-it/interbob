@@ -3,160 +3,34 @@
 <?xml-stylesheet type="text/xsl" href="INTERBOB.xslt"?>
 <!--Sample XML file for INTERBOB GA-->
 <IBACBA:MessageAcquisitions xsi:schemaLocation="urn:IBACBA_V1 IBACBA.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:IBACBA="urn:IBACBA_V1">
-	<DateHeure>2001-12-17T09:30:47Z</DateHeure>
+	<DateHeure>2015-12-17T09:30:47</DateHeure>
 	<CorrespondantEmetteur>
 		<Nom>normalizedString</Nom>
-		<IdPartenaire>1</IdPartenaire>
+		<IdPartenaire>21</IdPartenaire>
 		<CodePays>000</CodePays>
 		<CodeBassin>000</CodeBassin>
 	</CorrespondantEmetteur>
 	<CorrespondantDestinataire>
 		<Nom>normalizedString</Nom>
-		<IdPartenaire>1</IdPartenaire>
-		<CodePays>000</CodePays>
-		<CodeBassin>000</CodeBassin>
-	</CorrespondantDestinataire>
-	<CorrespondantDestinataire>
-		<Nom>normalizedString</Nom>
-		<IdPartenaire>1</IdPartenaire>
+		<IdPartenaire>2</IdPartenaire>
 		<CodePays>000</CodePays>
 		<CodeBassin>000</CodeBassin>
 	</CorrespondantDestinataire>
 	<FormatMessage>
-		<ReferenceNorme>normalizedString</ReferenceNorme>
-		<VersionNorme>normalizedString</VersionNorme>
+		<ReferenceNorme>IBACBA:MessageAcquisitions</ReferenceNorme>
+		<VersionNorme>1.2:000.3</VersionNorme>
 	</FormatMessage>
 	<IdMessage>1</IdMessage>
-	<ElementControleIntegrite>String</ElementControleIntegrite>
+	<ElementControleIntegrite></ElementControleIntegrite>
 	<ListeAcquisition>
 		<OperationVente>
-			<IdOperation>1</IdOperation>
-			<Date>1967-08-13</Date>
-			<Heure>14:20:00.0Z</Heure>
-			<TypeOperationVente>1</TypeOperationVente>
-			<CodeArticle>String</CodeArticle>
-			<EquipementAcquisition>
-				<IdFournisseurEquipement>
-					<Nom>String</Nom>
-					<Referentiel>String</Referentiel>
-					<IdentifiantDansReferentiel>String</IdentifiantDansReferentiel>
-				</IdFournisseurEquipement>			
-				<ExploitantEquipement>
-					<Nom>normalizedString</Nom>
-					<IdPartenaire>1</IdPartenaire>
-					<CodePays>000</CodePays>
-					<CodeBassin>000</CodeBassin>
-				</ExploitantEquipement>
-				<IdEquipement>String</IdEquipement>
-				<TypeEquipement>1</TypeEquipement>
-			</EquipementAcquisition>
-			<LieuDistribution>
-				<IdLocalisation>String</IdLocalisation>
-				<ReferentielLocalisation>1</ReferentielLocalisation>
-				<Sens>String</Sens>
-				<Ligne>
-					<IdLigne>1</IdLigne>
-					<TypeReferentiel>1</TypeReferentiel>
-				</Ligne>
-				<Course>
-					<IdCourse>1</IdCourse>
-					<TypeReferentiel>1</TypeReferentiel>
-				</Course>
-				<LibelleLieuDistribution>String</LibelleLieuDistribution>
-				<VenteEmbarquee>true</VenteEmbarquee>
-			</LieuDistribution>			
-			<EtatOperation>1</EtatOperation>
-			<MontantOperation>0.0</MontantOperation>
-			<Devise>String</Devise>
-			<MoyenPaiementPrincipal>1</MoyenPaiementPrincipal>
-			<ElementControleIntegrite>String</ElementControleIntegrite>
-			<ObjetImplique>
-				<ApplicationInstallee>
-					<AID>String</AID>
-					<IdApplicationInstallee>String</IdApplicationInstallee>
-					<MatriceApplicationEnregistree>
-						<IdMatriceApplication>String</IdMatriceApplication>
-						<TypeApplication>1</TypeApplication>
-						<Proprietaire>
-							<Nom>normalizedString</Nom>
-							<IdPartenaire>1</IdPartenaire>
-							<CodePays>000</CodePays>
-							<CodeBassin>000</CodeBassin>
-						</Proprietaire>
-						<BassinsAcceptation>
-							<CodePays>000</CodePays>
-							<CodeBassin>000</CodeBassin>
-							<CodeBassin>000</CodeBassin>
-						</BassinsAcceptation>
-						<BassinsAcceptation>
-							<CodePays>000</CodePays>
-							<CodeBassin>000</CodeBassin>
-							<CodeBassin>000</CodeBassin>
-						</BassinsAcceptation>
-					</MatriceApplicationEnregistree>
-					<Distributeur>
-						<Nom>normalizedString</Nom>
-						<IdPartenaire>1</IdPartenaire>
-						<CodePays>000</CodePays>
-						<CodeBassin>000</CodeBassin>
-					</Distributeur>
-					<DateHeureFinValidite>2001-12-17T09:30:47Z</DateHeureFinValidite>
-					<StructureApplication>0</StructureApplication>
-					<Support>
-						<FormeContenant>0</FormeContenant>
-						<TypeSupport>1</TypeSupport>
-						<CategorieSupport>1</CategorieSupport>
-						<IdSupport>1</IdSupport>
-					</Support>
-				</ApplicationInstallee>
-			</ObjetImplique>
-			<AncienObjetImplique>
-				<ApplicationInstallee>
-					<AID>String</AID>
-					<IdApplicationInstallee>String</IdApplicationInstallee>
-					<MatriceApplicationEnregistree>
-						<IdMatriceApplication>String</IdMatriceApplication>
-						<TypeApplication>1</TypeApplication>
-						<Proprietaire>
-							<Nom>normalizedString</Nom>
-							<IdPartenaire>1</IdPartenaire>
-							<CodePays>000</CodePays>
-							<CodeBassin>000</CodeBassin>
-						</Proprietaire>
-						<BassinsAcceptation>
-							<CodePays>000</CodePays>
-							<CodeBassin>000</CodeBassin>
-							<CodeBassin>000</CodeBassin>
-						</BassinsAcceptation>
-						<BassinsAcceptation>
-							<CodePays>000</CodePays>
-							<CodeBassin>000</CodeBassin>
-							<CodeBassin>000</CodeBassin>
-						</BassinsAcceptation>
-					</MatriceApplicationEnregistree>
-					<Distributeur>
-						<Nom>normalizedString</Nom>
-						<IdPartenaire>1</IdPartenaire>
-						<CodePays>000</CodePays>
-						<CodeBassin>000</CodeBassin>
-					</Distributeur>
-					<DateHeureFinValidite>2001-12-17T09:30:47Z</DateHeureFinValidite>
-					<StructureApplication>0</StructureApplication>
-					<Support>
-						<FormeContenant>0</FormeContenant>
-						<TypeSupport>1</TypeSupport>
-						<CategorieSupport>1</CategorieSupport>
-						<IdSupport>1</IdSupport>
-					</Support>
-				</ApplicationInstallee>
-			</AncienObjetImplique>
-		</OperationVente>
-		<OperationVente>
-			<IdOperation>1</IdOperation>		
-			<Date>1967-08-13</Date>
-			<Heure>14:20:00.0Z</Heure>
-			<TypeOperationVente>1</TypeOperationVente>
-			<CodeArticle>String</CodeArticle>
+			<IdRegroupement>602120245689</IdRegroupement>
+			<MontantTotalRegroupement>134106</MontantTotalRegroupement>		
+			<IdOperation>6021789678678</IdOperation>		
+			<Date>2014-08-13</Date>		
+			<Heure>14:20:00</Heure>
+			<TypeOperationVente>64</TypeOperationVente>
+			<CodeArticle></CodeArticle>
 			<EquipementAcquisition>
 				<IdFournisseurEquipement>
 					<Nom>String</Nom>
@@ -165,113 +39,50 @@
 				</IdFournisseurEquipement>
 				<ExploitantEquipement>
 					<Nom>normalizedString</Nom>
-					<IdPartenaire>1</IdPartenaire>
-					<CodePays>000</CodePays>
-					<CodeBassin>000</CodeBassin>
+					<IdPartenaire>3</IdPartenaire>
+					<CodePays>250</CodePays>
+					<CodeBassin>502</CodeBassin>
 				</ExploitantEquipement>
-				<IdEquipement>String</IdEquipement>
+				<IdEquipement>2</IdEquipement>
 				<TypeEquipement>1</TypeEquipement>
 			</EquipementAcquisition>
+			<CanalDistribution>1</CanalDistribution>			
 			<LieuDistribution>
-				<IdLocalisation>String</IdLocalisation>
-				<ReferentielLocalisation>1</ReferentielLocalisation>
-				<Sens>String</Sens>
+				<IdLocalisation>MAP_12345</IdLocalisation>
+				<ReferentielLocalisation>6011</ReferentielLocalisation>
+				<Sens></Sens>
 				<Ligne>
-					<IdLigne>1</IdLigne>
-					<TypeReferentiel>1</TypeReferentiel>
+					<IdLigne>0</IdLigne>
+					<TypeReferentiel>0</TypeReferentiel>
 				</Ligne>
 				<Course>
-					<IdCourse>1</IdCourse>				
-					<TypeReferentiel>1</TypeReferentiel>
+					<IdCourse>0</IdCourse>
+					<TypeReferentiel>0</TypeReferentiel>
 				</Course>
-				<LibelleLieuDistribution>String</LibelleLieuDistribution>
-				<VenteEmbarquee>true</VenteEmbarquee>
-			</LieuDistribution>			
+				<LibelleLieuDistribution>A--ABCABC----99</LibelleLieuDistribution>
+				<VenteEmbarquee>0</VenteEmbarquee>
+			</LieuDistribution>
 			<EtatOperation>1</EtatOperation>
-			<MontantOperation>0.0</MontantOperation>
-			<Devise>String</Devise>			
+			<MontantOperation>1000</MontantOperation>
+			<MontantFrais>0</MontantFrais>
+			<Devise></Devise>
 			<MoyenPaiementPrincipal>1</MoyenPaiementPrincipal>
 			<ElementControleIntegrite>String</ElementControleIntegrite>
 			<ObjetImplique>
 				<ApplicationInstallee>
-					<AID>String</AID>
-					<IdApplicationInstallee>String</IdApplicationInstallee>
-					<MatriceApplicationEnregistree>
-						<IdMatriceApplication>String</IdMatriceApplication>
-						<TypeApplication>1</TypeApplication>
-						<Proprietaire>
-							<Nom>normalizedString</Nom>
-							<IdPartenaire>1</IdPartenaire>
-							<CodePays>000</CodePays>
-							<CodeBassin>000</CodeBassin>
-						</Proprietaire>
-						<BassinsAcceptation>
-							<CodePays>000</CodePays>
-							<CodeBassin>000</CodeBassin>
-							<CodeBassin>000</CodeBassin>
-						</BassinsAcceptation>
-						<BassinsAcceptation>
-							<CodePays>000</CodePays>
-							<CodeBassin>000</CodeBassin>
-							<CodeBassin>000</CodeBassin>
-						</BassinsAcceptation>
-					</MatriceApplicationEnregistree>
-					<Distributeur>
-						<Nom>normalizedString</Nom>
-						<IdPartenaire>1</IdPartenaire>
-						<CodePays>000</CodePays>
-						<CodeBassin>000</CodeBassin>
-					</Distributeur>
-					<DateHeureFinValidite>2001-12-17T09:30:47Z</DateHeureFinValidite>
-					<StructureApplication>0</StructureApplication>
-					<Support>
-						<FormeContenant>0</FormeContenant>
-						<TypeSupport>1</TypeSupport>
-						<CategorieSupport>1</CategorieSupport>
-						<IdSupport>1</IdSupport>
-					</Support>
+				 <AID>String</AID>
+				 <IdApplicationInstallee>String</IdApplicationInstallee>
+				 <MatriceApplicationEnregistree>
+	<BassinsAcceptation>
+		<CodeBassin>000</CodeBassin>
+	</BassinsAcceptation>
+</MatriceApplicationEnregistree>
+				 <Distributeur>
+	<IdPartenaire>0</IdPartenaire>
+	<CodeBassin>000</CodeBassin>
+</Distributeur>
 				</ApplicationInstallee>
 			</ObjetImplique>
-			<AncienObjetImplique>
-				<ApplicationInstallee>
-					<AID>String</AID>
-					<IdApplicationInstallee>String</IdApplicationInstallee>
-					<MatriceApplicationEnregistree>
-						<IdMatriceApplication>String</IdMatriceApplication>
-						<TypeApplication>1</TypeApplication>
-						<Proprietaire>
-							<Nom>normalizedString</Nom>
-							<IdPartenaire>1</IdPartenaire>
-							<CodePays>000</CodePays>
-							<CodeBassin>000</CodeBassin>
-						</Proprietaire>
-						<BassinsAcceptation>
-							<CodePays>000</CodePays>
-							<CodeBassin>000</CodeBassin>
-							<CodeBassin>000</CodeBassin>
-						</BassinsAcceptation>
-						<BassinsAcceptation>
-							<CodePays>000</CodePays>
-							<CodeBassin>000</CodeBassin>
-							<CodeBassin>000</CodeBassin>
-						</BassinsAcceptation>
-					</MatriceApplicationEnregistree>
-					<Distributeur>
-						<Nom>normalizedString</Nom>
-						<IdPartenaire>1</IdPartenaire>
-						<CodePays>000</CodePays>
-						<CodeBassin>000</CodeBassin>
-					</Distributeur>
-					<DateHeureFinValidite>2001-12-17T09:30:47Z</DateHeureFinValidite>
-					<StructureApplication>0</StructureApplication>
-					<Support>
-						<FormeContenant>0</FormeContenant>
-						<TypeSupport>1</TypeSupport>
-						<CategorieSupport>1</CategorieSupport>
-						<IdSupport>1</IdSupport>
-					</Support>
-				</ApplicationInstallee>
-			</AncienObjetImplique>
 		</OperationVente>
 	</ListeAcquisition>
 </IBACBA:MessageAcquisitions>
