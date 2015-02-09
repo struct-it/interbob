@@ -92,6 +92,9 @@
 	<xs:simpleType name="t_EnumFormeContenant">
 		<xs:restriction base="xs:int"/>
 	</xs:simpleType>
+	<xs:simpleType name="t_EnumCanalDistribution">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
 	<xs:simpleType name="t_EnumTypeVoie">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>

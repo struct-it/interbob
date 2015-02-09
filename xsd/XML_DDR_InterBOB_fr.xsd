@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="urn:InterBOB_V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:InterBOB="urn:InterBOB_V1">
+<xs:schema targetNamespace="urn:InterBOB_V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:IB="urn:IB_V1" xmlns:InterBOB="urn:InterBOB_V1">
 	<xs:annotation>
 		<xs:documentation>Schéma XML du corps principal du dictionnaire de données d'InterBOB.</xs:documentation>
 	</xs:annotation>
+	<xs:import namespace="urn:IB_V1" schemaLocation="IB____.xsd"/>
 	<xs:include schemaLocation="XML_DDR_InterBOB_Local_fr.xsd"/>
 	<xs:complexType name="t_AccesValide">
 		<xs:sequence>
@@ -18,9 +19,11 @@
 				<xs:sequence>
 					<xs:element name="CodeArticle" type="xs:string" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="EquipementAcquisition" type="InterBOB:t_Equipement" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="CanalDistribution" type="InterBOB:t_EnumCanalDistribution" minOccurs="1" maxOccurs="1"/>
 					<xs:element name="LieuDistribution" type="InterBOB:t_LieuDistribution" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="EtatOperation" type="InterBOB:t_EnumEtatOperationVente" minOccurs="1" maxOccurs="1"/>
-					<xs:element name="MontantOperation" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="MontantOperation" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="MontantFrais" type="xs:nonNegativeInteger" minOccurs="1" maxOccurs="1"/>
 					<xs:element name="Devise" type="InterBOB:t_UniteMonetaire" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="MoyenPaiementPrincipal" type="InterBOB:t_EnumMoyenPaiement" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="ElementControleIntegrite" type="xs:string" minOccurs="0" maxOccurs="1"/>
@@ -510,7 +513,7 @@
 			<xs:element name="ContratProduit" type="InterBOB:t_ContratProduit" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="ContrainteGeographique" type="InterBOB:t_ContrainteGeographique" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="FacteurTarifaireDeQualite" type="InterBOB:t_EnumFacteurTarifaireDeQualite" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="PrixDeVenteProduit" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="PrixDeVenteProduit" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="ContrainteLignes" type="InterBOB:t_ContrainteLignes" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="ContrainteGroupesLignes" type="InterBOB:t_ContrainteGroupesLignes" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="ContrainteModale" type="InterBOB:t_ContrainteModale" minOccurs="0" maxOccurs="unbounded"/>
@@ -571,6 +574,8 @@
 	</xs:complexType>
 	<xs:complexType name="t_TypeOperationContrat">
 		<xs:sequence>
+			<xs:element name="IdRegroupement" type="InterBOB:t_Identifiant" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="MontantTotalRegroupement" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="IdOperation" type="InterBOB:t_Identifiant" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="Date" type="xs:date" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="Heure" type="xs:time" minOccurs="0" maxOccurs="1"/>
@@ -620,6 +625,7 @@
 		<xs:sequence>
 			<xs:element name="Nom" type="xs:normalizedString" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="IdPartenaire" type="InterBOB:t_IdPartenaire" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IdSousPartenaire" type="InterBOB:t_IdPartenaire" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="CodePays" type="InterBOB:t_IdPays" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="CodeBassin" type="InterBOB:t_NbTroisChiffres" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
@@ -654,7 +660,7 @@
 					<xs:element name="ContratProduit" type="InterBOB:t_ContratProduit" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="ContrainteGeographique" type="InterBOB:t_ContrainteGeographique" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="FacteurTarifaireDeQualite" type="InterBOB:t_EnumFacteurTarifaireDeQualite" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="PrixDeVenteProduit" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="PrixDeVenteProduit" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="ApplicationUtilisee" type="InterBOB:t_Application" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="SupportUtilise" type="InterBOB:t_SupportUtilisateur" minOccurs="0" maxOccurs="1"/>
 				</xs:sequence>
@@ -798,7 +804,7 @@
 					<xs:element name="ContratProduit" type="InterBOB:t_Contrat" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="ContrainteGeographique" type="InterBOB:t_ContrainteGeographique" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="FacteurTarifaireDeQualite" type="InterBOB:t_EnumFacteurTarifaireDeQualite" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="PrixDeVenteProduit" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="PrixDeVenteProduit" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="ApplicationUtilisee" type="InterBOB:t_Application" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="SupportUtilise" type="InterBOB:t_SupportUtilisateurAnonyme" minOccurs="0" maxOccurs="1"/>
 				</xs:sequence>
@@ -818,7 +824,7 @@
 	</xs:complexType>
 	<xs:complexType name="t_SupportUtilisateurAbstraitAnonyme" abstract="true">
 		<xs:complexContent>
-			<xs:extension base="InterBOB:t_Support">
+			<xs:extension base="IB:t_SupportUtilisateurAbstrait">
 				<xs:sequence>
 					<xs:element name="ContratSupport" type="InterBOB:t_Contrat" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="DateHeureEmission" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
@@ -874,7 +880,7 @@
 		<xs:complexContent>
 			<xs:extension base="InterBOB:t_ListeAbstrait">
 				<xs:sequence>
-					<xs:element name="ActionParDefaut" type="InterBOB:t_EnumActionEntreeListe" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="ActionParDefaut" type="InterBOB:t_EnumActionEntreeListe" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="TypeMiseaJour" type="InterBOB:t_EnumTypeMiseaJour" minOccurs="0" maxOccurs="1"/>
 				</xs:sequence>
 			</xs:extension>
