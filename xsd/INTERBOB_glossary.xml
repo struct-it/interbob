@@ -18,24 +18,18 @@
 		<usage>Obsolescent</usage>
 		<desc>Nom du partenaire émetteur</desc>
 	</element>
-	<element name="IdPartenaire" parent="" root="">
-		<usage>Obligatoire</usage>
-		<desc>Identifiant du partenaire</desc>
-	</element>
 	<element name="CodeBassin" parent="" root="">
 		<usage>Obligatoire</usage>
-		<desc>Code du bassin d'interopérabilité du partenaire</desc>
+		<desc>Code du bassin d'interopérabilité du partenaire <br/>
+		</desc>
 	</element>
 	<element name="CodePays" parent="" root="">
 		<usage>Conditionnel</usage>
-		<desc>
-			A utiliser obligatoirement si les échanges peuvent être réalisés dans un contexte 
-			impliquant plusieurs pays.
-		</desc>
+		<desc> cf. Nomenclature InterBOB</desc>
 	</element>
 	<element name="CorrespondantDestinataire" parent="" root="">
 		<usage>Obligatoire</usage>
-		<desc>Caractéristiques du partenaire émetteur</desc>
+		<desc>Caractéristiques du partenaire destinataire</desc>
 	</element>
 	<element name="Nom" parent="CorrespondantDestinataire" root="">
 		<usage>Obsolescent</usage>
@@ -52,33 +46,18 @@
 	<element name="VersionNorme" parent="FormatMessage" root="">
 		<usage>Obligatoire</usage>
 		<desc>
-			Concaténation de 2 éléments : 
-			<ul>
-			<li>en majeur la version InterBOB suivie du séparateur ":"</li>
-			<li>lui-même suivi d'un identifiant optionnel (mais conseillé) de version d'implémentation et à définir entre les partenaires impliqués dans les échanges.</li>
-			</ul>
-			Exemple : 1.0:8.5.<br/>
-			La numérotation des versions d'implémentation (8.5 dans l'exemple) est gérée par le CERTU.
+			cf. Nomenclature InterBOB
 		</desc>
 	</element>
 	<element name="IdMessage" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>
-			Cette donnée doit permettre (seule ou avec d'autres informations) d'identifier le message, 
-			d'effectuer la traçabilité et éventuellement de contrôler des pertes de séquence,
-			selon les règles édictées au niveau du bassin.<br/>
-			Doit être égale au numéro séquentiel attribué au message (dépend de l’émetteur):<br/>
-			<ul>
-			<li>Limite basse = 1</li>
-			<li>Limite haute = 65535</li> 
-			<li>Retour à 1 lorsque la limite haute est atteinte</li>
-			</ul>
+			cf. Nomenclature InterBOB
 		</desc>
 	</element>
 	<!-- IBLSLN -->
 	<element name="IBLSLN:MajListeSecurite" parent="" root="">
-		<desc>Demande d'interdiction d’une application transport ou d'un billet sans contact, 
-			qui sera placé dans une liste d'interdiction de titres de transport</desc>
+		<desc>Demande d'interdiction d’une application transport ou d'un billet sans contact</desc>
 	</element>
 	<element name="ListeSecurite" parent="IBLSLN:MajListeSecurite" root="">
 		<usage>Obligatoire</usage>
@@ -86,32 +65,30 @@
 	</element>
 	<element name="DateHeureEmission" parent="ListeSecurite" root="">
 		<usage>Obligatoire</usage>
-		<desc>Date et heure d'émission de la liste</desc>
+		<desc>Date et heure d'émission du message</desc>
 	</element>
 	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSLN:MajListeSecurite" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>Type de la liste<br/>Doit être égal à "2:Liste d'interdictions"</desc>
 	</element>
 	<element name="ActionParDefaut" parent="ListeSecurite" root="" isEnum="true">
-		<usage>Conditionnel</usage>
+		<usage>Obsolescent</usage>
 		<desc>Permet de définir la valeur par défaut de l'action à réaliser sur les entrées de la liste
 				dont l'élément "ActionDemandee" n'est pas présent.<br/>
-				Si présent, peut prendre les valeurs suivantes :
-				<ul>
-				<li>"4":Invalider = Rendre inutilisable (mais peut toujours être lu)</li>
-				<li>"7":Aucune opération d’invalidation demandée</li>
-				</ul>
-			</desc>
+				Obsolescent : L'élément "ActionDemandee" doit être systématiquement présent.
+		</desc>
 	</element>
 	<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSLN:MajListeSecurite" isEnum="true">
 		<usage>Obsolescent</usage>
-		<desc>Permet de préciser si: 
-				<ul>
-				<li>c'est une liste exhaustive qui est transmise : "1"</li>
-				<li>ce ne sont que des mises à jour (« incrémentiel ») : "2".</li>
-				</ul>
-				Dans le cas d'un message IBLSLN, c'est la liste exhaustive qui est transmise.
-		</desc>
+		<desc> Non utilisé </desc>
+	</element>
+	<element name="DateDebutEffetParDefaut" parent="ListeSecurite" root="">
+		<usage>Obsolescent</usage>
+		<desc> Non utilisé. Seule l'élément DateDebutEffet, propre à chaque entrée, est utilisé, si besoin </desc>
+	</element>
+	<element name="DateFinEffetParDefaut" parent="ListeSecurite" root="">
+		<usage>Obsolescent</usage>
+		<desc> Non utilisé. Seule l'élément DateFinEffet, propre à chaque entrée, est utilisé, si besoin </desc>
 	</element>
 	<element name="EntreeListeSecurite" parent="ListeSecurite" root="">
 		<usage>Obligatoire</usage>
@@ -121,19 +98,40 @@
 		<usage>Obligatoire</usage>
 		<desc>Entrée de la liste de type "Application Installée"</desc>
 	</element>
+	<element name="PositionDansListe" parent="EntreeApplicationInstallee" root="IBLSLN:MajListeSecurite">
+		<usage>Optionnel</usage>
+		<desc>Non utilisé pour des flux dont l'objet est une application transport
+		</desc>
+	</element>
 	<element name="ActionDemandee" parent="EntreeApplicationInstallee" root="IBLSLN:MajListeSecurite" isEnum="true">
-		<usage>Conditionnel</usage>
+		<usage>Obligatoire</usage>
 		<desc>Permet de définir la valeur de l'action à réaliser lors de la détection de l'objet.<br/>
-			Cette valeur est à préciser en local par les partenaires du bassin d'interopérabilité.<br/>
-			Les valeurs reprennent l'énumération de l'élément ActionParDefaut.
+			Pour le flux IBLSLN, les valeurs peuvent être les suivantes :
+			<ul>
+				<li>"4":Invalider = Rendre inutilisable (mais peut toujours être lu)</li>
+				<li>"7":Aucune opération d’invalidation demandée</li>
+			</ul>
 		</desc>
 	</element>
 	<element name="DateDebutEffet" parent="EntreeApplicationInstallee" root="IBLSLN:MajListeSecurite">
 		<usage>Conditionnel</usage>
-		<desc>Date d’entrée effective en liste d’opposition.<br/>
-			Si la date est absente au niveau de l'élément on considère que l’échéance d’effet est : 
-			dès que possible
+		<desc>Date effective de début de l'interdiction<br/>
+			A renseigner obligatoirement, sauf si le début d'effet de l'interdiction est : dès que possible. Dans ce cas, il est toléré que la date soit absente au niveau de l'élément.
 		</desc>
+	</element>
+	<element name="DateFinEffet" parent="EntreeApplicationInstallee" root="IBLSLN:MajListeSecurite">
+		<usage>Conditionnel</usage>
+		<desc>Date effective de fin de l'interdiction<br/>
+			Si l'élément n'est pas renseigné, alors l'objet ne peut être sorti de la liste d'interdiction selon un critère temporel
+		</desc>
+	</element>
+	<element name="Motif" parent="EntreeApplicationInstallee" root="">
+		<usage>Obsolescent</usage>
+		<desc>	</desc>
+	</element>
+	<element name="CodeMiseAJour" parent="EntreeApplicationInstallee" root="">
+		<usage>Obsolescent</usage>
+		<desc>	</desc>
 	</element>
 	<element name="ApplicationInstallee" parent="" root="">
 		<usage>Obligatoire</usage>
@@ -141,8 +139,8 @@
 	</element>
 	<element name="AID" parent="" root="">
 		<usage>Obligatoire</usage>
-		<desc>Identification de l’application.<br/>
-			99-502 pour le transport. Autres référentiels sinon.
+		<desc>Identifiant de l’application.<br/>
+		cf. Nomenclature InterBOB
 		</desc>
 	</element>
 	<element name="IdApplicationInstallee" parent="" root="">
@@ -155,36 +153,52 @@
 	</element>
 	<element name="BassinsAcceptation" parent="MatriceApplicationEnregistree" root="">
 		<usage>Obligatoire</usage>
-		<desc>Liste des réseaux sur lesquels la matrice application est acceptée</desc>
+		<desc>Liste des réseaux / bassins sur lesquels la matrice application est acceptée</desc>
 	</element>
 	<element name="FormeContenant" parent="" root="" isEnum="true">
 		<usage>Obligatoire</usage>
-		<desc>Permet d’identifier la forme physique du contenant de l’application transport : 
-			carte, billet, carte SIM, carte SD, clé USB, …
+		<desc>Permet d’identifier la forme physique du contenant de l’application transport  <br/>
+		cf. Nomenclature InterBOB<br/>
+		Si l'élément provient non renseigné (systèmes pré-InterBOB), alors le système destinataire interprètera l'information comme "contenant indéterminé" ou comme "contenant par défaut sur le bassin (ex: carte à puce)", selon les modalités déterminées au niveau du bassin d'interopérabilité. En dehors de cette exception, si le contenant n'est pas connu, la valeur indiquée sera 0 (indéterminé)
 		</desc>
 	</element>
 	<element name="StructureApplication" parent="" root="" isEnum="true">
 		<usage>Obligatoire</usage>
-		<desc>Structure de l’application : GTML, Tango, CD97-2, Triangle n, …</desc>
+		<desc>Structure logique de l’application <br/>
+		cf. Nomenclature InterBOB <br/>
+		Une valeur par défaut devra être désignée pour les partenaires d'un bassin où l'échange de cette donnée n'est utile pour aucun des systèmes partenaires.
+		</desc>
 	</element>
 	<element name="Distributeur" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>Identification du partenaire émetteur de l’application</desc>
 	</element>
+	<element name="IdPartenaire" parent="Distributeur" root="">
+		<usage>Obligatoire</usage>
+		<desc>
+Emetteur de l'ApplicationTransport ou du BSC
+		<br/>
+		Il peut s'agir de la valeur de l'élément de données EnvApplicationIssuerId repris dans certaines normes
+		</desc>
+	</element>
 	<element name="DateHeureFinValidite" parent="ApplicationInstallee" root="">
 		<usage>Conditionnel</usage>
-		<desc>Date de fin de validité de l’application<br/>
-			Si l’exploitant a l’information, il la transmet obligatoirement.</desc>
+		<desc>Date de fin de validité de l’application ou du BSC<br/>
+			Si l’émetteur dispose de l’information, il la transmet obligatoirement.</desc>
 	</element>
 	<element name="Support" parent="ApplicationInstallee" root="">
 		<usage>Conditionnel</usage>
 		<desc>Correspond au support sur lequel l'application est installée.<br/>
 			A utiliser obligatoirement si l'élément IdSupport est différent 
-			de l'élément AID, ou bien si le support n’a pas d’application.
+			de l'élément IdApplicationInstallee, ou bien si le support ne contient pas d'application pour l'objet de l'échange.
 		</desc>
+	</element>		
+	<element name="CategorieApplication" parent="ApplicationInstallee" root="" isEnum="true">
+		<usage>Obligatoire</usage>
+		<desc></desc>
 	</element>
 	<element name="TypeSupport" parent="Support" root="" isEnum="true">
-		<usage>Obsolescent</usage>
+		<usage>Obligatoire</usage>
 		<desc>Type de support sur lequel l’opération est réalisée.</desc>
 	</element>
 	<element name="IdSupport" parent="Support" root="">
@@ -210,15 +224,36 @@
 	</element>
 	<element name="LieuAction" parent="ActionListeSecurite" root="">
 		<usage>Obligatoire</usage>
-		<desc>Lieu géographique pour lequel la liste a été générée</desc>
+		<desc>Lieu où l'action a été réalisée</desc>
 	</element>
 	<element name="IdLocalisation" parent="LieuAction" root="">
 		<usage>Obligatoire</usage>
-		<desc>Identifiant du lieu</desc>
+		<desc>Identifiant du lieu où se déroule l'action<br/>
+		Le bassin d'interopérabilité pourra déterminer une valeur par défaut si l'échange de LieuAction n'est utile pour aucun des systèmes du bassin.<br/>
+		La valorisation de cet élément avec des données utiles est fortement recommandée dans le cas où le bassin d'interopérabilité dispose d'un dispositif commun de supervision technique ou opérationnelle, ou bien de gestion de fraude coordonnée ou mutualisée.
+		</desc>
 	</element>
 	<element name="ReferentielLocalisation" parent="LieuAction" root="">
 		<usage>Obligatoire</usage>
 		<desc>Identifiant du référentiel géographique associé au lieu</desc>
+	</element>
+	<element name="Sens" parent="LieuAction" root="">
+		<usage>Optionnel</usage>
+		<desc>Sens de parcours de la ligne <br/>
+		A renseigner si utile à la détermination de la localisation de l'action, ou à des finalités de suivi détaillé de la fraude.
+		</desc>
+	</element>
+	<element name="Ligne" parent="LieuAction" root="">
+		<usage>Optionnel</usage>
+		<desc>Ligne sur laquelle l'action est réalisée <br/>
+		A renseigner si utile à la détermination de la localisation de l'action, ou à des finalités de suivi détaillé de la fraude.
+		</desc>
+	</element>
+	<element name="Course" parent="LieuAction" root="">
+		<usage>Optionnel</usage>
+		<desc>Course sur laquelle l'action est réalisée <br/>
+		A renseigner si utile à la détermination de la localisation de l'action, ou à des finalités de suivi détaillé de la fraude.
+		</desc>
 	</element>
 	<element name="EquipementAction" parent="ActionListeSecurite" root="">
 		<usage>Obligatoire</usage>
@@ -226,11 +261,15 @@
 	</element>
 	<element name="IdEquipement" parent="EquipementAction" root="">
 		<usage>Obligatoire</usage>
-		<desc>Identifiant de l'équipement</desc>
+		<desc>Identifiant de l'équipement <br/>
+		Si la transmission de cette information n'est pas nécessaire (décision au niveau du bassin d'interopérabilité), l'élément peut être renseigné avec la valeur  "INDETERMINE".
+		</desc>
 	</element>
 	<element name="Referentiel" parent="EquipementAction" root="">
 		<usage>Obligatoire</usage>
-		<desc>Identifiant du référentiel géographique associé à l'équipement</desc>
+		<desc>Identifiant du référentiel auquel est associé l'identifiant de l'équipement. <br/>
+		Il doit permettre d'identifier le système qui a réalisé l'opération.
+		</desc>
 	</element>
 	<element name="TypeEquipement" parent="EquipementAction" root="" isEnum="true">
 		<usage>Obligatoire</usage>
@@ -239,6 +278,34 @@
 	<element name="ExploitantEquipement" parent="EquipementAction" root="">
 		<usage>Obligatoire</usage>
 		<desc>Partenaire du bassin d'interopérabilité exploitant l'équipement</desc>
+	</element>
+	<element name="PositionDansListe" parent="EntreeApplicationInstallee" root="IBCS:CompteRenduSecurite">
+		<usage>Optionnel</usage>
+		<desc>Non utilisé pour des flux dont l'objet est une application transport
+		</desc>
+	</element>
+	<element name="ActionDemandee" parent="EntreeApplicationInstallee" root="IBCS:CompteRenduSecurite" isEnum="true">
+		<usage>Optionnel</usage>
+		<desc>Peut être renseigné avec la valeur d'ActionDemandee reçue lors de la demande d'interdiction (IBLSLN).<br/>
+			Pour ce flux IBCS__, les valeurs peuvent donc être les suivantes :
+			<ul>
+				<li>"4":Invalider = Rendre inutilisable (mais peut toujours être lu)</li>
+				<li>"7":Aucune opération d’invalidation demandée</li>
+			</ul>
+		</desc>
+	</element>
+	<element name="DateDebutEffet" parent="EntreeApplicationInstallee" root="IBCS:CompteRenduSecurite">
+		<usage>Optionnel</usage>
+		<desc>Date effective de début de l'interdiction<br/>
+			Si utilisé, à renseigner avec les informations reçues lors de la demande d'interdiction (message IBLSLN)
+		</desc>
+	</element>
+	<element name="DateFinEffet" parent="EntreeApplicationInstallee" root="IBCS:CompteRenduSecurite">
+		<usage>Optionnel</usage>
+		<desc>Date effective de fin de l'interdiction<br/>
+			Si utilisé, à renseigner avec les informations reçues lors de la demande d'interdiction (message IBLSLN) <br/>
+			Si l'élément n'est pas renseigné, alors l'objet ne peut être sorti de la liste d'interdiction selon un critère temporel
+		</desc>
 	</element>
 	<!-- IBCSST -->
 	<element name="IBCSST:CompteRenduSecurite" parent="" root="">
@@ -263,7 +330,9 @@
 	</element>
 	<element name="IdProduit" parent="" root="">
 		<usage>Obligatoire</usage>
-		<desc>Code du produit</desc>
+		<desc>Code du produit<br/>
+		Souvent renseigné avec la valeur de l'élément de données ContractTariff
+		</desc>
 	</element>
 	<element name="ReferenceProduitInstalle" parent="" root="">
 		<usage>Obligatoire</usage>
@@ -275,25 +344,31 @@
 	</element>
 	<element name="IdProduitInstalle" parent="" root="">
 		<usage>Conditionnel</usage>
-		<desc>Numéro de série du titre
+		<desc>Numéro de série du titre / Identifiant Unique de titre
 			<ul>
 				<li>Obligatoire dans  le cas où l’identifiant du produit est connu au moment de l’opération.</li>
 				<li>Balise non présente si l’identifiant du produit n’est pas connu (demande de télédistribution pour laquelle l’IdProduit n’est déterminé qu’au chargement).</li>
+				<li>Il est recommandé de faire apparaitre systématiquement cet élément, en proposant une valeur par défaut (ex : '0') lorsque l'élément ne peut être valorisé (car il n'existe pas d'IdProduitInstalle : cas des droits simples, par exemple) </li>
 			</ul>
 		</desc>
+	</element>
+	<element name="ApplicationUtilisee" parent="ProduitInstalle" root="">
+		<usage>Conditionnel</usage>
+		<desc>A renseigner obligatoirement si le produit est hébergé par une application (type application transport) ou si, de manière plus générale, une application est liée à l'opération (par exemple, via un Identifiant d'Application)</desc>
 	</element>	
 	<element name="SupportUtilise" parent="" root="">
 		<usage>Conditionnel</usage>
 		<desc>Correspond au support hébergeant l'application installée<br/>
 			<ul>
-				<li>A utiliser obligatoirement si IdSupport est différent de l’Identifiant de l’Application, ou bien si le support n’a pas d’Application.</li>
-				<li>Inutilisé sinon.</li>
+			<li>A utiliser obligatoirement si les données contenues par la séquence sont utiles à la finalité, par exemple si IdSupport est différent de l’identifiant de l’application utilisée, si le support n’héberge pas d’application, si TypeSupport est une donnée significative, ....</li>
+			<li>Optionnel sinon</li>
 			</ul>
 		</desc>
 	</element>	
 	<element name="TypeSupport" parent="SupportUtilise" root="" isEnum="true">
-		<usage>Obsolescent</usage>
-		<desc>Permet de définir les supports pouvant accepter des matrices application produit.</desc>
+		<usage>Conditionnel</usage>
+		<desc>Permet de définir les supports pouvant accepter des matrices application produit.<br/>
+		Obligatoire s'il existe un support pour cette opération, et si la séquence SupportUtilise est présente</desc>
 	</element>
 	<element name="IdSupport" parent="SupportUtilise" root="">
 		<usage>Obligatoire</usage>
@@ -313,7 +388,36 @@
 	</element>
 	<element name="EmetteurSupportEnregistre" parent="" root="">
 		<usage>Obligatoire</usage>
-		<desc>Partenaire ayant délivré le support, vers qui le client se tournera en cas de dysfonctionnement.</desc>
+		<desc>Partenaire ayant délivré le support</desc>
+	</element>
+	<element name="DateFinEffet" parent="EntreeProduitInstalle" root="IBLSST:MajListeSecurite">
+		<usage>Obligatoire</usage>
+		<desc>Date effective de fin de l'interdiction<br/>
+			Si l'élément n'est pas renseigné, alors l'objet ne peut être sorti de la liste d'interdiction selon un critère temporel
+		</desc>
+	</element>
+		<element name="PositionDansListe" parent="EntreeProduitInstalle" root="IBCSST:CompteRenduSecurite">
+		<usage>Optionnel</usage>
+		<desc>Non utilisé pour des flux dont l'objet est une application transport
+		</desc>
+	</element>
+	<element name="ActionDemandee" parent="EntreeProduitInstalle" root="IBCSST:CompteRenduSecurite" isEnum="true">
+		<usage>Optionnel</usage>
+		<desc>Peut être renseigné avec la valeur d'ActionDemandee reçue lors de la demande d'interdiction (IBLSST).<br/>
+		</desc>
+	</element>
+	<element name="DateDebutEffet" parent="EntreeProduitInstalle" root="IBCSST:CompteRenduSecurite">
+		<usage>Optionnel</usage>
+		<desc>Date effective de début de l'interdiction<br/>
+			Si utilisé, à renseigner avec les informations reçues lors de la demande d'interdiction (message IBLSST)
+		</desc>
+	</element>
+	<element name="DateFinEffet" parent="EntreeProduitInstalle" root="IBCSST:CompteRenduSecurite">
+		<usage>Optionnel</usage>
+		<desc>Date effective de fin de l'interdiction<br/>
+			Si utilisé, à renseigner avec les informations reçues lors de la demande d'interdiction (message IBLSST) <br/>
+			Si l'élément n'est pas renseigné, alors l'objet ne peut être sorti de la liste d'interdiction selon un critère temporel
+		</desc>
 	</element>
 	<!-- IBLSRF -->
 	<element name="IBLSRF:MajListeSecurite" parent="" root="">
@@ -325,7 +429,7 @@
 	</element>
 	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSRF:MajListeSecurite" isEnum="true">
 		<usage>Obligatoire</usage>
-		<desc>Type de la liste<br/>Doit être égal à "17:Envoi de données client"</desc>
+		<desc>Type de la liste<br/>Doit être égal à "17:Réponse à une demande d'informations, contenant des données client"</desc>
 	</element>
 	<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSRF:MajListeSecurite" isEnum="true">
 		<usage>Obsolescent</usage>
@@ -344,13 +448,34 @@
 		<usage>Obligatoire</usage>
 		<desc>Données du client</desc>
 	</element>
+	<element name="CodeProfil" parent="ProfilClient" root="IBLSRF:MajListeSecurite">
+		<usage>Optionnel</usage>
+		<desc>Non utilisé pour ce flux</desc>
+	</element>
 	<element name="Nom" parent="ClientDetenteur" root="">
 		<usage>Obligatoire</usage>
 		<desc>Nom du client</desc>
 	</element>
-	<element name="ApplicationUtilisee" parent="EntreeClient" root="">
+	<element name="ApplicationUtilisee" parent="EntreeClient" root="IBLSRF:MajListeSecurite">
 		<usage>Obligatoire</usage>
-		<desc>Description de l'application utilisée</desc>
+		<desc>Description de l'application utilisée par le client : permet de préciser des informations concernant la ou les applications utilisées par le client<br/>
+		La séquence peut apparaitre autant de fois qu'il y a d'applications interopérables utilisées par ce client.
+		</desc>
+	</element>
+	<!-- IBLSEC -->
+	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSEC:MajListeSecurite" isEnum="true">
+		<usage>Obligatoire</usage>
+		<desc>Type de la liste<br/>Doit être égal à "19:Envoi de données client"</desc>
+	</element>
+	<element name="CodeProfil" parent="ProfilClient" root="IBLSEC:MajListeSecurite">
+	<usage>Optionnel</usage>
+	<desc>Non utilisé pour ce flux</desc>
+	</element>
+	<element name="ApplicationUtilisee" parent="ListeApplicationUtilisee" root="IBLSEC:MajListeSecurite">
+		<usage>Conditionnel</usage>
+		<desc>Description de l'application utilisée par le client : permet de préciser des informations concernant la ou les applications utilisées par le client, lorsque le client dispose d'applications.<br/>
+		La séquence peut apparaitre autant de fois qu'il y a d'applications interopérables utilisées par ce client. Si le client ne dispose pas d'application, alors la séquence peut être absente.
+		</desc>
 	</element>
 	<!-- IBLSSC -->
 	<element name="IBLSSC:MajListeSecurite" parent="" root="">
@@ -364,7 +489,31 @@
 		<usage>Obligatoire</usage>
 		<desc>Type de la liste<br/>Doit être égal à "18:Demande de suppression de données client"</desc>
 	</element>
-	<!-- IBUT -->
+	<element name="PositionDansListe" parent="EntreeApplicationInstallee" root="IBLSSC:MajListeSecurite" isEnum="true">
+		<usage>Optionnel</usage>
+		<desc>Non utilisé pour IBLSSC</desc>
+	</element>
+	<element name="ActionDemandee" parent="EntreeApplicationInstallee" root="IBLSSC:MajListeSecurite" isEnum="true">
+		<usage>Conditionnel</usage>
+		<desc>Permet de définir la valeur de l'action à réaliser lors de la détection de l'objet.<br/>
+			Pour le flux IBLSSC, les valeurs peuvent être les suivantes :
+			<ul>
+				<li>"11":Supprimer le lien entre l'objet et le client</li>
+			</ul>
+		</desc>
+	</element>
+	<element name="DateDebutEffet" parent="EntreeApplicationInstallee" root="IBLSSC:MajListeSecurite">
+		<usage>Conditionnel</usage>
+		<desc>Obligatoire seulement si la demande de suppression ne doit pas être immédiatement réalisée<br/>
+			Si la balise n'est pas présente, alors la demande de "suppression" doit être réalisée dès que possible
+		</desc>
+	</element>
+	<element name="DateFinEffet" parent="EntreeApplicationInstallee" root="IBLSSC:MajListeSecurite">
+		<usage>Optionnel</usage>
+		<desc>Non utilisé pour ce flux
+		</desc>
+	</element>
+		<!-- IBUT -->
 	<element name="IBUT:MessageUtilisations" parent="" root="">
 		<desc>Information concernant l'usage d'un titre de transport.</desc>
 	</element>
@@ -384,6 +533,10 @@
 		<usage>Obligatoire</usage>
 		<desc>Un équipement de terrain destiné à contrôler des droits d'utilisation liés à des produits installés, et en conséquence à valider ou non un passage en entrée, sortie ou correspondance d'un réseau de transports.</desc>
 	</element>
+	<element name="ExploitantEquipement" parent="Equipementvalidation" root="">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant du partenaire du bassin d'interopérabilité qui a réalisé l'opération de validation</desc>
+	</element>	
 	<element name="IdEquipement" parent="EquipementValidation" root="">
 		<usage>Obligatoire</usage>
 		<desc>Identifiant de l'équipement</desc>
@@ -392,49 +545,53 @@
 		<usage>Obligatoire</usage>
 		<desc>Type de l'équipement</desc>
 	</element>
+		<element name="ApplicationUtilisee" parent="UtilisationProduitInstalle" root="">
+		<usage>Conditionnel</usage>
+		<desc>A renseigner obligatoirement si le produit est hébergé par une application (type application transport) ou si, de manière plus générale, une application est liée à l'opération (par exemple, via un Identifiant d'Application)</desc>
+	</element>
 	<element name="ProduitUtilise" parent="" root="">
 		<usage>Conditionnel</usage>
 		<desc>Caractéristiques du produit utilisé.
 			<ul>
-			<li>Obligatoire lorsqu’il ne s’agit pas de postpaiement (le titre existe dans le support ou bien en central, en amont de l’utilisation).</li>
-			<li>Facultatif dans le cas du traitement d’un postpaiement  (ex : utilisé si l’application contient un identifiant indiquant que le service de postpaiement est actif pour cette application)</li>
+			<li>Obligatoire lorsqu’il ne s’agit pas de postpaiement (le titre/produit existe dans le support ou bien au niveau du système central, en amont de son utilisation).</li>
+			<li>Facultatif dans le cas du traitement d’un postpaiement  (ex : doit être utilisé si l’application contient des données indiquant que le service de postpaiement est actif pour cette application)</li>
 			</ul>
 		</desc>
 	</element>
 	<element name="SoldeCompteur" parent="" root="">
 		<usage>Conditionnel</usage>
-		<desc>Correspond à la valeur du compteur principal.<br/>
-			Les informations concernant le 2e compteur (dans la sous-période) ne sont pas échangées.
+		<desc>S'il n'existe qu'un seul élément SoldeCompteur, il correspond à la valeur du compteur principal.<br/>
+			Dans ce cas, les informations concernant le 2e compteur (ex : dans la sous-période) ne sont pas échangées.
+Si besoin, il est possible d'intégrer plusieurs occurences de l'élément SoldeCompteur, afin d'échanger des informations concernant des compteurs secondaires.
 			<ul>
 			<li>Employé systématiquement pour un carnet.</li>
 			<li>Non employé pour un forfait.</li>
-			</ul>
+			</ul><br/>
+			Les partenaires du bassin d’interopérabilité devront déterminer l’action à réaliser sur l'objet (le titre) lorsque le champ SoldeCompteur est à 0 : Par exemple : si le solde est à 0, le titre doit être effacé. 
 		</desc>
 	</element>
 	<element name="IdCompteur" parent="" root="">
 		<usage>Obligatoire</usage>
-		<desc>
-			<ul>
-			<li>0 : indéterminé</li>
-			<li>1 : Voyage</li>
-			<li>2 : unités, jeton</li>
-			<li>3 : unité monétaire</li>
-			</ul>
+		<desc>	cf.  Nomenclature InterBOB
 		</desc>
 	</element>
 	<element name="QuantiteOperation" parent="" root="">
 		<usage>Obligatoire</usage>
-		<desc>Valeur du décrément : nombre d’unités (voyage, argent, jeton, …) concernées par l’opération.</desc>
+		<desc>Valeur de l'incrément ou du décrément : nombre d’unités (voyage, argent, jeton, …) concernées par l’opération.<br/>
+		Si IdCompteur désigne une unité monétaire, le décrément est exprimé en centimes.
+		</desc>
 	</element>
 	<element name="Solde" parent="" root="">
 		<usage>Obligatoire</usage>
-		<desc>Solde après décrément.</desc>
+		<desc>Solde après opération (incrément ou décrément)<br/>
+		Si IdCompteur désigne une unité monétaire, le solde est exprimé en centimes.
+		</desc>
 	</element>
-	<element name="ContrainteTemporelle" parent="" root="">
+	<element name="ContrainteTemporelle" parent="ProduitUtilise" root="IBUT:MessageUtilisations"> 
 		<usage>Conditionnel</usage>
 		<desc>Contrainte temporelle du produit utilisé.
 			<ul>
-			<li>A renseigner obligatoirement  si la contrainte temporelle est modifiée à la validation ou à l’usage (ex :  titre est glissant à la validation)</li>
+			<li>A renseigner obligatoirement  si la contrainte temporelle est renseignée ou modifiée lors de l'opération de validation / consommation / utilisation (ex :  titre glissant à la validation)</li>
 			<li>Non renseigné dans les autres cas.</li>
 			</ul>
 		</desc>
@@ -456,23 +613,36 @@
 	</element>
 	<element name="JourDebut" parent="" root="">
 		<usage>Obligatoire</usage>
-		<desc>Date de début de la "tranche calendaire"</desc>
+		<desc>Date de début de la "tranche calendaire"<br/>
+		Correspond par défaut à la Date de Début de Validité (DDV) <br/>
+		Si elle n'existe pas sur le produit, l'élément est renseigné avec une valeur non significative, par défaut, fixée au 1/1/1997
+		</desc>
 	</element>
 	<element name="JourFin" parent="" root="">
 		<usage>Obligatoire</usage>
-		<desc>Date de fin de la "tranche calendaire"</desc>
+		<desc>Date de fin de la "tranche calendaire"
+		Correspond par défaut à la Date de Fin de Validité (DFV) , éventuellement déterminée au moment de la validation/consommation<br/>
+		Si elle n'existe pas sur le produit, ou bien qu'elle n'est pas encore déterminée, l'élément est renseigné avec une valeur non significative, par défaut, fixée au 1/1/1997
+		</desc>
 	</element>
 	<element name="HeureDebut" parent="" root="">
-		<usage>Optionnel</usage>
-		<desc>Heure de début pour la date de début</desc>
+		<usage>Conditionnel</usage>
+		<desc>Heure de début pour la date de début<br/>
+		Obligatoire si nécessaire à l'instanciation du produit</desc>
 	</element>
 	<element name="HeureFin" parent="" root="">
-		<usage>Optionnel</usage>
-		<desc>Heure de fin pour la date de fin</desc>
+		<usage>Conditionnel</usage>
+		<desc>Heure de fin pour la date de fin<br/>
+		Obligatoire si nécessaire à l'instanciation du produit</desc>
 	</element>
 	<element name="Autorise" parent="" root="">
 		<usage>Obligatoire</usage>
-		<desc>Indique si le produit utilisé est autorisé pendant la contrainte temporelle ou non</desc>
+		<desc>Indique si le produit utilisé est autorisé pendant la contrainte temporelle ou non
+			<ul>
+			<li>1 = true (valide sur la période)</li>
+			<li>0 = false (non valide sur la période)</li>
+			</ul>
+		</desc>
 	</element>
 	<element name="AccesValide" parent="" root="">
 		<usage>Conditionnel</usage>
@@ -481,18 +651,25 @@
 	</element>
 	<element name="CompteurCorrespondance" parent="" root="">
 		<usage>Obligatoire</usage>
-		<desc>Le champ CompteurCorrespondance est renseigné pour indiquer la notion de correspondance, et idéalement le nombre de correspondances.</desc>
+		<desc>Le champ CompteurCorrespondance est renseigné pour indiquer la notion de correspondance, et idéalement le nombre de correspondances.<br/>
+		Pour des titres structurés selon la norme INTERCODE (NF P99-405), le champ s’appuie sur la donnée EventJourneyInterchanges. Tout système doit être en capacité de distinguer une 1e montée d’une correspondance, y compris au niveau des échanges de données.<br/>
+		Une valeur par défaut est définie pour les systèmes qui ne savent pas compter le nombre de correspondances : il s’agit de la valeur de EventJourneyInterchanges correspondant à une 1e correspondance, soit la valeur ‘1’.
+		Par conséquent, un système qui sait distinguer une 1e montée d’une correspondance, mais qui ne sait pas compter le nombre de correspondances, doit émettre de la manière suivante :
+			<ul>
+			<li>CompteurCorrespondance = 0 pour une première montée</li>
+			<li>CompteurCorrespondance = 1 pour toute correspondance</li>
+			</ul>
+		Il sera nécessaire de préciser, au niveau des spécifications du bassin d'interopérabilité, si des systèmes impliqués dans le bassin ne savent pas gérer la notion de correspondance.
+		</desc>
+	</element>
+	<element name="Effacable" parent="ProduitUtilise" root="IBUT:MessageUtilisations">
+		<usage>Conditionnel</usage>
+		<desc>Indique si le produit installé peut être effacé (TRUE) ou non (FALSE)<br/>
+		Element obligatoire si le produit se trouve dans un état résiduel pouvant impliquer une mise à l'état Effaçable suite à l'action ou l'opération concernée par le message (exemple : si le solde résiduel est à 0, ...)</desc>
 	</element>
 	<element name="TypeTransaction" parent="" root="" isEnum="true">
 		<usage>Obligatoire</usage>
-		<desc>
-			<ul>
-			<li>1 : Validation en entrée</li>
-			<li>4 : Contrôle volant (à bord) – Validation effectuée par un contrôle volant</li>
-			<li>5 : Validation de test</li>
-			<li>6 : Validation en correspondance (entrée)</li>
-			<li>0 : Aucun</li>
-			</ul>
+		<desc>cf. Nomenclature InterBOB
 		</desc>
 	</element>
 	<element name="ModesTransport" parent="" root="">
@@ -503,36 +680,46 @@
 		<usage>Obligatoire</usage>
 		<desc>Mode de transport utilisé</desc>
 	</element>
-	<element name="Localisation" parent="" root="">
+	<element name="Localisation" parent="AccesValide" root="">
 		<usage>Conditionnel</usage>
 		<desc>
 			<ul>
-			<li>Balise obligatoirement présente et renseignée si la validation est localisée.</li>
-			<li>Balise absente si la validation est en mode délocalisé.</li>
+			<li>Balise absente si la localisation n'est pas nécessaire à l'une des finalités du système destinataire</li>
+			<li>Balise absente si la validation est en mode non localisé.</li>
+			<li>Balise obligatoire dans tous les autres cas</li>
 			</ul>
 		</desc>
 	</element>
 	<element name="IdLocalisation" parent="Localisation" root="">
 		<usage>Obligatoire</usage>
-		<desc>Identifiant du lieu</desc>
+		<desc>Identifiant du lieu de réalisation de l'opération ou de l'action</desc>
 	</element>
 	<element name="ReferentielLocalisation" parent="Localisation" root="">
 		<usage>Obligatoire</usage>
-		<desc>Identifiant du référentiel géographique associé au lieu</desc>
+		<desc>Identifiant du référentiel associé au lieu</desc>
 	</element>
 	<element name="Sens" parent="Localisation" root="">
 		<usage>Conditionnel</usage>
-		<desc>Direction de la ligne sur laquelle la validation est effectuée.<br/>
-			Transmise si connue.</desc>
+		<desc>Sens de la ligne sur laquelle la validation est effectuée.<br/>
+			transmise si nécessaire et connue.<br/>
+			Pour une valorisation s'appuyant sur la norme Intercode, la valeur équivaut à l'élément de donnée EventDataRouteDirection
+			</desc>
 	</element>
 	<element name="Ligne" parent="Localisation" root="">
 		<usage>Conditionnel</usage>
 		<desc>Caractéristique de la ligne sur laquelle la validation est effectuée.<br/>
-			Transmise si connue.</desc>
+			Transmise si nécessaire et connue.<br/>
+			Pour une valorisation s'appuyant sur la norme Intercode, la valeur équivaut à l'élément de donnée EventDataRouteNumber</desc>
 	</element>
 	<element name="IdLigne" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>Identifiant de la ligne</desc>
+	</element>
+	<element name="Course" parent="Localisation" root="">
+		<usage>Conditionnel</usage>
+		<desc>Caractéristique de la course sur laquelle la validation est effectuée.<br/>
+			transmise si nécessaire et connue.<br/>
+			Pour une valorisation s'appuyant sur la norme Intercode, la valeur équivaut à l'élément de donnée EventDataRouteVariant</desc>
 	</element>
 	<!-- IBLSDC -->
 	<element name="IBLSDC:MajListeSecurite" parent="" root="">
@@ -548,12 +735,23 @@
 	</element>
 	<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSDC:MajListeSecurite" isEnum="true">
 		<usage>Obsolescent</usage>
-		<desc>Permet de préciser si: 
-				<ul>
-				<li>c'est une liste exhaustive qui est transmise : "1"</li>
-				<li>ce ne sont que des mises à jour (« incrémentiel ») : "2".</li>
-				</ul>
-		</desc>
+		<desc>	</desc>
+	</element>
+	<element name="PositionDansListe" parent="EntreeApplicationInstallee" root="IBLSDC:MajListeSecurite" isEnum="true">
+		<usage>Optionnel</usage>
+		<desc>Non utilisé pour IBLSDC</desc>
+	</element>
+	<element name="ActionDemandee" parent="EntreeApplicationInstallee" root="IBLSDC:MajListeSecurite" isEnum="true">
+		<usage>Optionnel</usage>
+		<desc>Non utilisé pour IBLSDC</desc>
+	</element>
+	<element name="DateDebutEffet" parent="EntreeApplicationInstallee" root="IBLSDC:MajListeSecurite" isEnum="true">
+		<usage>Optionnel</usage>
+		<desc>Non utilisé pour IBLSDC</desc>
+	</element>
+	<element name="DateFinEffet" parent="EntreeApplicationInstallee" root="IBLSDC:MajListeSecurite" isEnum="true">
+		<usage>Optionnel</usage>
+		<desc>Non utilisé pour IBLSDC</desc>
 	</element>
 	<!-- IBLSST -->
 	<element name="IBLSST:MajListeSecurite" parent="" root="">
@@ -569,12 +767,11 @@
 	</element>
 	<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSST:MajListeSecurite" isEnum="true">
 		<usage>Obsolescent</usage>
-		<desc>Permet de préciser si: 
-				<ul>
-				<li>c'est une liste exhaustive qui est transmise : "1"</li>
-				<li>ce ne sont que des mises à jour (« incrémentiel ») : "2".</li>
-				</ul>
-		</desc>
+		<desc>	</desc>
+	</element>
+	<element name="PositionDansListe" parent="EntreeApplicationInstallee" root="IBLSST:MajListeSecurite" isEnum="true">
+		<usage>Obsolescent</usage>
+		<desc>Non utilisé pour IBLSST</desc>
 	</element>
 	<element name="ActionDemandee" parent="EntreeProduitInstalle" root="IBLSST:MajListeSecurite" isEnum="true">
 		<usage>Obligatoire</usage>
@@ -586,9 +783,65 @@
 		</desc>
 	</element>
 	<element name="DateDebutEffet" parent="EntreeProduitInstalle" root="IBLSST:MajListeSecurite">
-		<usage>Optionnel</usage>
+		<usage>Obligatoire</usage>
 		<desc>Date de mise en suspension<br/>
-			Si la date est absente au niveau de l'élément on considère que l’échéance d’effet est : dès que possible
+		Pour identifier une suspension, il est important d'échanger la date d'entrée en suspension (il peut effectivement y avoir plusieurs suspensions pour un même contrat).			
+		</desc>
+	</element>
+	<element name="SoldeCompteur" parent="ProduitInstalle" root="IBLSST:MajListeSecurite">
+		<!--description complémentaire à la définition générique de SoldeCompteur, qui apparait aussi dans le fichier-->
+		<usage>Conditionnel</usage>
+		<desc><br/>NON UTILISE POUR DES FLUX RELATIFS A LA SUSPENSION/REACTIVATION DE TITRES<br/>
+		</desc>
+	</element>
+	<element name="ContrainteTemporelle" parent="ProduitInstalle" root="IBLSST:MajListeSecurite">
+		<!--description complémentaire à la définition générique de SoldeCompteur, qui apparait aussi dans le fichier-->
+		<usage>Optionnel</usage>
+		<desc><br/>NON UTILISE POUR DES FLUX RELATIFS A LA SUSPENSION/REACTIVATION DE TITRES<br/>
+		</desc>
+	</element>
+	<element name="ContratProduit" parent="ProduitInstalle" root="IBLSST:MajListeSecurite">
+		<!--description complémentaire à la définition générique de SoldeCompteur, qui apparait aussi dans le fichier-->
+		<usage>Optionnel</usage>
+		<desc><br/>NON UTILISE POUR DES FLUX RELATIFS A LA SUSPENSION/REACTIVATION DE TITRES<br/>
+		</desc>
+	</element>
+	<element name="ContrainteGeographique" parent="ProduitInstalle" root="IBLSST:MajListeSecurite">
+		<!--description complémentaire à la définition générique de SoldeCompteur, qui apparait aussi dans le fichier-->
+		<usage>Optionnel</usage>
+		<desc><br/>NON UTILISE POUR DES FLUX RELATIFS A LA SUSPENSION/REACTIVATION DE TITRES<br/>
+		</desc>
+	</element>
+	<element name="FacteurTarifaireDeQualite" parent="ProduitInstalle" root="IBLSST:MajListeSecurite">
+		<!--description complémentaire à la définition générique de SoldeCompteur, qui apparait aussi dans le fichier-->
+		<usage>Optionnel</usage>
+		<desc><br/>NON UTILISE POUR DES FLUX RELATIFS A LA SUSPENSION/REACTIVATION DE TITRES<br/>
+		</desc>
+	</element>
+	<element name="PrixDeVenteProduit" parent="ProduitInstalle" root="IBLSST:MajListeSecurite">
+		<!--description complémentaire à la définition générique de SoldeCompteur, qui apparait aussi dans le fichier-->
+		<usage>Optionnel</usage>
+		<desc><br/>NON UTILISE POUR DES FLUX RELATIFS A LA SUSPENSION/REACTIVATION DE TITRES<br/>
+		</desc>
+	</element>
+	<!-- IBAC -->
+			<!-- Ajout de IdRegroupement, à intégrer aussi dans la NF -->
+	<element name="IdRegroupement" parent="" root=""> 
+		<usage>Optionnel</usage>
+		<desc>Lorsque l'opération fait partie d'une transaction multi-opérations, IdRegroupement permet d'identifier cette transaction, et ainsi de rapprocher les différentes opérations d'une même transaction lors de l'agrégation des données.
+		</desc>
+	</element>
+			<!-- Ajout de MontantTotalRegroupement, à intégrer aussi dans la NF -->
+	<element name="MontantTotalRegroupement" parent="" root=""> 
+		<usage>Optionnel</usage>
+		<desc>Permet de préciser le montant de l'ensemble de la transaction (par ex, somme des MontantOperation de toutes les opérations qui constituent la transaction.<br/>
+			Exprimé en centimes d'euros
+		</desc>
+	</element>
+	<element name="ContrainteTemporelle" parent="ProduitInstalle" root=""> 
+		<usage>Conditionnel</usage>
+		<desc>Contrainte temporelle du produit utilisé.<br/>
+			Utilisé lorsqu’au moins une des dates du titre est renseignée ou modifiée (ex : date de début et/ou date de fin) ou lorsqu’une contrainte basée sur un jour type est fixée.
 		</desc>
 	</element>
 	<!-- IBACDC -->
@@ -607,17 +860,17 @@
 		<usage>Obligatoire</usage>
 		<desc>Opération de vente</desc>
 	</element>
-	<element name="IdOperation" parent="OperationVente" root="">
+	<element name="IdOperation" parent="OperationVente" root="IBACDC:MessageAcquisitions">
 		<usage>Conditionnel</usage>
 		<desc>
-			<li>Obligatoire s'il s'agit d'une vente pour télédistribution ou rechargement en différé, et que l'IdProduit n'est pas déterminé au moment de la vente.</li>
-			<li>Renseigné avec le numéro de la commande ou de l'élément de commande, ou de la demande de télédistribution en cas de vente pour télédistribution (cf. [3-A]) lorsque l'IdProduit n'est déterminé qu'au chargement.</li>
-			<li>Optionnel (facultatif) s'il ne s'agit pas d'une vente pour télédistribution.</li>
+			<li>Obligatoire s'il s'agit d'une vente pour télédistribution ou rechargement en différé, et que le Numéro de Série du Produit à installer n'est pas déterminé au moment de la vente.</li>
+			<li>Renseigné avec le numéro de la commande ou de l'élément de commande, ou de la demande de télédistribution en cas de vente pour télédistribution (cf. [3-A]) lorsque le Numéro de Série du Produit à installer n'est déterminé qu'au chargement.</li>
+			<li>Fortement recommandé dans les autres cas pour le flux IBACDC (renseigné la plupart du temps avec le N° de l'opération / de l'élément de commande), notamment à des fins de traçabilité des opérations (finalités suivi d'exploitation, service après-vente/assistance...)</li>
 		</desc>
 	</element>
-	<element name="TypeOperationVente" parent="OperationVente" root="" isEnum="true">
+	<element name="TypeOperationVente" parent="OperationVente" root="IBACDC:MessageAcquisitions" isEnum="true">
 		<usage>Obligatoire</usage>
-		<desc>
+		<desc> Pour le flux IBACDC, les valeurs peuvent notamment être les suivantes : 
 			<li>1 : Vente (ou primo chargement)</li>
 			<li>31 : rechargement sur CSC sans changement de numéro de série de contrat ou rechargement sur BSC (rechargement englobe les mécanismes de surcharge et/ou de prorogation de date)</li>
 			<li>41 : distribution droit complexe</li>
@@ -626,21 +879,39 @@
 	</element>
 	<element name="CodeArticle" parent="OperationVente" root="">
 		<usage>Obsolescent</usage>
-		<desc>Code de l'ancien produit</desc>
+		<desc>Non utilisé. Les informations concernant les caractéristiques des anciens éléments (reconstitués, écrasés, ...) sont portés le cas échéant par la séquence AncienObjetImplique, pour les flux pour lesquels ces informations sont pertinentes.</desc>
 	</element>
 	<element name="EtatOperation" parent="OperationVente" root="" isEnum="true">
 		<usage>Obligatoire</usage>
 		<desc>Etat de l'opération de vente</desc>
 	</element>
-	<element name="MontantOperation" parent="OperationVente" root="">
+	<element name="MontantOperation" parent="OperationVente" root="IBACDC:MessageAcquisitions">
 		<usage>Obligatoire</usage>
 		<desc>Montant total réglé par le client, exprimé en centimes de la devise concernée.<br/>
-			Un montant nul sera renseigné avec la valeur « 0 ».
+			Un montant nul sera renseigné avec la valeur « 0 ».<br/>
+			Dans le cas d'une instanciation basée sur la norme Intercode, il pourrait être utilisé la valeur du champ ContractDataPriceAmont
 		</desc>
 	</element>
-	<element name="MoyenPaiementPrincipal" parent="OperationVente" root="" isEnum="true">
+	<element name="MontantFrais" parent="" root="">
+		<usage>Conditionnel</usage>
+		<desc>Montant des frais liés à l'opération, et contenus dans MontantOperation. <br/>
+			Il peut s'agir de frais de dossier, de délivrance, d'opération, ...<br/>
+			Obligatoire si des frais liés à l'opération existent.
+		</desc>
+	</element>
+	<element name="Devise" parent="" root="" isEnum="true">
+		<usage>Conditionnel</usage>
+		<desc>Devise du montant<br/>
+		A renseigner en majuscules, conformément à la norme ISO 4217.<br/>
+		A renseigner obligatoirement si la devise n'est pas l'euro<br/>
+		Si l'élément n'est pas présent, ceci est interprété comme la valeur EUR = Euro.
+		</desc>
+	</element>
+	<element name="MoyenPaiementPrincipal" parent="OperationVente" root="IBACDC:MessageAcquisitions" isEnum="true">
 		<usage>Obligatoire</usage>
-		<desc>Moyen de paiement utilisé pour régler le plus gros montant</desc>
+		<desc>Moyen de paiement utilisé pour régler le plus gros montant<br/>
+		Pour une instanciation basée sur la norme Intercode, il est possible de s'appuyer sur la valeur de l'élément de donnée ContractDataPayMethod, si et seulement si cette valeur est conforme au moyen de paiement principal réellement utilisé (en effet, cette valeur est parfois renseignée par défaut, sans adéquation avec la réalité).
+		</desc>
 	</element>
 	<element name="EquipementAcquisition" parent="OperationVente" root="">
 		<usage>Obligatoire</usage>
@@ -672,12 +943,17 @@
 	</element>	
 	<element name="ExploitantEquipement" parent="EquipementAcquisition" root="">
 		<usage>Obligatoire</usage>
-		<desc>Identifiant du partenaire du bassin d'interopérabilité qui a réalisé l'opération de vente</desc>
+		<desc>Identifiant du partenaire du bassin d'interopérabilité qui a réalisé l'opération de vente<br/>
+		Peut être utilisé pour indiquer l'opérateur qui réalise l'opération, en complément du réseau pour lequel il opère.</desc>
 	</element>	
 	<element name="Nom" parent="ExploitantEquipement" root="">
 		<usage>Obsolescent</usage>
 		<desc>Nom du partenaire du bassin d'intéropérabilité</desc>
 	</element>	
+	<element name="CanalDistribution" parent="OperationVente" root="">
+		<usage>Obligatoire</usage>
+		<desc>Canal de distribution associé à l'opération</desc>
+	</element>
 	<element name="LieuDistribution" parent="OperationVente" root="">
 		<usage>Obligatoire</usage>
 		<desc>Lieu de distribution associé à l'opération de vente</desc>
@@ -690,13 +966,16 @@
 		<usage>Obligatoire</usage>
 		<desc>Référentiel dans lequel est défini le lieu de distribution</desc>
 	</element>
-	<element name="Sens" parent="LieuDistribution" root="">
+	<element name="" parent="LieuDistribution" root="">
 		<usage>Optionnel</usage>
-		<desc>Indique le sens de la ligne associée à l'opération de vente</desc>
+		<desc>Indique le sens de la ligne associée à l'opération de vente<br/>
+		Pour une valorisation s'appuyant sur la norme Intercode, la valeur équivaut à l'élément de donnée EventDataRouteDirection
+		</desc>
 	</element>
 	<element name="Ligne" parent="LieuDistribution" root="">
 		<usage>Optionnel</usage>
-		<desc>Caractéristique de la ligne sur laquelle l'acquisition est effectuée.</desc>
+		<desc>Caractéristique de la ligne sur laquelle l'acquisition est effectuée.<br/>
+		Pour une valorisation s'appuyant sur la norme Intercode, la valeur équivaut à l'élément de donnée EventDataRouteNumber</desc>
 	</element>
 	<element name="TypeReferentiel" parent="Ligne" root="">
 		<usage>Optionnel</usage>
@@ -704,7 +983,8 @@
 	</element>
 	<element name="Course" parent="LieuDistribution" root="">
 		<usage>Optionnel</usage>
-		<desc>Permet de définir le parcours de la ligne sur laquelle l'acquisition est effectuée.</desc>
+		<desc>Permet de définir le parcours de la ligne sur laquelle l'acquisition est effectuée.<br/>
+		Pour une valorisation s'appuyant sur la norme Intercode, la valeur équivaut à l'élément de donnée EventDataRouteVariant</desc>
 	</element>
 	<element name="TypeReferentiel" parent="Course" root="">
 		<usage>Optionnel</usage>
@@ -721,11 +1001,6 @@
 	<element name="VenteEmbarquee" parent="LieuDistribution" root="">
 		<usage>Obligatoire</usage>
 		<desc>Indique si l'acquisition correspond à une vente en embarquée (TRUE) ou non (FALSE).</desc>
-	</element>
-	<element name="Devise" parent="OperationVente" root="">
-		<usage>Optionnel</usage>
-		<desc>Devise du montant total réglé par le client.<br/>
-			Si non utilisée, alors la devise sera considérée comme étant l'euro (EUR).</desc>
 	</element>
 	<element name="ObjetImplique" parent="OperationVente" root="">
 		<usage>Obligatoire</usage>
@@ -744,28 +1019,33 @@
 		<desc>Permet de préciser la duree de validité à partir de la première validation dans le cas des titres glissant à la validation.</desc>
 	</element>
 	<element name="FacteurTarifaireDeQualite" parent="ProduitInstalle" root="" isEnum="true">
-		<usage>Optionnel</usage>
-		<desc>Permet de définir le niveau de qualité associé au service. Par exemple, 1ère ou 2ème classe.</desc>
+		<usage>Conditionnel</usage>
+		<desc>Permet de définir le niveau de qualité associé au service. Par exemple, 1ère ou 2ème classe.<br/>
+		Obligatoire s'il existe pour le titre</desc>
 	</element>
 	<element name="PrixDeVenteProduit" parent="ProduitInstalle" root="">
 		<usage>Optionnel</usage>
-		<desc>Prix de vente initial du produit, exprimé en centimes de la devise concernée.</desc>
+		<desc>Prix de vente initial du produit / Prix de vente du dernier rechargement, exprimé en centimes de la devise concernée.</desc>
 	</element>
 	<element name="ContrainteGeographique" parent="ProduitInstalle" root="">
-		<usage>Optionnel</usage>
-		<desc>Contrainte de type géographique du produit.</desc>
+		<usage>Conditionnel</usage>
+		<desc>Contrainte de type géographique du produit.<br/>
+		Obligatoire s'il existe une contrainte géographique associée au produit faisant l'objet de l'opération.</desc>
 	</element>
 	<element name="ContrainteParcours" parent="ContrainteGeographique" root="">
-		<usage>Optionnel</usage>
-		<desc>Contrainte géographique sur le parcours associé au produit.</desc>
+		<usage>Conditionnel</usage>
+		<desc>Contrainte géographique sur le parcours associé au produit.<br/>
+		Obligatoire si elle existe.<br/>
+		A utiliser par exemple pour décrire une Origine/Destination (O/D)</desc>
 	</element>
 	<element name="IndicateurContrainteChainage" parent="ContrainteParcours" root="">
-		<usage>Optionnel</usage>
-		<desc>Permet de définir l'ordre d'enchaînement des différents parcours auxquels donne droit le produit.</desc>
+		<usage>Conditionnel</usage>
+		<desc>Permet de définir l'ordre d'enchaînement des différents parcours auxquels donne droit le produit.<br/>
+		Obligatoire s'il existe une combinaison de contraintes géographiques</desc>
 	</element>
 	<element name="PointArretDebut" parent="ContrainteParcours" root="">
 		<usage>Obligatoire</usage>
-		<desc>Point d'arrêt définissant le début du parcours.</desc>
+		<desc>Point d'arrêt définissant le début du parcours (Origine pour une OD)</desc>
 	</element>
 	<element name="IdPointArret" parent="" root="">
 		<usage>Obligatoire</usage>
@@ -777,35 +1057,37 @@
 	</element>
 	<element name="PointArretFin" parent="ContrainteParcours" root="">
 		<usage>Obligatoire</usage>
-		<desc>Point d'arrêt définissant la fin du parcours.</desc>
+		<desc>Point d'arrêt définissant la fin du parcours (Destination pour une OD)</desc>
 	</element>
 	<element name="TypeReferentiel" parent="PointArretFin" root="">
 		<usage>Obligatoire</usage>
 		<desc>Référentiel du point d'arrêt.</desc>
 	</element>
 	<element name="ContrainteZonale" parent="ContrainteGeographique" root="">
-		<usage>Optionnel</usage>
-		<desc>Contrainte géographique sur la zone tarifaire associée au produit.</desc>
+		<usage>Conditionnel</usage>
+		<desc>Contrainte géographique sur la zone tarifaire associée au produit.<br/>
+		Obligatoire si elle existe</desc>
 	</element>
 	<element name="IndicateurContrainteChainage" parent="ContrainteZonale" root="">
-		<usage>Optionnel</usage>
-		<desc>Permet de définir l'ordre d'enchaînement des différentes zones tarifaires auxquelles donne droit le produit.</desc>
+		<usage>Conditionnel</usage>
+		<desc>Permet de définir l'ordre d'enchaînement des différentes zones tarifaires auxquelles donne droit le produit.<br/>
+		Obligatoire s'il existe une combinaison de contraintes géographiques</desc>
 	</element>
 	<element name="ZoneTarifaire" parent="ContrainteZonale" root="">
 		<usage>Obligatoire</usage>
-		<desc>Caractéristique d'une zone tarifaire auxquelle donne droit le produit.</desc>
+		<desc>Caractéristique d'une zone tarifaire / d'une prestation zonale auxquelle donne droit le produit.<br/>
+		La séquence ZoneTarifaire est répétée autant de fois qu'il y a de zones concernées par la prestation<br/>
+		(en Intercode, cela correspond à autant de fois qu'il y a de bits valorisés à 1 dans le bitmap correspondant à la description des zones tarifaires</desc>
 	</element>
 	<element name="IdZoneTarifaire" parent="ZoneTarifaire" root="">
 		<usage>Obligatoire</usage>
-		<desc>Identifiant de la zone tarifaire.</desc>
+		<desc>Identifiant de la zone tarifaire / de la prestation zonalen<br/>
+		Renseigné en valeur décimale, conformément à la nomenclature du bassin<br/>
+		Les valeurs des éléments de donnée ContractDataValidityZoneOrigin, ContractDataValidityZoneDestination, ContractDataValidityZone1, ContractDataValidityZone2... sont souvent utilisées. Dans ce cas, l'IdZoneTarifaire est souvent associé au "rang" de la zone dans l'application transport.</desc>
 	</element>
 	<element name="TypeReferentiel" parent="ZoneTarifaire" root="">
 		<usage>Obligatoire</usage>
 		<desc>Référentiel de la zone tarifaire.</desc>
-	</element>
-	<element name="ApplicationUtilisee" parent="ProduitInstalle" root="">
-		<usage>Conditionnel</usage>
-		<desc>A renseigner si le produit est hébergé par une application.</desc>
 	</element>
 	<element name="Nom" parent="Distributeur" root="">
 		<usage>Obsolescent</usage>
@@ -817,7 +1099,9 @@
 	</element>
 	<element name="TypeApplication" parent="MatriceApplicationEnregistree" root="" isEnum="true">
 		<usage>Optionnel</usage>
-		<desc>Indique le type d'application (transport ou autre...)</desc>
+		<desc>Indique le type d'application (transport ou autre...)<br/>
+		A renseigner si différents types d'application sont concernés par le bassin d'interopérabilité
+		</desc>
 	</element>
 	<element name="Proprietaire" parent="MatriceApplicationEnregistree" root="">
 		<usage>Optionnel</usage>
@@ -832,9 +1116,17 @@
 		<usage>Obsolescent</usage>
 		<desc>Nom du partenaire</desc>
 	</element>
+	<element name="CategorieApplication" parent="" root="" isEnum="true">
+		<usage>Obligatoire</usage>
+		<!--l'usage est déjà renseigné par ailleurs (autre fichier), à obligatoire-->
+		<desc>Catégorie de l'application (nominatif, anonyme)
+		</desc>
+	</element>
 	<element name="CategorieSupport" parent="" root="" isEnum="true">
-		<usage>Obsolescent</usage>
-		<desc>Catégorie du support (nominatif, anonyme)</desc>
+		<usage>Conditionnel</usage>
+		<desc>Catégorie du support (nominatif, anonyme)<br/>
+		A renseigner obligatoirement si différent de la valeur de CategorieApplication. Si non renseigné, il sera supposé que CategorieApplication = CategorieSupport
+		</desc>
 	</element>
 	<element name="DateHeureEmission" parent="SupportUtilise" root="">
 		<usage>Optionnel</usage>
@@ -846,11 +1138,16 @@
 	</element>
 	<element name="ContratProduit" parent="ProduitInstalle" root="">
 		<usage>Optionnel</usage>
-		<desc>Contrat client associé au produit.</desc>
+		<desc>Contrat client associé au produit.<br/>
+		Séquence à utiliser si et seulement si l'un des éléments qui la composent ont un caractère utile.<br/>
+		C'est notamment le cas pour les opérations sur les droits simples (IBACDP, IBACBP, IBACCP).
+		</desc>
 	</element>
-	<element name="ClientDetenteur" parent="ContratProduit" root="">
-		<usage>Optionnel</usage>
-		<desc>Données du client détenteur du contrat</desc>
+	<element name="ClientDetenteur" parent="ContratProduit" root="IBACDC:MessageAcquisitions">
+		<usage>Obsolescent</usage>
+		<desc>Données du client détenteur du contrat<br/>
+		Ne doit pas être utilisé pour ce type de flux. Lorsqu'elles existent (support, application transport ou produit nominatif), les données client sont transmises par l'intermédiaire d'un autre flux, spécifique (IBLSEC, par exemple).<br/>
+		Nota : détail de la séquence retiré, car non pertinent pour ce type de flux</desc>
 	</element>
 	<element name="TypeCommercialContrat" parent="" root="" isEnum="true">
 		<usage>Optionnel</usage>
@@ -858,7 +1155,7 @@
 	</element>
 	<element name="IdContrat" parent="" root="">
 		<usage>Optionnel</usage>
-		<desc>Identifiant du contrat avec le client.</desc>
+		<desc></desc>
 	</element>
 	<element name="DateDebutValidite" parent="ProfilCommercialContrat" root="">
 		<usage>Optionnel</usage>
@@ -877,24 +1174,28 @@
 		<desc>Partenaire du bassin d'interopérabilité propriétaire du profil</desc>
 	</element>
 	<element name="ClientDetenteur" parent="ContratSupport" root="">
-		<usage>Optionnel</usage>
-		<desc>Données du client détenteur du contrat</desc>
+		<usage>Obsolescent</usage>
+		<desc>Données du client détenteur du contrat<br/>
+		Non utilisé</desc>
 	</element>
+
 	<element name="IdClient" parent="ClientDetenteur" root="">
 		<usage>Optionnel</usage>
 		<desc>Identifiant du client</desc>
 	</element>
 	<element name="Prenom" parent="ClientDetenteur" root="">
-		<usage>Optionnel</usage>
-		<desc>Prénom du client</desc>
+		<usage>Conditionnel</usage>
+		<desc>Prénom du client. Obligatoire si le client a un prénom.</desc>
 	</element>
 	<element name="Titre" parent="ClientDetenteur" root="" isEnum="true">
-		<usage>Optionnel</usage>
+		<usage>Obligatoire</usage>
 		<desc>Titre du client: M, Mme, Mlle</desc>
 	</element>
 	<element name="DateNaissance" parent="ClientDetenteur" root="">
-		<usage>Optionnel</usage>
-		<desc>Date de naissance du client.</desc>
+		<usage>Obligatoire</usage>
+		<desc>Date de naissance du client.<br/>
+		Dans le cas où cet élément ne peut être renseigné avec une valeur significative (ex: cas du client personne morale), il est renseigné avec une valeur par défaut : 01/01/1900
+		</desc>
 	</element>
 	<element name="TelephonePrive" parent="ClientDetenteur" root="">
 		<usage>Optionnel</usage>
@@ -905,44 +1206,62 @@
 		<desc>Numéro de téléphone professionnel du client.</desc>
 	</element>
 	<element name="Adresse" parent="ClientDetenteur" root="">
-		<usage>Optionnel</usage>
-		<desc>Addresse postale du client.</desc>
+		<usage>Conditionnel</usage>
+		<desc>Addresse postale du client.<br/>
+		Obligatoire lorsqu'elle existe</desc>
 	</element>
 	<element name="NumVoie" parent="" root="">
-		<usage>Optionnel</usage>
-		<desc>Numéro de voie.</desc>
+		<usage>Conditionnel</usage>
+		<desc>Numéro de voie.<br/>
+		Obligatoire lorsqu'il existe<br/>
+		Cf. Nomenclature INTERBOB</desc>
 	</element>
 	<element name="TypeVoie" parent="" root="" isEnum="true">
-		<usage>Optionnel</usage>
-		<desc>Type de voie.</desc>
+		<usage>Conditionnel</usage>
+		<desc>Type de voie.<br/>
+		Obligatoire lorsqu'il existe</desc>
 	</element>
 	<element name="LibelleVoie" parent="" root="">
-		<usage>Optionnel</usage>
-		<desc>Nom de voie.</desc>
+		<usage>Conditionnel</usage>
+		<desc>Nom de voie.<br/>
+		Obligatoire lorsqu'il existe</desc>
 	</element>
 	<element name="LigneAdresse" parent="" root="">
-		<usage>Optionnel</usage>
-		<desc>Adresse postale complémentaire.</desc>
+		<usage>Obsolescent</usage>
+		<desc></desc>
 	</element>
 	<element name="NumLigne" parent="" root="">
-		<usage>Obligatoire</usage>
+		<usage>Obsolescent</usage>
 		<desc>Numéro de ligne</desc>
 	</element>
 	<element name="TexteLigne" parent="" root="">
-		<usage>Obligatoire</usage>
+		<usage>Obsolescent</usage>
 		<desc>Texte de la ligne</desc>
 	</element>
 	<element name="CodePostal" parent="" root="">
 		<usage>Obligatoire</usage>
 		<desc>Code postal de l'adresse</desc>
 	</element>
+	<element name="Commune" parent="" root="">
+		<usage>Obligatoire</usage>
+		<desc>Commune</desc>
+	</element>
+	<element name="Complément" parent="" root="">
+		<usage>Conditionnel</usage>
+		<desc>Complément d'adresse<br/>
+		Obligatoire lorsqu'il existe</desc>
+	</element>
 	<element name="AdresseTravail" parent="ClientDetenteur" root="">
 		<usage>Optionnel</usage>
-		<desc>Addresse postale professionnelle du client.</desc>
+		<desc>Addresse postale professionnelle du client.<br/>
+		Séquence non détaillée ci-après (structure identique à la séquence Adresse)
+		</desc>
 	</element>
 	<element name="Coordonnees" parent="ClientDetenteur" root="">
-		<usage>Optionnel</usage>
-		<desc>Coordonnée supplémentaire du client.</desc>
+		<usage>Conditionnel</usage>
+		<desc>Coordonnée supplémentaire du client.<br/>
+		Le partenaire émetteur transmet toute information dont il dispose (mail, N° téléphone, ...)
+		</desc>
 	</element>
 	<element name="TypeCoordonnee" parent="Coordonnees" root="" isEnum="true">
 		<usage>Obligatoire</usage>
@@ -954,30 +1273,43 @@
 	</element>
 	<element name="CommunicationDonneesPersonnelles" parent="" root="">
 		<usage>Obligatoire</usage>
-		<desc>Indique si le client autorise la communication de ses données personnelles à un tiers 
-			(TRUE) ou non (FALSE)</desc>
+		<desc>Cette donnée permet d'indiquer aux partenaires du bassin si le client autorise la transmission de ses données personnelles à des entités non partenaires de l'interopérabilité 
+			(TRUE) ou non (FALSE)<br/>
+			Si l'information n'est pas disponible dans le système émetteur, alors l'élément sera par défaut renseigné avec la valeur 0.
+
+		</desc>
 	</element>
 	<element name="DateSaisie" parent="" root="">
 		<usage>Obligatoire</usage>
-		<desc>Dernière date de saisie des données personnelles du client</desc>
+		<desc>Dernière date de saisie des données personnelles du client par le système du réseau émetteur.<br/>
+		Si DateSaisie est postérieure à la dernière date de modification du fichier client du destinataire, alors ce dernier utilise les données de ce message pour mettre à jour sa base.
+		</desc>
 	</element>
 	<element name="ProfilClient" parent="" root="">
 		<usage>Optionnel</usage>
 		<desc>Profil socio-professionnel du client</desc>
 	</element>
-	<element name="CodeProfil" parent="ProfilClient" root="" isEnum="true">
+	<element name="CodeProfil" parent="ProfilClient" root="IBACDP:MessageAcquisitions">
+		<usage>Obligatoire</usage>
+		<desc>Code du profil</desc>
+	</element>
+	<element name="CodeProfil" parent="ProfilClient" root="IBACBP:MessageAcquisitions">
+		<usage>Obligatoire</usage>
+		<desc>Code du profil</desc>
+	</element>
+	<element name="CodeProfil" parent="ProfilClient" root="IBACCP:MessageAcquisitions">
 		<usage>Obligatoire</usage>
 		<desc>Code du profil</desc>
 	</element>
 	<element name="DateDebutValiditeProfil" parent="ProfilClient" root="">
-		<usage>Optionnel</usage>
-		<desc>Date de début de validité du profil</desc>
+		<usage>Conditionnel</usage>
+		<desc>Obligatoire si un profil est l'objet de l'opération, et s'il a une date de début de validité</desc>
 	</element>
 	<element name="DateFinValiditeProfil" parent="ProfilClient" root="">
-		<usage>Optionnel</usage>
-		<desc>Date de fin de validité du profil</desc>
+		<usage>Conditionnel</usage>
+		<desc>Obligatoire si un profil est l'objet de l'opération, et s'il a une date de fin de validité</desc>
 	</element>
-	<element name="CategorieSociale" parent="" root="">
+		<element name="CategorieSociale" parent="" root="">
 		<usage>Optionnel</usage>
 		<desc>Catégorie sociale</desc>
 	</element>
@@ -999,15 +1331,24 @@
 	</element>
 	<element name="PartenaireReferent" parent="" root="">
 		<usage>Optionnel</usage>
-		<desc>Partenaire du bassin d'intéropérabilité ayant enregistré le client.</desc>
+		<desc>Utilisé seulement s'il est fait le choix, au niveau du bassin, d'indiquer l'établissement (scolaire, universitaire, employeur...)</desc>
 	</element>	
 	<element name="Nom" parent="PartenaireReferent" root="">
 		<usage>Obsolescent</usage>
-		<desc>Nom du partenaire du bassin d'intéropérabilité</desc>
-	</element>	
+		<desc>Nom de l'établissement de référence</desc>
+	</element>
+	<element name="IdPartenaire" parent="PartenaireReferent" root="">
+		<usage>Obligatoire</usage>
+		<desc>Identifiant de l'établissement de Référence : le bassin d'interopérabilité déterminera la méthodologie de construction de cet identifiant spécifique : il est proposé qu'il soit construit de la sorte : TYPE_REFERENTIEL_IDENTIFIANT, avec : <br/>
+		<li>TYPE = Type d'Etablissement (nomenclature à gérer)</li>
+		<li>REFERENTIEL = identifiant du système de référence de numérotation (nomenclature à gérer)</li>
+		<li>IDENTIFIANT = identifiant du partenaire référent, pour ce type, dans le référentiel concerné</li>
+		</desc>
+	</element>		
 	<element name="ContrainteLignes" parent="ProduitInstalle" root="">
-		<usage>Optionnel</usage>
-		<desc>Contrainte concernant la ligne associée au produit.</desc>
+		<usage>Conditionnel</usage>
+		<desc>Contrainte concernant la ligne associée au produit.<br/>
+		Obligatoire si elle existe. Elle peut être utilisée indépendamment, ou en complément d'une contrainte géographique</desc>
 	</element>	
 	<element name="Transporteur" parent="ContrainteLignes" root="">
 		<usage>Obligatoire</usage>
@@ -1030,8 +1371,9 @@
 		<desc>Référentiel géographique associé à la ligne.</desc>
 	</element>	
 	<element name="ContrainteGroupesLignes" parent="ProduitInstalle" root="">
-		<usage>Optionnel</usage>
-		<desc>Contrainte concernant un groupe de ligne associée au produit.</desc>
+		<usage>Conditionnel</usage>
+		<desc>Contrainte concernant un groupe de ligne associée au produit.<br/>
+		Obligatoire si elle existe. Elle peut être utilisée indépendamment, ou en complément d'une contrainte géographique</desc>
 	</element>	
 	<element name="Transporteur" parent="ContrainteGroupesLignes" root="">
 		<usage>Obligatoire</usage>
@@ -1062,12 +1404,17 @@
 		<desc>Référentiel géographique associé à la ligne.</desc>
 	</element>	
 	<element name="ContrainteModale" parent="ProduitInstalle" root="">
-		<usage>Optionnel</usage>
-		<desc>Contrainte sur le mode de transport associé au produit.</desc>
+		<usage>Conditionnel</usage>
+		<desc>Contrainte sur le mode de transport associé au produit.<br/>
+		Obligatoire si elle existe, et si elle n'est pas déjà portée par les caractéristiques du produit. Elle peut être utilisée indépendamment, ou en complément d'une contrainte géographique</desc>
 	</element>	
-	<element name="AncienObjetImplique" parent="OperationVente" root="">
-		<usage>Optionnel</usage>
-		<desc>Ancien objet de l'acquisition.</desc>
+	<element name="AncienObjetImplique" parent="OperationVente" root="IBACDC:MessageAcquisitions">
+		<usage>Conditionnel</usage>
+		<desc>Objet précédent l'opération<br/>
+		Utilisé pour le flux IBACDC si le titre précédent a été écrasé en surcharge, et que son N° de série a été modifié<br/>
+		Son contenu est constitué des éléments strictement obligatoires dans le XSD, ainsi que des éléments nécessaires à sa bonne identification et traçabilité, en fonction de la finalité du système destinataire<br/>
+		Notamment, il est fortement recommandé de transmettre les différents Identifiants relatifs à cet ancien objet, voire certaines autres caractéristiques à des fins de SAV ou de statistiques.<br/>
+		A des fins de simplification, le contenu de la séquence n'est pas détaillé ici</desc>
 	</element>	
 	<element name="Objet" parent="ObjetImplique" root="">
 		<usage>Obligatoire</usage>
@@ -1089,9 +1436,83 @@
 	<element name="IBACDA:MessageAcquisitions" parent="" root="">
 		<desc>Informer les partenaires du bassin d'interoperabilité d'une opération de vente d'une application de transport.</desc>
 	</element>
+	<element name="IdOperation" parent="OperationVente" root="IBACDA:MessageAcquisitions">
+		<usage>Conditionnel</usage>
+		<desc>
+			Obligatoire si l'application n'est pas chargée / installée au moment de la vente<br/>
+			A utiliser, selon finalités souhaitées, dans les autres cas, pour identifier la commande ou l'élément de commande concerné par l'opération.
+		</desc>
+	</element>
+	<element name="TypeOperationVente" parent="OperationVente" root="IBACDA:MessageAcquisitions" isEnum="true">
+		<usage>Obligatoire</usage>
+		<desc> Pour le flux IBACDA, les valeurs peuvent notamment être les suivantes : 
+			<li>61 : distribution d'un support contenant une application transport</li>
+			<li>62 : distribution d'une application transport sur un support déjà en circulation</li>
+			<li>65 : transformation d'un support non nominatif en support nominatif</li>
+		</desc>
+	</element>
+	<element name="MontantOperation" parent="OperationVente" root="IBACDA:MessageAcquisitions">
+		<usage>Obligatoire</usage>
+		<desc>Montant réglé par le client, exprimé en centimes de la devise concernée.<br/>
+			Un montant nul sera renseigné avec la valeur « 0 ».
+		</desc>
+	</element>
+	<element name="MoyenPaiementPrincipal" parent="OperationVente" root="IBACDA:MessageAcquisitions" isEnum="true">
+		<usage>Optionnel</usage>
+		<desc></desc>
+	</element>
+	<element name="AncienObjetImplique" parent="OperationVente" root="IBACDA:MessageAcquisitions">
+		<usage>Optionnel</usage>
+		<desc>Non utilisé pour IBACDA, sauf en cas d'écrasement d'application
+		</desc>
+	</element>
 	<!-- IBACDP -->
 	<element name="IBACDP:MessageAcquisitions" parent="" root="">
 		<desc>Informer les partenaires du bassin d'interoperabilité d'une opération de reconstitution ou de renouvellement d'un profil client.</desc>
+	</element>
+	<element name="IdOperation" parent="OperationVente" root="IBACDP:MessageAcquisitions">
+		<usage>Conditionnel</usage>
+		<desc>Mêmes conditions que pour le flux IBACDC.
+		</desc>
+	</element>
+	<element name="TypeOperationVente" parent="OperationVente" root="IBACDP:MessageAcquisitions" isEnum="true">
+		<usage>Obligatoire</usage>
+		<desc> Pour le flux IBACDP, les valeurs peuvent notamment être les suivantes : 
+			<li>51 : distribution droit simple</li>
+			<li>53 : prolongation droit simple (changement de date de fin de validité du droit déjà inscrit sur le support</li>
+		</desc>
+	</element>
+	<element name="MontantOperation" parent="OperationVente" root="IBACDP:MessageAcquisitions">
+		<usage>Obligatoire</usage>
+		<desc>Montant réglé par le client, exprimé en centimes de la devise concernée.<br/>
+			La distribution d'un droit simple peut-être valorisée financièrement. Si elle ne l'est pas, un montant nul sera renseigné avec la valeur « 0 ».
+		</desc>
+	</element>
+	<element name="MoyenPaiementPrincipal" parent="OperationVente" root="IBACDP:MessageAcquisitions" isEnum="true">
+		<usage>Optionnel</usage>
+		<desc></desc>
+	</element>
+	<element name="IdContrat" parent="ContratProduit" root="IBACDP:MessageAcquisitions">
+		<usage>Optionnel</usage>
+		<desc>	Code du rang où le produit est inscrit, dans l'application transport <br/>
+		A utiliser obligatoirement si le produit est un droit simple, et si cette information est disponible.
+		</desc>
+	</element>
+	<element name="ClientDetenteur" parent="ContratProduit" root="IBACDP:MessageAcquisitions">
+		<usage>Obligatoire</usage>
+		<desc>Séquence utilisée pour s'échanger uniquement les données caractérisant le profil faisant l'objet de l'opération (au travers de la balise ProfilClient).
+		</desc>
+	</element>
+<!--ci-dessous, complément au ProfilClient précisé par ailleursl-->
+	<element name="ProfilClient" parent="" root="IBACDP:MessageAcquisitions">
+		<usage>Optionnel</usage>
+		<desc>OBLIGATOIRE pour IBACDP</desc>
+	</element>
+	<element name="SoldeCompteur" parent="ProduitInstalle" root="IBACDP:MessageAcquisitions">
+		<!--description complémentaire à la définition générique de SoldeCompteur, qui apparait aussi dans le fichier-->
+		<usage>Conditionnel</usage>
+		<desc>NON UTILISE POUR DES DROITS SIMPLES
+		</desc>
 	</element>
 	<element name="TrancheHoraire" parent="" root="">
 		<usage>Conditionnel</usage>
@@ -1135,33 +1556,197 @@
 		<usage>Optionnel</usage>
 		<desc>Identifiant du calendrier associé à la journée tarifaire.</desc>
 	</element>
+	<element name="AncienObjetImplique" parent="OperationVente" root="IBACDP:MessageAcquisitions">
+		<usage>Optionnel</usage>
+		<desc>Objet précédent l'opération<br/>
+		Utilisé pour le flux IBACDP seulement en cas d'écrasement de profil</desc>
+	</element>	
 	<!-- IBACBC -->
 	<element name="IBACBC:MessageAcquisitions" parent="" root="">
 		<desc>Informer les partenaires du bassin d'interoperabilité d'une opération de remboursement d'un titre de transport.</desc>
 	</element>
-	<element name="Effacable" parent="ProduitInstalle" root="">
+	<element name="IdOperation" parent="OperationVente" root="IBACBC:MessageAcquisitions">
+		<usage>Optionnel</usage>
+		<desc>Identifiant de l'opération - Utilisé si besoin.
+		</desc>
+	</element>
+	<element name="TypeOperationVente" parent="OperationVente" root="IBACBC:MessageAcquisitions" isEnum="true">
+		<usage>Obligatoire</usage>
+		<desc> Pour le flux IBACBC, les valeurs peuvent notamment être les suivantes : 
+			<li>10 : Remboursement</li>
+			<li>44 : suppression ou remboursement droit complexe</li>
+		</desc>
+	</element>
+	<element name="MontantOperation" parent="OperationVente" root="IBACBC:MessageAcquisitions">
+		<usage>Obligatoire</usage>
+		<desc>Montant total remboursé au client, exprimé en centimes de la devise concernée.<br/>
+			Un montant nul sera renseigné avec la valeur « 0 ».
+		</desc>
+	</element>
+	<element name="MoyenPaiementPrincipal" parent="OperationVente" root="IBACBC:MessageAcquisitions" isEnum="true">
+		<usage>Optionnel</usage>
+		<desc></desc>
+	</element>
+	<element name="Effacable" parent="ProduitInstalle" root="IBACBC:MessageAcquisitions">
 		<usage>Obligatoire</usage>
 		<desc>Indique si le produit installé peut être effacé (TRUE) ou non (FALSE)</desc>
+	</element>
+		<element name="AncienObjetImplique" parent="OperationVente" root="IBACBC:MessageAcquisitions">
+		<usage>Optionnel</usage>
+		<desc>Objet précédent l'opération<br/>
+		Non utilisé dans le cas d'une opération de remboursement.</desc>
 	</element>
 	<!-- IBACBP -->
 	<element name="IBACBP:MessageAcquisitions" parent="" root="">
 		<desc>Informer les partenaires du bassin d'interoperabilité d'une opération de remboursement d'un profil client.</desc>
 	</element>
+	<element name="IdOperation" parent="OperationVente" root="IBACBP:MessageAcquisitions">
+		<usage>Optionnel</usage>
+		<desc>Identifiant de l'opération - Utilisé si besoin.
+		</desc>
+	</element>
+	<element name="TypeOperationVente" parent="OperationVente" root="IBACBP:MessageAcquisitions" isEnum="true">
+		<usage>Obligatoire</usage>
+		<desc> Pour le flux IBACBC, les valeurs peuvent notamment être les suivantes : 
+			<li>54 : Suppression droits simple</li>
+		</desc>
+	</element>
+	<element name="MontantOperation" parent="OperationVente" root="IBACBP:MessageAcquisitions">
+		<usage>Obligatoire</usage>
+		<desc>même description que pour IBACBC
+		</desc>
+	</element>
+	<element name="MoyenPaiementPrincipal" parent="OperationVente" root="IBACBP:MessageAcquisitions" isEnum="true">
+		<usage>Optionnel</usage>
+		<desc>Même description que pour IBACBC</desc>
+	</element>
+	<element name="AncienObjetImplique" parent="OperationVente" root="IBACBP:MessageAcquisitions">
+		<usage>Optionnel</usage>
+		<desc>Objet précédent l'opération<br/>
+		Non utilisé dans le cas d'une opération de remboursement.</desc>
+	</element>
 	<!-- IBACBA -->
 	<element name="IBACBA:MessageAcquisitions" parent="" root="">
 		<desc>Informer les partenaires du bassin d'interoperabilité d'une opération de remboursement d'une application transport.</desc>
+	</element>
+	<element name="IdOperation" parent="OperationVente" root="IBACBA:MessageAcquisitions">
+		<usage>Optionnel</usage>
+		<desc>Identifiant de l'opération - Utilisé si besoin.
+		</desc>
+	</element>
+	<element name="TypeOperationVente" parent="OperationVente" root="IBACBA:MessageAcquisitions" isEnum="true">
+		<usage>Obligatoire</usage>
+		<desc> Pour le flux IBACBA, les valeurs peuvent notamment être les suivantes : 
+			<li>64 : suppression ou remboursement support ou application transport</li>
+		</desc>
+	</element>
+	<element name="MontantOperation" parent="OperationVente" root="IBACBA:MessageAcquisitions">
+		<usage>Obligatoire</usage>
+		<desc>Même description que pour IBACBC
+		</desc>
+	</element>
+	<element name="MoyenPaiementPrincipal" parent="OperationVente" root="IBACBA:MessageAcquisitions" isEnum="true">
+		<usage>Optionnel</usage>
+		<desc>Même description que pour IBACBC
+		</desc>
+	</element>
+	<element name="AncienObjetImplique" parent="OperationVente" root="IBACBA:MessageAcquisitions">
+		<usage>Optionnel</usage>
+		<desc>Objet précédent l'opération<br/>
+		Non utilisé dans le cas d'une opération de remboursement.</desc>
 	</element>
 	<!-- IBACCC -->
 	<element name="IBACCC:MessageAcquisitions" parent="" root="">
 		<desc>Informer les partenaires du bassin d'interoperabilité d'une opération de reconstitution ou de renouvellement d'un titre de transport.</desc>
 	</element>
+	<element name="IdOperation" parent="OperationVente" root="IBACCC:MessageAcquisitions">
+		<usage>Conditionnel</usage>
+		<desc>Mêmes conditions que pour le flux IBACDC.
+		</desc>
+	</element>
+	<element name="TypeOperationVente" parent="OperationVente" root="IBACCC:MessageAcquisitions" isEnum="true">
+		<usage>Obligatoire</usage>
+		<desc> Pour le flux IBACCC, les valeurs peuvent notamment être les suivantes : 
+			<li>29 : reconstitution</li>
+			<li>36 : transfert d’un titre dans le cas d’un renouvellement</li>
+			<li>42 : reconstitution droit complexe</li>
+			<li>46 : transfert/duplication d’un droit complexe dans le cas d’un renouvellement</li>
+		</desc>
+	</element>
+	<element name="MontantOperation" parent="OperationVente" root="IBACCC:MessageAcquisitions">
+		<usage>Obligatoire</usage>
+		<desc>Même description que pour IBACDC
+		</desc>
+	</element>
+	<element name="MoyenPaiementPrincipal" parent="OperationVente" root="IBACCC:MessageAcquisitions" isEnum="true">
+		<usage>Obligatoire</usage>
+		<desc>Même description que pour IBACDC</desc>
+	</element>
+	<element name="AncienObjetImplique" parent="OperationVente" root="IBACCC:MessageAcquisitions">
+		<usage>Obligatoire</usage>
+		<desc>Description de l'objet précédent (par exemple, détails du titre qui existait sur le support avant l'opération de reconstitution : identifiant, ...) . Permet de faire le lien entre l'ancien et le nouveau titre<br/>
+		Sont valorisés l'ensemble des éléments de la séquence nécessaires à la bonne traçabilité de l'objet précédent.<br/>
+		A des fins de simplification, le contenu de la séquence n'est pas détaillé ici</desc>
+	</element>
 	<!-- IBACCP -->
 	<element name="IBACCP:MessageAcquisitions" parent="" root="">
 		<desc>Informer les partenaires du bassin d'interoperabilité d'une opération de reconstitution ou de renouvellement d'un profil client.</desc>
 	</element>
+	<element name="IdOperation" parent="OperationVente" root="IBACCP:MessageAcquisitions">
+		<usage>Conditionnel</usage>
+		<desc>Mêmes conditions que pour le flux IBACBC.
+		</desc>
+	</element>
+	<element name="TypeOperationVente" parent="OperationVente" root="IBACCA:MessageAcquisitions" isEnum="true">
+		<usage>Obligatoire</usage>
+		<desc> Pour le flux IBACCA, les valeurs peuvent notamment être les suivantes : 
+			<li>52 : reconstitution droit simple</li>
+			</desc>
+	</element>
+		<element name="MontantOperation" parent="OperationVente" root="IBACCP:MessageAcquisitions">
+		<usage>Obligatoire</usage>
+		<desc>Même description que pour IBACCC
+		</desc>
+	</element>
+	<element name="MoyenPaiementPrincipal" parent="OperationVente" root="IBACCP:MessageAcquisitions" isEnum="true">
+		<usage>Obligatoire</usage>
+		<desc>Même description que pour IBACCC</desc>
+	</element>
+	<element name="AncienObjetImplique" parent="OperationVente" root="IBACCP:MessageAcquisitions">
+		<usage>Conditionnel</usage>
+		<desc>Objet précédent l'opération<br/>
+		Utilisé pour le flux IBACCP si des caractéristiques du profil ont été modifiées entre le profil précédent et le nouveau profil (reconstitué).</desc>
+	</element>	
 	<!-- IBACCA -->
 	<element name="IBACCA:MessageAcquisitions" parent="" root="">
 		<desc>Informer les partenaires du bassin d'interoperabilité d'une opération de reconstitution ou de renouvellement d'une application transport.</desc>
+	</element>
+	<element name="IdOperation" parent="OperationVente" root="IBACCA:MessageAcquisitions">
+		<usage>Conditionnel</usage>
+		<desc>Mêmes conditions que pour le flux IBACDC.
+		</desc>
+	</element>
+	<element name="TypeOperationVente" parent="OperationVente" root="IBACCA:MessageAcquisitions" isEnum="true">
+		<usage>Obligatoire</usage>
+		<desc> Pour le flux IBACCA, les valeurs peuvent notamment être les suivantes : 
+			<li>63 : reconstitution support ou application transport</li>
+			<li>66 : renouvellement support ou application transport</li>
+		</desc>
+	</element>
+	<element name="MontantOperation" parent="OperationVente" root="IBACCA:MessageAcquisitions">
+		<usage>Obligatoire</usage>
+		<desc>Même description que pour IBACDC
+		</desc>
+	</element>
+	<element name="MoyenPaiementPrincipal" parent="OperationVente" root="IBACCA:MessageAcquisitions" isEnum="true">
+		<usage>Obligatoire</usage>
+		<desc>Même description que pour IBACDC</desc>
+	</element>
+	<element name="AncienObjetImplique" parent="OperationVente" root="IBACCA:MessageAcquisitions">
+		<usage>Obligatoire</usage>
+		<desc>Description de l'objet précédent (par exemple, détails de l'application ou du support qui a été perdu / volé / ... Permet par exemple de faire le lien entre l'ancien et le nouveau support<br/>
+		Sont valorisés l'ensemble des éléments de la séquence nécessaires à la bonne traçabilité de l'objet précédent.<br/>
+		A des fins de simplification, le contenu de la séquence n'est pas détaillé ici</desc>
 	</element>
 	<!-- IBLSEC -->
 	<element name="IBLSEC:MajListeSecurite" parent="" root="">
@@ -1171,18 +1756,9 @@
 		<usage>Obligatoire</usage>
 		<desc>Liste de compte client</desc>
 	</element>
-	<element name="TypeListeSecurite" parent="ListeSecurite" root="IBLSEC:MajListeSecurite" isEnum="true">
-		<usage>Obligatoire</usage>
-		<desc>Type de la liste<br/>Doit être égal à "17:Envoi de données client"</desc>
-	</element>
-	<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSEC:MajListeSecurite" isEnum="true">
+		<element name="TypeMiseaJour" parent="ListeSecurite" root="IBLSEC:MajListeSecurite" isEnum="true">
 		<usage>Obsolescent</usage>
-		<desc>Permet de préciser si: 
-				<ul>
-				<li>c'est une liste exhaustive qui est transmise : "1"</li>
-				<li>ce ne sont que des mises à jour (« incrémentiel ») : "2".</li>
-				</ul>
-		</desc>
+		<desc>	</desc>
 	</element>
 	<element name="IdentifiantListe" parent="ListeSecurite" root="">
 		<usage>Obsolescent</usage>
@@ -1207,10 +1783,6 @@
 	<element name="ListeApplicationUtilisee" parent="EntreeClient" root="">
 		<usage>Obligatoire</usage>
 		<desc>Liste des applidations utilisées par le compte client</desc>
-	</element>
-	<element name="ApplicationUtilisee" parent="ListeApplicationUtilisee" root="">
-		<usage>Optionnel</usage>
-		<desc>Description de l'application utilisée</desc>
 	</element>
 	<element name="DateHeureDebutValidite" parent="ApplicationUtilisee" root="">
 		<usage>Obsolescent</usage>
