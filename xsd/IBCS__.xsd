@@ -10,9 +10,9 @@
 					<xs:documentation>Date de l’invalidation </xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="LieuAction" type="InterBOB:t_LieuTarifaire" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="LieuAction" type="InterBOB:t_LieuTarifaire" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="TypeListeSecurite" type="InterBOB:t_EnumTypeListeSecurite" minOccurs="1" maxOccurs="1" fixed="2"/>
-			<xs:element name="EquipementAction" type="IBCS:t_Equipement" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="EquipementAction" type="IBCS:t_Equipement" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="EntreeApplicationInstallee" type="IB:t_EntreeApplicationInstallee" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>

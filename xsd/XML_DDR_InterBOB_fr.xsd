@@ -37,7 +37,7 @@
 				<xs:sequence>
 					<xs:element name="DateHeureAction" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
 					<xs:element name="LieuAction" type="InterBOB:t_LieuTarifaire" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="IdentifiantListe" type="InterBOB:t_IdListe" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="IdentifiantListe" type="InterBOB:t_Identifiant" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="EtatAction" type="InterBOB:t_EnumEtatAction" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="TypeListeSecurite" type="InterBOB:t_EnumTypeListeSecurite" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="EquipementAction" type="InterBOB:t_Equipement" minOccurs="0" maxOccurs="1"/>
@@ -84,7 +84,7 @@
 	<xs:complexType name="t_Client">
 		<xs:sequence>
 			<xs:element name="ProfilClient" type="InterBOB:t_ProfilUsagerClient" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="IdClient" type="InterBOB:t_IdClient" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IdClient" type="InterBOB:t_Identifiant" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="Nom" type="xs:normalizedString" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="Prenom" type="xs:normalizedString" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="Titre" type="InterBOB:t_EnumTitre" minOccurs="0" maxOccurs="1"/>
@@ -195,7 +195,7 @@
 	</xs:complexType>
 	<xs:complexType name="t_ElementAccuseReception">
 		<xs:sequence>
-			<xs:element name="IdMessageConcerne" type="InterBOB:t_IdMessage" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IdMessageConcerne" type="InterBOB:t_Identifiant" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="QualifiantReception" type="InterBOB:t_EnumQualifiantReception" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="Commentaire" type="InterBOB:t_Commentaire" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="ElementControle" type="xs:string" minOccurs="0" maxOccurs="1"/>
@@ -272,23 +272,8 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:simpleType name="t_IdListe">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:simpleType name="t_IdMessage">
-		<xs:restriction base="xs:nonNegativeInteger"/>
-	</xs:simpleType>
-	<xs:simpleType name="t_IdPartenaire">
-		<xs:restriction base="InterBOB:t_Identifiant"/>
-	</xs:simpleType>
 	<xs:simpleType name="t_IdPays">
 		<xs:restriction base="InterBOB:t_NbTroisChiffres"/>
-	</xs:simpleType>
-	<xs:simpleType name="t_IdSousSystemeSecurite">
-		<xs:restriction base="InterBOB:t_Identifiant"/>
-	</xs:simpleType>
-	<xs:simpleType name="t_IdSupport">
-		<xs:restriction base="InterBOB:t_Identifiant"/>
 	</xs:simpleType>
 	<xs:complexType name="t_JourTypeTarifaire">
 		<xs:sequence>
@@ -330,11 +315,8 @@
 			<xs:element name="TypeReferentiel" type="InterBOB:t_TypeReferentiel" minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:simpleType name="t_IdClient">
-		<xs:restriction base="InterBOB:t_Identifiant"/>
-	</xs:simpleType>
 	<xs:simpleType name="t_Identifiant">
-		<xs:restriction base="xs:nonNegativeInteger"/>
+		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:complexType name="t_LieuDistribution">
 		<xs:complexContent>
@@ -348,7 +330,7 @@
 	</xs:complexType>
 	<xs:complexType name="t_LieuTarifaire">
 		<xs:sequence>
-			<xs:element name="IdLocalisation" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IdLocalisation" type="InterBOB:t_Identifiant" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="ReferentielLocalisation" type="InterBOB:t_TypeReferentiel" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="Sens" type="xs:string" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="Ligne" type="InterBOB:t_Ligne" minOccurs="0" maxOccurs="1"/>
@@ -392,7 +374,7 @@
 	</xs:complexType>
 	<xs:complexType name="t_MatriceApplicationEnregistree">
 		<xs:sequence>
-			<xs:element name="IdMatriceApplication" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IdMatriceApplication" type="InterBOB:t_Identifiant" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="TypeApplication" type="InterBOB:t_EnumTypeApplication" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="Proprietaire" type="InterBOB:t_OrganisationEnregistree" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="BassinsAcceptation" type="InterBOB:t_BassinsAcceptation" minOccurs="1" maxOccurs="unbounded"/>
@@ -410,7 +392,7 @@
 			<xs:element name="CorrespondantEmetteur" type="InterBOB:t_OrganisationEnregistree" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="CorrespondantDestinataire" type="InterBOB:t_OrganisationEnregistree" minOccurs="1" maxOccurs="unbounded"/>
 			<xs:element name="FormatMessage" type="InterBOB:t_FormatMessage" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="IdMessage" type="InterBOB:t_IdMessage" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IdMessage" type="InterBOB:t_Identifiant" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="ElementControleIntegrite" type="xs:string" minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -473,15 +455,15 @@
 			<xs:extension base="InterBOB:t_PlageSupportAbstrait">
 				<xs:sequence>
 					<xs:element name="TypeSupport" type="InterBOB:t_EnumTypeSupport" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="IdSupportDebut" type="InterBOB:t_IdSupport" minOccurs="1" maxOccurs="1"/>
-					<xs:element name="IdSupportFin" type="InterBOB:t_IdSupport" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="IdSupportDebut" type="InterBOB:t_Identifiant" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="IdSupportFin" type="InterBOB:t_Identifiant" minOccurs="1" maxOccurs="1"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="t_PointArret">
 		<xs:sequence>
-			<xs:element name="IdPointArret" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IdPointArret" type="InterBOB:t_Identifiant" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="TypeReferentiel" type="InterBOB:t_TypeReferentiel" minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -624,8 +606,8 @@
 	<xs:complexType name="t_OrganisationEnregistree">
 		<xs:sequence>
 			<xs:element name="Nom" type="xs:normalizedString" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="IdPartenaire" type="InterBOB:t_IdPartenaire" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="IdSousPartenaire" type="InterBOB:t_IdPartenaire" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IdPartenaire" type="InterBOB:t_Identifiant" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IdSousPartenaire" type="InterBOB:t_Identifiant" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="CodePays" type="InterBOB:t_IdPays" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="CodeBassin" type="InterBOB:t_NbTroisChiffres" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
@@ -639,8 +621,8 @@
 	</xs:complexType>
 	<xs:complexType name="t_PlageApplicationInstallee">
 		<xs:sequence>
-			<xs:element name="IdApplicationInstalleeDebut" type="xs:string" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="IdApplicationInstalleeFin" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IdApplicationInstalleeDebut" type="InterBOB:t_Identifiant" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IdApplicationInstalleeFin" type="InterBOB:t_Identifiant" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="MatriceApplicationEnregistree" type="InterBOB:t_MatriceApplicationEnregistree" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="Distributeur" type="InterBOB:t_OrganisationEnregistree" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
@@ -670,13 +652,13 @@
 	<xs:complexType name="t_ReferenceProduit">
 		<xs:sequence>
 			<xs:element name="ProprietaireProduit" type="InterBOB:t_OrganisationEnregistree" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="IdProduit" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IdProduit" type="InterBOB:t_Identifiant" minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="t_ReferenceProduitInstalle">
 		<xs:sequence>
 			<xs:element name="ExploitantVente" type="InterBOB:t_OrganisationEnregistree" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="IdProduitInstalle" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IdProduitInstalle" type="InterBOB:t_Identifiant" minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="t_SoldeCompteur">
@@ -688,7 +670,7 @@
 	</xs:complexType>
 	<xs:complexType name="t_SousSystemeSecurite">
 		<xs:sequence>
-			<xs:element name="IdSousSystemeSecurite" type="InterBOB:t_IdSousSystemeSecurite" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IdSousSystemeSecurite" type="InterBOB:t_Identifiant" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="TypeTechnique" type="InterBOB:t_EnumTypeTechniqueSousSystemeSecurite" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="EmetteurSousSystemeSecurite" type="InterBOB:t_OrganisationEnregistree" minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
@@ -698,7 +680,7 @@
 			<xs:element name="FormeContenant" type="InterBOB:t_EnumFormeContenant" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="TypeSupport" type="InterBOB:t_EnumTypeSupport" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="CategorieSupport" type="InterBOB:t_EnumCategorie" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="IdSupport" type="InterBOB:t_IdSupport" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IdSupport" type="InterBOB:t_Identifiant" minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="t_SupportUtilisateurAbstrait" abstract="true">
@@ -855,15 +837,15 @@
 	<xs:complexType name="t_Application">
 		<xs:sequence>
 			<xs:element name="AID" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="IdApplicationInstallee" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="MatriceApplicationEnregistree" type="InterBOB:t_MatriceApplicationEnregistree" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IdApplicationInstallee" type="InterBOB:t_Identifiant" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="MatriceApplicationEnregistree" type="InterBOB:t_MatriceApplicationEnregistree" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="Distributeur" type="InterBOB:t_OrganisationEnregistree" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="DateHeureFinValidite" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="t_ListeAbstrait" abstract="true">
 		<xs:sequence>
-			<xs:element name="IdentifiantListe" type="InterBOB:t_IdListe" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IdentifiantListe" type="InterBOB:t_Identifiant" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="DateHeureEmission" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="TypeListeSecurite" type="InterBOB:t_EnumTypeListeSecurite" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>

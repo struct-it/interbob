@@ -4,7 +4,7 @@
 	<xs:import namespace="urn:InterBOB_V1" schemaLocation="XML_DDR_InterBOB_fr.xsd"/>
 	<xs:complexType name="t_ListeSecurite">
 		<xs:complexContent>
-			<xs:extension base="InterBOB:t_ListeAbstrait">
+			<xs:extension base="InterBOB:t_Liste">
 				<xs:sequence>
 					<xs:element name="EntreeListeSecurite" type="IBLSSC:t_EntreeListeSecurite" minOccurs="1" maxOccurs="unbounded"/>
 				</xs:sequence>
