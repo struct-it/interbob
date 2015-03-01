@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema targetNamespace="urn:IB_V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:IB="urn:IB_V1" xmlns:InterBOB="urn:InterBOB_V1">
-	<xs:import namespace="urn:InterBOB_V1" schemaLocation="XML_DDR_InterBOB_Local_fr.xsd"/>
 	<xs:import namespace="urn:InterBOB_V1" schemaLocation="XML_DDR_InterBOB_fr.xsd"/>
 	<xs:complexType name="t_ApplicationInstallee">
 		<xs:annotation>
@@ -89,14 +88,6 @@
 	<xs:complexType name="t_ListeApplicationUtilisee">
 		<xs:sequence>
 			<xs:element name="ApplicationUtilisee" type="InterBOB:t_ApplicationUtilisee" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="t_SupportUtilisateurAbstrait" abstract="true">
-		<xs:sequence>
-			<xs:element name="FormeContenant" type="InterBOB:t_EnumFormeContenant" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="TypeSupport" type="InterBOB:t_EnumTypeSupport" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="CategorieSupport" type="InterBOB:t_EnumCategorie" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="IdSupport" type="InterBOB:t_Identifiant" minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
 </xs:schema>

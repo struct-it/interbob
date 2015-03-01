@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="urn:InterBOB_V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:IB="urn:IB_V1" xmlns:InterBOB="urn:InterBOB_V1">
+<xs:schema targetNamespace="urn:InterBOB_V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:InterBOB="urn:InterBOB_V1">
 	<xs:annotation>
 		<xs:documentation>Schéma XML du corps principal du dictionnaire de données d'InterBOB.</xs:documentation>
 	</xs:annotation>
-	<xs:import namespace="urn:IB_V1" schemaLocation="IB____.xsd"/>
 	<xs:include schemaLocation="XML_DDR_InterBOB_Local_fr.xsd"/>
 	<xs:complexType name="t_AccesValide">
 		<xs:sequence>
@@ -806,7 +805,7 @@
 	</xs:complexType>
 	<xs:complexType name="t_SupportUtilisateurAbstraitAnonyme" abstract="true">
 		<xs:complexContent>
-			<xs:extension base="IB:t_SupportUtilisateurAbstrait">
+			<xs:extension base="InterBOB:t_SupportContraint">
 				<xs:sequence>
 					<xs:element name="ContratSupport" type="InterBOB:t_Contrat" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="DateHeureEmission" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
@@ -883,5 +882,13 @@
 			<xs:element name="EmetteurSupportEnregistre" type="InterBOB:t_OrganisationEnregistree" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="EmetteurSupportExtraBassin" type="InterBOB:t_OrganisationExtraBassin" minOccurs="0" maxOccurs="1"/>
 		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="t_SupportContraint" abstract="true">
+		<xs:sequence>
+			<xs:element name="FormeContenant" type="InterBOB:t_EnumFormeContenant" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="TypeSupport" type="InterBOB:t_EnumTypeSupport" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="CategorieSupport" type="InterBOB:t_EnumCategorie" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IdSupport" type="InterBOB:t_Identifiant" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
 	</xs:complexType>
 </xs:schema>
