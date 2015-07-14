@@ -49,7 +49,7 @@
 		<xs:complexContent>
 			<xs:extension base="InterBOB:t_Message">
 				<xs:sequence>
-					<xs:element name="ActionListeSecurite" type="IBCSTS:t_ActionListeSecurite" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="ActionListeSecurite" type="IBCSTS:t_ActionListeSecurite" minOccurs="1" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
