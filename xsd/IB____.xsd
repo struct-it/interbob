@@ -66,12 +66,11 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="t_EntreeClient">
+	<xs:complexType name="t_EntreeClientAbstraite" abstract="true">
 		<xs:complexContent>
 			<xs:extension base="InterBOB:t_EntreeListeAbstrait">
 				<xs:sequence>
-					<xs:element name="ApplicationUtilisee" type="InterBOB:t_ApplicationUtilisee" minOccurs="1" maxOccurs="unbounded"/>
-					<xs:element name="ClientDetenteur" type="InterBOB:t_Client" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="ApplicationUtilisee" type="IB:t_ApplicationInstallee" minOccurs="1" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -89,5 +88,24 @@
 		<xs:sequence>
 			<xs:element name="ApplicationUtilisee" type="InterBOB:t_ApplicationUtilisee" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="t_EntreeClient">
+		<xs:complexContent>
+			<xs:extension base="IB:t_EntreeClientAbstraite">
+				<xs:choice>
+					<xs:element name="ClientDetenteur" type="InterBOB:t_Client" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="ClientDetenteurMoral" type="IB:t_ClientMoral" minOccurs="0" maxOccurs="1"/>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="t_ClientMoral">
+		<xs:complexContent>
+			<xs:extension base="InterBOB:t_Client">
+				<xs:sequence>
+					<xs:element name="Immatriculation" type="xs:normalizedString" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 </xs:schema>
