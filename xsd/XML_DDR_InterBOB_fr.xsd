@@ -51,7 +51,7 @@
 			<xs:element name="NumVoie" type="xs:string" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="TypeVoie" type="InterBOB:t_EnumTypeVoie" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="LibelleVoie" type="InterBOB:t_LibelleVoie" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="CodePostal" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="CodePostal" type="xs:string" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="Commune" type="InterBOB:t_Commune" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="Complement" type="xs:string" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="CodePays" type="InterBOB:t_IdPays" minOccurs="0" maxOccurs="1"/>
@@ -88,6 +88,7 @@
 			<xs:element name="Prenom" type="xs:normalizedString" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="Titre" type="InterBOB:t_EnumTitre" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="DateNaissance" type="xs:date" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="CommuneNaissance" type="InterBOB:t_AdressePostale" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="Adresse" type="InterBOB:t_AdressePostale" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="TelephonePrive" type="xs:normalizedString" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="AdresseTravail" type="InterBOB:t_AdressePostale" minOccurs="0" maxOccurs="1"/>

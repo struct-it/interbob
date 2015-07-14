@@ -445,7 +445,7 @@ Emetteur de l'ApplicationTransport ou du BSC
 		<desc>Entrée de la liste de type "Données client"</desc>
 	</element>
 	<element name="ClientDetenteur" parent="EntreeClient" root="">
-		<usage>Obligatoire</usage>
+		<usage>Conditionnel</usage>
 		<desc>Données du client</desc>
 	</element>
 	<element name="CodeProfil" parent="ProfilClient" root="IBLSRF:MajListeSecurite">
@@ -1197,6 +1197,10 @@ Si besoin, il est possible d'intégrer plusieurs occurences de l'élément Solde
 		Dans le cas où cet élément ne peut être renseigné avec une valeur significative (ex: cas du client personne morale), il est renseigné avec une valeur par défaut : 01/01/1900
 		</desc>
 	</element>
+	<element name="CommuneNaissance" parent="ClientDetenteur" root="">
+		<usage>Obligatoire</usage>
+		<desc>Commune de naissance du client.</desc>
+	</element>	
 	<element name="TelephonePrive" parent="ClientDetenteur" root="">
 		<usage>Optionnel</usage>
 		<desc>Numéro de téléphone privé du client.</desc>
@@ -1239,7 +1243,7 @@ Si besoin, il est possible d'intégrer plusieurs occurences de l'élément Solde
 		<desc>Texte de la ligne</desc>
 	</element>
 	<element name="CodePostal" parent="" root="">
-		<usage>Obligatoire</usage>
+		<usage>Conditionnel</usage>
 		<desc>Code postal de l'adresse</desc>
 	</element>
 	<element name="Commune" parent="" root="">
