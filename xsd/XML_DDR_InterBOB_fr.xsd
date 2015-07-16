@@ -88,7 +88,7 @@
 			<xs:element name="Prenom" type="xs:normalizedString" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="Titre" type="InterBOB:t_EnumTitre" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="DateNaissance" type="xs:date" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="CommuneNaissance" type="InterBOB:t_AdressePostale" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="LieuNaissance" type="InterBOB:t_AdressePostale" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="Adresse" type="InterBOB:t_AdressePostale" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="TelephonePrive" type="xs:normalizedString" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="AdresseTravail" type="InterBOB:t_AdressePostale" minOccurs="0" maxOccurs="1"/>

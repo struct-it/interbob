@@ -1197,9 +1197,9 @@ Si besoin, il est possible d'intégrer plusieurs occurences de l'élément Solde
 		Dans le cas où cet élément ne peut être renseigné avec une valeur significative (ex: cas du client personne morale), il est renseigné avec une valeur par défaut : 01/01/1900
 		</desc>
 	</element>
-	<element name="CommuneNaissance" parent="ClientDetenteur" root="">
+	<element name="LieuNaissance" parent="ClientDetenteur" root="">
 		<usage>Obligatoire</usage>
-		<desc>Commune de naissance du client.</desc>
+		<desc>Lieu de naissance du client.</desc>
 	</element>	
 	<element name="TelephonePrive" parent="ClientDetenteur" root="">
 		<usage>Optionnel</usage>

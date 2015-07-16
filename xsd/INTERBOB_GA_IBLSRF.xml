@@ -3,43 +3,43 @@
 <?xml-stylesheet type="text/xsl" href="INTERBOB.xslt"?>
 <!--Changement de déclaration-->
 <IBLSRF:MajListeSecurite xsi:schemaLocation="urn:IBLSRF_V1 IBLSRF.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:IBLSRF="urn:IBLSRF_V1">
-    <DateHeure>
+	<DateHeure>
 2012-12-05T11:53:52</DateHeure>
-    <CorrespondantEmetteur>
-        <Nom></Nom>
-        <IdPartenaire>024</IdPartenaire>
-        <CodePays>000</CodePays>
-        <CodeBassin>912</CodeBassin>
-    </CorrespondantEmetteur>
-    <CorrespondantDestinataire>
-        <Nom></Nom>
-        <IdPartenaire>000</IdPartenaire>
-        <CodePays>000</CodePays>
-        <CodeBassin>912</CodeBassin>
-    </CorrespondantDestinataire>
-    <FormatMessage>
-       	 <ReferenceNorme>IBLSDC:MajListeSecurite</ReferenceNorme>
-	<VersionNorme>1.2:912.1</VersionNorme>
-    </FormatMessage>
-    <IdMessage>25</IdMessage>
-    <ElementControleIntegrite></ElementControleIntegrite>
-    <ListeSecurite>
-	<IdentifiantListe></IdentifiantListe>
- 	<DateHeureEmission>2012-12-05T11:53:52</DateHeureEmission>
-        	<TypeListeSecurite>17</TypeListeSecurite>
-        	<ActionParDefaut></ActionParDefaut>
-        	<TypeMiseaJour>1</TypeMiseaJour>
-        <EntreeListeSecurite>
-            <EntreeClient>
-                <PositionDansListe>1</PositionDansListe>
-                <ActionDemandee></ActionDemandee>
-                <DateDebutEffet>1957-08-13</DateDebutEffet>
-                <DateFinEffet>1957-08-13</DateFinEffet>
-                <ApplicationUtilisee>
-	    				<AID>A0000004040125000001</AID>
+	<CorrespondantEmetteur>
+		<Nom/>
+		<IdPartenaire>024</IdPartenaire>
+		<CodePays>000</CodePays>
+		<CodeBassin>912</CodeBassin>
+	</CorrespondantEmetteur>
+	<CorrespondantDestinataire>
+		<Nom/>
+		<IdPartenaire>000</IdPartenaire>
+		<CodePays>000</CodePays>
+		<CodeBassin>912</CodeBassin>
+	</CorrespondantDestinataire>
+	<FormatMessage>
+		<ReferenceNorme>IBLSDC:MajListeSecurite</ReferenceNorme>
+		<VersionNorme>1.2:912.1</VersionNorme>
+	</FormatMessage>
+	<IdMessage>25</IdMessage>
+	<ElementControleIntegrite/>
+	<ListeSecurite>
+		<IdentifiantListe/>
+		<DateHeureEmission>2012-12-05T11:53:52</DateHeureEmission>
+		<TypeListeSecurite>17</TypeListeSecurite>
+		<ActionParDefaut/>
+		<TypeMiseaJour>1</TypeMiseaJour>
+		<EntreeListeSecurite>
+			<EntreeClient>
+				<PositionDansListe>1</PositionDansListe>
+				<ActionDemandee/>
+				<DateDebutEffet>1957-08-13</DateDebutEffet>
+				<DateFinEffet>1957-08-13</DateFinEffet>
+				<ApplicationUtilisee>
+					<AID>A0000004040125000001</AID>
 					<IdApplicationInstallee>201234567</IdApplicationInstallee>
 					<MatriceApplicationEnregistree>
-						<IdMatriceApplication></IdMatriceApplication>
+						<IdMatriceApplication/>
 						<TypeApplication>0</TypeApplication>
 						<Proprietaire>
 							<Nom>normalizedString</Nom>
@@ -59,71 +59,71 @@
 						<CodePays>250</CodePays>
 						<CodeBassin>912</CodeBassin>
 					</Distributeur>
-                    	<DateHeureFinValidite>2016-12-17T09:30:47</DateHeureFinValidite>
-                </ApplicationUtilisee>
-                <ClientDetenteur>
-                    <ProfilClient>
-                        <CodeProfil>0</CodeProfil>
-                        <DateDebutValiditeProfil>1957-08-13</DateDebutValiditeProfil>
-                        <DateFinValiditeProfil>1957-08-13</DateFinValiditeProfil>
-                        <CategorieSociale/>
-                        <NiveaudEtudes/>
-                        <Profession/>
-                        <Sexe/>
-                        <TranchedAge/>
-                    </ProfilClient>
-                    <IdClient>
-25091200212345678910</IdClient>
-                    <Nom>INTER</Nom>
-                    <Prenom>BOB</Prenom>
-                    <Titre>1</Titre>
-                    <DateNaissance>
-2015-01-01</DateNaissance>
-                    <Adresse>
-                        <LigneAdresse>
-                            <NumLigne>1</NumLigne>
-                            <TexteLigne/>
-                        </LigneAdresse>
-                         <NumVoie>00002</NumVoie>
-                	<TypeVoie>AV</TypeVoie>
-                	<LibelleVoie>DE STALINGRAD</LibelleVoie>
-               	 <CodePostal>30100</CodePostal>
-                	
-<Commune>ALES</Commune>
-                        	<Complement>QUARTIER VAL FLEURI</Complement>
-                        	<CodePays>250</CodePays>
-                    </Adresse>
-                    	<TelephonePrive/>
-                    <AdresseTravail>
-                        <!-- non détaillé-->
-                     <LigneAdresse>
-	<NumLigne>1</NumLigne>
-	<TexteLigne>String</TexteLigne>
-</LigneAdresse>
-                     <NumVoie>String</NumVoie>
-                     <LibelleVoie>String</LibelleVoie>
-                     <CodePostal>String</CodePostal>
-                    </AdresseTravail>
-                    <TelephoneTravail/>
-                    <Coordonnees>
-                        <TypeCoordonnee>1</TypeCoordonnee>
-                        <ValeurCoordonnee>+33 442263106</ValeurCoordonnee>
-                    </Coordonnees>
-                    <Coordonnees>
-                        <TypeCoordonnee>9</TypeCoordonnee>
-                        <ValeurCoordonnee>inter.bob@gt6.fr</ValeurCoordonnee>
-                    </Coordonnees>
-                    <PartenaireReferent>
-                        <Nom>COLLEGE DES CEVENNES</Nom>
-                        <IdPartenaire>1725012345</IdPartenaire>
-                        <CodePays>250</CodePays>
-                        <CodeBassin>913</CodeBassin>
-                    </PartenaireReferent>
-                    <CommunicationDonneesPersonnelles>0</CommunicationDonneesPersonnelles>
-                    <DateSaisie>
-2013-03-13</DateSaisie>
-                </ClientDetenteur>
-            </EntreeClient>
-        </EntreeListeSecurite>
-     </ListeSecurite>
+					<DateHeureFinValidite>2016-12-17T09:30:47</DateHeureFinValidite>
+				</ApplicationUtilisee>
+				<ClientDetenteur>
+					<ProfilClient>
+						<CodeProfil>0</CodeProfil>
+						<DateDebutValiditeProfil>1957-08-13</DateDebutValiditeProfil>
+						<DateFinValiditeProfil>1957-08-13</DateFinValiditeProfil>
+						<CategorieSociale/>
+						<NiveaudEtudes/>
+						<Profession/>
+						<Sexe/>
+						<TranchedAge/>
+					</ProfilClient>
+					<IdClient>25091200212345678910</IdClient>
+					<Nom>INTER</Nom>
+					<Prenom>BOB</Prenom>
+					<Titre>1</Titre>
+					<DateNaissance>2015-01-01</DateNaissance>
+					<LieuNaissance>
+						<CodePostal>69002</CodePostal>
+						<Commune>LYON</Commune>
+					</LieuNaissance>
+					<Adresse>
+						<LigneAdresse>
+							<NumLigne>1</NumLigne>
+							<TexteLigne/>
+						</LigneAdresse>
+						<NumVoie>00002</NumVoie>
+						<TypeVoie>AV</TypeVoie>
+						<LibelleVoie>DE STALINGRAD</LibelleVoie>
+						<CodePostal>30100</CodePostal>
+						<Commune>ALES</Commune>
+						<Complement>QUARTIER VAL FLEURI</Complement>
+						<CodePays>250</CodePays>
+					</Adresse>
+					<TelephonePrive/>
+					<AdresseTravail>
+						<!-- non détaillé-->
+						<LigneAdresse>
+							<NumLigne>1</NumLigne>
+							<TexteLigne>String</TexteLigne>
+						</LigneAdresse>
+						<NumVoie>String</NumVoie>
+						<LibelleVoie>String</LibelleVoie>
+						<CodePostal>String</CodePostal>
+					</AdresseTravail>
+					<TelephoneTravail/>
+					<Coordonnees>
+						<TypeCoordonnee>1</TypeCoordonnee>
+						<ValeurCoordonnee>+33 442263106</ValeurCoordonnee>
+					</Coordonnees>
+					<Coordonnees>
+						<TypeCoordonnee>9</TypeCoordonnee>
+						<ValeurCoordonnee>inter.bob@gt6.fr</ValeurCoordonnee>
+					</Coordonnees>
+					<PartenaireReferent>
+						<Nom>COLLEGE DES CEVENNES</Nom>
+						<IdPartenaire>1725012345</IdPartenaire>
+						<CodePays>250</CodePays>
+						<CodeBassin>913</CodeBassin>
+					</PartenaireReferent>
+					<CommunicationDonneesPersonnelles>0</CommunicationDonneesPersonnelles>
+					<DateSaisie>2013-03-13</DateSaisie>
+				</ClientDetenteur>
+			</EntreeClient>
+		</EntreeListeSecurite>
+	</ListeSecurite>
 </IBLSRF:MajListeSecurite>
