@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="urn:IBACRC" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:IBACRC="urn:IBACRC" xmlns:IB="urn:IB_V1" xmlns:InterBOB="urn:InterBOB_V1">
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="urn:IBACRC" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:IBACRC="urn:IBACRC" xmlns:InterBOB="urn:InterBOB_V1" xmlns:IB="urn:IB_V1">
 	<xs:import namespace="urn:IB_V1" schemaLocation="IB____.xsd"/>
 	<xs:import namespace="urn:InterBOB_V1" schemaLocation="XML_DDR_InterBOB_fr.xsd"/>
 	<xs:complexType name="t_MessageAcquisitions">
