@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xs:schema targetNamespace="urn:InterBOB_V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:InterBOB="urn:InterBOB_V1">
 	<xs:annotation>
 		<xs:documentation>Schéma XML du corps local du dictionnaire de données d'InterBOB.</xs:documentation>
@@ -84,10 +84,10 @@
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumActionEntreeListe">
-		<xs:restriction base="xs:string"/>
+		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumStructureApplication">
-		<xs:restriction base="xs:int"/>
+		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="t_EnumFormeContenant">
 		<xs:restriction base="xs:int"/>
