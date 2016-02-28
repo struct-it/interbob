@@ -51,7 +51,7 @@
         </EquipementAction>
         <EntreeApplicationInstallee>
             <PositionDansListe>1</PositionDansListe>
-            <ActionDemandee/>
+            <ActionDemandee>0</ActionDemandee>
             <DateDebutEffet>1957-08-13</DateDebutEffet>
             <DateFinEffet>1957-08-13</DateFinEffet>
             <Motif>0</Motif>
