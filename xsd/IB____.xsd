@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xs:schema targetNamespace="urn:IB_V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:IB="urn:IB_V1" xmlns:InterBOB="urn:InterBOB_V1">
 	<xs:import namespace="urn:InterBOB_V1" schemaLocation="XML_DDR_InterBOB_fr.xsd"/>
 	<xs:complexType name="t_ApplicationInstallee">
@@ -86,7 +86,7 @@
 	</xs:complexType>
 	<xs:complexType name="t_ListeApplicationUtilisee">
 		<xs:sequence>
-			<xs:element name="ApplicationUtilisee" type="InterBOB:t_ApplicationUtilisee" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ApplicationUtilisee" type="InterBOB:t_ApplicationInstallee" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="t_EntreeClient">
@@ -94,7 +94,6 @@
 			<xs:extension base="IB:t_EntreeClientAbstraite">
 				<xs:choice>
 					<xs:element name="ClientDetenteur" type="InterBOB:t_Client" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="ClientDetenteurMoral" type="IB:t_ClientMoral" minOccurs="0" maxOccurs="1"/>
 				</xs:choice>
 			</xs:extension>
 		</xs:complexContent>
