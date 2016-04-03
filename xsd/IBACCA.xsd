@@ -18,7 +18,7 @@
 			<xs:extension base="InterBOB:t_OperationVenteAbstrait">
 				<xs:sequence>
 					<xs:element name="ObjetImplique" type="IBACCA:t_ObjetImplique" minOccurs="1" maxOccurs="1"/>
-					<xs:element name="AncienObjetImplique" type="IBACCA:t_ObjetImplique" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="AncienObjetImplique" type="IBACCA:t_ObjetImplique" minOccurs="1" maxOccurs="1"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
