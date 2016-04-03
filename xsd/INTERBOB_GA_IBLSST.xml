@@ -26,7 +26,7 @@
         <IdentifiantListe/>
         <DateHeureEmission>2013-09-20T10:56:37</DateHeureEmission>
         <TypeListeSecurite>20</TypeListeSecurite>
-        <ActionParDefaut/>
+        <ActionParDefaut>0</ActionParDefaut>
         <TypeMiseaJour>0</TypeMiseaJour>
         <EntreeListeSecurite>
             <EntreeProduitInstalle>

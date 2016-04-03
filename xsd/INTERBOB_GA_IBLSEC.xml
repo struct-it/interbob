@@ -26,12 +26,12 @@
 	<IdentifiantListe></IdentifiantListe>
  	<DateHeureEmission>2012-12-05T11:53:52</DateHeureEmission>
         	<TypeListeSecurite>19</TypeListeSecurite>
-        	<ActionParDefaut></ActionParDefaut>
+        	<ActionParDefaut>0</ActionParDefaut>
         	<TypeMiseaJour>1</TypeMiseaJour>
 <EntreeListeSecurite>
             <EntreeClient>
                 <PositionDansListe>1</PositionDansListe>
-                <ActionDemandee></ActionDemandee>
+                <ActionDemandee>0</ActionDemandee>
                 <DateDebutEffet>1957-08-13</DateDebutEffet>
                 <DateFinEffet>1957-08-13</DateFinEffet>
                 <ListeApplicationUtilisee>
