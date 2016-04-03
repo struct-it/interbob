@@ -28,7 +28,7 @@
 					<xs:element name="EquipementValidation" type="InterBOB:t_Equipement" minOccurs="1" maxOccurs="1"/>
 					<xs:element name="ApplicationUtilisee" type="InterBOB:t_Application" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="ProduitUtilise" type="IBUT:t_ProduitUtilise" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="AccesValide" type="InterBOB:t_AccesValide" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="AccesValide" type="InterBOB:t_AccesValide" minOccurs="0" maxOccurs="1"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
