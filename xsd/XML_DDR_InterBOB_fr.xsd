@@ -73,7 +73,7 @@
 	</xs:complexType>
 	<xs:complexType name="t_ApplicationUtilisee">
 		<xs:complexContent>
-			<xs:extension base="InterBOB:t_ApplicationAbstraite">
+			<xs:extension base="InterBOB:t_Application">
 				<xs:sequence>
 					<xs:element name="DateHeureDebutValidite" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
 				</xs:sequence>
@@ -734,7 +734,7 @@
 	</xs:complexType>
 	<xs:complexType name="t_ApplicationInstalleeAbstraite" abstract="true">
 		<xs:complexContent>
-			<xs:extension base="InterBOB:t_ApplicationAbstraite">
+			<xs:extension base="InterBOB:t_Application">
 				<xs:sequence>
 					<xs:element name="Support" type="InterBOB:t_Support" minOccurs="0" maxOccurs="1"/>
 				</xs:sequence>
@@ -835,13 +835,17 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="t_Application">
-		<xs:sequence>
-			<xs:element name="AID" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="IdApplicationInstallee" type="InterBOB:t_Identifiant" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="MatriceApplicationEnregistree" type="InterBOB:t_MatriceApplicationEnregistree" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="Distributeur" type="InterBOB:t_OrganisationEnregistree" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="DateHeureFinValidite" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
-		</xs:sequence>
+		<xs:complexContent>
+			<xs:extension base="InterBOB:t_ApplicationAbstraite">
+				<xs:sequence>
+					<xs:element name="AID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="IdApplicationInstallee" type="InterBOB:t_Identifiant" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="MatriceApplicationEnregistree" type="InterBOB:t_MatriceApplicationEnregistree" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="Distributeur" type="InterBOB:t_OrganisationEnregistree" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="DateHeureFinValidite" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="t_ListeAbstrait" abstract="true">
 		<xs:sequence>
@@ -900,14 +904,10 @@
 			<xs:element name="IdSupport" type="InterBOB:t_Identifiant" minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="t_ApplicationAbstraite">
-		<xs:complexContent>
-			<xs:extension base="InterBOB:t_Application">
-				<xs:sequence>
-					<xs:element name="CategorieApplication" type="InterBOB:t_EnumCategorie" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="StructureApplication" type="InterBOB:t_EnumStructureApplication" minOccurs="0" maxOccurs="1" default="0"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
+	<xs:complexType name="t_ApplicationAbstraite" abstract="true">
+		<xs:sequence>
+			<xs:element name="CategorieApplication" type="InterBOB:t_EnumCategorie" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="StructureApplication" type="InterBOB:t_EnumStructureApplication" minOccurs="0" maxOccurs="1" default="0"/>
+		</xs:sequence>
 	</xs:complexType>
 </xs:schema>

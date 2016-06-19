@@ -36,6 +36,8 @@
 				<DateDebutEffet>1957-08-13</DateDebutEffet>
 				<DateFinEffet>1957-08-13</DateFinEffet>
 				<ApplicationInstallee>
+					<CategorieApplication>9</CategorieApplication>
+					<StructureApplication>7</StructureApplication>				
 					<AID>A0000004040125091201000000</AID>
 					<IdApplicationInstallee>201234567891234</IdApplicationInstallee>
 					<MatriceApplicationEnregistree>
@@ -59,8 +61,6 @@
 						<CodeBassin>912</CodeBassin>
 					</Distributeur>
 					<DateHeureFinValidite>2001-12-17T09:30:47+05:00</DateHeureFinValidite>
-					<CategorieApplication>9</CategorieApplication>
-					<StructureApplication>7</StructureApplication>
 					<Support>
 						<FormeContenant>0</FormeContenant>
 						<TypeSupport>

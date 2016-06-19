@@ -46,6 +46,7 @@
 			<ElementControleIntegrite></ElementControleIntegrite>
 			<ObjetImplique>
 				<ApplicationInstallee>
+					<StructureApplication>70</StructureApplication>				
 					<AID>A0000004040125000001</AID>
 					<IdApplicationInstallee>201234567</IdApplicationInstallee>
 					<MatriceApplicationEnregistree>
@@ -75,7 +76,6 @@
 						<CodeBassin>000</CodeBassin>
 					</Distributeur>
 					<DateHeureFinValidite>2016-12-17T09:30:47</DateHeureFinValidite>
-					<StructureApplication>70</StructureApplication>
 					<Support>
 						<FormeContenant>1</FormeContenant>
 						<TypeSupport>6</TypeSupport>

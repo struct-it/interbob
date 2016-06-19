@@ -57,6 +57,8 @@
             <Motif>0</Motif>
             <CodeMiseAJour>0</CodeMiseAJour>
             <ApplicationInstallee>
+                <CategorieApplication>0</CategorieApplication>
+                <StructureApplication>2</StructureApplication>
                 <AID/>
                 <IdApplicationInstallee/>
                 <MatriceApplicationEnregistree>
@@ -81,8 +83,6 @@
                     <CodeBassin>000</CodeBassin>
                 </Distributeur>
                 <DateHeureFinValidite>2021-04-03T00:00:00</DateHeureFinValidite>
-                <CategorieApplication>0</CategorieApplication>
-                <StructureApplication>2</StructureApplication>
                 <Support>
                      <FormeContenant>1</FormeContenant>
                     <TypeSupport>6</TypeSupport>
